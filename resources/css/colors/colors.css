@@ -1,0 +1,20 @@
+@layer base{
+    :root{
+        --color-blue-50: #F4F7FF;
+        --color-blue-100: #E3EBFF;
+        --color-blue-200: #DBE5FF;
+        --color-blue-300: #BFCFFF;
+        --color-blue-400: #95AFFD;
+        --color-blue-500: #7E9DFB;
+        --color-blue-600: #5A82FB;
+        --color-blue-700: #4063CC;
+        --color-blue-800: #27459F;
+        --color-blue-900: #1E3A8A;
+
+        --color-turquoise-100: #A7DDEC;
+        --color-turquoise-500: #00B5C4;
+
+        --color-corail-500: #E65650;
+        --color-corail-600: #E04842;
+    }
+}
