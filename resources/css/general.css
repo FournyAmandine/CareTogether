@@ -8,3 +8,7 @@
     border: 0;
     margin: -1px;
 }
+
+body {
+    background-color: var(--color-blue-50);
+}
