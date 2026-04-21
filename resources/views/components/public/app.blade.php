@@ -7,7 +7,7 @@
     <meta name="description" content="Site de vente, achats, dons, locations de matériel médical. Si vous êtes en quête de matériel médical, c'est ici que ça se passe">
     <meta name="keywords" content="vente, achats, dons, locations, matériel, médical">
     <title>{!! $title_page !!} - CareTogether</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
 <body class="">
 <x-public.partials.header :title="$title_page" />
