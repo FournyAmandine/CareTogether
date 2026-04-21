@@ -4,7 +4,7 @@
         <img class="header__imgContainer__img" src="{{ asset('assets/img/logo-header.svg') }}" alt="Logo CareTogether">
     </div>
     <nav class="header__navContainer">
-        <x-public.navigation.list.links name_parent="header__navContainer"/>
+        <x-public.navigation.list.list-header name_parent="header__navContainer"/>
     </nav>
     <x-public.utils.search name_parent="header"/>
     <div class="header__buttons">
