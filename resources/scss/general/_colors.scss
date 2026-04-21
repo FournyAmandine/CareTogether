@@ -1,5 +1,4 @@
-@layer base{
-    :root{
+:root{
         --color-blue-50: #F4F7FF;
         --color-blue-100: #E3EBFF;
         --color-blue-200: #DBE5FF;
@@ -16,5 +15,14 @@
 
         --color-corail-500: #E65650;
         --color-corail-600: #E04842;
-    }
 }
+
+$white: #FFFFFF;
+$black: #000000;
+
+$primary: #1E3A8A;
+$tertiary: #00B5C4;
+
+
+
+
