@@ -1,8 +1,6 @@
 <header class="header">
     <h1 class="sro header__title">{{$title}}</h1>
-    <div class="header__imgContainer">
-        <img class="header__imgContainer__img" src="{{ asset('assets/img/logo-header.svg') }}" alt="Logo CareTogether">
-    </div>
+    <x-public.utils.logo name_parent="header" />
     <nav class="header__navContainer">
         <x-public.navigation.list.list-header name_parent="header__navContainer"/>
     </nav>
