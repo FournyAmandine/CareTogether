@@ -1,3 +1,5 @@
-@props(['href', 'label', 'a_class'])
+@props(['href', 'label', 'name_parent'])
 
-<a class="{!! $a_class !!}" title="Aller vers la page {!! $label !!}" href="{!! $href !!}">{!! $label !!}</a>
+<div class="{!! $name_parent !!}__buttonContainer">
+    <a class="button {!! $name_parent !!}__buttonContainer__button" title="Aller vers la page {!! $label !!}" href="{!! $href !!}">{!! $label !!}</a>
+</div>

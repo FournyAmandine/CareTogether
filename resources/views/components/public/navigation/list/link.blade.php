@@ -1,3 +1,3 @@
-@props(['li_class', 'href', 'label', 'a_class'])
+@props(['name_parent', 'href', 'label'])
 
-<li class="{!! $li_class !!}"><a class="{!! $a_class !!}" title="Aller vers la page {!! $label !!}" href="{!! $href !!}">{!! $label !!}</a></li>
+<li class="{!! $name_parent !!}__list__item"><a class="{!! $name_parent !!}__list__item__link" title="Aller vers la page {!! $label !!}" href="{!! $href !!}">{!! $label !!}</a></li>

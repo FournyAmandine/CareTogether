@@ -1,33 +1,26 @@
-@props(['ul_class', 'li_class', 'a_class'])
+@props(['name_parent'])
 
 @php
     $links = [
         [
-            'li_class' => $li_class,
-            'a_class' => $a_class,
             'href'=>route('public.posts.index'),
             'label'=> 'Annonces'
         ],
         [
-            'li_class' => $li_class,
-            'a_class' => $a_class,
             'href'=>route('public.aboutpage'),
             'label'=> 'À propos'
         ],
         [
-            'li_class' => $li_class,
-            'a_class' => $a_class,
             'href'=>route('public.contactpage'),
             'label'=> 'Contact'
         ],
     ];
 @endphp
 
-<ul class="{!! $ul_class !!}">
+<ul class="{!! $name_parent !!}__list">
     @foreach($links as $link)
         <x-public.navigation.list.link
-            li_class="{!! $link['li_class'] !!}"
-            a_class="{!! $link['a_class'] !!}"
+            name_parent="{!! $name_parent !!}"
             :href="$link['href']"
             :label="$link['label']"
         />
