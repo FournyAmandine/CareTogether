@@ -1,3 +1,6 @@
+/****************************
+            COLORS
+*****************************/
 :root {
   --color-blue-50: #F4F7FF;
   --color-blue-100: #E3EBFF;
@@ -31,7 +34,7 @@
   src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
 }
 /****************************
-    COMMONS
+            GENERAL
 *****************************/
 .sro {
   position: absolute;
@@ -58,6 +61,9 @@ p {
   font-family: "Inter", sans-serif;
 }
 
+/****************************
+            RESET
+*****************************/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -112,6 +118,9 @@ table {
   border-spacing: 0;
 }
 
+/****************************
+            BUTTONS
+*****************************/
 .button {
   font-family: "DM Sans", sans-serif;
   font-size: 1.25em;
@@ -135,7 +144,7 @@ table {
 }
 
 /****************************
-    COMMONS
+            COMMONS
 *****************************/
 .maintitle {
   font-weight: bold;
@@ -147,6 +156,9 @@ table {
   font-size: 1.5em;
 }
 
+/****************************
+            HEADER
+*****************************/
 .header {
   background: #1E3A8A;
   display: flex;
@@ -230,6 +242,9 @@ table {
   border-left: 1px solid #FFFFFF;
   align-items: center;
 }
+/****************************
+            FOOTER
+*****************************/
 .footer {
   background: #1E3A8A;
   display: flex;
