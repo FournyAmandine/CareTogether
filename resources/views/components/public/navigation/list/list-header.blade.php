@@ -20,7 +20,7 @@
 <ul class="{!! $name_parent !!}__list">
     @foreach($links as $link)
         <x-public.navigation.list.link
-            name_parent="{!! $name_parent !!}"
+            name_parent="{!! $name_parent !!}__list"
             :href="$link['href']"
             :label="$link['label']"
         />

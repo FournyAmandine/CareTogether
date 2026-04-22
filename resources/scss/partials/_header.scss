@@ -19,7 +19,7 @@
         }
     }
 
-    &__navContainer {
+    &__navigation {
         border-left: 1px solid $white;
         height: 90%;
         margin-top: auto;
@@ -35,8 +35,7 @@
 
                 &__link {
                     color: $white;
-                    text-decoration: none;
-                    font-size: $large;
+                    font-size: $medium;
                     font-family: 'DM sans', sans-serif;
                     font-weight: bold;
 

@@ -12,6 +12,6 @@
 <body class="">
 <x-public.partials.header :title="$title_page" />
 {!! $slot !!}
-<x-public.partials.footer/>
+<x-public.partials.footer :title="$title_page"/>
 </body>
 </html>

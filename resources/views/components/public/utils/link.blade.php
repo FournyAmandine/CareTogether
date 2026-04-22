@@ -1,5 +1,8 @@
-@props(['href', 'label', 'name_parent'])
+@props(['href', 'label', 'name_parent', 'title'])
 
 <div class="{!! $name_parent !!}__buttonContainer">
-    <a class="button {!! $name_parent !!}__buttonContainer__button" title="Aller vers la page {!! $label !!}" href="{!! $href !!}">{!! $label !!}</a>
+    <a class="button {!! $name_parent !!}__buttonContainer__button"
+       title="{!! $title !!}"
+       href="{!! $href !!}">{!! $label !!}
+    </a>
 </div>
