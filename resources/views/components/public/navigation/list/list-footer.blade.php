@@ -3,6 +3,10 @@
 @php
     $links = [
         [
+            'href'=>route('public.homepage'),
+            'label'=> 'Accueil'
+        ],
+        [
             'href'=>route('public.posts.index'),
             'label'=> 'Annonces'
         ],
@@ -14,13 +18,17 @@
             'href'=>route('public.contactpage'),
             'label'=> 'Contact'
         ],
+        [
+            'href'=>'#',
+            'label'=> 'Mon profil'
+        ],
     ];
 @endphp
 
 <ul class="{!! $name_parent !!}__list">
     @foreach($links as $link)
         <x-public.navigation.list.link
-            name_parent="{!! $name_parent !!}"
+            name_parent="{!! $name_parent !!}__list"
             :href="$link['href']"
             :label="$link['label']"
         />
