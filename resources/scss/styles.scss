@@ -1,13 +1,9 @@
 //GENERAL
 @import "general/colors";
-@import "general/general";
 @import "general/fonts";
+@import "general/general";
 
 //PAGES
-
-//PARTIALS
-@import "partials/header";
-@import "partials/footer";
 
 //SETTINGS
 @import "settings/reset";
@@ -15,5 +11,9 @@
 //UTILS
 @import "utils/buttons";
 @import "utils/commons";
+
+//PARTIALS
+@import "partials/header";
+@import "partials/footer";
 
 

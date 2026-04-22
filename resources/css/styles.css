@@ -15,6 +15,24 @@
   --color-corail-600: #E04842;
 }
 
+/****************************
+    FONT (sizes et imports)
+*****************************/
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+/****************************
+    COMMONS
+*****************************/
 .sro {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -30,9 +48,103 @@ body {
   background-color: var(--color-blue-50);
 }
 
-a {
+a, h1, h2, h3, h4 {
   display: inline-block;
   text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.button {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #1E3A8A;
+  background: #FFFFFF;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.button--simple {
+  color: #FFFFFF;
+  padding: 0;
+  background: none;
+}
+.button--footer {
+  color: #FFFFFF;
+  padding: 0;
+  background: none;
+  font-weight: normal;
+}
+
+/****************************
+    COMMONS
+*****************************/
+.maintitle {
+  font-weight: bold;
+  font-size: 2em;
+  color: #FFFFFF;
+  font-family: "DM Sans", sans-serif;
+}
+.maintitle--footer {
+  font-size: 1.5em;
 }
 
 .header {
@@ -71,7 +183,6 @@ a {
 .header__navigation__list__item__link {
   color: #FFFFFF;
   font-size: 1.25em;
-  font-family: "DM sans", sans-serif;
   font-weight: bold;
 }
 .header__navigation__list__item__link:hover {
@@ -153,8 +264,9 @@ a {
 .footer__primary__navigation__list__item__link {
   font-size: 1.25em;
   color: #FFFFFF;
-  font-family: sans-serif;
   margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
 }
 .footer__primary__navigation__list__item__link:hover {
   color: #00B5C4;
@@ -166,6 +278,7 @@ a {
 .footer__primary__contact__buttonContainer__button {
   font-weight: normal;
   margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
 }
 .footer__primary__contact__buttonContainer__button:hover {
   color: #00B5C4;
@@ -188,98 +301,11 @@ a {
   display: none;
 }
 .footer__secondary__navigation__list__item__link {
-  color: #FFFFFF;
-  font-family: sans-serif;
+  font-weight: normal;
 }
 .footer__secondary__navigation__list__item__link:hover {
   color: #00B5C4;
   text-decoration: underline;
-}
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.button {
-  font-family: "DM sans", sans-serif;
-  font-size: 1.25em;
-  font-weight: bold;
-  color: #1E3A8A;
-  background: #FFFFFF;
-  padding: 10px 25px;
-  border-radius: 20px;
-  text-decoration: none;
-}
-.button--simple {
-  color: #FFFFFF;
-  padding: 0;
-  background: none;
-}
-.button--footer {
-  color: #FFFFFF;
-  padding: 0;
-  background: none;
-  font-weight: normal;
-}
-
-.maintitle {
-  font-weight: bold;
-  font-size: 2em;
-  color: #FFFFFF;
-  font-family: sans-serif;
-}
-.maintitle--footer {
-  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,8 +1,12 @@
+/****************************
+    COMMONS
+*****************************/
+
 .maintitle {
     font-weight: bold;
     font-size: $x-large;
     color: $white;
-    font-family: sans-serif;
+    font-family: $titleFont;
 
     &--footer {
         font-size: $large;
