@@ -1,3 +1,7 @@
+/****************************
+            HEADER
+*****************************/
+
 .header {
   background: $primary;
     display: flex;
@@ -36,7 +40,6 @@
                 &__link {
                     color: $white;
                     font-size: $medium;
-                    font-family: 'DM sans', sans-serif;
                     font-weight: bold;
 
                     &:hover {

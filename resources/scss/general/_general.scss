@@ -1,3 +1,7 @@
+/****************************
+            GENERAL
+*****************************/
+
 .sro{
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
@@ -13,7 +17,13 @@ body {
     background-color: var(--color-blue-50);
 }
 
-a {
+a, h1, h2, h3, h4 {
     display: inline-block;
     text-decoration: none;
+    font-family: $titleFont;
 }
+
+p {
+    font-family: $textFont;
+}
+

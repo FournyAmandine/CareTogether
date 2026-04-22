@@ -1,3 +1,8 @@
+/****************************
+            FOOTER
+*****************************/
+
+
 .footer{
     background: $primary;
     display: flex;
@@ -37,8 +42,9 @@
                     &__link {
                         font-size: $medium;
                         color: $white;
-                        font-family: sans-serif;
                         margin-bottom: 20px;
+                        font-family: $textFont;
+                        font-weight: normal;
 
                         &:hover {
                             color: $tertiary;
@@ -60,6 +66,7 @@
                 &__button {
                     font-weight: normal;
                     margin-bottom: 20px;
+                    font-family: $textFont;
 
                     &:hover {
                         color: $tertiary;
@@ -96,8 +103,7 @@
                     }
 
                     &__link {
-                        color: $white;
-                        font-family: sans-serif;
+                        font-weight: normal;
 
                         &:hover {
                             color: $tertiary;
