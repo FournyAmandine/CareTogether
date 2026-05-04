@@ -7,8 +7,25 @@
     font-size: $x-large;
     color: $white;
     font-family: $titleFont;
+    max-width: 280px;
+
+    &--big {
+        font-size: $xx-large;
+    }
+
+    &--blue {
+        color: $primary;
+    }
 
     &--footer {
         font-size: $large;
     }
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: $x-large;
+    color: $primary;
+    font-family: $titleFont;
+    margin-bottom: 15px;
 }

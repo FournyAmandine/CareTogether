@@ -1,0 +1,66 @@
+.textPage {
+
+    .text {
+
+        &__decoContainer {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__main {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            margin-top: 100px;
+
+            &__title {
+
+            }
+
+            &__contentContainer {
+                max-width: 925px;
+                line-height: 1.4;
+                margin-left: auto;
+                margin-right: 0;
+
+                &__content {
+                    margin-bottom: 60px;
+
+                    &__title {
+
+                    }
+
+                    &__text {
+
+                        &__item {
+                            font-size: $medium;
+                            margin-bottom: 0;
+
+                            &--margin {
+                                margin-top: 30px;
+                            }
+                        }
+
+                        &__list {
+                            margin-bottom: 30px;
+
+                            &__item {
+                                list-style-type: disc;
+                                margin-left: 15px;
+                                font-size: $medium;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
