@@ -1,7 +1,8 @@
 <header class="header">
     <h1 class="sro header__title">{{$title}}</h1>
     <x-public.utils.logo name_parent="header" />
-    <nav class="header__navContainer">
+    <nav class="header__navigation">
+        <h2 class="sro header__navigation__title">Navigation</h2>
         <x-public.navigation.list.list-header name_parent="header__navigation"/>
     </nav>
     <x-public.utils.search name_parent="header"/>
