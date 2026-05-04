@@ -3,13 +3,14 @@
 *****************************/
 
 .header {
-  background: $primary;
+    background: $primary;
     display: flex;
     padding: 15px 40px;
     border-radius: 40px;
     margin-right: 40px;
     margin-left: 40px;
     margin-top: 30px;
+    position: relative;
 
     &__imgContainer {
         width: 335px;
@@ -106,6 +107,33 @@
 
             &__button {
 
+            }
+        }
+    }
+
+    &__breadcrumbs {
+        position: absolute;
+        left: 125px;
+        bottom: -30px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        span {
+            color: $breadcrumb;
+            font-family: $titleFont;
+
+            &:last-of-type {
+                color: $primary;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                &:before {
+                    content: '>';
+                    color: $primary;
+                    font-weight: bold;
+                }
             }
         }
     }

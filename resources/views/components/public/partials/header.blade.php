@@ -10,4 +10,14 @@
         <x-public.utils.link name_parent="button--simple header__buttons" title="Aller vers la page S'inscrire" href="#" label="S'inscrire"/>
         <x-public.utils.link name_parent="header__buttons" title="Aller vers la page Se connecter" href="#" label="Se connecter"/>
     </div>
+    @if($title != 'Accueil')
+        <div class="header__breadcrumbs">
+        <span>
+            Accueil
+        </span>
+            <span>
+            {{$title}}
+        </span>
+        </div>
+    @endif
 </header>
