@@ -1,5 +1,5 @@
 <footer class="footer">
-    <h2 class="sro footer__title">{{$title}} - Footer</h2>
+    <h2 class="sro footer__title">Footer</h2>
     <div class="footer__primary">
         <x-public.utils.logo name_parent="footer__primary" />
         <div class="footer__primary__navigation">
