@@ -263,7 +263,11 @@ ul li {
   height: 80px;
   padding-right: 30px;
 }
-.header__imgContainer__img {
+.header__imgContainer__link {
+  width: 100%;
+  height: 100%;
+}
+.header__imgContainer__link__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -350,7 +354,11 @@ ul li {
 .footer__primary__imgContainer {
   width: 430px;
 }
-.footer__primary__imgContainer__img {
+.footer__primary__imgContainer__link {
+  width: 100%;
+  height: 100%;
+}
+.footer__primary__imgContainer__link__img {
   width: 100%;
   height: 100%;
 }

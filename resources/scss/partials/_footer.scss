@@ -18,9 +18,14 @@
         &__imgContainer {
             width: 430px;
 
-            &__img {
+            &__link {
                 width: 100%;
                 height: 100%;
+
+                &__img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
 
