@@ -14,6 +14,7 @@
     </div>
     <div class="footer__secondary">
         <nav class="footer__secondary__navigation">
+            <h3 class="sro footer__secondary__navigation__title">Navigation secondaire</h3>
             <ul class="footer__secondary__navigation__list">
                 <x-public.navigation.list.link name_parent="footer__secondary__navigation__list"
                                                :href="route('public.mentionspage')"

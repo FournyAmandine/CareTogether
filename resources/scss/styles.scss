@@ -1,19 +1,20 @@
+//SETTINGS
+@import "settings/reset";
+
 //GENERAL
 @import "general/colors";
 @import "general/fonts";
 @import "general/general";
 
-//SETTINGS
-@import "settings/reset";
-
 //UTILS
 @import "utils/buttons";
 @import "utils/commons";
+@import "utils/wrapper";
 
 //PARTIALS
 @import "partials/header";
 @import "partials/footer";
 
 //PAGES
-
+@import "pages/pageText";
 
