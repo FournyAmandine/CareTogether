@@ -1,0 +1,105 @@
+.card-post {
+    background: $postBcg;
+    border-radius: 15px;
+    position: relative;
+    padding: 15px;
+
+    &__iconType {
+        position: absolute;
+        fill: $postBcg;
+        background: $primary;
+        border-radius: 50%;
+        padding: 10px;
+        width: 45px;
+        height: 45px;
+        top: 25px;
+        right: 25px;
+    }
+
+    &__imgContainer {
+        overflow: hidden;
+        border-radius: 15px;
+        max-width: 350px;
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__contentContainer {
+        margin-top: 10px;
+
+        &__title {
+            text-transform: uppercase;
+            font-size: $large;
+            color: $primary;
+            font-weight: bold;
+        }
+
+        &__info {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            &__icon {
+                width: 25px;
+                height: 25px;
+                fill: $text;
+            }
+
+            &__text {
+                font-family: $textFont;
+                font-size: $medium;
+                color: $text;
+            }
+        }
+
+        &__price {
+            font-size: $large;
+            color: $primary;
+            font-weight: bold;
+            font-family: $titleFont;
+        }
+
+        &__navigation {
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;//safety
+
+            &__buttonContainer {
+                &__button { //_buttons.scss
+                    color: $primary;
+                    font-weight: normal;
+                    flex-direction: row-reverse;
+                    justify-content: flex-end;
+
+                    svg {
+                        fill: $primary;
+                        height: 15px;
+                        width: 10px;
+                    }
+                }
+            }
+
+            &__buttons {
+
+                &__button {
+                    background: none;
+                    border: none;
+
+                    &__icon {
+                        fill: $primary;
+                        width: 30px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
