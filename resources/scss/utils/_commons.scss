@@ -8,9 +8,14 @@
     color: $white;
     font-family: $titleFont;
     max-width: 280px;
+    line-height: 1.2;
 
     &--big {
         font-size: $xxx-large;
+    }
+
+    &--small {
+        font-size: $x-large;
     }
 
     &--blue {

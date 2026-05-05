@@ -191,9 +191,13 @@ ul li {
   color: #FFFFFF;
   font-family: "DM Sans", sans-serif;
   max-width: 280px;
+  line-height: 1.2;
 }
 .maintitle--big {
   font-size: 3.5em;
+}
+.maintitle--small {
+  font-size: 2em;
 }
 .maintitle--blue {
   color: #1E3A8A;
@@ -293,6 +297,7 @@ ul li {
   margin-left: 40px;
   margin-top: 30px;
   position: relative;
+  z-index: 3;
 }
 .header__imgContainer {
   width: 335px;
@@ -395,6 +400,10 @@ ul li {
   content: ">";
   color: #1E3A8A;
   font-weight: bold;
+}
+.header__breadcrumbs--about {
+  top: 800px;
+  bottom: unset;
 }
 
 /****************************
@@ -529,6 +538,34 @@ ul li {
   display: flex;
   gap: 20px;
 }
+.banner--about {
+  position: relative;
+  z-index: 2;
+}
+.banner--about .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.banner--about .banner__backgroundContainer:after {
+  content: "";
+  background: rgba(30, 58, 138, 0.5);
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -140px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.banner--about .banner__title {
+  max-width: 610px;
+  font-size: 3.5em;
+}
+.banner--about .banner__buttons {
+  margin-right: 145px;
+}
+
 .card-post {
   background: #FEFEFE;
   border-radius: 15px;
@@ -992,6 +1029,235 @@ ul li {
   padding: 15px 25px;
   margin-left: auto;
   margin-right: 0;
+}
+
+.aboutPage .about {
+  position: relative;
+  padding-bottom: 100px;
+}
+.aboutPage .about .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.aboutPage .about__decoContainer {
+  max-width: 1540px;
+  height: auto;
+  position: absolute;
+  bottom: 400px;
+  left: 15%;
+  right: 15%;
+  z-index: -1;
+}
+.aboutPage .about__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+}
+.aboutPage .about__contentContainer {
+  max-width: 785px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 155px;
+}
+.aboutPage .about__contentContainer__title {
+  margin-bottom: 50px;
+  max-width: 350px;
+}
+.aboutPage .about__contentContainer__content {
+  font-size: 1.25em;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+.aboutPage .about__contentContainer__content:nth-of-type(1) {
+  color: #1E3A8A;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.aboutPage .about__contentContainer__buttonContainer {
+  margin-top: 50px;
+}
+.aboutPage .about__imgContainer {
+  max-width: 630px;
+  max-height: 630px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 80px;
+}
+.aboutPage .about__imgContainer__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aboutPage .objectifs {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  position: relative;
+}
+.aboutPage .objectifs__decoContainer {
+  position: absolute;
+  right: 0;
+  top: -40px;
+}
+.aboutPage .objectifs__title {
+  max-width: 385px;
+  margin-bottom: 50px;
+}
+.aboutPage .objectifs__listing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.aboutPage .objectifs__listing__item {
+  background: #A7DDEC;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  width: 430px;
+}
+.aboutPage .objectifs__listing__item:nth-of-type(3), .aboutPage .objectifs__listing__item:nth-of-type(4) {
+  width: 550px;
+}
+.aboutPage .objectifs__listing__item:nth-of-type(3) .objectifs__listing__item__title, .aboutPage .objectifs__listing__item:nth-of-type(4) .objectifs__listing__item__title {
+  max-width: none;
+}
+.aboutPage .objectifs__listing__item__icon {
+  width: 50px;
+  height: 50px;
+  fill: #1E3A8A;
+  margin-right: 0;
+  margin-left: auto;
+}
+.aboutPage .objectifs__listing__item__title {
+  max-width: 310px;
+}
+.aboutPage .problems {
+  position: relative;
+  z-index: 2;
+}
+.aboutPage .problems:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #B6C8FF 50%, rgba(192, 206, 255, 0));
+}
+.aboutPage .problems .wrapper {
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aboutPage .problems__backgroundContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+}
+.aboutPage .problems__backgroundContainer__background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aboutPage .problems__title {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+.aboutPage .problems__title__strong {
+  font-weight: bold;
+}
+.aboutPage .problems__contentContainer {
+  max-width: 780px;
+}
+.aboutPage .problems__contentContainer__content {
+  font-size: 1.25em;
+  padding-bottom: 20px;
+  line-height: 1.2;
+}
+.aboutPage .problems__contentContainer__content:has(+ .problems__contentContainer__list) {
+  color: #1E3A8A;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.aboutPage .problems__contentContainer__content strong {
+  color: #1E3A8A;
+  font-weight: bold;
+}
+.aboutPage .problems__contentContainer__list {
+  padding-bottom: 20px;
+}
+.aboutPage .problems__contentContainer__list__item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  font-size: 1.25em;
+}
+.aboutPage .problems__contentContainer__list__item__icon {
+  width: 20px;
+  height: 20px;
+  fill: #1E3A8A;
+}
+.aboutPage .values {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  position: relative;
+}
+.aboutPage .values__decoContainer {
+  position: absolute;
+  bottom: 150px;
+  right: -260px;
+  width: 740px;
+  height: 870px;
+  z-index: -1;
+}
+.aboutPage .values__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+}
+.aboutPage .values__title {
+  max-width: 340px;
+  margin-bottom: 40px;
+}
+.aboutPage .values__contentContainer__content {
+  font-size: 1.25em;
+  margin-bottom: 30px;
+}
+.aboutPage .values__contentContainer__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.aboutPage .values__contentContainer__list__item {
+  font-size: 1.25em;
+  min-width: 700px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 10px;
+  margin-right: 25px;
+  flex: 1;
+}
+.aboutPage .values__contentContainer__list__item__icon {
+  width: 40px;
+  height: 40px;
+  fill: #01B0BF;
+}
+.aboutPage .values__contentContainer__list__item__textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.aboutPage .values__contentContainer__list__item__textContainer__title {
+  color: #1E3A8A;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */
