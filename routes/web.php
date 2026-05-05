@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', /*[HomePageController::class, 'index']*/ function (){ return view('public.homepage'); })->name('public.homepage');
 Route::get('/about', function (){ return view('public.aboutpage'); })->name('public.aboutpage');
 Route::get('/contact', function (){ return view('public.contactpage'); })->name('public.contactpage');
 /*Route::post('/contact', [ContactController::class, 'store'] function (){ return view('public.contactpage.store'); })->name('public.contactpage.store');*/
-Route::get('/posts', /*[PostController::class, 'index']*/ function (){ return view('public.posts.index'); })->name('public.posts.index');
+Route::get('/posts', [PostController::class, 'index'])->name('public.posts.index');
 Route::get('/posts{post}', /*[PostController::class, 'show']*/ function (){ return view('public.posts.show'); })->name('public.posts.show');
 Route::get('/mentions', function (){ return view('public.mentionspage'); })->name('public.mentionspage');
 Route::get('/policy', function (){ return view('public.policypage'); })->name('public.policypage');
