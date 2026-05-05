@@ -116,10 +116,16 @@
                     Nos dernières annonces
                 </h2>
                 <div class="posts__listing">
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
+                    @foreach($posts as $post)
+                        <x-public.home.card title="{!! $post->name !!}"
+                                            locality="{!! $post->locality !!}"
+                                            state="{!! $post->state !!}"
+                                            price="{!! $post->price !!}"
+                                            imgSrc="{!! $post->img_path !!}"
+                                            svg="{!! Str::slug($post->category, '_')!!}"
+                                            src="{!! route('public.posts.show', $post->id) !!}"
+                        />
+                    @endforeach
                 </div>
             </div>
         </section>
