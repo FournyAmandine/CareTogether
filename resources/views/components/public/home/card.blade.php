@@ -1,10 +1,12 @@
-@props(['title', 'locality', 'state', 'price', 'imgSrc'])
+@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg'])
 
 
 <article class="card-post posts__listing__item">
-    <svg class="card-post__iconType">
-        <use xlink:href="{{ asset('assets/img/svg/sprite.svg#mobilite') }}"></use>
-    </svg>
+    <div class="card-post__iconContainer">
+        <svg class="card-post__iconContainer__icon">
+            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>
+        </svg>
+    </div>
     <div class="card-post__imgContainer">
         <img class="card-post__imgContainer__img" src="{!! $imgSrc !!}" alt="Photo du produit {!! $title !!}">
     </div>

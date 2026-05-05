@@ -116,10 +116,10 @@
                     Nos dernières annonces
                 </h2>
                 <div class="posts__listing">
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390"/>
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390"/>
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390"/>
-                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390"/>
+                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
+                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
+                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
+                    <x-public.home.card title="FAUTEUIL ROULANT PLIABLE" img-src="{!! asset('assets/img/article-1.jpg') !!}" locality="Marche-en-Famenne" state="Bon état" price="390" svg="mobilite"/>
                 </div>
             </div>
         </section>
