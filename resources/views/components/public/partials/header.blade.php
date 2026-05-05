@@ -11,7 +11,7 @@
         <x-public.utils.link name_parent="header__buttons" title="Aller vers la page Se connecter" href="#" label="Se connecter"/>
     </div>
     @if($title != 'Accueil')
-        <div class="header__breadcrumbs">
+        <div class="header__breadcrumbs @if($title == 'À propos')header__breadcrumbs--about @endif">
         <span>
             Accueil
         </span>

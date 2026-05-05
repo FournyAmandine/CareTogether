@@ -65,7 +65,7 @@
         </section>
         <section class="steps">
             <div class="steps__decoContainer">
-                <img class="steps__decoContainer__deco" src="{!! asset('assets/img/home-steps-deco.png') !!}" alt="Forme bleu, ronde">
+                <img class="steps__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme bleu, ronde">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue steps__title">
@@ -109,7 +109,7 @@
         </section>
         <section class="posts">
             <div class="posts__decoContainer">
-                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/home-annonces-deco.png') !!}" alt="Forme bleu, ronde">
+                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleu, ronde">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue posts__title">
