@@ -41,5 +41,45 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
+
+        &__pagination {
+
+            span, a {
+                font-family: $titleFont;
+                color: rgba($primary, 0.7);
+                font-weight: bold;
+                margin-right: 15px;
+            }
+
+            a {
+                font-size: $xx-large;
+            }
+
+            span {
+                color: $primary;
+            }
+
+            &__container {
+                display: flex;
+                align-items: center;
+            }
+
+            &__icon {
+                fill: $white;
+                background: $primary;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+
+                &--disabled {
+                    background: rgba($primary, 0.7) !important;
+                }
+            }
+
+            &__current {
+                margin-right: 0 !important;
+                font-size: $xx-large;
+            }
+        }
     }
 }
