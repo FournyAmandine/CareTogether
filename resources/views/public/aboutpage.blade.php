@@ -32,7 +32,7 @@
 
         <section class="about">
             <div class="about__decoContainer">
-                <img class="about__decoContainer__deco" src="{!! asset('assets/img/about-about-deco.png') !!}" alt="Forme bleue, ronde">
+                <img class="about__decoContainer__deco" src="{!! asset('assets/img/deco-header.png') !!}" alt="Forme bleue, ronde">
             </div>
             <div class="wrapper">
                 <div class="about__contentContainer">
