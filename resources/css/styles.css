@@ -163,7 +163,6 @@ ul li {
 }
 .button--post {
   font-weight: normal;
-  flex-direction: row-reverse;
   justify-content: flex-end;
   text-decoration: underline;
   text-decoration-color: #01B0BF;
@@ -572,7 +571,7 @@ ul li {
   position: relative;
   padding: 15px;
 }
-.card-post__iconContainer {
+.card-post__link__iconContainer {
   top: 25px;
   right: 25px;
   position: absolute;
@@ -585,76 +584,76 @@ ul li {
   align-items: center;
   justify-content: center;
 }
-.card-post__iconContainer__icon {
+.card-post__link__iconContainer__icon {
   fill: #FEFEFE;
   width: 40px;
   height: 40px;
 }
-.card-post__imgContainer {
+.card-post__link__imgContainer {
   overflow: hidden;
   border-radius: 15px;
   max-width: 350px;
 }
-.card-post__imgContainer__img {
+.card-post__link__imgContainer__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.card-post__contentContainer {
+.card-post__link__contentContainer {
   margin-top: 10px;
 }
-.card-post__contentContainer__title {
+.card-post__link__contentContainer__title {
   text-transform: uppercase;
   font-size: 1.5em;
   color: #1E3A8A;
   font-weight: bold;
 }
-.card-post__contentContainer__info {
+.card-post__link__contentContainer__info {
   margin-top: 15px;
   margin-bottom: 20px;
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.card-post__contentContainer__info__icon {
+.card-post__link__contentContainer__info__icon {
   width: 25px;
   height: 25px;
   fill: #595959;
 }
-.card-post__contentContainer__info__text {
+.card-post__link__contentContainer__info__text {
   font-family: "Inter", sans-serif;
   font-size: 1.25em;
   color: #595959;
 }
-.card-post__contentContainer__price {
+.card-post__link__contentContainer__price {
   font-size: 1.5em;
   color: #1E3A8A;
   font-weight: bold;
   font-family: "DM Sans", sans-serif;
 }
-.card-post__contentContainer__navigation {
+.card-post__link__contentContainer__navigation {
   padding-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
 }
-.card-post__contentContainer__navigation__buttonContainer__button {
+.card-post__link__contentContainer__navigation__buttonContainer__button {
   color: #1E3A8A;
   font-weight: normal;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
-.card-post__contentContainer__navigation__buttonContainer__button svg {
+.card-post__link__contentContainer__navigation__buttonContainer__button svg {
   fill: #1E3A8A;
   height: 15px;
   width: 10px;
 }
-.card-post__contentContainer__navigation__buttons__button {
+.card-post__link__contentContainer__navigation__buttons__button {
   background: none;
   border: none;
 }
-.card-post__contentContainer__navigation__buttons__button__icon {
+.card-post__link__contentContainer__navigation__buttons__button__icon {
   fill: #1E3A8A;
   width: 25px;
   height: 45px;
@@ -1298,6 +1297,36 @@ ul li {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+}
+.postsPage .posts__pagination span, .postsPage .posts__pagination a {
+  font-family: "DM Sans", sans-serif;
+  color: rgba(30, 58, 138, 0.7);
+  font-weight: bold;
+  margin-right: 15px;
+}
+.postsPage .posts__pagination a {
+  font-size: 2.5em;
+}
+.postsPage .posts__pagination span {
+  color: #1E3A8A;
+}
+.postsPage .posts__pagination__container {
+  display: flex;
+  align-items: center;
+}
+.postsPage .posts__pagination__icon {
+  fill: #FFFFFF;
+  background: #1E3A8A;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.postsPage .posts__pagination__icon--disabled {
+  background: rgba(30, 58, 138, 0.7) !important;
+}
+.postsPage .posts__pagination__current {
+  margin-right: 0 !important;
+  font-size: 2.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */
