@@ -1,0 +1,45 @@
+.postsPage {
+
+    .posts {
+        padding-top: 90px;
+        position: relative;
+        padding-bottom: 90px;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            align-items: center;
+        }
+
+        &__decoContainer {
+            max-width: 1540px;
+            height: auto;
+            position: absolute;
+            top: -550px;
+            left: 15%;
+            right: 15%;
+            z-index: -1;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            max-width: none;
+
+        }
+
+        &__filter {
+
+        }
+
+        &__listing {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+    }
+}
