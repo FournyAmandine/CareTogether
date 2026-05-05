@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'amandine@fourny.com',
         ]);
 
-        Post::factory(30)->create();
+        Post::factory(80)->create();
     }
 }
