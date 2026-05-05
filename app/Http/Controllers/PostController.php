@@ -8,8 +8,15 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(8);
 
         return view('public.posts.index', compact('posts'));
+    }
+
+    public function show(Post $post)
+    {
+        $posts = Post::orderby('posts.created_at')->paginate(4);
+
+        return view('public.posts.show', compact('posts', 'post'));
     }
 }
