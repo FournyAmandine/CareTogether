@@ -64,12 +64,27 @@
     .steps {
         padding-bottom: 75px;
         padding-top: 80px;
+        position: relative;
 
         .wrapper {
             display: flex;
             gap: 60px;
             flex-direction: column;
             align-items: center;
+        }
+
+        &__decoContainer {
+            position: absolute;
+            bottom: 160px;
+            right: -270px;
+            width: 740px;
+            height: 870px;
+            z-index: -1;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         &__title {
@@ -256,12 +271,27 @@
     .posts {
         padding-top: 125px;
         padding-bottom: 110px;
+        position: relative;
 
         .wrapper {
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
+        }
+
+        &__decoContainer {
+            position: absolute;
+            bottom: 240px;
+            left: -300px;
+            width: 740px;
+            height: 870px;
+            z-index: -1;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         &__title {

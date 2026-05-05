@@ -64,6 +64,9 @@
             </div>
         </section>
         <section class="steps">
+            <div class="steps__decoContainer">
+                <img class="steps__decoContainer__deco" src="{!! asset('assets/img/home-steps-deco.png') !!}" alt="Forme bleu, ronde">
+            </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue steps__title">
                     Comment ça marche?
@@ -105,6 +108,9 @@
             </div>
         </section>
         <section class="posts">
+            <div class="posts__decoContainer">
+                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/home-annonces-deco.png') !!}" alt="Forme bleu, ronde">
+            </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue posts__title">
                     Nos dernières annonces
