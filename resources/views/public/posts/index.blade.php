@@ -25,8 +25,13 @@
                                             price="{!! $post->price !!}"
                                             imgSrc="{!! $post->img_path !!}"
                                             svg="{!! Str::slug($post->category, '_')!!}"
+                                            src="{!! route('public.posts.show', $post->id) !!}"
                         />
                     @endforeach
+                </div>
+
+                <div class="posts__pagination">
+                    {{ $posts->onEachSide(1)->links() }}
                 </div>
             </div>
         </section>
