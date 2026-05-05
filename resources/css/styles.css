@@ -152,6 +152,7 @@ ul li {
   color: #FFFFFF;
   background: #E65650;
   padding: 20px 25px;
+  border: none;
 }
 .button--blue {
   background: #C0CEFF;
@@ -291,6 +292,7 @@ ul li {
   margin-right: 40px;
   margin-left: 40px;
   margin-top: 30px;
+  position: relative;
 }
 .header__imgContainer {
   width: 335px;
@@ -370,6 +372,31 @@ ul li {
   border-left: 1px solid #FFFFFF;
   align-items: center;
 }
+.header__breadcrumbs {
+  position: absolute;
+  left: 125px;
+  bottom: -30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header__breadcrumbs span {
+  color: #837D7D;
+  font-family: "DM Sans", sans-serif;
+}
+.header__breadcrumbs span:last-of-type {
+  color: #1E3A8A;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+}
+.header__breadcrumbs span:last-of-type:before {
+  content: ">";
+  color: #1E3A8A;
+  font-weight: bold;
+}
+
 /****************************
             FOOTER
 *****************************/
@@ -438,6 +465,10 @@ ul li {
 .footer__secondary__navigation__list {
   display: flex;
   gap: 20px;
+}
+.footer__secondary__navigation__list__item {
+  display: flex;
+  align-items: center;
 }
 .footer__secondary__navigation__list__item:after {
   content: "-";
@@ -581,7 +612,7 @@ ul li {
 }
 .card-post__contentContainer__navigation__buttons__button__icon {
   fill: #1E3A8A;
-  width: 30px;
+  width: 25px;
   height: 45px;
 }
 
@@ -677,12 +708,25 @@ ul li {
 .homePage .steps {
   padding-bottom: 75px;
   padding-top: 80px;
+  position: relative;
 }
 .homePage .steps .wrapper {
   display: flex;
   gap: 60px;
   flex-direction: column;
   align-items: center;
+}
+.homePage .steps__decoContainer {
+  position: absolute;
+  bottom: 160px;
+  right: -270px;
+  width: 740px;
+  height: 870px;
+  z-index: -1;
+}
+.homePage .steps__decoContainer__deco {
+  width: 100%;
+  height: 100%;
 }
 .homePage .steps__title {
   max-width: none;
@@ -840,12 +884,25 @@ ul li {
 .homePage .posts {
   padding-top: 125px;
   padding-bottom: 110px;
+  position: relative;
 }
 .homePage .posts .wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.homePage .posts__decoContainer {
+  position: absolute;
+  bottom: 240px;
+  left: -300px;
+  width: 740px;
+  height: 870px;
+  z-index: -1;
+}
+.homePage .posts__decoContainer__deco {
+  width: 100%;
+  height: 100%;
 }
 .homePage .posts__title {
   max-width: none;
@@ -855,6 +912,86 @@ ul li {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+}
+
+.contactPage .contact {
+  padding-top: 90px;
+}
+.contactPage .contact .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contactPage .contact__backgroundContainer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: -140px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.contactPage .contact__aside__title {
+  max-width: 310px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.contactPage .contact__aside__content {
+  max-width: 540px;
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+.contactPage .contact__aside__content strong {
+  color: #1E3A8A;
+  font-weight: bold;
+}
+.contactPage .contact__aside__imgContainer {
+  max-width: 725px;
+  max-height: 725px;
+}
+.contactPage .contact__aside__imgContainer__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contactPage .contact__formContainer {
+  background: #EEF2FF;
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-height: 710px;
+}
+.contactPage .contact__formContainer__title {
+  max-width: none;
+  margin-bottom: 30px;
+}
+.contactPage .contact__formContainer__form__name {
+  display: flex;
+  gap: 45px;
+}
+.contactPage .contact__formContainer__form__formRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.contactPage .contact__formContainer__form__formRow__label {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.contactPage .contact__formContainer__form__formRow__input, .contactPage .contact__formContainer__form__formRow__textarea {
+  padding: 20px 15px;
+  border-radius: 15px;
+  border: solid #1E3A8A 2px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background: #FFFFFF;
+}
+.contactPage .contact__formContainer__form__buttonContainer__button {
+  padding: 15px 25px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
