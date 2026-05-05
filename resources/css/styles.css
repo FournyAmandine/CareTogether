@@ -572,16 +572,23 @@ ul li {
   position: relative;
   padding: 15px;
 }
-.card-post__iconType {
-  position: absolute;
-  fill: #FEFEFE;
-  background: #1E3A8A;
-  border-radius: 50%;
-  padding: 10px;
-  width: 45px;
-  height: 45px;
+.card-post__iconContainer {
   top: 25px;
   right: 25px;
+  position: absolute;
+  padding: 10px;
+  background: #1E3A8A;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-post__iconContainer__icon {
+  fill: #FEFEFE;
+  width: 40px;
+  height: 40px;
 }
 .card-post__imgContainer {
   overflow: hidden;
@@ -1258,6 +1265,39 @@ ul li {
 .aboutPage .values__contentContainer__list__item__textContainer__title {
   color: #1E3A8A;
   font-weight: bold;
+}
+
+.postsPage .posts {
+  padding-top: 90px;
+  position: relative;
+  padding-bottom: 90px;
+}
+.postsPage .posts .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+.postsPage .posts__decoContainer {
+  max-width: 1540px;
+  height: auto;
+  position: absolute;
+  top: -550px;
+  left: 15%;
+  right: 15%;
+  z-index: -1;
+}
+.postsPage .posts__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+}
+.postsPage .posts__title {
+  max-width: none;
+}
+.postsPage .posts__listing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
 /*# sourceMappingURL=styles.css.map */
