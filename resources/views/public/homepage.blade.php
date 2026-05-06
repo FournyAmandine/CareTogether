@@ -18,20 +18,8 @@
                     La plateforme dédiée au prêt, au don et à la vente de matériel médical de seconde main pour faciliter l’accès aux soins pour tous
                 </p>
                 <div class="banner__buttons">
-                    <x-public.utils.link href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces">
-                        <x-slot:svg>
-                            <svg class="banner__buttons__buttonContainer__button__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#arrow-button') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.utils.link>
-                    <x-public.utils.link href="#" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Se créer un compte">
-                        <x-slot:svg>
-                            <svg class="banner__buttons__buttonContainer__button__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#arrow-button') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.utils.link>
+                    <x-public.utils.link href="{!! route('public.posts.index') !!}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
+                    <x-public.utils.link href="#" svg="arrow-button" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Se créer un compte"/>
                 </div>
             </div>
         </section>
@@ -52,13 +40,7 @@
                             </strong>
                             à votre matériel médical
                         </h2>
-                        <x-public.utils.link href="#" class-button="button--red" name_parent="hook__main__contentContainer" title="Aller vers la page AJout d'annonce" label="Ajouter une annonce">
-                            <x-slot:svg>
-                                <svg class="hook__main__contentContainer__button__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#arrow-button') }}"></use>
-                                </svg>
-                            </x-slot:svg>
-                        </x-public.utils.link>
+                        <x-public.utils.link href="#" svg="arrow-button" class-button="button--red" name_parent="hook__main__contentContainer" title="Aller vers la page AJout d'annonce" label="Ajouter une annonce"/>
                     </div>
                 </div>
             </div>
@@ -90,20 +72,8 @@
                     <strong class="stats__title__strong">Ensemble</strong>, améliorons l’accès au matériel médical
                 </h2>
                 <div class="stats__listing">
-                    <x-public.home.stats-item title="250" text="Annonces publiées">
-                        <x-slot:svg>
-                            <svg class="stats__listing__item__titleContainer__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#home-stats-annonces') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.home.stats-item>
-                    <x-public.home.stats-item title="120" text="Utilisateurs actifs">
-                        <x-slot:svg>
-                            <svg class="stats__listing__item__titleContainer__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#home-stats-users') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.home.stats-item>
+                    <x-public.home.stats-item svg="home-stats-annonces" title="250" text="Annonces publiées"/>
+                    <x-public.home.stats-item svg="home-stats-users" title="120" text="Utilisateurs actifs"/>
                 </div>
             </div>
         </section>
@@ -115,18 +85,7 @@
                 <h2 class="maintitle maintitle--blue posts__title">
                     Nos dernières annonces
                 </h2>
-                <div class="posts__listing">
-                    @foreach($posts as $post)
-                        <x-public.home.card title="{!! $post->name !!}"
-                                            locality="{!! $post->locality !!}"
-                                            state="{!! $post->state !!}"
-                                            price="{!! $post->price !!}"
-                                            imgSrc="{!! $post->img_path !!}"
-                                            svg="{!! Str::slug($post->category, '_')!!}"
-                                            src="{!! route('public.posts.show', $post->id) !!}"
-                        />
-                    @endforeach
-                </div>
+                <x-public.utils.listing-cards :posts="$posts"/>
             </div>
         </section>
     </main>

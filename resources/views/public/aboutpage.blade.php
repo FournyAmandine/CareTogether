@@ -12,20 +12,8 @@
                     Faciliter l’accès au matériel médical grâce à la seconde main.
                 </h2>
                 <div class="banner__buttons">
-                    <x-public.utils.link href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire">
-                        <x-slot:svg>
-                            <svg class="banner__buttons__buttonContainer__button__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#arrow-button') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.utils.link>
-                    <x-public.utils.link href="#" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces">
-                        <x-slot:svg>
-                            <svg class="banner__buttons__buttonContainer__button__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#arrow-button') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.utils.link>
+                    <x-public.utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
+                    <x-public.utils.link svg="arrow-button" href="#" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
                 </div>
             </div>
         </section>
@@ -48,13 +36,7 @@
                     <p  class="about__contentContainer__content">
                         Fauteuils roulants, lits médicalisés, déambulateurs ou équipements de confort représentent souvent un investissement important et ne sont utilisés que temporairement. CareTogether propose une solution simple, locale et solidaire pour favoriser leur réutilisation.
                     </p>
-                    <x-public.utils.link href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte">
-                        <x-slot:svg>
-                            <svg class="banner__buttons__buttonContainer__button__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#arrow-button') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.utils.link>
+                    <x-public.utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
                 </div>
                 <div class="about__imgContainer">
                     <img class="about__imgContainer__img" src="{!! asset('assets/img/about-about-image.png') !!}" alt="Homme tenant l'épaule d'une femme dans un lit médical">
@@ -71,53 +53,12 @@
                     Les objectifs de CareTogether
                 </h2>
                 <div class="objectifs__listing">
-                    <x-public.about.objectifs-item title="Faciliter l’accès au matériel médical d’occasion">
-                        <x-slot:svg>
-                            <svg class="objectifs__listing__item__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#cadenas') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.about.objectifs-item>
-
-                    <x-public.about.objectifs-item title="Encourager la réutilisation et réduire le gaspillage">
-                        <x-slot:svg>
-                            <svg class="objectifs__listing__item__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#gaspi') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.about.objectifs-item>
-
-                    <x-public.about.objectifs-item title="Simplifier la publication et la recherche d’annonces parmi toutes celles disponibles">
-                        <x-slot:svg>
-                            <svg class="objectifs__listing__item__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#search-button') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.about.objectifs-item>
-
-                    <x-public.about.objectifs-item title="Créer une plateforme claire, intuitive et sécurisée pour tous les utilisateurs">
-                        <x-slot:svg>
-                            <svg class="objectifs__listing__item__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#securite') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.about.objectifs-item>
-
-                    <x-public.about.objectifs-item title="Simplifier la mise en relation entre utilisateurs">
-                        <x-slot:svg>
-                            <svg class="objectifs__listing__item__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#cadenas') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.about.objectifs-item>
-
-                    <x-public.about.objectifs-item title="Favoriser une dynamique solidaire et local">
-                        <x-slot:svg>
-                            <svg class="objectifs__listing__item__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#map') }}"></use>
-                            </svg>
-                        </x-slot:svg>
-                    </x-public.about.objectifs-item>
+                    <x-public.about.objectifs-item svg="cadenas" title="Faciliter l’accès au matériel médical d’occasion"/>
+                    <x-public.about.objectifs-item svg="gaspi" title="Encourager la réutilisation et réduire le gaspillage"/>
+                    <x-public.about.objectifs-item svg="search-button" title="Simplifier la publication et la recherche d’annonces parmi toutes celles disponibles"/>
+                    <x-public.about.objectifs-item svg="securite" title="Créer une plateforme claire, intuitive et sécurisée pour tous les utilisateurs"/>
+                    <x-public.about.objectifs-item svg="cadenas" title="Simplifier la mise en relation entre utilisateurs"/>
+                    <x-public.about.objectifs-item svg="map" title="Favoriser une dynamique solidaire et local"/>
                 </div>
             </div>
         </section>
@@ -141,27 +82,9 @@
                         Cette situation entraîne :
                     </p>
                     <ul  class="problems__contentContainer__list">
-                        <x-public.about.list-item name_parent="problems__contentContainer__list" item="Un gaspillage de ressources">
-                            <x-slot:svg>
-                                <svg class="problems__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#list-button') }}"></use>
-                                </svg>
-                            </x-slot:svg>
-                        </x-public.about.list-item>
-                        <x-public.about.list-item name_parent="problems__contentContainer__list" item="Des dépenses évitables pour les familles">
-                            <x-slot:svg>
-                                <svg class="problems__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#list-button') }}"></use>
-                                </svg>
-                            </x-slot:svg>
-                        </x-public.about.list-item>
-                        <x-public.about.list-item name_parent="problems__contentContainer__list" item="Une difficulté d’accès au matériel pour certaines personnes">
-                            <x-slot:svg>
-                                <svg class="problems__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#list-button') }}"></use>
-                                </svg>
-                            </x-slot:svg>
-                        </x-public.about.list-item>
+                        <x-public.utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Un gaspillage de ressources"/>
+                        <x-public.utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Des dépenses évitables pour les familles"/>
+                        <x-public.utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Une difficulté d’accès au matériel pour certaines personnes"/>
                     </ul>
                     <p  class="problems__contentContainer__content">
                         <strong>
@@ -186,61 +109,41 @@
                         CareTogether repose sur des valeurs fortes :
                     </p>
                     <ul class="values__contentContainer__list">
-                        <x-public.about.list-item name_parent="values__contentContainer__list">
-                            <x-slot:svg>
-                                <svg class="values__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#heart') }}"></use>
-                                </svg>
-                            </x-slot:svg>
+                        <x-public.utils.list-item svg="heart" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Solidarité
                                 </span>
                                 Favoriser l’entraide entre particuliers et soutenir les personnes en situation de besoin.
                             </x-slot:item>
-                        </x-public.about.list-item>
+                        </x-public.utils.list-item>
 
-                        <x-public.about.list-item name_parent="values__contentContainer__list">
-                            <x-slot:svg>
-                                <svg class="values__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#responsabilite') }}"></use>
-                                </svg>
-                            </x-slot:svg>
+                        <x-public.utils.list-item svg="responsabilite" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Responsabilité
                                 </span>
                                 Encourager la seconde vie des équipements et limiter le gaspillage.
                             </x-slot:item>
-                        </x-public.about.list-item>
+                        </x-public.utils.list-item>
 
-                        <x-public.about.list-item name_parent="values__contentContainer__list">
-                            <x-slot:svg>
-                                <svg class="values__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#accessibilite') }}"></use>
-                                </svg>
-                            </x-slot:svg>
+                        <x-public.utils.list-item svg="accessibilite" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Accessibilité
                                 </span>
                                 Permettre à chacun d’accéder à du matériel médical à moindre coût.
                             </x-slot:item>
-                        </x-public.about.list-item>
+                        </x-public.utils.list-item>
 
-                        <x-public.about.list-item name_parent="values__contentContainer__list">
-                            <x-slot:svg>
-                                <svg class="values__contentContainer__list__item__icon">
-                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#confiance') }}"></use>
-                                </svg>
-                            </x-slot:svg>
+                        <x-public.utils.list-item svg="confiance" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Confiance
                                 </span>
                                 Proposer une plateforme claire, transparente et respectueuse des   utilisateurs.
                             </x-slot:item>
-                        </x-public.about.list-item>
+                        </x-public.utils.list-item>
                     </ul>
                 </div>
             </div>
