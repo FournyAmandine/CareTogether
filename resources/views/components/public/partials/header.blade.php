@@ -39,4 +39,6 @@
             </span>
         </div>
     @endif
+
+    {{ Breadcrumbs::render() }}
 </header>
