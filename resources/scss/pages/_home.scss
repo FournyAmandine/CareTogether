@@ -295,14 +295,7 @@
         }
 
         &__title {
-            max-width: none;
             margin-bottom: 40px;
-        }
-
-        &__listing {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
         }
     }
 }

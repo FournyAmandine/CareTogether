@@ -10,12 +10,14 @@
 @import "utils/buttons";
 @import "utils/commons";
 @import "utils/wrapper";
+@import "utils/deco";
 
 //PARTIALS
 @import "partials/header";
 @import "partials/footer";
 @import "partials/banner";
 @import "partials/card-post";
+@import "partials/listing-posts";
 
 //PAGES
 @import "pages/pageText";
@@ -23,4 +25,5 @@
 @import "pages/contact";
 @import "pages/about";
 @import "pages/posts";
+@import "pages/singlepost";
 
