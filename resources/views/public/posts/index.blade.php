@@ -5,9 +5,7 @@
     <main class="postsPage">
 
         <section class="posts">
-            <div class="posts__decoContainer">
-                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/deco-header.png') !!}" alt="Forme bleue, ronde">
-            </div>
+            <x-public.utils.deco/>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue posts__title">
                     Découvrez toutes nos annonces
@@ -17,18 +15,7 @@
 
                 </div>
 
-                <div class="posts__listing">
-                    @foreach($posts as $post)
-                        <x-public.home.card title="{!! $post->name !!}"
-                                            locality="{!! $post->locality !!}"
-                                            state="{!! $post->state !!}"
-                                            price="{!! $post->price !!}"
-                                            imgSrc="{!! $post->img_path !!}"
-                                            svg="{!! Str::slug($post->category, '_')!!}"
-                                            src="{!! route('public.posts.show', $post->id) !!}"
-                        />
-                    @endforeach
-                </div>
+                <x-public.utils.listing-cards :posts="$posts"/>
 
                 <div class="posts__pagination">
                     {{ $posts->onEachSide(1)->links() }}
