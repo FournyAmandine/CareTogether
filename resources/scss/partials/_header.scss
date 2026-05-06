@@ -124,6 +124,19 @@
             color: $breadcrumb;
             font-family: $titleFont;
 
+            &:before {
+                content: '>';
+                color: $breadcrumb;
+                font-weight: bold;
+            }
+
+            &:first-of-type {
+
+                &:before {
+                    display: none;
+                }
+            }
+
             &:last-of-type {
                 color: $primary;
                 display: flex;
@@ -132,9 +145,7 @@
                 font-weight: bold;
 
                 &:before {
-                    content: '>';
                     color: $primary;
-                    font-weight: bold;
                 }
             }
         }
@@ -142,6 +153,10 @@
         &--about {
             top: 800px;
             bottom: unset;
+        }
+
+        &--post {
+
         }
     }
 }

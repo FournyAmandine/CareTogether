@@ -1,3 +1,5 @@
+@props(['post' => '', 'title'])
+
 <header class="header">
     <h1 class="sro header__title">{{$title}}</h1>
     <x-public.utils.logo name_parent="header" />
@@ -10,14 +12,31 @@
         <x-public.utils.link name_parent="button--simple header__buttons" title="Aller vers la page S'inscrire" href="#" label="S'inscrire"/>
         <x-public.utils.link name_parent="header__buttons" title="Aller vers la page Se connecter" href="#" label="Se connecter"/>
     </div>
-    @if($title != 'Accueil')
+    @if($title != 'Accueil' && $title == 'À propos' || $title == 'Annonces' || $title == 'Contact')
         <div class="header__breadcrumbs @if($title == 'À propos')header__breadcrumbs--about @endif">
-        <span>
-            Accueil
-        </span>
             <span>
-            {{$title}}
-        </span>
+                Accueil
+            </span>
+            <span>
+                {{$title}}
+            </span>
+        </div>
+    @endif
+
+    @if($title != 'Accueil' && $title != 'À propos' && $title != 'Annonces' && $title != 'Contact')
+        <div class="header__breadcrumbs header__breadcrumbs--post">
+            <span>
+                Accueil
+            </span>
+            <span>
+                Annonces
+            </span>
+            <span>
+                {{$post->category}}
+            </span>
+            <span>
+                {{$post->name}}
+            </span>
         </div>
     @endif
 </header>
