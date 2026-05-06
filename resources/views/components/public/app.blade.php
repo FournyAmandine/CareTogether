@@ -10,7 +10,7 @@
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
 <body class="">
-<x-public.partials.header :title="$title_page" />
+<x-public.partials.header :title="$title_page" :post="$post ?? ''"/>
 {!! $slot !!}
 <x-public.partials.footer :title="$title_page"/>
 </body>

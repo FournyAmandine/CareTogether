@@ -1,0 +1,95 @@
+/****************************
+            BANNER
+*****************************/
+
+.banner {
+    position: relative;
+    min-height: 660px;
+
+    &__backgroundContainer {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -140px;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        border-radius: 0 230px 0 230px;
+        z-index: -1;
+
+        &__background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        margin-top: 185px;
+        margin-bottom: 30px;
+        font-size: $xxxxx-large;
+        max-width: 380px;
+
+        &__span {
+            color: $title2;
+        }
+    }
+
+    &__subtitle {
+        color: $white;
+        max-width: 485px;
+        line-height: 1.5;
+        font-size: $medium;
+        margin-bottom: 40px;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+
+        &__buttonContainer {
+
+            &__button {
+                //_button.scss
+            }
+        }
+    }
+
+    &--about {
+        position: relative;
+        z-index: 2;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .banner{
+
+            &__backgroundContainer {
+
+                &:after {
+                    content: '';
+                    background: rgba($primary, 0.5);
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: -140px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+
+            &__title {
+                max-width: 610px;
+                font-size: $xxxx-large;
+            }
+
+            &__buttons {
+                margin-right: 145px;
+            }
+        }
+    }
+}

@@ -4,13 +4,18 @@
 
 .maintitle {
     font-weight: bold;
-    font-size: $x-large;
+    font-size: $xxx-large;
     color: $white;
     font-family: $titleFont;
     max-width: 280px;
+    line-height: 1.2;
 
     &--big {
-        font-size: $xx-large;
+        font-size: $xxxx-large;
+    }
+
+    &--small {
+        font-size: $x-large;
     }
 
     &--blue {

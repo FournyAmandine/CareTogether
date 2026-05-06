@@ -1,0 +1,301 @@
+.homePage {
+
+    .hook {
+        padding-top: 170px;
+        padding-bottom: 130px;
+        position: relative;
+
+        &__backgroundContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            &__background {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__main {
+            display: flex;
+            gap: 50px;
+
+            &__imgContainer {
+                width: 950px;
+                height: 630px;
+                border-radius: 30px;
+                overflow: hidden;
+
+                &__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__contentContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+                justify-content: center;
+
+
+                &__title {
+                    font-weight: normal;
+                    max-width: 580px;
+                    line-height: 1.3;
+
+                    &__strong {
+                        font-weight: bold;
+                    }
+                }
+
+                &__button {
+                    //.buttons.scss
+                }
+            }
+        }
+    }
+
+    .steps {
+        padding-bottom: 75px;
+        padding-top: 80px;
+        position: relative;
+
+        .wrapper {
+            display: flex;
+            gap: 60px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__decoContainer {
+            position: absolute;
+            bottom: 160px;
+            right: -270px;
+            width: 740px;
+            height: 870px;
+            z-index: -1;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            max-width: none;
+        }
+
+        &__listing {
+            display: flex;
+            justify-content: space-between;
+
+            &__item {
+                background: $stepBcg;
+                margin-left: 100px;
+                margin-right: 100px;
+                flex: 1;
+                border-radius: 30px;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    background: $primary;
+                    display: block;
+                    width: 150px;
+                    height: 4px;
+                    position: absolute;
+                    top: 50%;
+                    left: -175px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+
+                    &:before {
+                        display: none;
+                    }
+
+                    .steps__listing__item__number {
+                        background: $tertiary;
+                        padding: 12px 20px;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+
+                    .steps__listing__item__number {
+                        background: $tertiary;
+                    }
+                }
+
+                &__icon {
+                    fill: $pageBcg;
+                    width: 80px;
+                    height: 70px;
+                    position: absolute;
+                    top: 0;
+                    left: -2px;
+                    z-index: 2;
+                }
+
+                &__number {
+                    position: absolute;
+                    z-index: 3;
+                    left: -10px;
+                    top: -10px;
+                    font-size: $large;
+                    color: $white;
+                    font-family: $titleFont;
+                    font-weight: bold;
+                    padding: 12px 17px;
+                    border-radius: 50%;
+                    background: $buttonBcg1;
+                }
+
+                &__contentContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+                    padding-right: 16px;
+                    padding-left: 95px;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+
+                    &__title {
+                        font-size: $x-large;
+                    }
+
+                    &__content {
+                        font-size: $medium;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+    }
+
+    .stats {
+        margin-top: 75px;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, $gradient1 50%, rgba($secondary, 0));
+        }
+
+        .wrapper {
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__backgroundContainer {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            z-index: -1;
+
+            &__background {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__title {
+            font-weight: normal;
+            max-width: 680px;
+            margin-bottom: 30px;
+
+            &__strong {
+                font-weight: bold;
+            }
+        }
+
+        &__listing {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+
+            &__item {
+                background: $white;
+                border-radius: 30px;
+                padding: 45px 25px 55px 50px;
+
+                &__titleContainer {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding-bottom: 20px;
+
+                    &__icon {
+                        fill: $primary;
+                        height: 50px;
+                        width: 50px;
+                    }
+
+                    &__title {
+                        font-size: $xxx-large;
+                        font-weight: bold;
+                        color: $primary;
+                    }
+                }
+
+                &__text {
+                    font-weight: bold;
+                    color: $primary;
+                    font-size: $x-large;
+                }
+            }
+        }
+    }
+
+    .posts {
+        padding-top: 125px;
+        padding-bottom: 110px;
+        position: relative;
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__decoContainer {
+            position: absolute;
+            bottom: 240px;
+            left: -300px;
+            width: 740px;
+            height: 870px;
+            z-index: -1;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            margin-bottom: 40px;
+        }
+    }
+}
