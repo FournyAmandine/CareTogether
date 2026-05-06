@@ -26,6 +26,8 @@ class PostFactory extends Factory
             'price' => $this->faker->randomElement($price),
             'category' => $this->faker->randomElement($category),
             'img_path' => $this->faker->randomElement($img_path),
+            'marque' => 'Rolstoel',
+            'description' => $this->faker->text(200),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

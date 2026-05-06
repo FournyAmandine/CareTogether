@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->integer('price');
             $table->string('category');
             $table->string('img_path')->nullable();
+            $table->string('marque');
+            $table->tinyText('description');
             $table->timestamps();
         });
     }
