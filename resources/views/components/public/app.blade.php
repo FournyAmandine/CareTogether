@@ -9,7 +9,7 @@
     <title>{!! $title_page !!} - CareTogether</title>
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
-<body class="">
+<body class="@if($title_page == 'À propos') aboutBody @endif">
 <x-public.partials.header :title="$title_page" :post="$post ?? ''"/>
 {!! $slot !!}
 <x-public.partials.footer :title="$title_page"/>
