@@ -1,15 +1,15 @@
 <footer class="footer">
     <h2 class="sro footer__title">Footer</h2>
     <div class="footer__primary">
-        <x-public.utils.logo name_parent="footer__primary" />
+        <x-utils.logo name_parent="footer__primary" />
         <div class="footer__primary__navigation">
             <h3 class="maintitle maintitle--footer footer__primary__navigation__title">Navigation</h3>
             <x-public.navigation.list.list-footer name_parent="footer__primary__navigation"/>
         </div>
         <div class="footer__primary__contact">
             <h3 class="maintitle maintitle--footer footer__primary__contact__title">Contact</h3>
-            <x-public.utils.link name_parent="button--footer footer__primary__contact" href="mailto:amandine.fourny@student.hepl.be" label="amandine.fourny@student.hepl.be" title="Envoyer un mail à amandine.fourny@student.hepl.be"/>
-            <x-public.utils.link name_parent="button--footer footer__primary__contact" href="tel:0472483260" label="0472 48 32 60" title="Télephone au 0472 48 32 60"/>
+            <x-utils.link name_parent="button--footer footer__primary__contact" href="mailto:amandine.fourny@student.hepl.be" label="amandine.fourny@student.hepl.be" title="Envoyer un mail à amandine.fourny@student.hepl.be"/>
+            <x-utils.link name_parent="button--footer footer__primary__contact" href="tel:0472483260" label="0472 48 32 60" title="Télephone au 0472 48 32 60"/>
         </div>
     </div>
     <div class="footer__secondary">
