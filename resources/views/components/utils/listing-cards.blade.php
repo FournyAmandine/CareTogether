@@ -2,7 +2,7 @@
 
 <div class="posts__listing">
     @foreach($posts as $post)
-        <x-public.utils.card title="{!! $post->name !!}"
+        <x-utils.card title="{!! $post->name !!}"
                              locality="{!! $post->locality !!}"
                              state="{!! $post->state !!}"
                              price="{!! $post->price !!}"
