@@ -12,7 +12,7 @@
             <p class="maintitle maintitle--small content__text">Inscription à l’espace personnel</p>
             <span class="content__required">Les champs * sont obligatoires</span>
 
-            <form class="content__form" method="post" action="{{ route('register') }}">
+            <form class="content__form" method="post" action="{{ route('register.store') }}">
                 @csrf
 
                 <div class="content__form__name">
