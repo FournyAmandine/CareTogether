@@ -5,7 +5,7 @@
     <main class="postsPage">
 
         <section class="posts">
-            <x-public.utils.deco/>
+            <x-utils.deco/>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue posts__title">
                     Découvrez toutes nos annonces
@@ -15,7 +15,7 @@
 
                 </div>
 
-                <x-public.utils.listing-cards :posts="$posts"/>
+                <x-utils.listing-cards :posts="$posts"/>
 
                 <div class="posts__pagination">
                     {{ $posts->onEachSide(1)->links() }}

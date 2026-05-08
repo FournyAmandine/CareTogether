@@ -5,7 +5,7 @@
     <main class="singlePostPage">
 
         <section class="detail">
-            <x-public.utils.deco/>
+            <x-utils.deco/>
             <div class="wrapper">
                 <div class="detail__main">
                     <div class="detail__main__imgContainer">
@@ -25,12 +25,12 @@
                                 {!! $post->price !!}€
                             </p>
                             <ul class="detail__main__contentContainer__infos__list">
-                                <x-public.utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
-                                <x-public.utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
-                                <x-public.utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté il y a {{ \Carbon\Carbon::parse($post->created_at)->day }} jours"/>
-                                <x-public.utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par Sarah Deseurs"/>
-                                <x-public.utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category !!}"/>
-                                <x-public.utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
+                                <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
+                                <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
+                                <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté il y a {{ \Carbon\Carbon::parse($post->created_at)->day }} jours"/>
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par Sarah Deseurs"/>
+                                <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category !!}"/>
+                                <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
                             </ul>
                         </div>
                         <div class="detail__main__contentContainer__description">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <x-public.utils.link name_parent="detail" href="#" svg="arrow-button" class-button="button--red" title="Aller vers la page Message" label="Contacter le vendeur"/>
+                <x-utils.link name_parent="detail" href="#" svg="arrow-button" class-button="button--red" title="Aller vers la page Message" label="Contacter le vendeur"/>
             </div>
         </section>
 
@@ -58,7 +58,7 @@
                 <h2 class="maintitle maintitle--blue posts__title">
                     Dernières annonces dans la catégorie : {!! $post->category !!}
                 </h2>
-                <x-public.utils.listing-cards :posts="$posts"/>
+                <x-utils.listing-cards :posts="$posts"/>
             </div>
         </section>
     </main>

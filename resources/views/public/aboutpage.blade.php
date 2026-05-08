@@ -12,8 +12,8 @@
                     Faciliter l’accès au matériel médical grâce à la seconde main.
                 </h2>
                 <div class="banner__buttons">
-                    <x-public.utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
-                    <x-public.utils.link svg="arrow-button" href="#" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
+                    <x-utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
+                    <x-utils.link svg="arrow-button" href="#" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
                 </div>
             </div>
         </section>
@@ -36,7 +36,7 @@
                     <p  class="about__contentContainer__content">
                         Fauteuils roulants, lits médicalisés, déambulateurs ou équipements de confort représentent souvent un investissement important et ne sont utilisés que temporairement. CareTogether propose une solution simple, locale et solidaire pour favoriser leur réutilisation.
                     </p>
-                    <x-public.utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    <x-utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
                 </div>
                 <div class="about__imgContainer">
                     <img class="about__imgContainer__img" src="{!! asset('assets/img/about-about-image.png') !!}" alt="Homme tenant l'épaule d'une femme dans un lit médical">
@@ -82,9 +82,9 @@
                         Cette situation entraîne :
                     </p>
                     <ul  class="problems__contentContainer__list">
-                        <x-public.utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Un gaspillage de ressources"/>
-                        <x-public.utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Des dépenses évitables pour les familles"/>
-                        <x-public.utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Une difficulté d’accès au matériel pour certaines personnes"/>
+                        <x-utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Un gaspillage de ressources"/>
+                        <x-utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Des dépenses évitables pour les familles"/>
+                        <x-utils.list-item svg="list-button" name_parent="problems__contentContainer__list" item="Une difficulté d’accès au matériel pour certaines personnes"/>
                     </ul>
                     <p  class="problems__contentContainer__content">
                         <strong>
@@ -109,41 +109,41 @@
                         CareTogether repose sur des valeurs fortes :
                     </p>
                     <ul class="values__contentContainer__list">
-                        <x-public.utils.list-item svg="heart" name_parent="values__contentContainer__list">
+                        <x-utils.list-item svg="heart" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Solidarité
                                 </span>
                                 Favoriser l’entraide entre particuliers et soutenir les personnes en situation de besoin.
                             </x-slot:item>
-                        </x-public.utils.list-item>
+                        </x-utils.list-item>
 
-                        <x-public.utils.list-item svg="responsabilite" name_parent="values__contentContainer__list">
+                        <x-utils.list-item svg="responsabilite" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Responsabilité
                                 </span>
                                 Encourager la seconde vie des équipements et limiter le gaspillage.
                             </x-slot:item>
-                        </x-public.utils.list-item>
+                        </x-utils.list-item>
 
-                        <x-public.utils.list-item svg="accessibilite" name_parent="values__contentContainer__list">
+                        <x-utils.list-item svg="accessibilite" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Accessibilité
                                 </span>
                                 Permettre à chacun d’accéder à du matériel médical à moindre coût.
                             </x-slot:item>
-                        </x-public.utils.list-item>
+                        </x-utils.list-item>
 
-                        <x-public.utils.list-item svg="confiance" name_parent="values__contentContainer__list">
+                        <x-utils.list-item svg="confiance" name_parent="values__contentContainer__list">
                             <x-slot:item>
                                 <span class="values__contentContainer__list__item__textContainer__title">
                                     Confiance
                                 </span>
                                 Proposer une plateforme claire, transparente et respectueuse des   utilisateurs.
                             </x-slot:item>
-                        </x-public.utils.list-item>
+                        </x-utils.list-item>
                     </ul>
                 </div>
             </div>

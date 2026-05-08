@@ -18,8 +18,8 @@
                     La plateforme dédiée au prêt, au don et à la vente de matériel médical de seconde main pour faciliter l’accès aux soins pour tous
                 </p>
                 <div class="banner__buttons">
-                    <x-public.utils.link href="{!! route('public.posts.index') !!}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
-                    <x-public.utils.link href="#" svg="arrow-button" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Se créer un compte"/>
+                    <x-utils.link href="{!! route('public.posts.index') !!}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
+                    <x-utils.link href="#" svg="arrow-button" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Se créer un compte"/>
                 </div>
             </div>
         </section>
@@ -40,7 +40,7 @@
                             </strong>
                             à votre matériel médical
                         </h2>
-                        <x-public.utils.link href="#" svg="arrow-button" class-button="button--red" name_parent="hook__main__contentContainer" title="Aller vers la page AJout d'annonce" label="Ajouter une annonce"/>
+                        <x-utils.link href="#" svg="arrow-button" class-button="button--red" name_parent="hook__main__contentContainer" title="Aller vers la page AJout d'annonce" label="Ajouter une annonce"/>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                 <h2 class="maintitle maintitle--blue posts__title">
                     Nos dernières annonces
                 </h2>
-                <x-public.utils.listing-cards :posts="$posts"/>
+                <x-utils.listing-cards :posts="$posts"/>
             </div>
         </section>
     </main>
