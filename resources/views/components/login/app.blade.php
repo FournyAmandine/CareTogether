@@ -1,5 +1,7 @@
-<!doctype html>
-<html lang="{!! app()->getLocale() !!}">
+@props(['title_page'])
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,9 +11,13 @@
     <title>{!! $title_page !!} - CareTogether</title>
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
-<body class="@if($title_page == 'À propos') aboutBody @endif">
-<x-public.partials.header :title="$title_page" :post="$post ?? ''"/>
-{!! $slot !!}
-<x-public.partials.footer :title="$title_page"/>
+<body class="auth">
+<header>
+    <h1 class="sro">Header</h1>
+</header>
+{{ $slot }}
+<footer>
+    <h2 class="sro">Footer</h2>
+</footer>
 </body>
 </html>

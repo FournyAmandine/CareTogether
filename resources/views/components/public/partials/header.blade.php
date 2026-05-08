@@ -9,34 +9,14 @@
     </nav>
     <x-public.utils.search name_parent="header"/>
     <div class="header__buttons">
-        <x-public.utils.link name_parent="button--simple header__buttons" title="Aller vers la page S'inscrire" href="#" label="S'inscrire"/>
-        <x-public.utils.link name_parent="header__buttons" title="Aller vers la page Se connecter" href="#" label="Se connecter"/>
+        <x-public.utils.link name_parent="button--simple header__buttons" title="Aller vers la page S'inscrire" href="{!! route('register') !!}" label="S'inscrire"/>
+        <x-public.utils.link name_parent="header__buttons" title="Aller vers la page Se connecter" href="{!! route('login') !!}" label="Se connecter"/>
     </div>
-    @if($title != 'Accueil' && $title == 'À propos' || $title == 'Annonces' || $title == 'Contact')
-        <div class="header__breadcrumbs @if($title == 'À propos')header__breadcrumbs--about @endif">
-            <span>
-                Accueil
-            </span>
-            <span>
-                {{$title}}
-            </span>
-        </div>
-    @endif
 
     @if($title != 'Accueil' && $title != 'À propos' && $title != 'Annonces' && $title != 'Contact')
-        <div class="header__breadcrumbs header__breadcrumbs--post">
-            <span>
-                Accueil
-            </span>
-            <span>
-                Annonces
-            </span>
-            <span>
-                {{$post->category}}
-            </span>
-            <span>
-                {{$post->name}}
-            </span>
-        </div>
+        {{ Breadcrumbs::render('public.posts.show', $post) }}
     @endif
+
+    {{ Breadcrumbs::render() }}
+
 </header>

@@ -112,7 +112,7 @@
         }
     }
 
-    &__breadcrumbs {
+    .breadcrumb {
         position: absolute;
         left: 125px;
         bottom: -30px;
@@ -120,14 +120,19 @@
         align-items: center;
         gap: 5px;
 
-        span {
-            color: $breadcrumb;
+        li {
             font-family: $titleFont;
+            color: $breadcrumb;
+
+            a {
+                color: $breadcrumb;
+            }
 
             &:before {
                 content: '>';
                 color: $breadcrumb;
                 font-weight: bold;
+                padding-right: 5px;
             }
 
             &:first-of-type {
@@ -148,15 +153,6 @@
                     color: $primary;
                 }
             }
-        }
-
-        &--about {
-            top: 800px;
-            bottom: unset;
-        }
-
-        &--post {
-
         }
     }
 }

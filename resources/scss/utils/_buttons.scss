@@ -59,6 +59,13 @@
         }
     }
 
+    &--login {
+        background: $primary;
+        color: $white;
+        border: none;
+        border-radius: 10px;
+    }
+
     &--footer {
         color: $white;
         padding: 0;
