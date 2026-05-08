@@ -13,18 +13,19 @@
 @import "utils/deco";
 
 //PARTIALS
-@import "partials/header";
-@import "partials/footer";
+@import "partials/public/header";
+@import "partials/public/footer";
 @import "partials/banner";
 @import "partials/card-post";
 @import "partials/listing-posts";
+@import "partials/user/header";
 
 //PAGES
-@import "pages/pageText";
-@import "pages/home";
-@import "pages/contact";
-@import "pages/about";
-@import "pages/posts";
-@import "pages/singlepost";
-@import "pages/authentification";
+@import "pages/public/pageText";
+@import "pages/public/home";
+@import "pages/public/contact";
+@import "pages/public/about";
+@import "pages/public/posts";
+@import "pages/public/singlepost";
+@import "pages/public/authentification";
 
