@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+use Laravel\Fortify\Contracts\LoginResponse;
+use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Fortify;
 
 class FortifyServiceProvider extends ServiceProvider
@@ -45,14 +47,6 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
-        Fortify::loginView(function () {
-            return view('pages.login.login');
-        });
-
-        Fortify::registerView(function () {
-            return view('pages.register.register');
-        });
-
         Fortify::requestPasswordResetLinkView(function () {
 
             return view('pages.password.forgot-password');
@@ -64,5 +58,29 @@ class FortifyServiceProvider extends ServiceProvider
             return view('pages.password.reset-password', ['request' => $request]);
 
         });
+
+        Fortify::loginView(function () {
+            return view('pages.login.login');
+        });
+
+        Fortify::registerView(function () {
+            return view('pages.register.register');
+        });
+
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+
+            public function toResponse($request)
+
+            {
+
+                /*if (auth()->user()->role === 'Administateur'){
+                    return redirect('/admin/dashboard');
+                }*/
+                return redirect('/user/dashboard');
+
+            }
+
+        });
+
     }
 }
