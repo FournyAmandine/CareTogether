@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Middleware\isUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('public.homepage');
@@ -17,8 +18,8 @@ Route::get('/conditions', function (){ return view('public.conditionspage'); })-
 /*Route::livewire('/admin/dashboard', 'pages::dashboard')->name('admin.dashboard')->middleware('auth', IsAdministrator::class);*/
 /*Route::livewire('/admin/profil', 'pages::profil')->name('profil')->middleware('auth', IsAdministrator::class);*/
 
-/*Route::livewire('/user/dashboard', 'pages::user.dashboard')->name('user.dashboard')->middleware('auth', IsUser::class);
-Route::livewire('/user/profil', 'pages::user.profil')->name('user.profil')->middleware('auth', IsUser::class);
+Route::livewire('/user/dashboard', 'pages::user.dashboard')->name('user.dashboard')/*->middleware('auth', IsUser::class)*/;
+/*Route::livewire('/user/profil', 'pages::user.profil')->name('user.profil')->middleware('auth', IsUser::class);
 Route::livewire('/user/messages', 'pages::user.messages')->name('user.messages')->middleware('auth', IsUser::class);*/
 
 
