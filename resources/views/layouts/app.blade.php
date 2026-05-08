@@ -12,8 +12,8 @@
     <title>{{ $title . ' - CareTogether' }}</title>
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
-<body class="lg:flex lg:relative">
-{{--<livewire:admin.structure.header/>--}}
+<body class="user {{$body_class ?? ''}}">
+<livewire:user.partials.header/>
 {{ $slot }}
 {{--<livewire:widgets::modal />--}}
 </body>
