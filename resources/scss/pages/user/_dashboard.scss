@@ -1,0 +1,312 @@
+.dashboardPage {
+
+    .heading {
+        padding-top: 100px;
+        padding-bottom: 40px;
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;//safety
+        }
+
+        &__decoContainer {
+            position: absolute;
+            bottom: 400px;
+            right: -280px;
+            width: 870px;
+            height: 1055px;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__content {
+            width: 100%;
+
+            &__title {
+                max-width: none;
+                margin-bottom: 20px;
+            }
+
+            &__text {
+                font-size: $medium;
+                color: $text;
+                max-width: 380px;
+                line-height: 1.5;
+            }
+        }
+
+        &__icons {
+            display: flex;
+            gap: 20px;
+            margin-right: 0;
+            margin-left: auto;
+
+            &__buttonContainer {
+
+                &__button {
+
+                    &__icon {
+
+                    }
+                }
+            }
+        }
+    }
+
+    .stats {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        &__title {
+            max-width: none;
+            margin-bottom: 15px;
+        }
+
+        &__listing {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+
+            &__item {
+                border: 25px solid $white;
+                border-radius: 30px;
+                background: $statsBcg1;
+                padding: 20px 30px;
+
+                &:nth-child(even) {
+                    background: $statsBcg2;
+
+                    .stats__listing__item__numberContainer {
+
+                        &__icon {
+                            fill: $white;
+                        }
+                    }
+                }
+
+                &__numberContainer {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    &__number {
+                        margin-left: 10px;
+                    }
+
+                    &__icon {
+                        width: 60px;
+                        height: 60px;
+                        fill: $primary;
+                    }
+                }
+
+                &__content {
+                    font-size: $medium;
+                    font-weight: bold;
+                    color: $primary;
+                }
+            }
+        }
+
+        &__buttonContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 30px;
+
+            &__button {
+                //_button.scss
+            }
+        }
+    }
+
+    .recap {
+        padding-top: 40px;
+        padding-bottom: 110px;
+        position: relative;
+        overflow: hidden;
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        &__decoContainer {
+            position: absolute;
+            top: 450px;
+            left: -200px;
+            width: 740px;
+            height: 920px;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__posts {
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 3px solid $tertiary;
+            background: $postsBcg;
+            box-shadow: rgba($primary, 0.3) 0 0 30px;
+
+            &__title {
+                margin-bottom: 30px;
+                max-width: none;
+            }
+
+            &__listing {
+
+                &__item {
+                    display: flex;
+                    align-items: center;
+                    background: $postsBcg;
+                    box-shadow: rgba($primary, 0.2) 0 0 30px;
+                    padding: 15px 20px;
+                    border-radius: 20px;
+                    margin-bottom: 20px;
+
+                    &__imgContainer {
+                        width: 150px;
+                        height: 90px;
+                        border-radius: 30px;
+                        overflow: hidden;
+
+                        &__img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &__contentContainer {
+                        margin-left: 20px;
+                        line-height: 1.5;
+                        display: flex;
+                        flex-direction: column;
+
+                        &__name {
+                            font-family: $titleFont;
+                            font-weight: bold;
+                            font-size: $medium;
+                            color: $primary;
+                        }
+
+                        &__price {
+                            font-family: $titleFont;
+                            font-weight: bold;
+                            font-size: $medium;
+                            color: $primary;
+                        }
+
+                        &__date {
+                            font-family: $textFont;
+                        }
+                    }
+
+                    &__buttons {
+                        display: flex;
+                        gap: 20px;
+                        margin-left: auto;
+                        margin-right: 0;
+
+                        &__buttonContainer {
+
+                            &__button {
+                                //_buttons.scss
+                                padding: 15px;
+                                svg {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__buttonContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-top: 30px;
+
+                &__button {
+                    //_button.scss
+                }
+            }
+        }
+
+        &__messages {
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: $messagesBcg;
+            box-shadow: rgba($primary, 0.3) 0 0 30px;
+            height: fit-content;
+
+            &__title {
+                margin-bottom: 30px;
+                max-width: none;
+            }
+
+            &__listing {
+
+                &__item {
+                    display: flex;
+                    border-bottom: 1px solid $primary;
+                    padding: 15px 10px;
+
+                    &__imgContainer {
+                        width: 60px;
+                        height: 60px;
+
+                        &__img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &__contentContainer {
+                        margin-left: 20px;
+                        line-height: 1.5;
+
+                        &__name {
+                            font-family: $titleFont;
+                            font-weight: bold;
+                            font-size: $medium;
+                            color: $primary;
+                        }
+
+                        &__content {
+
+                        }
+                    }
+
+                    &__date {
+                        font-family: $textFont;
+                        margin-right: 0;
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            &__buttonContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-top: 30px;
+
+                &__button {
+                    //_button.scss
+                }
+            }
+        }
+    }
+}
