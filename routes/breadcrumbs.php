@@ -43,3 +43,8 @@ Breadcrumbs::for('user.sales.index', function (BreadcrumbTrail $trail) {
     $trail->push('Vos achats et dons', route('user.sales.index'));
 });
 
+Breadcrumbs::for('user.registered.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos annonces enregistrées', route('user.registered.index'));
+});
+
