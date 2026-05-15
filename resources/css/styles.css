@@ -127,8 +127,7 @@ body.user {
   height: 100vh;
   overflow: hidden;
 }
-
-main {
+body.user main {
   width: 100%;
   flex: 1;
   overflow-y: auto;
