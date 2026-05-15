@@ -6,7 +6,7 @@
         <div class="wrapper wrapper--small">
             <div class="heading__content">
                 <h2 class="maintitle maintitle--blue maintitle--big heading__content__title">
-                    Bonjour Sarah,
+                    Bonjour {!! $first_name !!},
                 </h2>
                 <p class="heading__content__text">
                     Bienvenue sur votre espace personnel, voici un résumé de votre activité :
@@ -25,10 +25,10 @@
                 Quelques statistiques
             </h2>
             <div class="stats__listing">
-                <x-user.utils.stats-card number="3" content="annonces actives" svg="stats-actives"/>
-                <x-user.utils.stats-card number="4" content="annonces vendues" svg="stats-vendues"/>
-                <x-user.utils.stats-card number="10" content="locations/prêts" svg="stats-locations"/>
-                <x-user.utils.stats-card number="7" content="messages non lus" svg="stats-messages"/>
+                <x-user.utils.stats-card number="{!! $posts_unsold !!}" content="annonces actives" svg="stats-actives"/>
+                <x-user.utils.stats-card number="{!! $posts_sold !!}" content="annonces vendues" svg="stats-vendues"/>
+                <x-user.utils.stats-card number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
+                <x-user.utils.stats-card number="{!! $messages_unread !!}" content="messages non lus" svg="stats-messages"/>
             </div>
             <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="#" title="Aller vers la page d'ajout d'une annonce" />
         </div>
@@ -44,11 +44,11 @@
                     Vos dernières annonces
                 </h2>
                 <div class="recap__posts__listing">
-                    <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset('assets/img/article-1.jpg') !!}" name="Fauteuil roulant" date="2" price="390"/>
-                    <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset('assets/img/article-1.jpg') !!}" name="Fauteuil roulant" date="2" price="390"/>
-                    <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset('assets/img/article-1.jpg') !!}" name="Fauteuil roulant" date="2" price="390"/>
-                    <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset('assets/img/article-1.jpg') !!}" name="Fauteuil roulant" date="2" price="390"/>
-                    <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset('assets/img/article-1.jpg') !!}" name="Fauteuil roulant" date="2" price="390"/>
+                    @foreach($posts as $post)
+                        <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset($post->img_path) !!}"
+                                            name="{!! $post->name !!}" date="{!! \Carbon\Carbon::parse($post->created_at)->day !!}"
+                                            price="{!! $post->price !!}"/>
+                    @endforeach
                 </div>
                 <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="#" title="Aller vers la page de vos annonces" />
             </section>
@@ -57,11 +57,11 @@
                     Vos derniers messages reçus
                 </h2>
                 <div class="recap__messages__listing">
-                    <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}" name="Marc Delpierre" date="3" message="Bonjour, je vous contacte pour votre..."/>
-                    <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}" name="Marc Delpierre" date="3" message="Bonjour, je vous contacte pour votre..."/>
-                    <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}" name="Marc Delpierre" date="3" message="Bonjour, je vous contacte pour votre..."/>
-                    <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}" name="Marc Delpierre" date="3" message="Bonjour, je vous contacte pour votre..."/>
-                    <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}" name="Marc Delpierre" date="3" message="Bonjour, je vous contacte pour votre..."/>
+                    @foreach($messages as $message)
+                        <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}"
+                                               name="{!! $message->user->first_name !!} {!! $message->user->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
+                                               message="{!! Str::limit($message->text, 40) !!}"/>
+                    @endforeach
                 </div>
                 <x-utils.link name_parent="recap__messages" class_button="button button--blue" svg="arrow-button" label="Voir tous vos messages" href="#" title="Aller vers la page des messages" />
             </section>

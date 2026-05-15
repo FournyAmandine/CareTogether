@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Livewire\Forms;
+
+use App\Models\Post;
+use Livewire\Attributes\Validate;
+use Livewire\Form;
+
+class PostForm extends Form
+{
+    public ?Post $post;
+
+    #[Validate('required|string')]
+    public $name = '';
+
+    #[Validate('required|string')]
+    public $locality = '';
+
+    #[Validate('required|string')]
+    public $state = '';
+
+    #[Validate('required|integer')]
+    public $price = '';
+
+    #[Validate('nullable|string')]
+    public $marque = '';
+
+    #[Validate('string')]
+    public $descrption = '';
+
+    #[Validate('boolean')]
+    public $sold = false;
+
+    #[Validate('nullable|string')]
+    public $img_path = 'assets/img/profil.png';
+
+    public function setPost(Post $post) {
+
+        $this->post = $post;
+        $this->name = $post->name;
+        $this->locality = $post->locality;
+        $this->state = $post->state;
+        $this->price = $post->price;
+        $this->marque = $post->marque;
+        $this->descrption = $post->description;
+        $this->sold = $post->sold;
+        $this->img_path = $post->img_path;
+    }
+
+    public function store()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+}

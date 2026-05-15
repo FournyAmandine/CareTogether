@@ -5,21 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Post extends Model
+class Rental extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'locality', 'state', 'price', 'category','img_path', 'description', 'marque'];
+    protected $fillable = ['start_date', 'end_date'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function rentals(): HasMany
+    public function post(): BelongsTo
     {
-        return $this->hasMany(Rental::class);
+        return $this->belongsTo(Post::class);
     }
 }
