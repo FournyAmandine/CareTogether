@@ -10,14 +10,7 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public PostForm $postform;
-    public MessageForm $messageform;
     #[Title('Vos locations/prêts')]
-    public function mount(Post $post, Message $message)
-    {
-        $this->postform->setPost($post);
-        $this->messageform->setMessage($message);
-    }
 
     public function render()
     {
