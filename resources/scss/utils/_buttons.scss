@@ -67,7 +67,6 @@
 
     &--post {
         font-weight: normal;
-        flex-direction: row-reverse;
         justify-content: flex-end;
         text-decoration: underline;
         text-decoration-color: $buttonUnderline;
@@ -75,7 +74,7 @@
         padding: 0;
 
         svg {
-            fill: $primary;
+            fill: $buttonUnderline;
             height: 15px;
             width: 10px;
         }

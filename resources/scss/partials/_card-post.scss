@@ -150,4 +150,55 @@
             }
         }
     }
+
+    &--registered {
+
+        .card-post__link {
+
+            &__contentContainer {
+
+                &__title {
+
+                }
+
+                &__info {
+
+                    &__text {
+
+                    }
+                }
+
+                &__price {
+                    margin-bottom: 25px;
+                    display: block;
+                }
+
+                &__navigation {
+
+                    &__buttonContainer {
+
+                        &__button { //_buttons.scss
+
+                            svg {
+
+                            }
+                        }
+                    }
+
+                    &__buttons {
+                        position: absolute;
+                        right: 15px;
+                        bottom: 60px;
+
+                        &__button {
+
+                            &__icon {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
