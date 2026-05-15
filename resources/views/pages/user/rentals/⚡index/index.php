@@ -17,6 +17,6 @@ new class extends Component
         return view('pages.user.rentals.⚡index.index', [
             'current_rentals' => auth()->user()->rentals()->where('rentals.end_date', '>', Carbon::now())->get(),
             'ended_rentals' => auth()->user()->rentals()->where('rentals.end_date', '<', Carbon::now())->get(),
-        ])->layoutData(['body_class'=>'']);
+        ]);
     }
 };

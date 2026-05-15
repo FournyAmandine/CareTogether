@@ -12,6 +12,6 @@ new class extends Component
     {
         return view('pages.user.sales.⚡index.index', [
             'sales' => auth()->user()->sales()->get(),
-        ])->layoutData(['body_class'=>'']);
+        ]);
     }
 };
