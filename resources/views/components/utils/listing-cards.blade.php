@@ -9,6 +9,7 @@
                              imgSrc="{!! $post->img_path !!}"
                              svg="{!! Str::slug($post->category, '_')!!}"
                              src="{!! route('public.posts.show', $post->id) !!}"
+                             type="{!! $post->type !!}"
         />
     @endforeach
 </div>
