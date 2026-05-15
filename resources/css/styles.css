@@ -375,6 +375,19 @@ body.user main {
   color: #1E3A8A;
 }
 
+.heading {
+  margin-top: 80px;
+}
+.heading .breadcrumb {
+  bottom: 65px;
+  left: 0;
+}
+.heading__title {
+  text-align: center;
+  max-width: none;
+  width: 100%;
+}
+
 /****************************
             HEADER
 *****************************/
@@ -734,9 +747,9 @@ body.user main {
 }
 .card-post--rental .card-post__container__contentContainer__price {
   padding-top: 20px;
+  padding-bottom: 15px;
   display: block;
 }
-
 .posts__title {
   max-width: none;
 }
@@ -1900,18 +1913,6 @@ body.user main {
   align-items: flex-end;
   margin-top: 30px;
 }
-.rentalsPage .heading {
-  margin-top: 80px;
-}
-.rentalsPage .heading .breadcrumb {
-  bottom: 65px;
-  left: 0;
-}
-.rentalsPage .heading__title {
-  text-align: center;
-  max-width: none;
-  width: 100%;
-}
 .rentalsPage .rentals {
   margin-top: 40px;
 }
@@ -1927,6 +1928,15 @@ body.user main {
   margin-bottom: 10px;
 }
 .rentalsPage .rentals__listing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.salesPage .sales {
+  margin-top: 40px;
+}
+.salesPage .sales__listing {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;

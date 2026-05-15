@@ -20,14 +20,6 @@
             <span class="card-post__container__contentContainer__price">
             {!! $price !!}€/mois
             </span>
-
-            <span class="button button--post card-post__container__contentContainer__date">
-                @if($date)
-                    Se termine le {!! $date !!}
-                @else
-                    Terminé
-                @endif
-            </span>
         </div>
     </div>
 

@@ -1,14 +1,6 @@
 <main class="rentalsPage">
 
-    <section class="heading">
-        <x-utils.deco modifier="user"/>
-        <div class="wrapper wrapper--small">
-            {{ Breadcrumbs::render() }}
-            <h2 class="maintitle maintitle--blue heading__title">
-                Vos locations et prêts
-            </h2>
-        </div>
-    </section>
+    <x-user.utils.heading title="Vos locations et prêts"/>
 
     <section class="rentals">
         <div class="wrapper wrapper--small">

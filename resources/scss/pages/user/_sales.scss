@@ -1,0 +1,12 @@
+.salesPage {
+
+    .sales {
+        margin-top: 40px;
+
+        &__listing {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+    }
+}

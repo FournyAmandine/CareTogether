@@ -12,6 +12,7 @@
 @import "utils/wrapper";
 @import "utils/deco";
 @import "utils/breadcrumb";
+@import "utils/user/heading";
 
 //PARTIALS
 @import "partials/public/header";
@@ -31,4 +32,5 @@
 @import "pages/public/authentification";
 @import "pages/user/dashboard";
 @import "pages/user/rentals";
+@import "pages/user/sales";
 
