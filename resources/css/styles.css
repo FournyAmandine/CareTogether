@@ -193,7 +193,6 @@ body.user main {
 }
 .button--post {
   font-weight: normal;
-  flex-direction: row-reverse;
   justify-content: flex-end;
   text-decoration: underline;
   text-decoration-color: #01B0BF;
@@ -201,7 +200,7 @@ body.user main {
   padding: 0;
 }
 .button--post svg {
-  fill: #1E3A8A;
+  fill: #01B0BF;
   height: 15px;
   width: 10px;
 }
@@ -749,6 +748,15 @@ body.user main {
   padding-top: 20px;
   padding-bottom: 15px;
   display: block;
+}
+.card-post--registered .card-post__link__contentContainer__price {
+  margin-bottom: 25px;
+  display: block;
+}
+.card-post--registered .card-post__link__contentContainer__navigation__buttons {
+  position: absolute;
+  right: 15px;
+  bottom: 60px;
 }
 .posts__title {
   max-width: none;
@@ -1937,6 +1945,15 @@ body.user main {
   margin-top: 40px;
 }
 .salesPage .sales__listing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.registeredPage .registered {
+  margin-top: 40px;
+}
+.registeredPage .registered__listing {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
