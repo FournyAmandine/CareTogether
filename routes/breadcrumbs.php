@@ -37,3 +37,9 @@ Breadcrumbs::for('user.rentals.index', function (BreadcrumbTrail $trail) {
     $trail->parent('user.dashboard');
     $trail->push('Vos locations et prêts', route('user.rentals.index'));
 });
+
+Breadcrumbs::for('user.sales.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos achats et dons', route('user.sales.index'));
+});
+
