@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\PostType;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
@@ -18,6 +19,7 @@ class PostFactory extends Factory
         $price = [390, 180, 420, 220];
         $category = ['Mobilité', 'Lit médicalisé', 'Soins et surveillance', 'Salle de bain adaptée', 'Confort et prévention', 'Autre matériel médical'];
         $img_path = ['assets/img/article-1.jpg', 'assets/img/article-2.jpg', 'assets/img/article-3.jpg', 'assets/img/article-4.jpg'];
+        $type = [PostType::Sale, PostType::Rental];
 
         return [
             'name' => $this->faker->randomElement($name),
@@ -27,7 +29,10 @@ class PostFactory extends Factory
             'category' => $this->faker->randomElement($category),
             'img_path' => $this->faker->randomElement($img_path),
             'marque' => 'Rolstoel',
+            'type' => $this->faker->randomElement($type),
             'description' => $this->faker->text(200),
+            'sold' => $this->faker->boolean(),
+            'user_id' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
