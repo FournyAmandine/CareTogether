@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,6 +20,21 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+
+    public function posts2(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'post_user', 'user_id', 'post_id');
+    }
+
+    public function posts3(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'post_user', 'user_id', 'post_id');
+    }
+
+    public function registeredPosts(): BelongsToMany
+    {
+        return $this->belongsToMany(RegisteredPost::class, 'registered_post_user', 'user_id', 'registered_post_id');
+    }
 
     /**
      * Get the attributes that should be cast.
@@ -56,4 +72,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Rental::class);
     }
+
+    public function registered_posts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'registered_posts');
+    }
+
 }
