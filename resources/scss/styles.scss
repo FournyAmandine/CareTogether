@@ -11,6 +11,7 @@
 @import "utils/commons";
 @import "utils/wrapper";
 @import "utils/deco";
+@import "utils/breadcrumb";
 
 //PARTIALS
 @import "partials/public/header";
@@ -29,4 +30,5 @@
 @import "pages/public/singlepost";
 @import "pages/public/authentification";
 @import "pages/user/dashboard";
+@import "pages/user/rentals";
 

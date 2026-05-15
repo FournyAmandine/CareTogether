@@ -1,0 +1,40 @@
+.rentalsPage {
+
+    .heading {
+        margin-top: 80px;
+
+        .breadcrumb {
+            bottom: 65px;
+            left: 0;
+        }
+
+        &__title {
+            text-align: center;
+            max-width: none;
+            width: 100%;
+        }
+    }
+
+    .rentals {
+        margin-top: 40px;
+
+        &--ended {
+            margin-top: 70px;
+            margin-bottom: 60px;
+        }
+
+        &__title {
+            font-size: $large;
+            font-weight: bold;
+            color: $primary;
+            font-family: $titleFont;
+            margin-bottom: 10px;
+        }
+
+        &__listing {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+    }
+}

@@ -1,10 +1,10 @@
-.card-post {
+.card-post { //voir modifier --rental en dessous
     background: $postBcg;
     border-radius: 15px;
     position: relative;
     padding: 15px;
 
-    &__link {
+    &__link, &__container {
 
         &__iconContainer {
             top: 25px;
@@ -46,6 +46,7 @@
                 font-size: $large;
                 color: $primary;
                 font-weight: bold;
+                line-height: 1.5;
             }
 
             &__info {
@@ -70,7 +71,7 @@
 
             &__price {
                 font-size: $large;
-                color: $primary;
+                color: $price;
                 font-weight: bold;
                 font-family: $titleFont;
             }
@@ -109,6 +110,37 @@
                             height: 45px;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    &--rental {
+
+        .card-post__container {
+
+            &__iconContainer {
+                width: 40px;
+                height: 40px;
+
+                &__icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            &__imgContainer {
+                max-width: 270px;
+            }
+
+            &__contentContainer {
+
+                &__title {
+                }
+
+                &__price {
+                    padding-top: 20px;
+                    display: block;
                 }
             }
         }
