@@ -7,6 +7,6 @@ enum PostType : string
     case Sale = 'Vente';
     case Rental = 'Location';
 
-/*    case Donation = 'Don';
-    case Loan = 'Prêt';*/
+    case Donation = 'Don';
+    case Loan = 'Prêt';
 }

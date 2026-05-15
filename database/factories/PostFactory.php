@@ -19,7 +19,7 @@ class PostFactory extends Factory
         $price = [390, 180, 420, 220];
         $category = ['Mobilité', 'Lit médicalisé', 'Soins et surveillance', 'Salle de bain adaptée', 'Confort et prévention', 'Autre matériel médical'];
         $img_path = ['assets/img/article-1.jpg', 'assets/img/article-2.jpg', 'assets/img/article-3.jpg', 'assets/img/article-4.jpg'];
-        $type = [PostType::Sale, PostType::Rental];
+        $type = [PostType::Sale, PostType::Rental, PostType::Loan, PostType::Donation];
 
         return [
             'name' => $this->faker->randomElement($name),
