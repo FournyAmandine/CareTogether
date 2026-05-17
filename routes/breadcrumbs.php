@@ -48,3 +48,7 @@ Breadcrumbs::for('user.registered.index', function (BreadcrumbTrail $trail) {
     $trail->push('Vos annonces enregistrées', route('user.registered.index'));
 });
 
+Breadcrumbs::for('user.posts.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos annonces', route('user.posts.index'));
+});
