@@ -13,6 +13,6 @@ new class extends Component
         return view('pages.user.posts.⚡index.index', [
             'sales' => auth()->user()->posts()->whereIn('posts.type', [PostType::Sale, PostType::Donation])->get(),
             'rentals' => auth()->user()->posts()->whereIn('posts.type', [PostType::Rental, PostType::Loan])->get()
-        ]);
+        ])->layoutData(['body_class'=>'userPosts']);
     }
 };
