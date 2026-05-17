@@ -13,7 +13,7 @@
             'svg'=> 'user'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.posts.index'),
             'label'=> 'Vos annonces',
             'svg'=> 'posts'
         ],
