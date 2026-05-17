@@ -8,13 +8,16 @@
                 En cours
             </h3>
             <div class="rentals__listing">
-                @foreach($current_rentals as $current_rental)
+                @forelse($current_rentals as $current_rental)
                     <x-user.utils.rental-card title="{{ $current_rental->post->name }}"
                                               svg="{!! Str::slug($current_rental->post->category, '_')!!}"
                                               date="{{ \Carbon\Carbon::parse($current_rental->end_date)->locale('fr')->translatedFormat('d F Y')  }}"
                                               price="{{ $current_rental->post->price }}"
                                               imgSrc="{{ asset($current_rental->post->img_path) }}"/>
-                @endforeach
+                @empty
+                    <x-user.utils.empty text="Il n'y a aucune location en cours pour le moment"
+                                        label="Voir toutes les annonces" href="{!! route('public.posts.index') !!}" title="Aller sur la page avec les annonces"/>
+                @endforelse
             </div>
         </div>
     </section>
@@ -25,12 +28,15 @@
                 Terminés
             </h3>
             <div class="rentals__listing">
-                @foreach($ended_rentals as $ended_rental)
+                @forelse($ended_rentals as $ended_rental)
                     <x-user.utils.rental-card title="{{ $ended_rental->post->name }}"
                                               svg="{!! Str::slug($ended_rental->post->category, '_')!!}"
                                               price="{{ $ended_rental->post->price }}"
                                               imgSrc="{{ asset($ended_rental->post->img_path) }}"/>
-                @endforeach
+                @empty
+                    <x-user.utils.empty text="Il n'y a aucune location terminée pour le moment"
+                                        label="Voir toutes les annonces" href="{!! route('public.posts.index') !!}" title="Aller sur la page avec les annonces"/>
+                @endforelse
             </div>
         </div>
     </section>
