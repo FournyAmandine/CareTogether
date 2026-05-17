@@ -155,6 +155,16 @@
 
         .card-post__link {
 
+            &__iconContainer {
+                width: 40px;
+                height: 40px;
+
+                &__icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
             &__contentContainer {
 
                 &__title {
@@ -195,6 +205,51 @@
                             &__icon {
 
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--post {
+
+        .card-post__link {
+
+            &__iconContainer {
+                width: 40px;
+                height: 40px;
+
+                &__icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            &__contentContainer {
+
+                &__navigation {
+                    padding-top: 25px;
+                }
+
+                &__registered {
+                    position: absolute;
+                    right: 25px;
+                    bottom: 55px;
+
+                    &__button {
+                        border: none;
+                        background: none;
+                        font-size: $normal;
+                        color: $text;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        &__icon {
+                            fill: $primary;
+                            height: 30px;
+                            width: 25px;
                         }
                     }
                 }
