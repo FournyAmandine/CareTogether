@@ -65,6 +65,21 @@
         }
     }
 
+    &--arrow {
+        padding: 10px 10px 10px 12px;
+        position: absolute;
+        top: 460px;
+        right: -80px;
+
+        &--left {
+            transform: rotate(180deg);
+            top: 460px;
+            left: -80px;
+            right: unset;
+        }
+
+    }
+
     &--post {
         font-weight: normal;
         justify-content: flex-end;
@@ -72,6 +87,7 @@
         text-decoration-color: $buttonUnderline;
         text-decoration-thickness: 2px;
         padding: 0;
+        display: block;
 
         svg {
             fill: $buttonUnderline;

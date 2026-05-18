@@ -47,11 +47,11 @@ body.user {
 
 .empty {
     min-width: 1270px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
     margin-top: 20px;
 
     &__text {
@@ -66,6 +66,10 @@ body.user {
 
         }
     }
+}
+
+button[aria-disabled="true"] {
+    display: none;
 }
 
 
