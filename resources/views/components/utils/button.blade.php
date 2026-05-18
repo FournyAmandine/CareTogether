@@ -1,4 +1,4 @@
-@props(['name_parent', 'svg', 'title'])
+@props(['name_parent', 'svg', 'title', 'classButton'])
 
 <div class="{!! $name_parent !!}__buttonContainer">
     <button title="{!! $title !!}" class="@if(isset($classButton)) {!! $classButton !!} @endif {!! $name_parent !!}__buttonContainer__button">

@@ -13,22 +13,22 @@
             'svg'=> 'user'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.posts.index'),
             'label'=> 'Vos annonces',
             'svg'=> 'posts'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.registered.index'),
             'label'=> 'Vos annonces enregistrées',
             'svg'=> 'register'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.sales.index'),
             'label'=> 'Vos achats',
             'svg'=> 'achats'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.rentals.index'),
             'label'=> 'Vos locations/prêts',
             'svg'=> 'locations'
         ],
@@ -38,7 +38,7 @@
             'svg'=> 'messages'
         ],
         [
-            'href'=>'#',
+            'href'=>route('public.homepage'),
             'label'=> 'Accueil',
             'svg'=> 'home'
         ],

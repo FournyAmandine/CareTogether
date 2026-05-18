@@ -12,8 +12,8 @@ class SaleFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 2,
-            'post_id' => 3,
+            'user_id' => $this->faker->numberBetween(1, 2),
+            'post_id' => $this->faker->numberBetween(1, 80),
         ];
     }
 }

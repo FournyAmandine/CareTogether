@@ -45,5 +45,31 @@ body.user {
     }
 }
 
+.empty {
+    min-width: 1270px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
+    margin-top: 20px;
+
+    &__text {
+        font-weight: bold;
+        color: $primary;
+        font-size: $medium;
+    }
+
+    &__buttonContainer {
+
+        &__button {
+
+        }
+    }
+}
+
+button[aria-disabled="true"] {
+    display: none;
+}
 
 

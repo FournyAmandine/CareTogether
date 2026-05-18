@@ -15,8 +15,8 @@ class RentalFactory extends Factory
         return [
             'start_date' => Carbon::now(),
             'end_date' => Carbon::create(2026, 06,05, 10, 00),
-            'user_id' => 2,
-            'post_id' => 3,
+            'user_id' => $this->faker->numberBetween(1, 2),
+            'post_id' => $this->faker->numberBetween(1, 80),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

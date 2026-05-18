@@ -10,11 +10,14 @@
     <meta name="description" content="Site de vente, achats, dons, locations de matériel médical. Si vous êtes en quête de matériel médical, c'est ici que ça se passe">
     <meta name="keywords" content="vente, achats, dons, locations, matériel, médical">
     <title>{{ $title . ' - CareTogether' }}</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
 <body class="user {{$body_class ?? ''}}">
 <livewire:user.partials.header/>
 {{ $slot }}
 {{--<livewire:widgets::modal />--}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>

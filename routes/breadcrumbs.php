@@ -28,3 +28,27 @@ Breadcrumbs::for('public.posts.show', function (BreadcrumbTrail $trail, Post $po
     $trail->push($post->category);
     $trail->push($post->name, route('public.posts.show', $post->id));
 });
+
+Breadcrumbs::for('user.dashboard', function (BreadcrumbTrail $trail) {
+    $trail->push('Compte', route('user.dashboard'));
+});
+
+Breadcrumbs::for('user.rentals.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos locations et prêts', route('user.rentals.index'));
+});
+
+Breadcrumbs::for('user.sales.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos achats et dons', route('user.sales.index'));
+});
+
+Breadcrumbs::for('user.registered.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos annonces enregistrées', route('user.registered.index'));
+});
+
+Breadcrumbs::for('user.posts.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos annonces', route('user.posts.index'));
+});

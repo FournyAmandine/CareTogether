@@ -1,7 +1,7 @@
-@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src'])
+@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type'])
 
 
-<article class="card-post posts__listing__item">
+<article class="card-post card-post--{!! $modifier !!} posts__listing__item">
     <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}">
         <div class="card-post__link__iconContainer">
             <svg class="card-post__link__iconContainer__icon">
@@ -34,7 +34,15 @@
             </span>
             </div>
             <span class="card-post__link__contentContainer__price">
-            {!! $price !!}€
+                @if($type == \App\Enums\PostType::Sale->value)
+                    {!! $price !!}€
+                @elseif($type == \App\Enums\PostType::Donation->value)
+                    Don
+                @elseif($type == \App\Enums\PostType::Rental->value)
+                    {!! $price !!}€/mois
+                @elseif($type == \App\Enums\PostType::Loan->value)
+                    Prêt
+                @endif
         </span>
 
             <div class="card-post__link__contentContainer__navigation">

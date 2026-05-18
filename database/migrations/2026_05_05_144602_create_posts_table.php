@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string('type');
             $table->tinyText('description');
             $table->boolean('sold')->default(0);
+            $table->integer('views');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

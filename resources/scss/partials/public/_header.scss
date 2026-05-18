@@ -113,49 +113,5 @@
                 }
             }
         }
-
-        .breadcrumb {
-            position: absolute;
-            left: 125px;
-            bottom: -30px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            li {
-                font-family: $titleFont;
-                color: $breadcrumb;
-
-                a {
-                    color: $breadcrumb;
-                }
-
-                &:before {
-                    content: '>';
-                    color: $breadcrumb;
-                    font-weight: bold;
-                    padding-right: 5px;
-                }
-
-                &:first-of-type {
-
-                    &:before {
-                        display: none;
-                    }
-                }
-
-                &:last-of-type {
-                    color: $primary;
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-                    font-weight: bold;
-
-                    &:before {
-                        color: $primary;
-                    }
-                }
-            }
-        }
     }
 }
