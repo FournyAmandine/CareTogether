@@ -24,8 +24,8 @@ Route::livewire('/user/messages', 'pages::user.messages')->name('user.messages')
 
 
 Route::livewire('/user/posts/create', 'pages::user.posts.create')->name('user.posts.create')->middleware('auth', IsUser::class);
-/*Route::livewire('/user/posts/{post}/edit', 'pages::user.posts.edit')->name('user.posts.edit')->middleware('auth', IsUser::class);
-Route::livewire('/user/posts/{post}', 'pages::user.posts.show')->name('user.posts.show')->middleware('auth', IsUser::class);*/
+Route::livewire('/user/posts/{post}/edit', 'pages::user.posts.edit')->name('user.posts.edit')->middleware('auth', IsUser::class);
+Route::livewire('/user/posts/{post}', 'pages::user.posts.show')->name('user.posts.show')->middleware('auth', IsUser::class);
 Route::livewire('/user/posts', 'pages::user.posts.index')->name('user.posts.index')->middleware('auth', IsUser::class);
 
 Route::livewire('/user/registered', 'pages::user.registered.index')->name('user.registered.index')->middleware('auth', IsUser::class);
