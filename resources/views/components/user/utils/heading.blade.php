@@ -1,9 +1,13 @@
-@props(['title', 'button' => false])
+@props(['title', 'button' => false, 'post'=>''])
 
 <section class="heading">
     <x-utils.deco modifier="user"/>
     <div class="wrapper wrapper--small">
-        {{ Breadcrumbs::render() }}
+        @if(str_contains($title, 'Votre annonce'))
+            {{ Breadcrumbs::render('user.posts.show', $post) }}
+        @else
+            {{ Breadcrumbs::render() }}
+        @endif
         <h2 class="maintitle maintitle--blue heading__title">
             {!! $title !!}
         </h2>
