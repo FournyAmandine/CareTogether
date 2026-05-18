@@ -33,6 +33,7 @@ return [
         'layouts' => resource_path('views/layouts'),
         'pages' => resource_path('views/pages'),
         'components' => resource_path('views/components'),
+        'widgets' => resource_path('views/widgets'),
     ],
 
     /*
