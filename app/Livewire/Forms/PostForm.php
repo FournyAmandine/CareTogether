@@ -26,7 +26,7 @@ class PostForm extends Form
     public $marque = '';
 
     #[Validate('string')]
-    public $descrption = '';
+    public $description = '';
 
     #[Validate('boolean')]
     public $sold = false;
@@ -42,7 +42,7 @@ class PostForm extends Form
         $this->state = $post->state;
         $this->price = $post->price;
         $this->marque = $post->marque;
-        $this->descrption = $post->description;
+        $this->description = $post->description;
         $this->sold = $post->sold;
         $this->img_path = $post->img_path;
     }
@@ -54,6 +54,23 @@ class PostForm extends Form
 
     public function update()
     {
+        $this->validate();
 
+        $img_path = $this->img_path;
+
+        $this->post->update(
+            array_merge(
+                $this->only([
+                    'name',
+                    'locality',
+                    'state',
+                    'price',
+                    'marque',
+                    'description',
+                    'sold'
+                ]),
+                ['img_path' => $img_path],
+            )
+        );
     }
 }
