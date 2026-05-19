@@ -38,9 +38,11 @@ class DatabaseSeeder extends Seeder
             'password' => 'admin'
         ]);
 
+        User::factory(10)->create();
+
         Post::factory(80)->create();
 
-        Message::factory(10)->create();
+        Message::factory(15)->create();
 
         Rental::factory(10)->create();
 

@@ -13,7 +13,8 @@ class CreateMessagesTable extends Migration
             $table->tinyText('text');
             $table->boolean('read');
             $table->foreignId('post_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('receiver_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('sender_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }
