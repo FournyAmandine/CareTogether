@@ -1,10 +1,10 @@
 @props(['content','title','outside'])
 
-<div class="delete">
-    <div class="delete__container"
+<div class="modal">
+    <div class="modal__container"
          @click.outside="{{$outside}}">
 
-        <p class="delete__container__title">
+        <p class="modal__container__title">
             {{$title}}
         </p>
 

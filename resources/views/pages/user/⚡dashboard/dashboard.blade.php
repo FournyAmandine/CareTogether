@@ -72,14 +72,14 @@
         <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'delete' })">
             <x-slot:title>
                 Voulez-vous vraiment supprimer cette annonce :
-                <span class="delete__container__title__name">
+                <span class="modal__container__title__name">
                     {{$chosenPost->name}}
                 </span> ?
             </x-slot:title>
             <x-slot:content>
-                <div class="delete__container__buttons">
-                    <x-utils.button-text wire:click="toggleModal('delete')" classButton="button button--border" name_parent="delete__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
-                    <x-utils.button-text wire:click="delete()" classButton="button button--red" name_parent="delete__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="delete"/>
+                <div class="modal__container__buttons">
+                    <x-utils.button-text wire:click="toggleModal('delete')" classButton="button button--border" name_parent="modal__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
+                    <x-utils.button-text wire:click="delete()" classButton="button button--red" name_parent="modal__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="delete"/>
                 </div>
             </x-slot:content>
         </x-user.modal.modal>

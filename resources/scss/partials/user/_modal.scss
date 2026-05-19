@@ -1,4 +1,4 @@
-.delete {
+.modal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -18,7 +18,7 @@
         background: $messagesBcg;
 
         &__title {
-            font-size: $large;
+            font-size: $x-large;
             text-align: center;
             font-weight: bold;
             color: $primary;
@@ -37,6 +37,68 @@
                 &__button {
                     //_buttons.scss
                     padding: 20px 25px !important;
+                }
+            }
+        }
+
+        &__form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__formRow {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 25px;
+                width: 100%;
+
+                &__label {
+                    font-size: $large;
+                    font-family: $textFont;
+                    font-weight: bold;
+                    color: $text;
+                    margin-bottom: 15px;
+
+                    .required {
+                        color: $required;
+                    }
+                }
+
+                &__input {
+                    font-size: $medium;
+                    color: $primary;
+                    font-weight: bold;
+                    border: 2px solid $primary;
+                    background: $messagesBcg;
+                    padding: 5px;
+                    border-radius: 5px;
+                    width: 90%;
+                }
+
+                &__select {
+                    font-size: $medium;
+                    color: $primary;
+                    font-weight: bold;
+                    border: 2px solid $primary;
+                    background: $messagesBcg;
+                    padding: 5px;
+                    border-radius: 5px;
+                    width: 90%;
+
+                    &__option {
+                        font-size: $medium;
+                    }
+                }
+            }
+
+            &__buttonContainer {
+                margin-top: 20px;
+
+                &__button {
+                    //_button.scss
+                    padding: 15px 25px;
                 }
             }
         }
