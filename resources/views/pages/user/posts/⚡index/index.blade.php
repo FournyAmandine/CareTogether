@@ -16,7 +16,7 @@
                                                 svg="{!! Str::slug($sale->category, '_')!!}"
                                                 price="{{ $sale->price }}" locality="{{ $sale->locality }}"
                                                 state="{{ $sale->state }}" modifier="post"
-                                                imgSrc="{{ asset($sale->img_path) }}" src="{!! route('public.posts.show', $sale->id) !!}"
+                                                imgSrc="{{ asset($sale->img_path) }}" src="{!! route('user.posts.show', $sale->id) !!}"
                                                 views="{{ $sale->views }}" registered="{!! $sale->registeredByUser()->count() !!}"/>
                     @endforeach
                 </div>
@@ -42,7 +42,7 @@
                                             svg="{!! Str::slug($rental->category, '_')!!}"
                                             price="{{ $rental->price }}" locality="{{ $rental->locality }}"
                                             state="{{ $rental->state }}" modifier="post"
-                                            imgSrc="{{ asset($rental->img_path) }}" src="{!! route('public.posts.show', $rental->id) !!}"
+                                            imgSrc="{{ asset($rental->img_path) }}" src="{!! route('user.posts.show', $rental->id) !!}"
                                             views="{{ $rental->views }}" registered="{{ $rental->registeredByUser()->count() }}"/>
                 @endforeach
                 </div>

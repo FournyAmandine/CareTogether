@@ -10,7 +10,7 @@ class Rental extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['start_date', 'end_date'];
+    protected $fillable = ['start_date', 'end_date', 'post_id', 'user_id'];
 
     public function user(): BelongsTo
     {

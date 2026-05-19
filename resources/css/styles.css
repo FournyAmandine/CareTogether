@@ -187,6 +187,7 @@ button[aria-disabled=true] {
 .button--blue {
   background: #C0CEFF;
   padding: 20px 25px;
+  border: none;
 }
 .button--blue svg {
   fill: #1E3A8A;
@@ -356,7 +357,7 @@ button[aria-disabled=true] {
   max-width: 1540px;
   height: auto;
   position: absolute;
-  top: -550px;
+  top: -600px;
   left: 15%;
   right: 15%;
   z-index: -1;
@@ -835,6 +836,14 @@ button[aria-disabled=true] {
   height: 30px;
   width: 25px;
 }
+.card-post--last .card-post__link__iconContainer {
+  width: 40px;
+  height: 40px;
+}
+.card-post--last .card-post__link__iconContainer__icon {
+  width: 30px;
+  height: 30px;
+}
 
 .posts__title {
   max-width: none;
@@ -880,6 +889,95 @@ button[aria-disabled=true] {
 }
 .user .header__content__buttonContainer__button {
   padding: 10px 25px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 20;
+}
+.modal__container {
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+  border: 4px solid #1E3A8A;
+  background: #E9EFFF;
+}
+.modal__container__title {
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  color: #1E3A8A;
+  line-height: 1.2;
+}
+.modal__container__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.modal__container__buttons__buttonContainer__button {
+  padding: 20px 25px !important;
+}
+.modal__container__form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__container__form__formRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.modal__container__form__formRow__label {
+  font-size: 1.5em;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  color: #595959;
+  margin-bottom: 15px;
+}
+.modal__container__form__formRow__label .required {
+  color: #C51010;
+}
+.modal__container__form__formRow__input {
+  font-size: 1.25em;
+  color: #1E3A8A;
+  font-weight: bold;
+  border: 2px solid #1E3A8A;
+  background: #E9EFFF;
+  padding: 5px;
+  border-radius: 5px;
+  width: 90%;
+}
+.modal__container__form__formRow__select {
+  font-size: 1.25em;
+  color: #1E3A8A;
+  font-weight: bold;
+  border: 2px solid #1E3A8A;
+  background: #E9EFFF;
+  padding: 5px;
+  border-radius: 5px;
+  width: 90%;
+}
+.modal__container__form__formRow__select__option {
+  font-size: 1.25em;
+}
+.modal__container__form__buttonContainer {
+  margin-top: 20px;
+}
+.modal__container__form__buttonContainer__button {
+  padding: 15px 25px;
 }
 
 .textPage .text__decoContainer {
@@ -1666,7 +1764,48 @@ button[aria-disabled=true] {
 .singlePostPage .posts__title {
   margin-bottom: 10px;
 }
-
+.singlePostPage--user {
+  overflow: hidden;
+}
+.singlePostPage--user .heading .wrapper {
+  display: flex;
+  justify-content: center;
+}
+.singlePostPage--user .heading .decoContainer {
+  top: -640px;
+}
+.singlePostPage--user .heading .breadcrumb {
+  bottom: 125px;
+}
+.singlePostPage--user .heading__title {
+  max-width: 500px;
+}
+.singlePostPage--user .detail {
+  z-index: 2;
+}
+.singlePostPage--user .detail__main__contentContainer__infos__list__item__icon {
+  fill: #595959;
+  width: 35px;
+  height: 35px;
+}
+.singlePostPage--user .detail__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  z-index: 2;
+}
+.singlePostPage--user .detail__buttons__buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
+}
+.singlePostPage--user .detail__buttons:last-of-type a svg {
+  fill: #1E3A8A;
+}
+.singlePostPage--user .posts__decoContainer {
+  right: -320px;
+  left: unset;
+}
 .auth {
   background-image: url("../../../../public/assets/img/connexion-background.jpg");
   background-size: cover;
@@ -1784,7 +1923,7 @@ button[aria-disabled=true] {
 .dashboardPage .heading__decoContainer {
   position: absolute;
   bottom: 400px;
-  right: -280px;
+  right: 0;
   width: 870px;
   height: 1055px;
 }

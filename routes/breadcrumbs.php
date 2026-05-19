@@ -52,3 +52,10 @@ Breadcrumbs::for('user.posts.index', function (BreadcrumbTrail $trail) {
     $trail->parent('user.dashboard');
     $trail->push('Vos annonces', route('user.posts.index'));
 });
+
+Breadcrumbs::for('user.posts.show', function (BreadcrumbTrail $trail, Post $post) {
+    $trail->parent('user.dashboard');
+    $trail->push('Vos annonces');
+    $trail->push($post->name, route('user.posts.show', $post->id));
+});
+

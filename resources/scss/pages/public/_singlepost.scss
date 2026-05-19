@@ -1,4 +1,4 @@
-.singlePostPage {
+.singlePostPage {//voir modifier --user en bas de page
 
     .detail {
         position: relative;
@@ -153,6 +153,128 @@
 
         &__title {
             margin-bottom: 10px;
+        }
+    }
+
+    &--user {
+        overflow: hidden;
+
+        .heading {
+
+            .wrapper {
+                display: flex;
+                justify-content: center;
+            }
+
+            .decoContainer {
+                top: -640px;
+            }
+
+            .breadcrumb {
+                bottom: 125px;
+            }
+
+            &__title {
+                max-width: 500px;
+            }
+        }
+
+        .detail {
+            z-index: 2;
+
+            &__main {
+
+                &__imgContainer {
+
+                    &__iconContainer {
+
+                        &__icon{
+                        }
+                    }
+
+                    &__img {
+                    }
+                }
+
+                &__contentContainer {
+
+                    &__infos {
+
+                        &__title {
+                        }
+
+                        &__price {
+                        }
+
+                        &__list {
+
+                            &__item {
+
+
+                                &__icon {
+                                    fill: $text;
+                                    width: 35px;
+                                    height: 35px;
+                                }
+
+                                &__text {
+
+                                }
+                            }
+                        }
+                    }
+
+                    &__description {
+
+                        &__title {
+                        }
+
+                        &__text {
+
+                            &__icon {
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__buttons {
+                display: flex;
+                gap: 20px;
+                justify-content: flex-end;
+                z-index: 2;
+
+                &__buttonContainer {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-top: 30px;
+
+                    &__button {
+                        //_buttons.scss
+                    }
+                }
+
+                &:last-of-type{
+
+                    a{
+                        svg {
+                            fill: $primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .posts {
+
+            &__decoContainer {
+                right: -320px;
+                left: unset;
+
+                &__deco {
+
+                }
+            }
         }
     }
 }

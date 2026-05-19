@@ -47,7 +47,7 @@
                     @foreach($posts as $post)
                         <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset($post->img_path) !!}"
                                             name="{!! $post->name !!}" date="{!! \Carbon\Carbon::parse($post->created_at)->day !!}"
-                                            price="{!! $post->price !!}"/>
+                                            price="{!! $post->price !!}" :post="$post"/>
                     @endforeach
                 </div>
                 <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="#" title="Aller vers la page de vos annonces" />
@@ -59,7 +59,7 @@
                 <div class="recap__messages__listing">
                     @foreach($messages as $message)
                         <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}"
-                                               name="{!! $message->user->first_name !!} {!! $message->user->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
+                                               name="{!! $message->receiver->first_name !!} {!! $message->receiver->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
                                                message="{!! Str::limit($message->text, 40) !!}"/>
                     @endforeach
                 </div>
@@ -67,4 +67,21 @@
             </section>
         </div>
     </div>
+
+    @if($isOpenDeleteModal)
+        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'delete' })">
+            <x-slot:title>
+                Voulez-vous vraiment supprimer cette annonce :
+                <span class="modal__container__title__name">
+                    {{$chosenPost->name}}
+                </span> ?
+            </x-slot:title>
+            <x-slot:content>
+                <div class="modal__container__buttons">
+                    <x-utils.button-text wire:click="toggleModal('delete')" classButton="button button--border" name_parent="modal__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
+                    <x-utils.button-text wire:click="delete()" classButton="button button--red" name_parent="modal__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="delete"/>
+                </div>
+            </x-slot:content>
+        </x-user.modal.modal>
+    @endif
 </main>

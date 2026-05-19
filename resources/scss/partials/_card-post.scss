@@ -256,4 +256,19 @@
             }
         }
     }
+
+    &--last {
+        .card-post__link {
+
+            &__iconContainer {
+                width: 40px;
+                height: 40px;
+
+                &__icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
 }
