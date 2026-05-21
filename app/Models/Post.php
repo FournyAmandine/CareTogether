@@ -26,6 +26,11 @@ class Post extends Model
         return $this->hasMany(Rental::class);
     }
 
+    public function sales(): HasMany
+    {
+        return $this->hasMany(Sale::class);
+    }
+
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id');
