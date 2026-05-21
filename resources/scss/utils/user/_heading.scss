@@ -11,4 +11,10 @@
         max-width: none;
         width: 100%;
     }
+
+    &__text {
+        font-size: $medium;
+        text-align: center;
+        margin-top: 20px;
+    }
 }

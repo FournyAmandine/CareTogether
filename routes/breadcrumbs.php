@@ -59,3 +59,13 @@ Breadcrumbs::for('user.posts.show', function (BreadcrumbTrail $trail, Post $post
     $trail->push($post->name, route('user.posts.show', $post->id));
 });
 
+Breadcrumbs::for('user.posts.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Ajouter une annonce', route('user.posts.create'));
+});
+
+Breadcrumbs::for('user.posts.edit', function (BreadcrumbTrail $trail, Post $post) {
+    $trail->parent('user.dashboard');
+    $trail->push('Modifier une annonce', route('user.posts.edit', $post->id));
+});
+
