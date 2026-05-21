@@ -242,6 +242,9 @@ button[aria-disabled=true] {
   border: none;
   border-radius: 10px;
 }
+.button--login svg {
+  fill: #FFFFFF;
+}
 .button--footer {
   color: #FFFFFF;
   padding: 0;
@@ -425,6 +428,145 @@ button[aria-disabled=true] {
   text-align: center;
   max-width: none;
   width: 100%;
+}
+.heading__text {
+  font-size: 1.25em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.formContainer {
+  padding-bottom: 80px;
+  padding-top: 50px;
+  overflow: hidden;
+}
+.formContainer__decoContainer {
+  position: absolute;
+  width: 870px;
+  height: 1055px;
+  bottom: -250px;
+  right: 0;
+  z-index: -1;
+}
+.formContainer__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+}
+.formContainer__title {
+  max-width: none;
+  margin-bottom: 30px;
+}
+.formContainer__form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 25px;
+  z-index: 3;
+  position: relative;
+}
+.formContainer__form__secondary__fieldset {
+  border-radius: 20px;
+  border: 2px solid #1E3A8A;
+  box-shadow: rgba(30, 58, 138, 0.25) 0 0 30px;
+  padding: 45px 25px;
+  background: #F4F7FF;
+}
+.formContainer__form__secondary__fieldset__formRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.formContainer__form__secondary__fieldset__formRow__label {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.formContainer__form__secondary__fieldset__formRow__label .required {
+  color: #C51010;
+}
+.formContainer__form__secondary__fieldset__formRow__textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: solid #1E3A8A 2px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background: rgba(30, 58, 138, 0.05);
+}
+.formContainer__form__secondary__fieldset__title {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  display: block;
+}
+.formContainer__form__secondary__fieldset__title .required {
+  color: #C51010;
+}
+.formContainer__form__secondary__fieldset__image {
+  background: rgba(30, 58, 138, 0.2);
+  border-radius: 10px;
+  border: solid #1E3A8A 2px;
+  padding: 105px 25px;
+}
+.formContainer__form__secondary__fieldset__image__button {
+  max-width: 230px;
+  margin-bottom: 20px;
+}
+.formContainer__form__secondary__fieldset__image__text {
+  color: #1E3A8A;
+}
+.formContainer__form__secondary__fieldset__buttonContainer {
+  margin-top: 25px;
+}
+.formContainer__form__secondary__fieldset__buttonContainer__button {
+  padding: 15px 25px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.formContainer__form__fieldset {
+  border-radius: 20px;
+  border: 2px solid #1E3A8A;
+  box-shadow: rgba(30, 58, 138, 0.25) 0 0 30px;
+  padding: 45px 25px;
+}
+.formContainer__form__fieldset__formRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.formContainer__form__fieldset__formRow__label {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.formContainer__form__fieldset__formRow__label .required {
+  color: #C51010;
+}
+.formContainer__form__fieldset__formRow__input, .formContainer__form__fieldset__formRow__textarea, .formContainer__form__fieldset__formRow__select {
+  padding: 15px;
+  border-radius: 10px;
+  border: solid #1E3A8A 2px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background: rgba(30, 58, 138, 0.05);
+}
+.formContainer__form__fieldset__formRow__select {
+  background: rgba(191, 207, 255, 0.35);
+  color: #1E3A8A;
+}
+.formContainer__form__fieldset__buttonContainer {
+  margin-top: 25px;
+}
+.formContainer__form__fieldset__buttonContainer__button {
+  padding: 15px 25px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /****************************
