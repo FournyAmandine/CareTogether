@@ -17,6 +17,9 @@ class PostForm extends Form
     public $locality = '';
 
     #[Validate('required|string')]
+    public $type = '';
+
+    #[Validate('required|string')]
     public $state = '';
 
     #[Validate('required|integer')]
@@ -40,6 +43,7 @@ class PostForm extends Form
         $this->name = $post->name;
         $this->locality = $post->locality;
         $this->state = $post->state;
+        $this->type = $post->type;
         $this->price = $post->price;
         $this->marque = $post->marque;
         $this->description = $post->description;
@@ -49,7 +53,24 @@ class PostForm extends Form
 
     public function store()
     {
+        $this->validate();
 
+        $img_path = $this->img_path;
+
+        $this->post->update(
+            array_merge(
+                $this->only([
+                    'name',
+                    'locality',
+                    'state',
+                    'price',
+                    'marque',
+                    'description',
+                    'sold'
+                ]),
+                ['img_path' => $img_path],
+            )
+        );
     }
 
     public function update()
