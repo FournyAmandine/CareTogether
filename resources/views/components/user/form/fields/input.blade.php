@@ -1,4 +1,4 @@
-@props(['field_name', 'type', 'placeholder', 'required', 'label', 'name_parent'])
+@props(['field_name', 'type', 'placeholder', 'required', 'label', 'name_parent', 'text' => ''])
 
 <div class="{!! $name_parent !!}__formRow">
     <label class="{!! $name_parent !!}__formRow__label" for="{!! $field_name !!}">{!! $label !!}
@@ -13,6 +13,12 @@
            id="{!! $field_name !!}"
            placeholder="{!! $placeholder ?? '' !!}"
         {!! $required ?? '' !!}>
+
+    @if($text)
+        <p {!! $name_parent !!}__formRow__text>
+            {!! $text !!}
+        </p>
+    @endif
 
     @error($field_name)
         <p class="error">

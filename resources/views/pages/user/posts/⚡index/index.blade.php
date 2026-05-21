@@ -17,7 +17,7 @@
                                                 price="{{ $sale->price }}" locality="{{ $sale->locality }}"
                                                 state="{{ $sale->state }}" modifier="post"
                                                 imgSrc="{{ asset($sale->img_path) }}" src="{!! route('user.posts.show', $sale->id) !!}"
-                                                views="{{ $sale->views }}" registered="{!! $sale->registeredByUser()->count() !!}"/>
+                                                views="{{ $sale->views }}" registered="{!! $sale->registeredByUser->count() !!}"/>
                     @endforeach
                 </div>
                 <x-utils.button name_parent="posts__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-sale-next"/>
@@ -43,7 +43,7 @@
                                             price="{{ $rental->price }}" locality="{{ $rental->locality }}"
                                             state="{{ $rental->state }}" modifier="post"
                                             imgSrc="{{ asset($rental->img_path) }}" src="{!! route('user.posts.show', $rental->id) !!}"
-                                            views="{{ $rental->views }}" registered="{{ $rental->registeredByUser()->count() }}"/>
+                                            views="{{ $rental->views }}" registered="{{ $rental->registeredByUser->count() }}"/>
                 @endforeach
                 </div>
                 <x-utils.button name_parent="posts__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-rental-next"/>

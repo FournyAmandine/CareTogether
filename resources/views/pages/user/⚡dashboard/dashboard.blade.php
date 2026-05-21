@@ -30,7 +30,7 @@
                 <x-user.utils.stats-card number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
                 <x-user.utils.stats-card number="{!! $messages_unread !!}" content="messages non lus" svg="stats-messages"/>
             </div>
-            <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="#" title="Aller vers la page d'ajout d'une annonce" />
+            <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="{!! route('user.posts.create') !!}" title="Aller vers la page d'ajout d'une annonce" />
         </div>
     </section>
 
