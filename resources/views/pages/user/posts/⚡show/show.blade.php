@@ -9,7 +9,7 @@
                 <div class="detail__main__imgContainer">
                     <button class="detail__main__imgContainer__iconContainer" title="Mettre en favoris">
                         <svg class="detail__main__imgContainer__iconContainer__icon">
-                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#heart') }}"></use>
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
                         </svg>
                     </button>
                     <img class="detail__main__imgContainer__img" src="{!! asset($post->img_path) !!}" alt="Image du produit : {!! $post->name !!}">
@@ -27,7 +27,7 @@
                             <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
                             <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté il y a {{ \Carbon\Carbon::parse($post->created_at)->day }} jours"/>
                             <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par Sarah Deseurs"/>
-                            <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category !!}"/>
+                            <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
                             <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
                         </ul>
                     </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="detail__buttons">
-                <x-utils.button-text wire:click="toggleModal('delete', {!! $post->id !!})" name_parent="detail__buttons" text="Supprimer" svg="modal" class-button="button button--red" title="Supprimer l'annonce"/>
+                <x-utils.button-text wire:click="toggleModal('delete', {!! $post->id !!})" name_parent="detail__buttons" text="Supprimer" svg="delete" class-button="button button--red" title="Supprimer l'annonce"/>
                 @if($post->sold === 0)
                     @if($post->type === \App\Enums\PostType::Sale->value)
                         <x-utils.button-text wire:click="toggleModal('sold', {!! $post->id !!})" name_parent="detail__buttons" text="Marquer comme vendu" svg="arrow-button" class-button="button button--border" title="Marquer l'article comme vendu"/>
@@ -87,7 +87,7 @@
                                   state="{!! $post->state !!}"
                                   price="{!! $post->price !!}"
                                   imgSrc="{!! asset($post->img_path) !!}"
-                                  svg="{!! Str::slug($post->category, '_')!!}"
+                                  svg="{!! Str::slug($post->category->name, '_')!!}"
                                   src="{!! route('user.posts.show', $post->id) !!}"
                                   type="{!! $post->type !!}" modifier="last"
                     />

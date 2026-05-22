@@ -11,7 +11,9 @@ new class extends Component
     public PostForm $form;
     #[Title('Ajouter une annonce')]
     public function render() {
-        return view('pages.user.posts.⚡create.create');
+        return view('pages.user.posts.⚡create.create', [
+            'categories' => \App\Models\Category::get()
+        ]);
     }
 
     public function store() {

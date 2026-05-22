@@ -16,7 +16,7 @@ new class extends Component
             ->whereIn('posts.type', [PostType::Sale, PostType::Donation])
             ->get();
 
-        $sales->load(['sales', 'registeredByUser']);
+        $sales->load(['sales', 'registeredByUser', 'category']);
 
         $rentals = auth()->user()
             ->posts()
@@ -24,7 +24,7 @@ new class extends Component
             ->whereIn('posts.type', [PostType::Rental, PostType::Loan])
             ->get();
 
-        $rentals->load(['rentals', 'registeredByUser']);
+        $rentals->load(['rentals', 'registeredByUser', 'category']);
 
         return view('pages.user.posts.⚡index.index', [
             'sales' => $sales,

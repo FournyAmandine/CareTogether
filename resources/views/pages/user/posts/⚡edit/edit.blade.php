@@ -8,7 +8,7 @@
             <img class="formContainer__decoContainer" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleue ronde">
         </div>
         <div class="wrapper wrapper--small">
-            <form class="formContainer__form" wire:submit="store()" enctype="multipart/form-data" method="post">
+            <form class="formContainer__form" wire:submit="save()" enctype="multipart/form-data" method="post">
                 @csrf
 
                 <fieldset class="formContainer__form__fieldset">
@@ -20,7 +20,9 @@
                                               placeholder="Ex : Fauteuil Roulant" required="required"/>
 
                     <x-user.form.fields.select wire:model="form.category" name_parent="formContainer__form__fieldset" field_name="post_category" required="required" label="Categorie">
-
+                        @foreach($categories as $category)
+                            <x-user.form.fields.option value="{!! $category->name !!}" option_name="{!! $category->name !!}" name_parent="formContainer__form__fieldset"/>
+                        @endforeach
                     </x-user.form.fields.select>
 
                     <x-user.form.fields.select wire:model="form.type" name_parent="formContainer__form__fieldset" field_name="post_type" required="required" label="Type d'annonce">

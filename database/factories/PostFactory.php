@@ -18,7 +18,6 @@ class PostFactory extends Factory
         $locality = ['Nandrin', 'Seraing', 'Marche-en-Famenne', 'Bastogne'];
         $state = [PostState::Damaged->value, PostState::Good->value, PostState::New->value, PostState::Wear->value];
         $price = [390, 180, 420, 220];
-        $category = ['Mobilité', 'Lit médicalisé', 'Soins et surveillance', 'Salle de bain adaptée', 'Confort et prévention', 'Autre matériel médical'];
         $img_path = ['assets/img/article-1.jpg', 'assets/img/article-2.jpg', 'assets/img/article-3.jpg', 'assets/img/article-4.jpg'];
         $type = [PostType::Sale->value, PostType::Rental->value, PostType::Loan->value, PostType::Donation->value];
 
@@ -27,7 +26,7 @@ class PostFactory extends Factory
             'locality' => $this->faker->randomElement($locality),
             'state' => $this->faker->randomElement($state),
             'price' => $this->faker->randomElement($price),
-            'category' => $this->faker->randomElement($category),
+            'category_id' => $this->faker->numberBetween(1, 6),
             'img_path' => $this->faker->randomElement($img_path),
             'marque' => 'Rolstoel',
             'type' => $this->faker->randomElement($type),

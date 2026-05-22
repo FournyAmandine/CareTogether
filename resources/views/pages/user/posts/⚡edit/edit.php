@@ -14,7 +14,9 @@ new class extends Component
 
     public function render()
     {
-        return view('pages.user.posts.⚡edit.edit')->title('Modifier ' . $this->post->name);
+        return view('pages.user.posts.⚡edit.edit', [
+            'categories' => \App\Models\Category::get()
+        ])->title('Modifier ' . $this->post->name);
     }
 
     public function mount($post): void

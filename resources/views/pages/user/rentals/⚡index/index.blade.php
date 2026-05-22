@@ -14,7 +14,7 @@
                 <div class="rentals__sliderContainer__slider rentals__sliderContainer__slider--current">
                 @foreach($current_rentals as $current_rental)
                     <x-user.utils.rental-card title="{{ $current_rental->post->name }}"
-                                              svg="{!! Str::slug($current_rental->post->category, '_')!!}"
+                                              svg="{!! Str::slug($current_rental->post->category->name, '_')!!}"
                                               date="{{ \Carbon\Carbon::parse($current_rental->end_date)->locale('fr')->translatedFormat('d F Y')  }}"
                                               price="{{ $current_rental->post->price }}"
                                               imgSrc="{{ asset($current_rental->post->img_path) }}"/>
@@ -40,7 +40,7 @@
                 <div class="rentals__sliderContainer__slider rentals__sliderContainer__slider--ended">
                 @foreach($ended_rentals as $ended_rental)
                     <x-user.utils.rental-card title="{{ $ended_rental->post->name }}"
-                                              svg="{!! Str::slug($ended_rental->post->category, '_')!!}"
+                                              svg="{!! Str::slug($ended_rental->post->category->name, '_')!!}"
                                               price="{{ $ended_rental->post->price }}"
                                               imgSrc="{{ asset($ended_rental->post->img_path) }}"/>
                 @endforeach

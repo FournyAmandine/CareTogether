@@ -11,7 +11,7 @@
                 <div class="sales__sliderContainer__slider">
                 @foreach($sales as $sale)
                     <x-user.utils.sale-card title="{{ $sale->post->name }}"
-                                              svg="{!! Str::slug($sale->post->category, '_')!!}"
+                                              svg="{!! Str::slug($sale->post->category->name, '_')!!}"
                                               price="{{ $sale->post->price }}"
                                               imgSrc="{{ asset($sale->post->img_path) }}"/>
                 @endforeach

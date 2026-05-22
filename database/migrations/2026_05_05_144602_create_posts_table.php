@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->string('locality');
             $table->string('state');
             $table->integer('price');
-            $table->string('category');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('img_path')->nullable();
             $table->string('marque')->nullable();
             $table->string('type');
