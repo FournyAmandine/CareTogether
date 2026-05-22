@@ -435,6 +435,19 @@ button[aria-disabled=true] {
   margin-top: 20px;
 }
 
+.postsEdit .heading .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.postsEdit .heading .breadcrumb {
+  bottom: 150px;
+  left: 0;
+}
+.postsEdit .heading__title {
+  max-width: 580px;
+}
+
 .formContainer {
   padding-bottom: 80px;
   padding-top: 50px;

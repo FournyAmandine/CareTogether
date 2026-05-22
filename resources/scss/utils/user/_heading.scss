@@ -18,3 +18,24 @@
         margin-top: 20px;
     }
 }
+
+.postsEdit {
+
+    .heading {
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .breadcrumb {
+            bottom: 150px;
+            left: 0;
+        }
+
+        &__title {
+            max-width: 580px;
+        }
+    }
+}
