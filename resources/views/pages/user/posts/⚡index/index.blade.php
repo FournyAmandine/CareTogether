@@ -16,7 +16,10 @@
                                                 svg="{!! Str::slug($sale->category->name, '_')!!}"
                                                 price="{{ $sale->price }}" locality="{{ $sale->locality }}"
                                                 state="{{ $sale->state }}" modifier="post"
-                                                imgSrc="{{ asset($sale->img_path) }}" src="{!! route('user.posts.show', $sale->id) !!}"
+                                                imgSrc="{{Str::startsWith($sale->images()->first()->img_path, 'assets')
+                                                    ? asset($sale->images()->first()->img_path)
+                                                    : asset('storage/photos/posts/originals/' . $sale->images()->first()->img_path)}}"
+                                                src="{!! route('user.posts.show', $sale->id) !!}"
                                                 views="{{ $sale->views }}" registered="{!! $sale->registeredByUser->count() !!}"/>
                     @endforeach
                 </div>
@@ -42,7 +45,10 @@
                                             svg="{!! Str::slug($rental->category->name, '_')!!}"
                                             price="{{ $rental->price }}" locality="{{ $rental->locality }}"
                                             state="{{ $rental->state }}" modifier="post"
-                                            imgSrc="{{ asset($rental->img_path) }}" src="{!! route('user.posts.show', $rental->id) !!}"
+                                            imgSrc="{{Str::startsWith($rental->images()->first()->img_path, 'assets')
+                                                    ? asset($rental->images()->first()->img_path)
+                                                    : asset('storage/photos/posts/originals/' . $rental->images()->first()->img_path)}}"
+                                            src="{!! route('user.posts.show', $rental->id) !!}"
                                             views="{{ $rental->views }}" registered="{{ $rental->registeredByUser->count() }}"/>
                 @endforeach
                 </div>

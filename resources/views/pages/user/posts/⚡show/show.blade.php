@@ -6,13 +6,27 @@
         <x-utils.deco/>
         <div class="wrapper wrapper--small">
             <div class="detail__main">
-                <div class="detail__main__imgContainer">
-                    <button class="detail__main__imgContainer__iconContainer" title="Mettre en favoris">
-                        <svg class="detail__main__imgContainer__iconContainer__icon">
+                <div class="detail__main__listing">
+                    <button class="detail__main__listing__iconContainer" title="Mettre en favoris">
+                        <svg class="detail__main__listing__iconContainer__icon">
                             <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
                         </svg>
                     </button>
-                    <img class="detail__main__imgContainer__img" src="{!! asset($post->img_path) !!}" alt="Image du produit : {!! $post->name !!}">
+                    @if($existingImages == [])
+                        <div class="detail__main__listing__imgContainer">
+                            <img class="detail__main__listing__imgContainer__img detail__main__listing__imgContainer__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">
+                        </div>
+                    @else
+                        @foreach($existingImages as $image)
+                            <div class="detail__main__listing__imgContainer">
+                                @if(Str::startsWith($image['img_path'], 'assets'))
+                                    <img class="detail__main__listing__imgContainer__img" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                @else
+                                    <img class="detail__main__listing__imgContainer__img" src="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                               @endif
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
                 <div class="detail__main__contentContainer">
                     <div class="detail__main__contentContainer__infos">
@@ -86,7 +100,7 @@
                                   locality="{!! $post->locality !!}"
                                   state="{!! $post->state !!}"
                                   price="{!! $post->price !!}"
-                                  imgSrc="{!! asset($post->img_path) !!}"
+                                  imgSrc="{!! asset($post->images()->first()->img_path) !!}"
                                   svg="{!! Str::slug($post->category->name, '_')!!}"
                                   src="{!! route('user.posts.show', $post->id) !!}"
                                   type="{!! $post->type !!}" modifier="last"

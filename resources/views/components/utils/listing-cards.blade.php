@@ -6,7 +6,7 @@
                              locality="{!! $post->locality !!}"
                              state="{!! $post->state !!}"
                              price="{!! $post->price !!}"
-                             imgSrc="{!! asset($post->img_path) !!}"
+                             imgSrc="{!! asset($post->images()->first()->img_path) !!}"
                              svg="{!! Str::slug($post->category->name, '_')!!}"
                              src="{!! route('public.posts.show', $post->id) !!}"
                              type="{!! $post->type !!}"

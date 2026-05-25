@@ -15,32 +15,35 @@
                     <legend class="sro formContainer__form__fieldset__legend">
                         Champs primaires
                     </legend>
-                    <x-user.form.fields.input wire:model="form.name" name_parent="formContainer__form__fieldset"
+                    <x-user.form.fields.input wire:model.live="form.name" name_parent="formContainer__form__fieldset"
                                               field_name="post_name" label="Titre"
                                               placeholder="Ex : Fauteuil Roulant" required="required"/>
 
-                    <x-user.form.fields.select wire:model="form.category" name_parent="formContainer__form__fieldset" field_name="post_category" required="required" label="Categorie">
+                    <x-user.form.fields.select wire:model.live="form.category_id" name_parent="formContainer__form__fieldset" field_name="post_category" required="required" label="Categorie">
+                        <x-user.form.fields.option value="none" option_name="Sélectionnez la catégorie" name_parent="formContainer__form__fieldset" selected="selected"/>
                         @foreach($categories as $category)
-                            <x-user.form.fields.option value="{!! $category->name !!}" option_name="{!! $category->name !!}" name_parent="formContainer__form__fieldset"/>
+                            <x-user.form.fields.option value="{!! $category->id !!}" option_name="{!! $category->name !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
                     </x-user.form.fields.select>
 
-                    <x-user.form.fields.select wire:model="form.type" name_parent="formContainer__form__fieldset" field_name="post_type" required="required" label="Type d'annonce">
+                    <x-user.form.fields.select wire:model.live="form.type" name_parent="formContainer__form__fieldset" field_name="post_type" required="required" label="Type d'annonce">
                         <x-user.form.fields.option value="none" option_name="Sélectionnez le type" name_parent="formContainer__form__fieldset"/>
                         @foreach($this->getType() as $type)
                             <x-user.form.fields.option value="{!! $type->value !!}" option_name="{!! $type->value !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
                     </x-user.form.fields.select>
 
-                    <x-user.form.fields.input wire:model="form.price" name_parent="formContainer__form__fieldset"
-                                              field_name="post_price" label="Prix du matériel"
-                                              placeholder="Ex : 390€" required="required"/>
+                    <x-user.form.fields.input wire:model.live="form.price" name_parent="formContainer__form__fieldset"
+                                              field_name="post_price"
+                                              label="{!! $form->type == \App\Enums\PostType::Rental->value ? 'Prix de location (par mois)' : 'Prix du matériel' !!}"
+                                              placeholder="Ex : 390€" required="required"
+                                              disabled="{!! in_array($form->type, [\App\Enums\PostType::Loan->value, \App\Enums\PostType::Donation->value]) !!}"/>
 
-                    <x-user.form.fields.input wire:model="form.marque" name_parent="formContainer__form__fieldset"
+                    <x-user.form.fields.input wire:model.live="form.marque" name_parent="formContainer__form__fieldset"
                                               field_name="post_marque" label="Marque"
                                               placeholder="Ex : Invacare" required="required"/>
 
-                    <x-user.form.fields.select wire:model="form.state" name_parent="formContainer__form__fieldset" field_name="post_state" required="required" label="État du produit">
+                    <x-user.form.fields.select wire:model.live="form.state" name_parent="formContainer__form__fieldset" field_name="post_state" required="required" label="État du produit">
                         <x-user.form.fields.option value="none" option_name="Sélectionnez l’état" name_parent="formContainer__form__fieldset"/>
                         @foreach($this->getState() as $state)
                             <x-user.form.fields.option value="{!! $state->value !!}" option_name="{!! $state->value !!}" name_parent="formContainer__form__fieldset"/>
@@ -53,7 +56,7 @@
                         <legend class="sro formContainer__form__secondary__fieldset__legend">
                             Champs secondaires
                         </legend>
-                        <x-user.form.fields.textarea wire:model="form.description" name_parent="formContainer__form__secondary__fieldset" field_name="post_description" placeholder="Décrivez l’état de votre matériel, son utilisation ou toutes autres informations utiles" label="Description" required="required"/>
+                        <x-user.form.fields.textarea wire:model.live="form.description" name_parent="formContainer__form__secondary__fieldset" field_name="post_description" placeholder="Décrivez l’état de votre matériel, son utilisation ou toutes autres informations utiles" label="Description" required="required"/>
 
                         <span class="formContainer__form__secondary__fieldset__title">
                                 Photos
@@ -61,19 +64,65 @@
                                     *
                                 </span>
                             </span>
-                        <div class="formContainer__form__secondary__fieldset__image">
-                            <input wire:model="form.img_path" class="formContainer__form__secondary__fieldset__image__input" type="file" id="photos" hidden multiple>
+                        <div class="@if($existingImages == [] && $form->newImages == []) formContainer__form__secondary__fieldset__image @else formContainer__form__secondary__fieldset__image formContainer__form__secondary__fieldset__image--complet @endif">
+                            <input wire:model.live="form.newImages" class="formContainer__form__secondary__fieldset__image__input" type="file" id="photos" hidden multiple>
 
-                            <label for="photos" class="button button--login formContainer__form__secondary__fieldset__image__button">
+                            @if($existingImages == [] && $form->newImages == [])
+                                <label for="photos" class="button button--login formContainer__form__secondary__fieldset__image__button">
+                                    <svg class="formContainer__form__secondary__fieldset__image__button__icon">
+                                        <use xlink:href="{{ asset('assets/img/svg/sprite.svg#add') }}"></use>
+                                    </svg>
+                                    Ajouter une photo
+                                </label>
+
+                                <p class="formContainer__form__secondary__fieldset__image__text">
+                                    Ajoutez jusqu'à 5 photos de votre matériel
+                                </p>
+                            @else
+
+                            @foreach($existingImages as $image)
+                                <div class="image-card">
+                                    <div class="image-card__imageContainer">
+                                        @if(Str::startsWith($image['img_path'], 'assets'))
+                                            <img class="image-card__imageContainer__image" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        @else
+                                            <img class="image-card__imageContainer__image" src="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        @endif
+                                    </div>
+
+                                    <div class="image-card__buttonContainer">
+                                        <button class="button button--red image-card__buttonContainer__button" type="button" wire:click="removeImage({{ $image['id'] }})">
+                                            <svg class="image-card__buttonContainer__button__icon">
+                                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#close') }}"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endforeach
+
+
+                            @foreach($form->newImages as $index => $image)
+                                <div class="image-card">
+                                    <div class="image-card__imageContainer">
+                                        <img class="image-card__imageContainer__image" src="{{ $image->temporaryUrl() }}" alt="Image de l'article">
+                                    </div>
+
+                                    <div class="image-card__buttonContainer">
+                                        <button class="button button--red image-card__buttonContainer__button" type="button" wire:click="removeNewImage({{ $index }})">
+                                            <svg class="image-card__buttonContainer__button__icon">
+                                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#close') }}"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <label for="photos" class="button button--icon formContainer__form__secondary__fieldset__image__button">
                                 <svg class="formContainer__form__secondary__fieldset__image__button__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#add') }}"></use>
                                 </svg>
-                                Ajouter une photo
                             </label>
-
-                            <p class="formContainer__form__secondary__fieldset__image__text">
-                                Ajoutez jusqu'à 5 photos de votre matériel
-                            </p>
+                            @endif
                         </div>
                     </fieldset>
 

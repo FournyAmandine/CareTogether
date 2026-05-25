@@ -13,14 +13,13 @@ return new class extends Migration {
             $table->string('name');
             $table->string('locality');
             $table->string('state');
-            $table->integer('price');
+            $table->integer('price')->default(0);
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->string('img_path')->nullable();
             $table->string('marque')->nullable();
             $table->string('type');
             $table->tinyText('description');
             $table->boolean('sold')->default(0);
-            $table->integer('views');
+            $table->integer('views')->default(0);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

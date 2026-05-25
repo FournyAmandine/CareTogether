@@ -27,7 +27,6 @@ class PostFactory extends Factory
             'state' => $this->faker->randomElement($state),
             'price' => $this->faker->randomElement($price),
             'category_id' => $this->faker->numberBetween(1, 6),
-            'img_path' => $this->faker->randomElement($img_path),
             'marque' => 'Rolstoel',
             'type' => $this->faker->randomElement($type),
             'description' => $this->faker->text(200),

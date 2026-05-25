@@ -31,6 +31,8 @@ new class extends Component
 
     public ?string $endedDate = null;
 
+    public array $existingImages = [];
+
     public function render()
     {
         return view('pages.user.posts.⚡show.show', [
@@ -42,6 +44,7 @@ new class extends Component
     {
         $this->post = Post::findOrFail($post);
         $this->form->setPost($this->post);
+        $this->existingImages = $this->post->images->toArray();
     }
 
     #[On ('toggleModal')]
