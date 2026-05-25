@@ -242,6 +242,9 @@ button[aria-disabled=true] {
   border: none;
   border-radius: 10px;
 }
+.button--login svg {
+  fill: #FFFFFF;
+}
 .button--footer {
   color: #FFFFFF;
   padding: 0;
@@ -425,6 +428,177 @@ button[aria-disabled=true] {
   text-align: center;
   max-width: none;
   width: 100%;
+}
+.heading__text {
+  font-size: 1.25em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.postsEdit .heading .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.postsEdit .heading .breadcrumb {
+  bottom: 150px;
+  left: 0;
+}
+.postsEdit .heading__title {
+  max-width: 580px;
+}
+
+.formContainer {
+  padding-bottom: 80px;
+  padding-top: 50px;
+  overflow: hidden;
+}
+.formContainer__decoContainer {
+  position: absolute;
+  width: 870px;
+  height: 1055px;
+  bottom: -250px;
+  right: 0;
+  z-index: -1;
+}
+.formContainer__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+}
+.formContainer__title {
+  max-width: none;
+  margin-bottom: 30px;
+}
+.formContainer__form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 25px;
+  z-index: 3;
+  position: relative;
+}
+.formContainer__form__secondary__fieldset {
+  border-radius: 20px;
+  border: 2px solid #1E3A8A;
+  box-shadow: rgba(30, 58, 138, 0.25) 0 0 30px;
+  padding: 45px 25px;
+  background: #F4F7FF;
+}
+.formContainer__form__secondary__fieldset__formRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.formContainer__form__secondary__fieldset__formRow__label {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.formContainer__form__secondary__fieldset__formRow__label .required {
+  color: #C51010;
+}
+.formContainer__form__secondary__fieldset__formRow__textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: solid #1E3A8A 2px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background: rgba(30, 58, 138, 0.05);
+}
+.formContainer__form__secondary__fieldset__title {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  display: block;
+}
+.formContainer__form__secondary__fieldset__title .required {
+  color: #C51010;
+}
+.formContainer__form__secondary__fieldset__image {
+  background: rgba(30, 58, 138, 0.2);
+  border-radius: 10px;
+  border: solid #1E3A8A 2px;
+  padding: 105px 25px;
+}
+.formContainer__form__secondary__fieldset__image__button {
+  max-width: max-content;
+  margin-bottom: 20px;
+}
+.formContainer__form__secondary__fieldset__image__text {
+  color: #1E3A8A;
+}
+.formContainer__form__secondary__fieldset__image--complet {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px 25px;
+}
+.formContainer__form__secondary__fieldset__image--complet .formContainer__form__secondary__fieldset__image__button {
+  width: 25px;
+  height: 25px;
+  padding: 15px;
+}
+.formContainer__form__secondary__fieldset__buttonContainer {
+  margin-top: 25px;
+}
+.formContainer__form__secondary__fieldset__buttonContainer__button {
+  padding: 15px 25px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.formContainer__form__fieldset {
+  border-radius: 20px;
+  border: 2px solid #1E3A8A;
+  box-shadow: rgba(30, 58, 138, 0.25) 0 0 30px;
+  padding: 45px 25px;
+}
+.formContainer__form__fieldset__formRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.formContainer__form__fieldset__formRow__label {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.formContainer__form__fieldset__formRow__label .required {
+  color: #C51010;
+}
+.formContainer__form__fieldset__formRow__label:has(+ input:disabled) {
+  color: #595959;
+}
+.formContainer__form__fieldset__formRow__input, .formContainer__form__fieldset__formRow__textarea, .formContainer__form__fieldset__formRow__select {
+  padding: 15px;
+  border-radius: 10px;
+  border: solid #1E3A8A 2px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background: rgba(30, 58, 138, 0.05);
+}
+.formContainer__form__fieldset__formRow__input:disabled, .formContainer__form__fieldset__formRow__textarea:disabled, .formContainer__form__fieldset__formRow__select:disabled {
+  background: rgba(89, 89, 89, 0.2);
+  border: solid #595959 2px;
+}
+.formContainer__form__fieldset__formRow__select {
+  background: rgba(191, 207, 255, 0.35);
+  color: #1E3A8A;
+}
+.formContainer__form__fieldset__buttonContainer {
+  margin-top: 25px;
+}
+.formContainer__form__fieldset__buttonContainer__button {
+  padding: 15px 25px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /****************************
@@ -685,6 +859,9 @@ button[aria-disabled=true] {
   position: relative;
   padding: 15px;
 }
+.card-post__link, .card-post__container {
+  height: 100%;
+}
 .card-post__link__iconContainer, .card-post__container__iconContainer {
   top: 25px;
   right: 25px;
@@ -706,12 +883,14 @@ button[aria-disabled=true] {
 .card-post__link__imgContainer, .card-post__container__imgContainer {
   overflow: hidden;
   border-radius: 15px;
-  max-width: 350px;
+  width: 350px;
+  height: 200px;
 }
 .card-post__link__imgContainer__img, .card-post__container__imgContainer__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 .card-post__link__contentContainer, .card-post__container__contentContainer {
   margin-top: 10px;
@@ -725,7 +904,7 @@ button[aria-disabled=true] {
 }
 .card-post__link__contentContainer__info, .card-post__container__contentContainer__info {
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -745,6 +924,7 @@ button[aria-disabled=true] {
   color: #1A41AE;
   font-weight: bold;
   font-family: "DM Sans", sans-serif;
+  margin-top: 20px;
 }
 .card-post__link__contentContainer__navigation, .card-post__container__contentContainer__navigation {
   padding-top: 15px;
@@ -782,7 +962,8 @@ button[aria-disabled=true] {
   height: 30px;
 }
 .card-post--rental .card-post__container__imgContainer {
-  max-width: 270px;
+  width: 265px;
+  height: 155px;
 }
 .card-post--rental .card-post__container__contentContainer__price {
   padding-top: 20px;
@@ -796,6 +977,10 @@ button[aria-disabled=true] {
 .card-post--registered .card-post__link__iconContainer__icon {
   width: 30px;
   height: 30px;
+}
+.card-post--registered .card-post__link__imgContainer {
+  width: 265px;
+  height: 155px;
 }
 .card-post--registered .card-post__link__contentContainer__price {
   margin-bottom: 25px;
@@ -814,8 +999,20 @@ button[aria-disabled=true] {
   width: 30px;
   height: 30px;
 }
+.card-post--post .card-post__link__imgContainer {
+  width: 265px;
+  height: 155px;
+}
+.card-post--post .card-post__link__contentContainer {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+}
 .card-post--post .card-post__link__contentContainer__navigation {
   padding-top: 25px;
+  margin-top: auto;
+  margin-bottom: 0;
+  height: 100%;
 }
 .card-post--post .card-post__link__contentContainer__registered {
   position: absolute;
@@ -978,6 +1175,34 @@ button[aria-disabled=true] {
 }
 .modal__container__form__buttonContainer__button {
   padding: 15px 25px;
+}
+
+.image-card {
+  position: relative;
+}
+.image-card__imageContainer {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.image-card__imageContainer__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-card__buttonContainer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.image-card__buttonContainer__button {
+  border-radius: 50%;
+  padding: 15px;
+}
+.image-card__buttonContainer__button svg {
+  width: 15px;
+  height: 15px;
 }
 
 .textPage .text__decoContainer {
@@ -1645,21 +1870,24 @@ button[aria-disabled=true] {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 25px;
+  align-items: flex-start;
 }
-.singlePostPage .detail__main__imgContainer {
-  overflow: hidden;
-  border-radius: 30px;
-  border: 3px solid #1A41AE;
+.singlePostPage .detail__main__listing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 15px;
   position: relative;
 }
-.singlePostPage .detail__main__imgContainer__iconContainer {
+.singlePostPage .detail__main__listing__iconContainer {
   border: none;
   background: none;
   position: absolute;
   top: 15px;
   right: 15px;
+  z-index: 10;
 }
-.singlePostPage .detail__main__imgContainer__iconContainer__icon {
+.singlePostPage .detail__main__listing__iconContainer__icon {
   background: #FFFFFF;
   padding: 10px;
   width: 40px;
@@ -1667,7 +1895,17 @@ button[aria-disabled=true] {
   border-radius: 20px;
   fill: #1E3A8A;
 }
-.singlePostPage .detail__main__imgContainer__img {
+.singlePostPage .detail__main__listing__imgContainer {
+  overflow: hidden;
+  border-radius: 30px;
+  border: 3px solid #1A41AE;
+  position: relative;
+  aspect-ratio: 1.2;
+}
+.singlePostPage .detail__main__listing__imgContainer:first-of-type {
+  grid-column: span 2;
+}
+.singlePostPage .detail__main__listing__imgContainer__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1679,6 +1917,7 @@ button[aria-disabled=true] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+  max-height: fit-content !important;
 }
 .singlePostPage .detail__main__contentContainer__infos__title {
   color: #1E3A8A;
@@ -1775,7 +2014,8 @@ button[aria-disabled=true] {
   top: -640px;
 }
 .singlePostPage--user .heading .breadcrumb {
-  bottom: 125px;
+  bottom: unset;
+  top: -25px;
 }
 .singlePostPage--user .heading__title {
   max-width: 500px;

@@ -12,7 +12,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'locality', 'state', 'price', 'category', 'img_path', 'description', 'marque', 'type', 'views',
+    protected $fillable = ['name', 'locality', 'state', 'price', 'category_id', 'img_path', 'description', 'marque', 'type', 'views',
         'sold'
     ];
 
@@ -26,9 +26,24 @@ class Post extends Model
         return $this->hasMany(Rental::class);
     }
 
+    public function sales(): HasMany
+    {
+        return $this->hasMany(Sale::class);
+    }
+
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id');
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(PostImage::class);
     }
 
     public function registeredByUser(): BelongsToMany

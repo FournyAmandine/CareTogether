@@ -11,9 +11,11 @@
                 <div class="sales__sliderContainer__slider">
                 @foreach($sales as $sale)
                     <x-user.utils.sale-card title="{{ $sale->post->name }}"
-                                              svg="{!! Str::slug($sale->post->category, '_')!!}"
+                                              svg="{!! Str::slug($sale->post->category->name, '_')!!}"
                                               price="{{ $sale->post->price }}"
-                                              imgSrc="{{ asset($sale->post->img_path) }}"/>
+                                              imgSrc="{{Str::startsWith($sale->post->images()->first()->img_path, 'assets')
+                                                    ? asset($sale->post->images()->first()->img_path)
+                                                    : asset('storage/photos/posts/originals/' . $sale->post->images()->first()->img_path)}}"/>
                 @endforeach
             </div>
             <x-utils.button name_parent="sales__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-next"/>

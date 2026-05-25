@@ -13,6 +13,7 @@
 @import "utils/deco";
 @import "utils/breadcrumb";
 @import "utils/user/heading";
+@import "utils/user/form";
 
 //PARTIALS
 @import "partials/public/header";
@@ -22,6 +23,7 @@
 @import "partials/listing-posts";
 @import "partials/user/header";
 @import "partials/user/modal";
+@import "partials/user/card-image";
 
 //PAGES
 @import "pages/public/pageText";

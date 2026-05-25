@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Enums\UserRole;
+use App\Models\Category;
 use App\Models\Message;
 use App\Models\Post;
+use App\Models\PostImage;
 use App\Models\Rental;
 use App\Models\Sale;
 use App\Models\User;
@@ -40,6 +42,42 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
 
+        Category::factory()->create(
+            [
+                'name' => 'Mobilité'
+            ]
+        );
+
+        Category::factory()->create(
+            [
+                'name' => 'Lit médicalisé'
+            ]
+        );
+
+        Category::factory()->create(
+            [
+                'name' => 'Soins et surveillance'
+            ]
+        );
+
+        Category::factory()->create(
+            [
+                'name' => 'Salle de bain adaptée'
+            ]
+        );
+
+        Category::factory()->create(
+            [
+                'name' => 'Confort et prévention'
+            ]
+        );
+
+        Category::factory()->create(
+            [
+                'name' => 'Autre matériel médical'
+            ]
+        );
+
         Post::factory(80)->create();
 
         Message::factory(15)->create();
@@ -47,5 +85,7 @@ class DatabaseSeeder extends Seeder
         Rental::factory(10)->create();
 
         Sale::factory(10)->create();
+
+        PostImage::factory(100)->create();
     }
 }

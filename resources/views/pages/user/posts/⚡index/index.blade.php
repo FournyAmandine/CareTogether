@@ -13,11 +13,14 @@
                 <div class="posts__sliderContainer__slider posts__sliderContainer__slider--sale">
                     @foreach($sales as $sale)
                         <x-user.utils.post-card title="{{ $sale->name }}" type="{{ $sale->type }}"
-                                                svg="{!! Str::slug($sale->category, '_')!!}"
+                                                svg="{!! Str::slug($sale->category->name, '_')!!}"
                                                 price="{{ $sale->price }}" locality="{{ $sale->locality }}"
                                                 state="{{ $sale->state }}" modifier="post"
-                                                imgSrc="{{ asset($sale->img_path) }}" src="{!! route('user.posts.show', $sale->id) !!}"
-                                                views="{{ $sale->views }}" registered="{!! $sale->registeredByUser()->count() !!}"/>
+                                                imgSrc="{{Str::startsWith($sale->images()->first()->img_path, 'assets')
+                                                    ? asset($sale->images()->first()->img_path)
+                                                    : asset('storage/photos/posts/originals/' . $sale->images()->first()->img_path)}}"
+                                                src="{!! route('user.posts.show', $sale->id) !!}"
+                                                views="{{ $sale->views }}" registered="{!! $sale->registeredByUser->count() !!}"/>
                     @endforeach
                 </div>
                 <x-utils.button name_parent="posts__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-sale-next"/>
@@ -39,11 +42,14 @@
                 <div class="posts__sliderContainer__slider posts__sliderContainer__slider--rental">
                 @foreach($rentals as $rental)
                     <x-user.utils.post-card title="{{ $rental->name }}" type="{{ $rental->type }}"
-                                            svg="{!! Str::slug($rental->category, '_')!!}"
+                                            svg="{!! Str::slug($rental->category->name, '_')!!}"
                                             price="{{ $rental->price }}" locality="{{ $rental->locality }}"
                                             state="{{ $rental->state }}" modifier="post"
-                                            imgSrc="{{ asset($rental->img_path) }}" src="{!! route('user.posts.show', $rental->id) !!}"
-                                            views="{{ $rental->views }}" registered="{{ $rental->registeredByUser()->count() }}"/>
+                                            imgSrc="{{Str::startsWith($rental->images()->first()->img_path, 'assets')
+                                                    ? asset($rental->images()->first()->img_path)
+                                                    : asset('storage/photos/posts/originals/' . $rental->images()->first()->img_path)}}"
+                                            src="{!! route('user.posts.show', $rental->id) !!}"
+                                            views="{{ $rental->views }}" registered="{{ $rental->registeredByUser->count() }}"/>
                 @endforeach
                 </div>
                 <x-utils.button name_parent="posts__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-rental-next"/>

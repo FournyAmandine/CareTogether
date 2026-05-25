@@ -30,7 +30,7 @@
                 <x-user.utils.stats-card number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
                 <x-user.utils.stats-card number="{!! $messages_unread !!}" content="messages non lus" svg="stats-messages"/>
             </div>
-            <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="#" title="Aller vers la page d'ajout d'une annonce" />
+            <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="{!! route('user.posts.create') !!}" title="Aller vers la page d'ajout d'une annonce" />
         </div>
     </section>
 
@@ -45,12 +45,12 @@
                 </h2>
                 <div class="recap__posts__listing">
                     @foreach($posts as $post)
-                        <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset($post->img_path) !!}"
+                        <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset($post->images()->first()->img_path) !!}"
                                             name="{!! $post->name !!}" date="{!! \Carbon\Carbon::parse($post->created_at)->day !!}"
                                             price="{!! $post->price !!}" :post="$post"/>
                     @endforeach
                 </div>
-                <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="#" title="Aller vers la page de vos annonces" />
+                <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="{!! route('user.posts.index') !!}" title="Aller vers la page de vos annonces" />
             </section>
             <section class="recap__messages">
                 <h2 class="maintitle maintitle--blue maintitle--small recap__messages__title">

@@ -25,7 +25,7 @@ Breadcrumbs::for('public.aboutpage', function (BreadcrumbTrail $trail) {
 
 Breadcrumbs::for('public.posts.show', function (BreadcrumbTrail $trail, Post $post) {
     $trail->parent('public.posts.index');
-    $trail->push($post->category);
+    $trail->push($post->category->name);
     $trail->push($post->name, route('public.posts.show', $post->id));
 });
 
@@ -57,5 +57,19 @@ Breadcrumbs::for('user.posts.show', function (BreadcrumbTrail $trail, Post $post
     $trail->parent('user.dashboard');
     $trail->push('Vos annonces');
     $trail->push($post->name, route('user.posts.show', $post->id));
+});
+
+Breadcrumbs::for('user.posts.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
+    $trail->push('Ajouter une annonce', route('user.posts.create'));
+});
+
+Breadcrumbs::for('user.posts.edit', function (BreadcrumbTrail $trail, Post $post) {
+    $trail->parent('user.dashboard');
+    $trail->push('Modifier une annonce', route('user.posts.edit', $post->id));
+});
+
+Breadcrumbs::for('default-livewire.update', function ($trail) {
+    $trail->push('Ajouter une annonce');
 });
 

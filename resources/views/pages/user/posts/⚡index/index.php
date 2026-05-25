@@ -10,9 +10,25 @@ new class extends Component
 
     public function render()
     {
+        $sales = auth()->user()
+            ->posts()
+            ->with('registeredByUser')
+            ->whereIn('posts.type', [PostType::Sale, PostType::Donation])
+            ->get();
+
+        $sales->load(['sales', 'registeredByUser', 'category']);
+
+        $rentals = auth()->user()
+            ->posts()
+            ->with('registeredByUser')
+            ->whereIn('posts.type', [PostType::Rental, PostType::Loan])
+            ->get();
+
+        $rentals->load(['rentals', 'registeredByUser', 'category']);
+
         return view('pages.user.posts.⚡index.index', [
-            'sales' => auth()->user()->posts()->whereIn('posts.type', [PostType::Sale, PostType::Donation])->get(),
-            'rentals' => auth()->user()->posts()->whereIn('posts.type', [PostType::Rental, PostType::Loan])->get()
+            'sales' => $sales,
+            'rentals' => $rentals
         ])->layoutData(['body_class'=>'userPosts']);
     }
 };
