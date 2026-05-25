@@ -6,6 +6,7 @@ use App\Enums\UserRole;
 use App\Models\Category;
 use App\Models\Message;
 use App\Models\Post;
+use App\Models\PostImage;
 use App\Models\Rental;
 use App\Models\Sale;
 use App\Models\User;
@@ -84,5 +85,7 @@ class DatabaseSeeder extends Seeder
         Rental::factory(10)->create();
 
         Sale::factory(10)->create();
+
+        PostImage::factory(100)->create();
     }
 }
