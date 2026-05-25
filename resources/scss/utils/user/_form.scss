@@ -90,12 +90,26 @@
                     }
 
                     &__button {
-                        max-width: 230px;
+                        max-width: max-content;
                         margin-bottom: 20px;
                     }
 
                     &__text {
                         color: $primary;
+                    }
+
+                    &--complet {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        padding: 30px 25px;
+
+                        .formContainer__form__secondary__fieldset__image__button {
+                            width: 25px;
+                            height: 25px;
+                            padding: 15px;
+                        }
                     }
                 }
 
@@ -133,6 +147,10 @@
                     .required {
                         color: $required;
                     }
+
+                    &:has(+input:disabled) {
+                        color: $text;
+                    }
                 }
 
                 &__input, &__textarea, &__select {
@@ -142,6 +160,11 @@
                     font-family: $titleFont;
                     font-size: $normal;
                     background: rgba($primary, 0.05);
+
+                    &:disabled {
+                        background: rgba($text, 0.2);
+                        border: solid $text 2px;
+                    }
                 }
 
                 &__select {
