@@ -66,6 +66,15 @@
         }
     }
 
+    &--input {
+        background: none;
+        border: none;
+
+        svg {
+            fill: $primary;
+        }
+    }
+
     &--arrow {
         padding: 10px 10px 10px 12px;
         position: absolute;
