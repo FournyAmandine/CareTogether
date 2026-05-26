@@ -29,7 +29,11 @@ class DatabaseSeeder extends Seeder
             'first_name' => 'Anne-Catherine',
             'email' => 'anne@bourguignon.com',
             'role' => UserRole::User,
-            'password' => 'user'
+            'password' => 'user',
+            'tel'=> '0473 79 19 38',
+            'address' => 'Rue du Spite',
+            'postal'=> 6600,
+            'locality' => 'Flamierge',
         ]);
 
         User::factory()->create([
@@ -37,7 +41,11 @@ class DatabaseSeeder extends Seeder
             'first_name' => 'Amandine',
             'email' => 'amandine@fourny.com',
             'role' => UserRole::Administrator,
-            'password' => 'admin'
+            'password' => 'admin',
+            'tel'=> '0473 79 19 38',
+            'address' => 'Rue du Spite',
+            'postal'=> 6600,
+            'locality' => 'Bertogne',
         ]);
 
         User::factory(10)->create();

@@ -21,20 +21,7 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
-    public function posts2(): BelongsToMany
-    {
-        return $this->belongsToMany(Post::class, 'post_user', 'user_id', 'post_id');
-    }
-
-    public function posts3(): BelongsToMany
-    {
-        return $this->belongsToMany(Post::class, 'post_user', 'user_id', 'post_id');
-    }
-
-    public function registeredPosts(): BelongsToMany
-    {
-        return $this->belongsToMany(RegisteredPost::class, 'registered_post_user', 'user_id', 'registered_post_id');
-    }
+    protected $fillable = ['last_name', 'first_name', 'tel', 'address', 'locality', 'postal', 'profil_picture', 'email', 'password'];
 
     /**
      * Get the attributes that should be cast.
