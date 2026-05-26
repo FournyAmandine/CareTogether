@@ -30,7 +30,7 @@ new class extends Component
             'posts_sold' => auth()->user()->posts()->where('posts.sold', 1)->count(),
             'rentals' => auth()->user()->rentals()->count(),
             'messages_unread' => auth()->user()->receivedMessages()->where('messages.read', 0)->count(),
-            'posts' => auth()->user()->posts()->where('posts.sold', 0)->paginate(4),
+            'posts' => auth()->user()->posts()->with('images')->where('posts.sold', 0)->paginate(4),
             'messages' => auth()->user()->receivedMessages()->with('receiver')->paginate(5),
         ])->layoutData(['body_class'=>'dashboardPage']);
     }
