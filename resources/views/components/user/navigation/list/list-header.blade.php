@@ -8,7 +8,7 @@
             'svg'=> 'dashboard'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.profil'),
             'label'=> 'Votre profil',
             'svg'=> 'user'
         ],

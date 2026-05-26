@@ -210,6 +210,13 @@ button[aria-disabled=true] {
   height: 40px;
   width: 40px;
 }
+.button--input {
+  background: none;
+  border: none;
+}
+.button--input svg {
+  fill: #1E3A8A;
+}
 .button--arrow {
   padding: 10px 10px 10px 12px;
   position: absolute;
@@ -2616,6 +2623,125 @@ button[aria-disabled=true] {
 }
 .userPosts .postsPage .posts__sliderContainer__slider.slick-initialized.slick-slider .slick-list.draggable .slick-track .slick-slide div:not([class^=card]) .card-post {
   width: 90% !important;
+}
+
+.profilPage .heading .breadcrumb {
+  bottom: unset;
+  top: -25px;
+}
+.profilPage .profil {
+  padding-top: 50px;
+}
+.profilPage .profil__decoContainer {
+  width: 775px;
+  height: 920px;
+  position: absolute;
+  bottom: -300px;
+  right: 0;
+}
+.profilPage .profil__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profilPage .profil__form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  box-shadow: rgba(30, 58, 138, 0.3) 0 0 30px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.profilPage .profil__form__fieldset {
+  background: rgba(192, 206, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+.profilPage .profil__form__fieldset__image {
+  padding: 0 40px 30px;
+  border-bottom: 1px solid #1E3A8A;
+  margin-bottom: 40px;
+  position: relative;
+}
+.profilPage .profil__form__fieldset__image__imageContainer {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+}
+.profilPage .profil__form__fieldset__image__imageContainer__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.profilPage .profil__form__fieldset__image__button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.profilPage .profil__form__fieldset__image__button svg {
+  width: 15px;
+  height: 15px;
+}
+.profilPage .profil__form__fieldset__password {
+  width: 100%;
+  position: relative;
+}
+.profilPage .profil__form__fieldset__password__button {
+  position: absolute;
+  top: 28px;
+  right: -10px;
+}
+.profilPage .profil__form__fieldset__formRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.profilPage .profil__form__fieldset__formRow__label {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #1E3A8A;
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 10px;
+}
+.profilPage .profil__form__fieldset__formRow__label .required {
+  color: #C51010;
+}
+.profilPage .profil__form__fieldset__formRow__input {
+  border-radius: 10px;
+  padding: 10px;
+  color: #595959;
+  border: 1px solid #BFCFFF;
+  background: #E3EBFF;
+}
+.profilPage .profil__form__fieldset--secondary {
+  padding: 40px 110px 40px 90px;
+  background: #F4F7FF;
+}
+.profilPage .profil__form__fieldset--secondary .profil__form__fieldset__locality {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #1E3A8A;
+  margin-bottom: 40px;
+}
+.profilPage .profil__form__fieldset--secondary .profil__form__fieldset__formRow__input {
+  padding: 15px;
+}
+.profilPage .profil__form__fieldset__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+.profilPage .profil__form__fieldset__buttons__buttonContainer:first-of-type .profil__form__fieldset__buttons__buttonContainer__button {
+  padding: 13px 25px;
+}
+.profilPage .profil__form__fieldset__buttons__buttonContainer__button {
+  padding: 15px 25px;
 }
 
 /*# sourceMappingURL=styles.css.map */

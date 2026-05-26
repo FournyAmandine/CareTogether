@@ -8,7 +8,7 @@
             <img class="formContainer__decoContainer" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleue ronde">
         </div>
         <div class="wrapper wrapper--small">
-            <form class="formContainer__form" wire:submit="save()" enctype="multipart/form-data" method="post">
+            <form class="formContainer__form" wire:submit.prevent="save()" enctype="multipart/form-data" method="post">
                 @csrf
 
                 <fieldset class="formContainer__form__fieldset">

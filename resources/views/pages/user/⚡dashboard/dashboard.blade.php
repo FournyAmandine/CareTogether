@@ -45,7 +45,14 @@
                 </h2>
                 <div class="recap__posts__listing">
                     @foreach($posts as $post)
-                        <x-utils.posts-card name_parent="recap__posts__listing" src="{!! asset($post->images()->first()->img_path) !!}"
+                        @php
+                            $image = $post->images->first();
+                        @endphp
+                        <x-utils.posts-card name_parent="recap__posts__listing"
+                                            src="{!! $image
+                                                ? asset($image->img_path)
+                                                : asset('assets/img/post-image.jpg')
+                                            !!}"
                                             name="{!! $post->name !!}" date="{!! \Carbon\Carbon::parse($post->created_at)->day !!}"
                                             price="{!! $post->price !!}" :post="$post"/>
                     @endforeach
