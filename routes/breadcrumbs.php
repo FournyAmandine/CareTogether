@@ -74,7 +74,8 @@ Breadcrumbs::for('user.profil', function (BreadcrumbTrail $trail) {
     $trail->push('Profil', route('user.profil'));
 });
 
-Breadcrumbs::for('default-livewire.update', function ($trail) {
+Breadcrumbs::for('default-livewire.update', function (BreadcrumbTrail $trail) {
+    $trail->parent('user.dashboard');
     $trail->push('Ajouter une annonce');
 });
 

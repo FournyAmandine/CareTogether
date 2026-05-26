@@ -14,6 +14,7 @@ new class extends Component
             ->posts()
             ->with('registeredByUser')
             ->whereIn('posts.type', [PostType::Sale, PostType::Donation])
+            ->orderByDesc('created_at')
             ->get();
 
         $sales->load(['sales', 'registeredByUser', 'category']);
@@ -22,6 +23,7 @@ new class extends Component
             ->posts()
             ->with('registeredByUser')
             ->whereIn('posts.type', [PostType::Rental, PostType::Loan])
+            ->orderByDesc('created_at')
             ->get();
 
         $rentals->load(['rentals', 'registeredByUser', 'category']);

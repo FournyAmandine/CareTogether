@@ -40,7 +40,7 @@
                             <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
                             <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
                             <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté il y a {{ \Carbon\Carbon::parse($post->created_at)->day }} jours"/>
-                            <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par Sarah Deseurs"/>
+                            <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
                             <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
                             <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
                         </ul>
@@ -96,11 +96,14 @@
             </h2>
             <div class="posts__listing">
                 @foreach($posts as $post)
+                    @php
+                        $image = $post->images()->first();
+                    @endphp
                     <x-utils.card title="{!! $post->name !!}"
                                   locality="{!! $post->locality !!}"
                                   state="{!! $post->state !!}"
                                   price="{!! $post->price !!}"
-                                  imgSrc="{!! asset($post->images()->first()->img_path) !!}"
+                                  imgSrc="{!! asset($image ? $image->img_path : 'assets/img/post-image.jpg') !!}"
                                   svg="{!! Str::slug($post->category->name, '_')!!}"
                                   src="{!! route('user.posts.show', $post->id) !!}"
                                   type="{!! $post->type !!}" modifier="last"

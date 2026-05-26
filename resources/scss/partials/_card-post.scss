@@ -223,6 +223,7 @@
     }
 
     &--post {
+        position: relative;
 
         .card-post__link {
 
@@ -245,6 +246,22 @@
                 min-height: 260px;
                 display: flex;
                 flex-direction: column;
+
+                &__sold {
+                    background: $sold;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 10px 15px;
+                    border-radius: 15px 0 15px 0;
+
+                    &__text {
+                        color: $white;
+                        font-size: $large;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                }
 
                 &__navigation {
                     padding-top: 25px;

@@ -111,36 +111,36 @@
                     <ul class="values__contentContainer__list">
                         <x-utils.list-item svg="heart" name_parent="values__contentContainer__list">
                             <x-slot:item>
-                                <span class="values__contentContainer__list__item__textContainer__title">
+                                <h3 class="values__contentContainer__list__item__textContainer__title">
                                     Solidarité
-                                </span>
+                                </h3>
                                 Favoriser l’entraide entre particuliers et soutenir les personnes en situation de besoin.
                             </x-slot:item>
                         </x-utils.list-item>
 
                         <x-utils.list-item svg="responsabilite" name_parent="values__contentContainer__list">
                             <x-slot:item>
-                                <span class="values__contentContainer__list__item__textContainer__title">
+                                <h3 class="values__contentContainer__list__item__textContainer__title">
                                     Responsabilité
-                                </span>
+                                </h3>
                                 Encourager la seconde vie des équipements et limiter le gaspillage.
                             </x-slot:item>
                         </x-utils.list-item>
 
                         <x-utils.list-item svg="accessibilite" name_parent="values__contentContainer__list">
                             <x-slot:item>
-                                <span class="values__contentContainer__list__item__textContainer__title">
+                                <h3 class="values__contentContainer__list__item__textContainer__title">
                                     Accessibilité
-                                </span>
+                                </h3>
                                 Permettre à chacun d’accéder à du matériel médical à moindre coût.
                             </x-slot:item>
                         </x-utils.list-item>
 
                         <x-utils.list-item svg="confiance" name_parent="values__contentContainer__list">
                             <x-slot:item>
-                                <span class="values__contentContainer__list__item__textContainer__title">
+                                <h3 class="values__contentContainer__list__item__textContainer__title">
                                     Confiance
-                                </span>
+                                </h3>
                                 Proposer une plateforme claire, transparente et respectueuse des   utilisateurs.
                             </x-slot:item>
                         </x-utils.list-item>

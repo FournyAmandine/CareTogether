@@ -10,7 +10,7 @@ class CreatePostImagesTable extends Migration
     {
         Schema::create('post_images', function (Blueprint $table) {
             $table->id();
-            $table->string('img_path')->nullable();
+            $table->string('img_path')->nullable()->default('assets/img/post-image.jpg');
             $table->foreignId('post_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

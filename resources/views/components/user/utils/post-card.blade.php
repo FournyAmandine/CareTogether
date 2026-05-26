@@ -1,4 +1,4 @@
-@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'views', 'registered'])
+@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'views', 'registered', 'sold' => 0])
 
 
 <article class="card-post card-post--{!! $modifier !!} posts__listing__item">
@@ -14,6 +14,21 @@
         </div>
 
         <div class="card-post__link__contentContainer">
+            @if($sold == 1)
+                <div class="card-post__link__contentContainer__sold">
+                    <span class="card-post__link__contentContainer__sold__text">
+                        @if($type == \App\Enums\PostType::Sale->value)
+                            vendu
+                        @elseif($type == \App\Enums\PostType::Donation->value)
+                            donné
+                        @elseif($type == \App\Enums\PostType::Rental->value)
+                            loué
+                        @elseif($type == \App\Enums\PostType::Loan->value)
+                            prêté
+                        @endif
+                    </span>
+                </div>
+            @endif
             <h3 class="card-post__link__contentContainer__title">
                 {!! $title !!}
             </h3>

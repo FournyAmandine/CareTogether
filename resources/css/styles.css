@@ -692,6 +692,18 @@ button[aria-disabled=true] {
   width: 25px;
   height: 25px;
 }
+.public .header__link {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.public .header__link__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .public .header__buttons {
   display: flex;
   gap: 20px;
@@ -998,6 +1010,9 @@ button[aria-disabled=true] {
   right: 15px;
   bottom: 60px;
 }
+.card-post--post {
+  position: relative;
+}
 .card-post--post .card-post__link__iconContainer {
   width: 40px;
   height: 40px;
@@ -1014,6 +1029,20 @@ button[aria-disabled=true] {
   min-height: 260px;
   display: flex;
   flex-direction: column;
+}
+.card-post--post .card-post__link__contentContainer__sold {
+  background: #56C954;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  border-radius: 15px 0 15px 0;
+}
+.card-post--post .card-post__link__contentContainer__sold__text {
+  color: #FFFFFF;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .card-post--post .card-post__link__contentContainer__navigation {
   padding-top: 25px;
@@ -1315,7 +1344,7 @@ button[aria-disabled=true] {
 .homePage .steps__decoContainer {
   position: absolute;
   bottom: 160px;
-  right: -270px;
+  right: 0;
   width: 740px;
   height: 870px;
   z-index: -1;
