@@ -1582,6 +1582,21 @@ button[aria-disabled=true] {
   max-width: none;
   margin-bottom: 30px;
 }
+.contactPage .contact__formContainer__success {
+  font-size: 1.5em;
+  color: #1E3A8A;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.contactPage .contact__formContainer__form__error__text {
+  font-size: 1.25em;
+  color: #C51010;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 .contactPage .contact__formContainer__form__name {
   display: flex;
   gap: 45px;

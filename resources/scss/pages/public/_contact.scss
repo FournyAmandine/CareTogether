@@ -64,7 +64,27 @@
                 margin-bottom: 30px;
             }
 
+            &__success {
+                font-size: $large;
+                color: $primary;
+                font-family: $titleFont;
+                font-weight: bold;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
             &__form {
+
+                &__error {
+
+                    &__text {
+                        font-size: $medium;
+                        color: $required;
+                        font-weight: bold;
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                    }
+                }
 
                 &__name {
                     display: flex;
