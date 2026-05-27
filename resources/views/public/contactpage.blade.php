@@ -31,7 +31,21 @@
                     <h2 class="maintitle maintitle--blue contact__formContainer__title">
                         Dites nous bonjour !
                     </h2>
-                    <form class="contact__formContainer__form" action="" method="post">
+                    @if(session('success'))
+                        <div class="contact__formContainer__success">
+                            Votre message a été envoyé avec succès !
+                        </div>
+                    @else
+                    <form class="contact__formContainer__form" action="{!! route('public.contactpage.store') !!}" method="post">
+                        @csrf
+
+                        @if ($errors->any())
+                            <div class="contact__formContainer__form__error">
+                                @foreach ($errors->all() as $error)
+                                    <p class="contact__formContainer__form__error__text">{{ $error }}</p>
+                                @endforeach
+                            </div>
+                        @endif
 
                         <div class="contact__formContainer__form__name">
                             <x-public.form.fields.input
@@ -57,12 +71,13 @@
 
                         <x-public.form.fields.textarea
                             name_parent="contact__formContainer__form"
-                            field_name="subject" required="required"
+                            field_name="message" required="required"
                             placeholder="Bonjour, je voudrais..." label="Message"/>
 
                         <x-public.form.buttons.button name_parent="contact__formContainer__form"
                                                       class_button="button--red" text="Envoyer"/>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Middleware\isUser;
@@ -8,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('public.homepage');
 Route::get('/about', function (){ return view('public.aboutpage'); })->name('public.aboutpage');
 Route::get('/contact', function (){ return view('public.contactpage'); })->name('public.contactpage');
-/*Route::post('/contact', [ContactController::class, 'store'] function (){ return view('public.contactpage.store'); })->name('public.contactpage.store');*/
+Route::post('/contact', [ContactController::class, 'store'])->name('public.contactpage.store');
 Route::get('/posts', [PostController::class, 'index'])->name('public.posts.index');
 Route::get('/posts{post}', [PostController::class, 'show'])->name('public.posts.show');
 Route::get('/mentions', function (){ return view('public.mentionspage'); })->name('public.mentionspage');

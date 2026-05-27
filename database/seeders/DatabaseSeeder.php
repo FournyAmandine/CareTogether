@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\UserRole;
 use App\Models\Category;
+use App\Models\ContactMessage;
 use App\Models\Message;
 use App\Models\Post;
 use App\Models\PostImage;
@@ -95,5 +96,7 @@ class DatabaseSeeder extends Seeder
         Sale::factory(10)->create();
 
         PostImage::factory(100)->create();
+
+        ContactMessage::factory(10)->create();
     }
 }
