@@ -70,4 +70,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Post::class, 'registered_posts');
     }
 
+    public function contact_messages(): hasMany
+    {
+        return $this->hasMany(ContactMessage::class);
+    }
+
 }
