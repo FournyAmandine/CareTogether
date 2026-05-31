@@ -2,15 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PostType;
+use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::where('sold', 0)->paginate(8);
+        $categories = Category::get();
 
-        return view('public.posts.index', compact('posts'));
+        $types = PostType::cases();
+
+        $term = $request->query('term');
+        $category = $request->query('categories');
+        $type = $request->query('types');
+        $sort = $request->query('sort');
+
+        $posts = Post::query()->where('sold', 0)
+            ->when($term, function ($query) use ($term) {
+                $query->where('name', 'like', "%{$term}%");
+            })
+            ->when($category, function ($query) use ($category) {
+                $query->whereIn('category_id', $category);
+            })
+            ->when($type, function ($query) use ($type) {
+                $query->whereIn('type', $type);
+            })
+            ->when($sort, function ($query) use ($sort) {
+                match ($sort) {
+                    'date_asc' => $query->orderBy('created_at', 'asc'),
+                    'date_desc' => $query->orderBy('created_at', 'desc'),
+                    'price_asc' => $query->orderBy('price', 'asc'),
+                    'price_desc' => $query->orderBy('price', 'desc'),
+                    default => $query->latest(),
+                };
+            })
+            ->paginate(8)->withQueryString();
+
+        return view('public.posts.index', compact('posts', 'categories', 'types', 'term', 'category', 'sort', 'type'));
     }
 
     public function show(Post $post)

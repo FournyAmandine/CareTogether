@@ -11,7 +11,9 @@
             <x-user.navigation.list.list-header name_parent="header__content__navigation"/>
         </nav>
 
-        <x-utils.link svg="deconnexion" class-button="button--red" name_parent="header__content" title="Se déconnecter du compte"
-                      href="{!! route('login') !!}" label="Deconnexion"/>
+        <form method="POST" action="{{ route('logout') }}" class="header__content__form">
+            @csrf
+            <x-user.form.buttons.button svg="deconnexion" class_button="button--red" name_parent="header__content" text="Deconnexion"/>
+        </form>
     </div>
 </header>

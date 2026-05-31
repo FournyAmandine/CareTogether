@@ -1,7 +1,7 @@
 @props(['posts'])
 
 <div class="posts__listing">
-    @foreach($posts as $post)
+    @forelse($posts as $post)
         @php
             $image = $post->images()->first();
         @endphp
@@ -14,5 +14,9 @@
                              src="{!! route('public.posts.show', $post->id) !!}"
                              type="{!! $post->type !!}"
         />
-    @endforeach
+    @empty
+        <div class="empty--public">
+            <p class="empty__text">Il n'y a pas d'annonce qui correspond à votre recherche</p>
+        </div>
+    @endforelse
 </div>
