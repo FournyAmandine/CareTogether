@@ -102,5 +102,19 @@
                 }
             }
         }
+
+        .filters__form {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &--filters {
+
+        .modal__container {
+            background: none;
+            border: none;
+        }
     }
 }

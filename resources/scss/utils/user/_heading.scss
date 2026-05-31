@@ -17,6 +17,17 @@
         text-align: center;
         margin-top: 20px;
     }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__filters {
+
+
+        }
+    }
 }
 
 .postsEdit {
@@ -30,7 +41,7 @@
         }
 
         .breadcrumb {
-            bottom: 150px;
+            bottom: 140px;
             left: 0;
         }
 

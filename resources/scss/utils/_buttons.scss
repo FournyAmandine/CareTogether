@@ -45,7 +45,7 @@
     }
 
     &--border {
-        background: none;
+        background: none !important;
         border: solid 3px $primary;
 
         svg {

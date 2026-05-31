@@ -1,12 +1,14 @@
-@props(['content','title','outside'])
+@props(['content','title' => '','outside', 'modifier'=>''])
 
-<div class="modal">
+<div class="modal @if($modifier) modal--{!! $modifier !!} @endif">
     <div class="modal__container"
          @click.outside="{{$outside}}">
 
-        <p class="modal__container__title">
-            {{$title}}
-        </p>
+        @if($title)
+            <p class="modal__container__title">
+                {{$title}}
+            </p>
+        @endif
 
         {{$content}}
     </div>

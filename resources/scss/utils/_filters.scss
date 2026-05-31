@@ -1,0 +1,156 @@
+.filters {
+    display: flex;
+    gap: 25px;
+    align-self: flex-end;
+    margin-left: auto;
+    align-items: center;
+
+    &__formSearch {
+        position: relative;
+
+        &__input {
+            border: none;
+            background: rgba($secondary, 0.75);
+            border-radius: 15px;
+            font-size: $medium;
+            color: $primary;
+            padding: 15px 25px;
+            width: 460px;
+            font-weight: bold;
+            opacity: 1;
+
+            &::placeholder {
+                color: $primary;
+            }
+        }
+
+        &__button {
+            background: none;
+            border: none;
+            position: absolute;
+            top: 12px;
+            right: 15px;
+
+            &__icon {
+                fill: $primary;
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+
+    &__buttonContainer {
+
+        &__button {
+            padding: 15px 40px;
+            background: rgba($secondary, 0.75);
+        }
+    }
+
+    &__form {
+        position: absolute;
+        top: -18%;
+        right: -10%;
+        z-index: 10;
+        padding: 30px;
+        background: $postInfosBcg;
+        height: 95vh;
+        width: 350px;
+        overflow-y: scroll;
+
+        &.hidden {
+            display: none;
+        }
+
+        &__text {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        &__fieldset {
+            margin-bottom: 30px;
+
+            &__legend {
+                font-family: $titleFont;
+                color: $primary;
+                font-size: $large;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            &__checkbox {
+
+                &__label {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 10px;
+                    border-radius: 10px;
+                    gap: 15px;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    background: $primary;
+                    color: $white;
+
+                    &__input {
+
+                    }
+
+                    &__text {
+                        font-family: $titleFont;
+                        font-size: $medium;
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        color: $white;
+                        justify-content: space-between;
+                        width: 85%;
+
+                        &__icon {
+                            fill: $white;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__label {
+            display: block;
+            font-family: $titleFont;
+            color: $primary;
+            font-size: $large;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        &__sort {
+            font-size: $medium;
+            color: $primary;
+            font-weight: bold;
+            border: 2px solid $primary;
+            background: $messagesBcg;
+            padding: 5px;
+            border-radius: 5px;
+            width: 90%;
+
+            &__option {
+
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            gap: 15px;
+
+            &__buttonContainer {
+                margin-top: 20px;
+
+                &__button {
+                    padding: 15px 20px;
+                }
+            }
+        }
+    }
+}
