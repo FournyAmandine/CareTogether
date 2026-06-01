@@ -10,6 +10,10 @@ class HomeController extends Controller
     {
         $posts = Post::where('sold', 0)->paginate(4);
 
-        return view('public.homepage', compact('posts'));
+        $registeredPostIds = auth()->check()
+            ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
+            : [];
+
+        return view('public.homepage', compact('posts', 'registeredPostIds'));
     }
 }

@@ -86,7 +86,7 @@
                         </form>
                     </div>
 
-                    <x-utils.listing-cards :posts="$posts"/>
+                    <x-utils.listing-cards :posts="$posts" :registered-post-ids="$registeredPostIds"/>
 
                     <div class="posts__pagination">
                         {{ $posts->onEachSide(1)->links() }}

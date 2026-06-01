@@ -12,7 +12,7 @@
                              imgSrc="{!! asset($image ? $image->img_path : 'assets/img/post-image.jpg') !!}"
                              svg="{!! Str::slug($post->category->name, '_')!!}"
                              src="{!! route('public.posts.show', $post->id) !!}"
-                             type="{!! $post->type !!}"
+                             type="{!! $post->type !!}" :post="$post" :registered-post-ids="$registeredPostIds"
         />
     @empty
         <div class="empty--public">

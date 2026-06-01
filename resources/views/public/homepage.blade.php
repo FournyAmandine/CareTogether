@@ -85,7 +85,7 @@
                 <h2 class="maintitle maintitle--blue posts__title">
                     Nos dernières annonces
                 </h2>
-                <x-utils.listing-cards :posts="$posts"/>
+                <x-utils.listing-cards :posts="$posts" :registered-post-ids="$registeredPostIds"/>
             </div>
         </section>
     </main>

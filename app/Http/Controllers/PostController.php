@@ -41,7 +41,12 @@ class PostController extends Controller
             })
             ->paginate(8)->withQueryString();
 
-        return view('public.posts.index', compact('posts', 'categories', 'types', 'term', 'category', 'sort', 'type'));
+
+        $registeredPostIds = auth()->check()
+            ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
+            : [];
+
+        return view('public.posts.index', compact('posts', 'categories', 'types', 'term', 'category', 'sort', 'type', 'registeredPostIds'));
     }
 
     public function show(Post $post)
@@ -50,6 +55,12 @@ class PostController extends Controller
 
         $posts = Post::where('posts.category_id', '=', $post->category->id)->where('posts.id', "!=", $post->id)->where('sold', 0)->orderby('posts.created_at')->paginate(4);
 
-        return view('public.posts.show', compact('posts', 'post', 'existingImages'));
+        $registeredPostIds = auth()->check()
+            ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
+            : [];
+
+        $post->increment('views');
+
+        return view('public.posts.show', compact('posts', 'post', 'existingImages', 'registeredPostIds'));
     }
 }
