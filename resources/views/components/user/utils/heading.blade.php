@@ -1,7 +1,7 @@
-    @props(['title', 'button' => false, 'post'=>'', 'text'=>'', 'categories' => '', 'types' => '', 'route'])
+    @props(['title', 'button' => false, 'post'=>'', 'text'=>'', 'categories' => '', 'types' => '', 'route', 'modifier' =>'user'])
 
     <section class="heading">
-        <x-utils.deco modifier="user"/>
+        <x-utils.deco modifier="{!! $modifier !!}"/>
         <div class="wrapper wrapper--small">
             @if(str_contains($title, 'Votre annonce'))
                 {{ Breadcrumbs::render('user.posts.show', $post) }}

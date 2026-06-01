@@ -79,3 +79,11 @@ Breadcrumbs::for('default-livewire.update', function (BreadcrumbTrail $trail) {
     $trail->push('Ajouter une annonce');
 });
 
+/*Breadcrumbs::for('admin.dashbpard', function (BreadcrumbTrail $trail) {
+    $trail->push('Vos messages de contact', route('admin.dashboard'));
+});*/
+
+Breadcrumbs::for('admin.messages.index', function (BreadcrumbTrail $trail) {
+/*    $trail->parent('admin.dashboard');*/
+    $trail->push('Vos messages de contact', route('admin.messages.index'));
+});

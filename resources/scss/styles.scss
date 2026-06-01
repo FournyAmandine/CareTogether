@@ -25,6 +25,7 @@
 @import "partials/user/header";
 @import "partials/user/modal";
 @import "partials/user/card-image";
+@import "partials/admin/card-messages";
 
 //PAGES
 @import "pages/public/pageText";
@@ -40,4 +41,5 @@
 @import "pages/user/registered";
 @import "pages/user/posts";
 @import "pages/user/profil";
+@import "pages/admin/messages";
 
