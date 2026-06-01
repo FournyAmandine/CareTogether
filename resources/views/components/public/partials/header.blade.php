@@ -27,8 +27,8 @@
 
     @if($title != 'Accueil' && $title != 'À propos' && $title != 'Annonces' && $title != 'Contact')
         {{ Breadcrumbs::render('public.posts.show', $post) }}
-    @endif
-
+    @else
     {{ Breadcrumbs::render() }}
+    @endif
 
 </header>
