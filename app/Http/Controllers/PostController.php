@@ -59,6 +59,8 @@ class PostController extends Controller
             ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
             : [];
 
+        $post->increment('views');
+
         return view('public.posts.show', compact('posts', 'post', 'existingImages', 'registeredPostIds'));
     }
 }
