@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'locality' => 'Flamierge',
         ]);
 
-        User::factory()->create([
+        $admin = User::factory()->create([
             'last_name' => 'Fourny',
             'first_name' => 'Amandine',
             'email' => 'amandine@fourny.com',
@@ -97,6 +97,6 @@ class DatabaseSeeder extends Seeder
 
         PostImage::factory(100)->create();
 
-        ContactMessage::factory(10)->create();
+        ContactMessage::factory(10)->for($admin)->create();
     }
 }

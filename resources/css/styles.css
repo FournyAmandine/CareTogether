@@ -1351,6 +1351,35 @@ button[aria-disabled=true] {
   top: 0;
   right: 0;
 }
+.modal--messages .modal__container {
+  max-width: 800px;
+}
+.modal--messages .modal__container__content {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25em;
+}
+.modal--messages .modal__container__subject {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25em;
+}
+.modal--messages .modal__container__message {
+  font-size: 1.25em;
+  margin-top: 10px;
+}
+.modal--messages .modal__container__buttons {
+  display: flex;
+  gap: 20px;
+}
+.modal--messages .modal__container__buttons__buttonContainer__button {
+  padding: 15px 25px !important;
+}
+.modal--messages .modal__container__buttons__buttonContainer:nth-child(2) .modal__container__buttons__buttonContainer__button {
+  padding: 20px 25px !important;
+}
 .modal--filters .modal__container {
   background: none;
   border: none;
@@ -1382,6 +1411,44 @@ button[aria-disabled=true] {
 .image-card__buttonContainer__button svg {
   width: 15px;
   height: 15px;
+}
+
+.card-message {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border: #1E3A8A 2px solid;
+  border-radius: 10px;
+  padding: 20px;
+  background: rgba(182, 200, 255, 0.2);
+  flex-wrap: wrap;
+}
+.card-message__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  border: none;
+}
+.card-message__content__name {
+  font-size: 1.25em;
+  color: #1E3A8A;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card-message__content__subject {
+  color: #595959;
+}
+.card-message__date {
+  color: #595959;
+}
+.card-message--read {
+  border: rgba(182, 200, 255, 0.4) 2px solid;
 }
 
 .textPage .text__decoContainer {
@@ -2946,6 +3013,19 @@ button[aria-disabled=true] {
 }
 .profilPage .profil__form__fieldset__buttons__buttonContainer__button {
   padding: 15px 25px;
+}
+
+.contactMessagesPage .decoContainer {
+  top: -570px;
+  left: 15%;
+  right: 10%;
+}
+.contactMessagesPage .unread__title, .contactMessagesPage .read__title {
+  margin-bottom: 20px;
+}
+.contactMessagesPage .read {
+  padding-top: 70px;
+  padding-bottom: 80px;
 }
 
 /*# sourceMappingURL=styles.css.map */

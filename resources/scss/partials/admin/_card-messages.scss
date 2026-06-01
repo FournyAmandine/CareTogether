@@ -1,0 +1,52 @@
+.card-message {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: $primary 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba($gradient1, 0.2);
+    flex-wrap: wrap;
+
+    &__button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: none;
+        border: none;
+    }
+
+    &__content {
+
+        &__name {
+            font-size: $medium;
+            color: $primary;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        &__subject {
+            color: $text;
+        }
+    }
+
+    &__date {
+        color: $text;
+    }
+
+    &__buttonContainer {
+
+        &__button {
+            //buttons.scss
+        }
+    }
+
+    &--read {
+        border: rgba($gradient1, 0.4) 2px solid;
+    }
+}
