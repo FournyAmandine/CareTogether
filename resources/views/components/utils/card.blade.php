@@ -1,4 +1,4 @@
-@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type'])
+@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'post', 'registeredPostIds'])
 
 
 <article class="card-post card-post--{!! $modifier !!} posts__listing__item">
@@ -58,11 +58,29 @@
                             <use xlink:href="{{ asset('assets/img/svg/sprite.svg#share') }}"></use>
                         </svg>
                     </button>
-                    <button class="card-post__link__contentContainer__navigation__buttons__button">
-                        <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
-                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
-                        </svg>
-                    </button>
+
+                    @if(in_array($post->id, $registeredPostIds))
+                        <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                                <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
+                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#registered_fill') }}"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    @else
+                        <form action="{{ route('public.posts.register', $post) }}" method="POST">
+                            @csrf
+
+                            <button type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                                <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
+                                    <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

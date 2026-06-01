@@ -56,10 +56,15 @@
                 ->orderByDesc('created_at')
                 ->get();
 
+            $registeredPostIds = auth()->check()
+                ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
+                : [];
+
             return view('pages.user.registered.⚡index.index', [
                 'registered_posts' => $posts,
                 'categories_name' => $categoriesName,
-                'types_name' => $typesName
+                'types_name' => $typesName,
+                'registerPost' => $registeredPostIds
             ]);
         }
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterPostController;
 use App\Http\Middleware\isAdministrator;
 use App\Http\Middleware\isUser;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,8 @@ Route::get('/contact', function (){ return view('public.contactpage'); })->name(
 Route::post('/contact', [ContactController::class, 'store'])->name('public.contactpage.store');
 Route::get('/posts', [PostController::class, 'index'])->name('public.posts.index');
 Route::get('/posts{post}', [PostController::class, 'show'])->name('public.posts.show');
+Route::post('/posts{post}/register', [RegisterPostController::class, 'store'])->name('public.posts.register')->middleware('auth');
+Route::delete('/posts{post}/register', [RegisterPostController::class, 'destroy'])->name('public.posts.unregister')->middleware('auth');
 Route::get('/mentions', function (){ return view('public.mentionspage'); })->name('public.mentionspage');
 Route::get('/policy', function (){ return view('public.policypage'); })->name('public.policypage');
 Route::get('/conditions', function (){ return view('public.conditionspage'); })->name('public.conditionspage');

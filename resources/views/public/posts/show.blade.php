@@ -9,11 +9,28 @@
             <div class="wrapper">
                 <div class="detail__main">
                     <div class="detail__main__listing">
-                        <button class="detail__main__listing__iconContainer" title="Mettre en favoris">
-                            <svg class="detail__main__listing__iconContainer__icon">
-                                <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
-                            </svg>
-                        </button>
+                        @if(in_array($post->id, $registeredPostIds))
+                            <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="detail__main__listing__iconContainer" title="Mettre en favoris">
+                                    <svg class="detail__main__listing__iconContainer__icon">
+                                        <use xlink:href="{{ asset('assets/img/svg/sprite.svg#registered_fill') }}"></use>
+                                    </svg>
+                                </button>
+                            </form>
+                        @else
+                            <form action="{{ route('public.posts.register', $post) }}" method="POST">
+                                @csrf
+
+                                <button type="submit" class="detail__main__listing__iconContainer" title="Mettre en favoris">
+                                    <svg class="detail__main__listing__iconContainer__icon">
+                                        <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
+                                    </svg>
+                                </button>
+                            </form>
+                        @endif
                         @if($existingImages == [])
                             <div class="detail__main__listing__imgContainer">
                                 <img class="detail__main__listing__imgContainer__img detail__main__listing__imgContainer__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">
@@ -72,7 +89,7 @@
                 <h2 class="maintitle maintitle--blue posts__title">
                     Dernières annonces dans la catégorie : {!! $post->category->name !!}
                 </h2>
-                <x-utils.listing-cards :posts="$posts"/>
+                <x-utils.listing-cards :posts="$posts" :registered-post-ids="$registeredPostIds"/>
             </div>
         </section>
     </main>
