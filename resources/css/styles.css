@@ -2463,7 +2463,7 @@ button[aria-disabled=true] {
 .dashboardPage .heading__content__text {
   font-size: 1.25em;
   color: #595959;
-  max-width: 380px;
+  max-width: 400px;
   line-height: 1.5;
 }
 .dashboardPage .heading__icons {
@@ -2471,6 +2471,9 @@ button[aria-disabled=true] {
   gap: 20px;
   margin-right: 0;
   margin-left: auto;
+}
+.dashboardPage .heading__icons__form__buttonContainer__button {
+  padding: 15px 25px;
 }
 .dashboardPage .stats {
   padding-top: 40px;
@@ -2543,18 +2546,19 @@ button[aria-disabled=true] {
   width: 100%;
   height: 100%;
 }
-.dashboardPage .recap__posts {
+.dashboardPage .recap__posts, .dashboardPage .recap__category {
   padding: 40px 30px;
   border-radius: 20px;
   border: 3px solid #00B5C4;
   background: #F4F7FF;
   box-shadow: rgba(30, 58, 138, 0.3) 0 0 30px;
+  height: fit-content;
 }
-.dashboardPage .recap__posts__title {
+.dashboardPage .recap__posts__title, .dashboardPage .recap__category__title {
   margin-bottom: 30px;
   max-width: none;
 }
-.dashboardPage .recap__posts__listing__item {
+.dashboardPage .recap__posts__listing__item, .dashboardPage .recap__category__listing__item {
   display: flex;
   align-items: center;
   background: #F4F7FF;
@@ -2563,52 +2567,57 @@ button[aria-disabled=true] {
   border-radius: 20px;
   margin-bottom: 20px;
 }
-.dashboardPage .recap__posts__listing__item__imgContainer {
+.dashboardPage .recap__posts__listing__item__imgContainer, .dashboardPage .recap__category__listing__item__imgContainer {
   width: 150px;
   height: 90px;
   border-radius: 30px;
   overflow: hidden;
 }
-.dashboardPage .recap__posts__listing__item__imgContainer__img {
+.dashboardPage .recap__posts__listing__item__imgContainer__img, .dashboardPage .recap__category__listing__item__imgContainer__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.dashboardPage .recap__posts__listing__item__contentContainer {
+.dashboardPage .recap__posts__listing__item__contentContainer, .dashboardPage .recap__category__listing__item__contentContainer {
   margin-left: 20px;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
 }
-.dashboardPage .recap__posts__listing__item__contentContainer__name {
+.dashboardPage .recap__posts__listing__item__contentContainer__name, .dashboardPage .recap__category__listing__item__contentContainer__name {
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
   font-size: 1.25em;
   color: #1E3A8A;
 }
-.dashboardPage .recap__posts__listing__item__contentContainer__price {
+.dashboardPage .recap__posts__listing__item__contentContainer__price, .dashboardPage .recap__category__listing__item__contentContainer__price {
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
   font-size: 1.25em;
   color: #1E3A8A;
 }
-.dashboardPage .recap__posts__listing__item__contentContainer__date {
+.dashboardPage .recap__posts__listing__item__contentContainer__date, .dashboardPage .recap__category__listing__item__contentContainer__date {
   font-family: "Inter", sans-serif;
 }
-.dashboardPage .recap__posts__listing__item__buttons {
+.dashboardPage .recap__posts__listing__item__text, .dashboardPage .recap__category__listing__item__text {
+  color: #1E3A8A;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.dashboardPage .recap__posts__listing__item__buttons, .dashboardPage .recap__category__listing__item__buttons {
   display: flex;
   gap: 20px;
   margin-left: auto;
   margin-right: 0;
 }
-.dashboardPage .recap__posts__listing__item__buttons__buttonContainer__button {
+.dashboardPage .recap__posts__listing__item__buttons__buttonContainer__button, .dashboardPage .recap__category__listing__item__buttons__buttonContainer__button {
   padding: 15px;
 }
-.dashboardPage .recap__posts__listing__item__buttons__buttonContainer__button svg {
+.dashboardPage .recap__posts__listing__item__buttons__buttonContainer__button svg, .dashboardPage .recap__category__listing__item__buttons__buttonContainer__button svg {
   width: 25px;
   height: 25px;
 }
-.dashboardPage .recap__posts__buttonContainer {
+.dashboardPage .recap__posts__buttonContainer, .dashboardPage .recap__category__buttonContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-end;

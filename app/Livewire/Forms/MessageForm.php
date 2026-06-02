@@ -21,14 +21,4 @@ class MessageForm extends Form
         $this->text = $message;
         $this->read = $message->name;
     }
-
-    public function store()
-    {
-
-    }
-
-    public function update()
-    {
-
-    }
 }

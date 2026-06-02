@@ -70,7 +70,7 @@
                                                message="{!! Str::limit($message->text, 40) !!}"/>
                     @endforeach
                 </div>
-                <x-utils.link name_parent="recap__messages" class_button="button button--blue" svg="arrow-button" label="Voir tous vos messages" href="#" title="Aller vers la page des messages" />
+                <x-utils.link name_parent="recap__messages" class_button="button button--blue" svg="arrow-button" label="Voir tous vos messages" href="{!! route('user.messages') !!}" title="Aller vers la page des messages" />
             </section>
         </div>
     </div>

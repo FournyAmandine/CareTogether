@@ -34,7 +34,7 @@
             &__text {
                 font-size: $medium;
                 color: $text;
-                max-width: 380px;
+                max-width: 400px;
                 line-height: 1.5;
             }
         }
@@ -48,9 +48,25 @@
             &__buttonContainer {
 
                 &__button {
+                    //buttons.scss
 
                     &__icon {
 
+                    }
+                }
+            }
+
+            &__form {
+
+                &__buttonContainer {
+
+                    &__button {
+                        //buttons.scss
+                        padding: 15px 25px;
+
+                        &__icon {
+
+                        }
                     }
                 }
             }
@@ -149,12 +165,13 @@
             }
         }
 
-        &__posts {
+        &__posts, &__category {
             padding: 40px 30px;
             border-radius: 20px;
             border: 3px solid $tertiary;
             background: $postsBcg;
             box-shadow: rgba($primary, 0.3) 0 0 30px;
+            height: fit-content;
 
             &__title {
                 margin-bottom: 30px;
@@ -208,6 +225,12 @@
                         &__date {
                             font-family: $textFont;
                         }
+                    }
+
+                    &__text {
+                        color: $primary;
+                        font-size: $medium;
+                        font-weight: bold;
                     }
 
                     &__buttons {

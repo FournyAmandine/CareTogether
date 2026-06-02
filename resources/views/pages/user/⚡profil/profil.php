@@ -21,7 +21,7 @@ new class extends Component
 
     public function mount(): void
     {
-        $this->user = auth()->user()->first();
+        $this->user = auth()->user();
         $this->form->setUser($this->user);
     }
 
