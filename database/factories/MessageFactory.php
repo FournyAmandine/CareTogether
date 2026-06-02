@@ -14,9 +14,8 @@ class MessageFactory extends Factory
         return [
             'text' => $this->faker->text(100),
             'read' => $this->faker->boolean(),
-            'post_id' => 1,
-            'receiver_id' => $this->faker->randomNumber(1, 10),
-            'sender_id' => $this->faker->randomNumber(1, 10),
+            'conversation_id' => $this->faker->numberBetween(1, 10),
+            'sender_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

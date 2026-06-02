@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterPostController;
@@ -16,6 +17,7 @@ Route::get('/posts', [PostController::class, 'index'])->name('public.posts.index
 Route::get('/posts{post}', [PostController::class, 'show'])->name('public.posts.show');
 Route::post('/posts{post}/register', [RegisterPostController::class, 'store'])->name('public.posts.register')->middleware('auth');
 Route::delete('/posts{post}/register', [RegisterPostController::class, 'destroy'])->name('public.posts.unregister')->middleware('auth');
+Route::post('/posts{post}/contact', [ConversationController::class, 'store'])->name('public.posts.contact')->middleware('auth');
 Route::get('/mentions', function (){ return view('public.mentionspage'); })->name('public.mentionspage');
 Route::get('/policy', function (){ return view('public.policypage'); })->name('public.policypage');
 Route::get('/conditions', function (){ return view('public.conditionspage'); })->name('public.conditionspage');
@@ -25,8 +27,7 @@ Route::livewire('/admin/messages', 'pages::admin.contact_messages.index')->name(
 
 Route::livewire('/user/dashboard', 'pages::user.dashboard')->name('user.dashboard')->middleware('auth');
 Route::livewire('/user/profil', 'pages::user.profil')->name('user.profil')->middleware('auth');
-/*Route::livewire('/user/messages', 'pages::user.messages')->name('user.messages')->middleware('auth');*/
-
+Route::livewire('/user/messages{conversation?}', 'pages::user.messages')->name('user.messages')->middleware('auth');
 
 Route::livewire('/user/posts/create', 'pages::user.posts.create')->name('user.posts.create')->middleware('auth');
 Route::livewire('/user/posts/{post}/edit', 'pages::user.posts.edit')->name('user.posts.edit')->middleware('auth');

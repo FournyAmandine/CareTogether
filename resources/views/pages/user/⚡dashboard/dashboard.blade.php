@@ -28,7 +28,7 @@
                 <x-user.utils.stats-card number="{!! $posts_unsold !!}" content="annonces actives" svg="stats-actives"/>
                 <x-user.utils.stats-card number="{!! $posts_sold !!}" content="annonces vendues" svg="stats-vendues"/>
                 <x-user.utils.stats-card number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
-                <x-user.utils.stats-card number="{!! $messages_unread !!}" content="messages non lus" svg="stats-messages"/>
+                <x-user.utils.stats-card number="{!! $conversations !!}" content="conversations" svg="stats-messages"/>
             </div>
             <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="{!! route('user.posts.create') !!}" title="Aller vers la page d'ajout d'une annonce" />
         </div>
@@ -65,8 +65,8 @@
                 </h2>
                 <div class="recap__messages__listing">
                     @foreach($messages as $message)
-                        <x-utils.messages-card name_parent="recap__messages__listing" src="{!! asset('assets/img/profil.png') !!}"
-                                               name="{!! $message->receiver->first_name !!} {!! $message->receiver->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
+                        <x-utils.messages-card name_parent="recap__messages__listing" src="{!! Str::startsWith($message->sender->profil_picture, 'assets')? asset($message->sender->profil_picture) : asset('storage/photos/users/originals/' . $message->sender->profil_picture)!!}"
+                                               name="{!! $message->sender->first_name !!} {!! $message->sender->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
                                                message="{!! Str::limit($message->text, 40) !!}"/>
                     @endforeach
                 </div>

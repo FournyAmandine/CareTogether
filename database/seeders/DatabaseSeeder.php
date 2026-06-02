@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Enums\UserRole;
 use App\Models\Category;
 use App\Models\ContactMessage;
+use App\Models\Conversation;
 use App\Models\Message;
 use App\Models\Post;
 use App\Models\PostImage;
@@ -25,7 +26,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        $user = User::factory()->create([
             'last_name' => 'Bourguignon',
             'first_name' => 'Anne-Catherine',
             'email' => 'anne@bourguignon.com',
@@ -89,8 +90,6 @@ class DatabaseSeeder extends Seeder
 
         Post::factory(80)->create();
 
-        Message::factory(15)->create();
-
         Rental::factory(10)->create();
 
         Sale::factory(10)->create();
@@ -98,5 +97,9 @@ class DatabaseSeeder extends Seeder
         PostImage::factory(100)->create();
 
         ContactMessage::factory(10)->for($admin)->create();
+
+        Conversation::factory(10)->create();
+
+        Message::factory(15)->create();
     }
 }
