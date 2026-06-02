@@ -19,7 +19,7 @@
             'label'=> 'Contact'
         ],
         [
-            'href'=>'#',
+            'href'=>route('user.dashboard'),
             'label'=> 'Mon profil'
         ],
     ];
@@ -31,6 +31,7 @@
             name_parent="{!! $name_parent !!}__list"
             :href="$link['href']"
             :label="$link['label']"
+            :active="request()->url() == $link['href']"
         />
     @endforeach
 </ul>

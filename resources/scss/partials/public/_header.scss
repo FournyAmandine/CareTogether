@@ -51,6 +51,11 @@
                         font-size: $medium;
                         font-weight: bold;
 
+                        &.active {
+                            color: $tertiary;
+                            text-decoration: underline;
+                        }
+
                         &:hover {
                             color: $tertiary;
                             text-decoration: underline;

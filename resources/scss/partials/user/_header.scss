@@ -36,6 +36,10 @@
                         border-radius: 10px;
                         margin-bottom: 15px;
 
+                        &.active {
+                            background: $tertiary;
+                        }
+
                         &__link {
 
                             &__icon {

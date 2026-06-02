@@ -51,6 +51,11 @@
                         font-family: $textFont;
                         font-weight: normal;
 
+                        &.active {
+                            color: $tertiary;
+                            text-decoration: underline;
+                        }
+
                         &:hover {
                             color: $tertiary;
                             text-decoration: underline;
@@ -111,6 +116,11 @@
 
                     &__link {
                         font-weight: normal;
+
+                        &.active {
+                            color: $tertiary;
+                            text-decoration: underline;
+                        }
 
                         &:hover {
                             color: $tertiary;

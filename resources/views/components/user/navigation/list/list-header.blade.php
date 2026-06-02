@@ -52,6 +52,7 @@
             :href="$link['href']"
             :label="$link['label']"
             :svg="$link['svg']"
+            :active="request()->url() == $link['href']"
         />
     @endforeach
 </ul>

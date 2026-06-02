@@ -18,13 +18,16 @@
             <ul class="footer__secondary__navigation__list">
                 <x-public.navigation.list.link name_parent="footer__secondary__navigation__list"
                                                :href="route('public.mentionspage')"
-                                               label="Mention légales"/>
+                                               label="Mention légales"
+                                               :active="request()->url() == route('public.mentionspage')"/>
                 <x-public.navigation.list.link name_parent="footer__secondary__navigation__list"
                                                :href="route('public.policypage')"
-                                               label="Politique de confidentialité"/>
+                                               label="Politique de confidentialité"
+                                               :active="request()->url() == route('public.policypage')"/>
                 <x-public.navigation.list.link name_parent="footer__secondary__navigation__list"
                                                :href="route('public.conditionspage')"
-                                               label="Conditions d’utilisation"/>
+                                               label="Conditions d’utilisation"
+                                               :active="request()->url() == route('public.conditionspage')"/>
             </ul>
         </nav>
     </div>
