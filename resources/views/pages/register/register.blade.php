@@ -17,13 +17,13 @@
 
                 <div class="content__form__name">
                     <x-login.input field_name="last_name"
-                                   placeholder="Jean"
+                                   placeholder="Dubois"
                                    label="Entrez votre nom"
                                    required="required"
                                    name_parent="content__form"/>
 
                     <x-login.input field_name="first_name"
-                                   placeholder="Dubois"
+                                   placeholder="Jean"
                                    label="Entrez votre prénom"
                                    required="required"
                                    name_parent="content__form"/>
@@ -40,6 +40,14 @@
                     type="password"
                     placeholder="******"
                     label="Entrez votre mot de passe"
+                    required="required"
+                    name_parent="content__form"
+                />
+
+                <x-login.input
+                    field_name="locality"
+                    placeholder="Bastogne"
+                    label="Entrez votre localité"
                     required="required"
                     name_parent="content__form"
                 />

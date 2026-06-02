@@ -32,6 +32,7 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
+            'locality' => ['required', 'string', 'max:255'],
             'password' => $this->passwordRules(),
         ])->validate();
 
@@ -40,6 +41,7 @@ class CreateNewUser implements CreatesNewUsers
             'first_name' => $input['first_name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'locality' => $input['locality']
         ]);
     }
 }
