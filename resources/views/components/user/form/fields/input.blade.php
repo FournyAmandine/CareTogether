@@ -8,7 +8,7 @@
     </label>
     <input {!! $attributes !!} {{ $disabled ? 'disabled' : '' }} class="{!! $name_parent !!}__formRow__input"
            type="{!! $type ?? 'text' !!}"
-           {{$value ?? old($field_name)}}
+           value="{{ $value ?? old($field_name) }}"
            name="{!! $field_name !!}"
            id="{!! $field_name !!}"
            placeholder="{!! $placeholder ?? '' !!}"

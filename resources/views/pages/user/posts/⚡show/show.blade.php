@@ -155,7 +155,7 @@
                 Marquer cette annonce comme loué
             </x-slot:title>
             <x-slot:content>
-                <form class="modal__container__form" wire:submit.prevent="markAsLoaned" action="" method="post">
+                <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
@@ -177,7 +177,7 @@
                 Marquer cette annonce comme donné
             </x-slot:title>
             <x-slot:content>
-                <form class="modal__container__form" wire:submit.prevent="markAsGiven" action="" method="post">
+                <form class="modal__container__form" wire:submit.prevent="markAsGiven" method="post">
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
@@ -197,7 +197,7 @@
                 Marquer cette annonce comme prêté
             </x-slot:title>
             <x-slot:content>
-                <form class="modal__container__form" wire:submit.prevent="markAsLoaned" action="" method="post">
+                <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
