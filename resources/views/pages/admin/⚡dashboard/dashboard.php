@@ -32,7 +32,7 @@ new class extends Component
             'users' => User::where('role', UserRole::User)->count(),
             'contact_messages' => auth()->user()->contact_messages()->count(),
             'categories' => Category::get(),
-            'messages' => auth()->user()->contact_messages()->get(),
+            'messages' => auth()->user()->contact_messages()->paginate(6),
         ])->layout('layouts::admin');
     }
 
@@ -54,6 +54,10 @@ new class extends Component
         $this->isOpenDeleteModal || $this->isOpenModifyModal || $this->isOpenAddModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
         if ($modal === 'delete' || $modal === 'modify' || $modal === 'add') {
             $this->chosenCategory = $id !== '' ? Category::find($id) : '';
+        }
+
+        if ($id !== '' && $modal === 'modify' ) {
+            $this->catform->setCategory($this->chosenCategory);
         }
     }
 
