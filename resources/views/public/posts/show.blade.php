@@ -77,7 +77,12 @@
                         </div>
                     </div>
                 </div>
-                <x-utils.link name_parent="detail" href="#" svg="arrow-button" class-button="button--red" title="Aller vers la page Message" label="Contacter le vendeur"/>
+
+                <form action="{{ route('public.posts.contact', $post->id) }}" method="POST">
+                    @csrf
+
+                    <x-user.form.buttons.button name_parent="detail" class_button="button--red" text="Contacter le vendeur"/>
+                </form>
             </div>
         </section>
 

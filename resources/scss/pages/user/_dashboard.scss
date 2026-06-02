@@ -265,6 +265,8 @@
                     &__imgContainer {
                         width: 60px;
                         height: 60px;
+                        background: $primary;
+                        border-radius: 50%;
 
                         &__img {
                             width: 100%;

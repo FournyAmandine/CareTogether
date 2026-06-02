@@ -1,0 +1,268 @@
+.messagesPage {
+    position: relative;
+    overflow: hidden;
+
+    .messages {
+        padding-bottom: 120px;
+        position: relative;
+        height: 100vh;
+        display: flex;
+
+        &__decoContainer {
+            position: absolute;
+            bottom: 0;
+            right: -300px;
+            max-width: 870px;
+            max-height: 1055px;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__container {
+            border-radius: 15px;
+            border: solid 2px $primary;
+            box-shadow: rgba($primary, 0.2) 0 0 30px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            background: $pageBcg;
+            height: 80vh;
+            overflow: hidden;
+
+            &__listing {
+                border-right: solid 2px $primary;
+                overflow-y: auto;
+
+                &__heading {
+                    display: flex;
+                    gap: 20px;
+                    padding: 25px 10px 10px 15px;
+
+                    &__buttonContainer {
+
+                        &__button {
+                            padding: 5px 15px;
+                            border: 1px solid $primary;
+                            border-radius: 10px;
+                            font-size: $normal;
+                        }
+                    }
+                }
+
+                &__item {
+                    display: flex;
+                    gap: 15px;
+                    padding: 15px;
+                    border-top: solid 2px $primary;
+                    position: relative;
+
+                    &--unread {
+                        background: $postInfosBcg;
+                    }
+
+                    &__button {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: none;
+                        border: none;
+                    }
+
+                    &__imgContainer {
+                        min-width: 40px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: $primary;
+
+                        &__img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &__infos {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        &__name {
+                            font-weight: bold;
+                            font-family: $titleFont;
+                            font-size: $large;
+                            color: $primary;
+                        }
+
+                        &__post {
+                            font-family: $textFont;
+                            font-size: $medium;
+                            color: $primary;
+                        }
+
+                        &__text {
+                            font-family: $textFont;
+                            font-size: $medium;
+                        }
+                    }
+                }
+            }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+
+                &__heading {
+                    display: flex;
+                    padding: 9px 25px;
+                    align-items: center;
+                    flex-shrink: 0;
+
+                    &--select{
+                        padding: 22px 25px;
+
+                        .messages__container__content__heading__text {
+                            font-size: $large;
+                            color: $primary;
+                            font-weight: bold;
+                        }
+                    }
+
+                    &__sender {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        &__imgContainer {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            background: $primary;
+
+                            &__img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        &__name {
+                            font-size: $medium;
+                            color: $primary;
+                            font-family: $titleFont;
+                            font-weight: bold;
+                        }
+                    }
+
+                    &__post {
+                        color: $primary;
+                        font-family: $textFont;
+                        padding: 10px;
+                        border-radius: 10px;
+                        border: 1px solid $primary;
+                        margin-left: 30px;
+                    }
+
+                    &__buttonContainer {
+                        margin-left: auto;
+
+                        &__button {
+                            padding: 10px 30px;
+                        }
+                    }
+                }
+
+                &__main {
+                    border-top: solid 2px $primary;
+                    height: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    overflow: hidden;
+
+                    &__listing {
+                        flex: 1;
+                        overflow-y: auto;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 15px;
+
+                        &__messageContainer {
+                            border-radius: 15px;
+                            max-width: 400px;
+                            padding: 20px;
+                            margin-bottom: 10px;
+
+                            &--mine {
+                                background: $primary;
+                                align-self: flex-end;
+                                margin-right: 25px;
+
+                                p {
+                                    color: $white;
+                                }
+                            }
+
+                            &--theirs {
+                                border: 1px solid $primary;
+                                background: $postInfosBcg;
+                                align-self: flex-start;
+                                margin-left: 25px;
+
+                                p {
+                                    color: $primary;
+                                }
+                            }
+
+                            &__message {
+                                font-family: $titleFont;
+                            }
+                        }
+                    }
+
+                    &__form {
+                        position: relative;
+                        flex-shrink: 0;
+
+                        &__formRow {
+                            padding: 10px 25px;
+
+                            &__input {
+                                padding: 25px 20px;
+                                border-radius: 20px;
+                                border: 1px solid $primary;
+                                width: 95%;
+                                background: $postInfosBcg;
+
+                                &::placeholder {
+                                    color: $primary;
+                                }
+                            }
+                        }
+
+                        &__buttonContainer {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            transform: rotate(45deg);
+
+                            &__button {
+
+                                svg {
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -23,15 +23,18 @@ new class extends Component
     }
 
     public function render (){
+
         return view('pages.user.⚡dashboard.dashboard', [
             'first_name' => auth()->user()->first_name,
             'last_name' => auth()->user()->last_name,
             'posts_unsold' => auth()->user()->posts()->where('posts.sold', 0)->count(),
             'posts_sold' => auth()->user()->posts()->where('posts.sold', 1)->count(),
             'rentals' => auth()->user()->rentals()->count(),
-            'messages_unread' => auth()->user()->receivedMessages()->where('messages.read', 0)->count(),
+            'conversations' => auth()->user()->soldConversations()->count(),
             'posts' => auth()->user()->posts()->with('images')->where('posts.sold', 0)->paginate(4),
-            'messages' => auth()->user()->receivedMessages()->with('receiver')->paginate(5),
+            'messages' => Message::whereHas('conversation', function ($q) {
+                $q->where('seller_id', auth()->id());
+            })->with(['sender'])->latest()->paginate(5),
         ])->layoutData(['body_class'=>'dashboardPage']);
     }
 
@@ -55,5 +58,4 @@ new class extends Component
         $this->toggleModal('delete');
         $this->redirect(route('user.dashboard'));
     }
-
 };

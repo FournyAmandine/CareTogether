@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\PostType;
 use App\Models\Category;
+use App\Models\Conversation;
 use App\Models\Post;
 use Illuminate\Http\Request;
 

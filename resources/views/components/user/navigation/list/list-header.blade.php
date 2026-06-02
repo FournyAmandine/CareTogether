@@ -1,4 +1,4 @@
-@props(['name_parent'])
+@props(['name_parent', 'conversation'=>null])
 
 @php
     $links = [
@@ -33,8 +33,8 @@
             'svg'=> 'locations'
         ],
         [
-            'href'=>route('public.homepage'),
-            'label'=> 'Vos message',
+            'href'=>route('user.messages'),
+            'label'=> 'Vos messages',
             'svg'=> 'messages'
         ],
         [

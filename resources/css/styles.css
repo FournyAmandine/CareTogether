@@ -168,7 +168,7 @@ button[aria-disabled=true] {
   color: #1E3A8A;
   background: #FFFFFF;
   padding: 10px 25px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -2618,6 +2618,8 @@ button[aria-disabled=true] {
 .dashboardPage .recap__messages__listing__item__imgContainer {
   width: 60px;
   height: 60px;
+  background: #1E3A8A;
+  border-radius: 50%;
 }
 .dashboardPage .recap__messages__listing__item__imgContainer__img {
   width: 100%;
@@ -3016,6 +3018,228 @@ button[aria-disabled=true] {
 }
 .profilPage .profil__form__fieldset__buttons__buttonContainer__button {
   padding: 15px 25px;
+}
+
+.messagesPage {
+  position: relative;
+  overflow: hidden;
+}
+.messagesPage .messages {
+  padding-bottom: 120px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+}
+.messagesPage .messages__decoContainer {
+  position: absolute;
+  bottom: 0;
+  right: -300px;
+  max-width: 870px;
+  max-height: 1055px;
+}
+.messagesPage .messages__decoContainer__deco {
+  width: 100%;
+  height: 100%;
+}
+.messagesPage .messages__container {
+  border-radius: 15px;
+  border: solid 2px #1E3A8A;
+  box-shadow: rgba(30, 58, 138, 0.2) 0 0 30px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: #F4F7FF;
+  height: 80vh;
+  overflow: hidden;
+}
+.messagesPage .messages__container__listing {
+  border-right: solid 2px #1E3A8A;
+  overflow-y: auto;
+}
+.messagesPage .messages__container__listing__heading {
+  display: flex;
+  gap: 20px;
+  padding: 25px 10px 10px 15px;
+}
+.messagesPage .messages__container__listing__heading__buttonContainer__button {
+  padding: 5px 15px;
+  border: 1px solid #1E3A8A;
+  border-radius: 10px;
+  font-size: 1em;
+}
+.messagesPage .messages__container__listing__item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-top: solid 2px #1E3A8A;
+  position: relative;
+}
+.messagesPage .messages__container__listing__item--unread {
+  background: #E3EBFF;
+}
+.messagesPage .messages__container__listing__item__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  border: none;
+}
+.messagesPage .messages__container__listing__item__imgContainer {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1E3A8A;
+}
+.messagesPage .messages__container__listing__item__imgContainer__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.messagesPage .messages__container__listing__item__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.messagesPage .messages__container__listing__item__infos__name {
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5em;
+  color: #1E3A8A;
+}
+.messagesPage .messages__container__listing__item__infos__post {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25em;
+  color: #1E3A8A;
+}
+.messagesPage .messages__container__listing__item__infos__text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25em;
+}
+.messagesPage .messages__container__content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.messagesPage .messages__container__content__heading {
+  display: flex;
+  padding: 9px 25px;
+  align-items: center;
+  flex-shrink: 0;
+}
+.messagesPage .messages__container__content__heading--select {
+  padding: 22px 25px;
+}
+.messagesPage .messages__container__content__heading--select .messages__container__content__heading__text {
+  font-size: 1.5em;
+  color: #1E3A8A;
+  font-weight: bold;
+}
+.messagesPage .messages__container__content__heading__sender {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.messagesPage .messages__container__content__heading__sender__imgContainer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #1E3A8A;
+}
+.messagesPage .messages__container__content__heading__sender__imgContainer__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.messagesPage .messages__container__content__heading__sender__name {
+  font-size: 1.25em;
+  color: #1E3A8A;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+}
+.messagesPage .messages__container__content__heading__post {
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #1E3A8A;
+  margin-left: 30px;
+}
+.messagesPage .messages__container__content__heading__buttonContainer {
+  margin-left: auto;
+}
+.messagesPage .messages__container__content__heading__buttonContainer__button {
+  padding: 10px 30px;
+}
+.messagesPage .messages__container__content__main {
+  border-top: solid 2px #1E3A8A;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+.messagesPage .messages__container__content__main__listing {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.messagesPage .messages__container__content__main__listing__messageContainer {
+  border-radius: 15px;
+  max-width: 400px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.messagesPage .messages__container__content__main__listing__messageContainer--mine {
+  background: #1E3A8A;
+  align-self: flex-end;
+  margin-right: 25px;
+}
+.messagesPage .messages__container__content__main__listing__messageContainer--mine p {
+  color: #FFFFFF;
+}
+.messagesPage .messages__container__content__main__listing__messageContainer--theirs {
+  border: 1px solid #1E3A8A;
+  background: #E3EBFF;
+  align-self: flex-start;
+  margin-left: 25px;
+}
+.messagesPage .messages__container__content__main__listing__messageContainer--theirs p {
+  color: #1E3A8A;
+}
+.messagesPage .messages__container__content__main__listing__messageContainer__message {
+  font-family: "DM Sans", sans-serif;
+}
+.messagesPage .messages__container__content__main__form {
+  position: relative;
+  flex-shrink: 0;
+}
+.messagesPage .messages__container__content__main__form__formRow {
+  padding: 10px 25px;
+}
+.messagesPage .messages__container__content__main__form__formRow__input {
+  padding: 25px 20px;
+  border-radius: 20px;
+  border: 1px solid #1E3A8A;
+  width: 95%;
+  background: #E3EBFF;
+}
+.messagesPage .messages__container__content__main__form__formRow__input::placeholder {
+  color: #1E3A8A;
+}
+.messagesPage .messages__container__content__main__form__buttonContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transform: rotate(45deg);
+}
+.messagesPage .messages__container__content__main__form__buttonContainer__button svg {
+  width: 30px;
+  height: 30px;
 }
 
 .contactMessagesPage .decoContainer {

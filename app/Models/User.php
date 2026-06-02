@@ -50,11 +50,6 @@ class User extends Authenticatable
         return $this->hasMany(Message::class, 'sender_id');
     }
 
-    public function receivedMessages(): HasMany
-    {
-        return $this->hasMany(Message::class, 'receiver_id');
-    }
-
     public function rentals(): HasMany
     {
         return $this->hasMany(Rental::class);
@@ -75,4 +70,13 @@ class User extends Authenticatable
         return $this->hasMany(ContactMessage::class);
     }
 
+    public function boughtConversations()
+    {
+        return $this->hasMany(Conversation::class, 'buyer_id');
+    }
+
+    public function soldConversations()
+    {
+        return $this->hasMany(Conversation::class, 'seller_id');
+    }
 }
