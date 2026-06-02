@@ -25,10 +25,10 @@
     @endif
 
 
-    @if($title != 'Accueil' && $title != 'À propos' && $title != 'Annonces' && $title != 'Contact')
+    @if($title != 'Accueil' && $title != 'À propos' && $title != 'Annonces' && $title != 'Contact' && $title != 'Mentions légales' && $title != 'Politique de confidentialité' && $title != 'Conditions générales d’utilisation')
         {{ Breadcrumbs::render('public.posts.show', $post) }}
-    @else
-    {{ Breadcrumbs::render() }}
+    @elseif($title != 'Mentions légales' && $title != 'Politique de confidentialité' && $title != 'Conditions générales d’utilisation')
+        {{ Breadcrumbs::render() }}
     @endif
 
 </header>
