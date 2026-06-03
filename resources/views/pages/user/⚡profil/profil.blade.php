@@ -3,7 +3,7 @@
 
     <section class="profil">
         <div class="profil__decoContainer">
-            <img class="profil__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme rose, ronde">
+            <img class="profil__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="">
         </div>
         <div class="wrapper wrapper--small">
             <form class="profil__form" wire:submit.prevent="save" method="post">
@@ -29,7 +29,7 @@
                     <x-user.form.fields.input wire:model.live="form.first_name" field_name="first_name" placeholder="Anne" required="required" label="Prénom" name_parent="profil__form__fieldset"/>
                     <div class="profil__form__fieldset__password" x-data="{showPassword : false}">
                         <x-user.form.fields.input wire:model.live="form.password" x-bind:type="showPassword ? 'text' : 'password'" field_name="password" required="required" label="Mot de passe" name_parent="profil__form__fieldset"/>
-                        <button class="button button--input profil__form__fieldset__password__button" type="button" @click="showPassword = !showPassword">
+                        <button class="button button--input profil__form__fieldset__password__button" type="button" @click="showPassword = !showPassword" title="Cacher ou voir le mot de passe">
                             <svg class="profil__form__fieldset__password__button__icon" x-show="!showPassword">
                                 <use xlink:href="{{ asset('assets/img/svg/sprite.svg#view') }}"></use>
                             </svg>

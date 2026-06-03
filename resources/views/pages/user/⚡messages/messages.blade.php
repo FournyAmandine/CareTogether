@@ -26,7 +26,7 @@
                             });
                         @endphp
                         <div class="messages__container__listing__item messages__container__listing__item--{{$unread ? 'unread' : ''}}">
-                            <button wire:click="selectConversation({{ $conversation->id }})" class="messages__container__listing__item__button"></button>
+                            <button wire:click="selectConversation({{ $conversation->id }})" class="messages__container__listing__item__button" title="Voir la conversation avec  {!! $otherUser->first_name . ' ' . $otherUser->last_name !!}"></button>
                             <div class="messages__container__listing__item__imgContainer">
                                 <img class="messages__container__listing__item__imgContainer__img" src="{!! Str::startsWith($otherUser->profil_picture, 'assets')? asset($otherUser->profil_picture) : asset('storage/photos/users/originals/' . $otherUser->profil_picture) !!}" alt="Image de profil de l'utilisateur">
                             </div>
@@ -81,7 +81,7 @@
                             <form class="messages__container__content__main__form" wire:submit.prevent="store" method="Post">
                                 @csrf
 
-                                <x-user.form.fields.input wire:model="text" name_parent="messages__container__content__main__form" field_name="text" placeholder="Écrivez votre message..." label=""/>
+                                <x-user.form.fields.input wire:model="text" name_parent="messages__container__content__main__form" field_name="text" placeholder="Écrivez votre message..." label="" required="required"/>
 
                                 <x-user.form.buttons.button name_parent="messages__container__content__main__form" class_button="button--input" svg="send"/>
                             </form>

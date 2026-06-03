@@ -53,18 +53,13 @@
                 Découvrir l’article
             </span>
                 <div class="card-post__link__contentContainer__navigation__buttons">
-                    <button class="card-post__link__contentContainer__navigation__buttons__button">
-                        <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
-                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#share') }}"></use>
-                        </svg>
-                    </button>
-
                     @if(in_array($post->id, $registeredPostIds))
                         <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                            <button aria-labelledby="deleteRegister" type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                                <span id="deleteRegister" class="sro">Supprimer cette annonce des enregistrées</span>
                                 <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#registered_fill') }}"></use>
                                 </svg>
@@ -73,8 +68,8 @@
                     @else
                         <form action="{{ route('public.posts.register', $post) }}" method="POST">
                             @csrf
-
-                            <button type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                            <button aria-labelledby="addRegister" type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                                <span id="addRegister" class="sro">Enregistrer cette annonce</span>
                                 <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
                                 </svg>

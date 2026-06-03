@@ -1,7 +1,7 @@
 <main class="dashboardPage">
     <section class="heading">
         <div class="heading__decoContainer">
-            <img class="heading__decoContainer__deco" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleue, ronde">
+            <img class="heading__decoContainer__deco" src="{!! asset('assets/img/deco-blue.png') !!}" alt="">
         </div>
         <div class="wrapper wrapper--small">
             <div class="heading__content">
@@ -34,9 +34,9 @@
         </div>
     </section>
 
-    <div class="recap">
+    <div class="recap" role="region">
         <div class="recap__decoContainer">
-            <img class="recap__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme rose, ronde">
+            <img class="recap__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="">
         </div>
         <div class="wrapper wrapper--small">
             <section class="recap__posts">

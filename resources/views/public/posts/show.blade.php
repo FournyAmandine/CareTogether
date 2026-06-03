@@ -88,7 +88,7 @@
 
         <section class="posts">
             <div class="posts__decoContainer">
-                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme bleu, ronde">
+                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue posts__title">

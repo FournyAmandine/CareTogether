@@ -5,7 +5,7 @@
             Formulaire d'ajout d'annonce
         </h3>
         <div class="formContainer__decoContainer">
-            <img class="formContainer__decoContainer" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleue ronde">
+            <img class="formContainer__decoContainer" src="{!! asset('assets/img/deco-blue.png') !!}" alt="">
         </div>
         <div class="wrapper wrapper--small">
             <form class="formContainer__form" wire:submit.prevent="store()" enctype="multipart/form-data" method="post">

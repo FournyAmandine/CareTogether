@@ -1,7 +1,7 @@
 @props(['title', 'date' => '', 'price', 'imgSrc', 'svg'])
 
 
-<article class="card-post card-post--rental posts__listing__item">
+<article class="card-post card-post--rental posts__listing__item" tabindex="0">
     <div class="card-post__container">
         <div class="card-post__container__iconContainer">
             <svg class="card-post__container__iconContainer__icon">

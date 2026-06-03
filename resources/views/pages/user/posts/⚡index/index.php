@@ -89,12 +89,12 @@ new class extends Component
     #[On ('toggleModal')]
     public function toggleModal(string $modal): void
     {
+
         if ($modal === 'filters') {
             $this->isOpenFiltersModal = !$this->isOpenFiltersModal;
         }
 
         $this->isOpenFiltersModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
-
     }
 
     public function filters():void

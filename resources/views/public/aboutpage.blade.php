@@ -20,7 +20,7 @@
 
         <section class="about">
             <div class="about__decoContainer">
-                <img class="about__decoContainer__deco" src="{!! asset('assets/img/deco-header.png') !!}" alt="Forme bleue, ronde">
+                <img class="about__decoContainer__deco" src="{!! asset('assets/img/deco-header.png') !!}" alt="">
             </div>
             <div class="wrapper">
                 <div class="about__contentContainer">
@@ -98,7 +98,7 @@
 
         <section class="values">
             <div class="values__decoContainer">
-                <img class="values__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme rose, ronde">
+                <img class="values__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue values__title">

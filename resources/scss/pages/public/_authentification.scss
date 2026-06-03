@@ -98,6 +98,10 @@
                     color: $primary;
                     margin-bottom: 50px;
                     display: block;
+
+                    &:hover, &:focus {
+                        color: $tertiary;
+                    }
                 }
 
                 &__buttonContainer {
@@ -119,6 +123,10 @@
                 &__link {
                     font-family: $textFont;
                     color: $primary;
+
+                    &:hover, &:focus {
+                        color: $tertiary;
+                    }
                 }
             }
         }
