@@ -19,19 +19,30 @@
                                               field_name="post_name" label="Titre"
                                               placeholder="Ex : Fauteuil Roulant" required="required"/>
 
+
+                    @error('form.name')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
+
                     <x-user.form.fields.select wire:model.live="form.category_id" name_parent="formContainer__form__fieldset" field_name="post_category" required="required" label="Categorie">
-                        <x-user.form.fields.option value="none" option_name="Sélectionnez la catégorie" name_parent="formContainer__form__fieldset" selected="selected"/>
                         @foreach($categories as $category)
                             <x-user.form.fields.option value="{!! $category->id !!}" option_name="{!! $category->name !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
                     </x-user.form.fields.select>
 
+                    @error('form.category_id')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
+
                     <x-user.form.fields.select wire:model.live="form.type" name_parent="formContainer__form__fieldset" field_name="post_type" required="required" label="Type d'annonce">
-                        <x-user.form.fields.option value="none" option_name="Sélectionnez le type" name_parent="formContainer__form__fieldset"/>
                         @foreach($this->getType() as $type)
                             <x-user.form.fields.option value="{!! $type->value !!}" option_name="{!! $type->value !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
                     </x-user.form.fields.select>
+
+                    @error('form.type')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
 
                     <x-user.form.fields.input wire:model.live="form.price" name_parent="formContainer__form__fieldset"
                                               field_name="post_price"
@@ -39,16 +50,28 @@
                                               placeholder="Ex : 390€" required="required"
                                               disabled="{!! in_array($form->type, [\App\Enums\PostType::Loan->value, \App\Enums\PostType::Donation->value]) !!}"/>
 
+                    @error('form.price')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
+
                     <x-user.form.fields.input wire:model.live="form.marque" name_parent="formContainer__form__fieldset"
                                               field_name="post_marque" label="Marque"
                                               placeholder="Ex : Invacare" required="required"/>
 
+                    @error('form.marque')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
+
+
                     <x-user.form.fields.select wire:model.live="form.state" name_parent="formContainer__form__fieldset" field_name="post_state" required="required" label="État du produit">
-                        <x-user.form.fields.option value="none" option_name="Sélectionnez l’état" name_parent="formContainer__form__fieldset"/>
                         @foreach($this->getState() as $state)
                             <x-user.form.fields.option value="{!! $state->value !!}" option_name="{!! $state->value !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
                     </x-user.form.fields.select>
+
+                    @error('form.state')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
                 </fieldset>
 
                 <div class="formContainer__form__secondary">
@@ -57,6 +80,10 @@
                             Champs secondaires
                         </legend>
                         <x-user.form.fields.textarea wire:model.live="form.description" name_parent="formContainer__form__secondary__fieldset" field_name="post_description" placeholder="Décrivez l’état de votre matériel, son utilisation ou toutes autres informations utiles" label="Description" required="required"/>
+
+                        @error('form.description')
+                        <span class="error">{{ $message }}</span>
+                        @enderror
 
                         <span class="formContainer__form__secondary__fieldset__title">
                                 Photos
@@ -124,6 +151,9 @@
                             </label>
                             @endif
                         </div>
+                        @error('form.newImages')
+                        <span class="error">{{ $message }}</span>
+                        @enderror
                     </fieldset>
 
                     <x-user.form.buttons.button svg="modify" text="Modifier" name_parent="formContainer__form__fieldset" class_button="button--red"/>
