@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    <div class="recap">
+    <div class="recap" role="region">
         <div class="recap__decoContainer">
             <img class="recap__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme rose, ronde">
         </div>

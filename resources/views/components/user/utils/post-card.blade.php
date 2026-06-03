@@ -69,12 +69,10 @@
                 </span>
             </div>
             <div class="card-post__link__contentContainer__registered">
-                <button class="card-post__link__contentContainer__registered__button">
-                    <svg class="card-post__link__contentContainer__registered__button__icon">
+                    <svg class="card-post__link__contentContainer__registered__icon">
                         <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
                     </svg>
                     {!! $registered !!}
-                </button>
             </div>
         </div>
     </a>

@@ -44,21 +44,27 @@
                 height: 100%;
 
                 &__item {
-                    padding: 15px 20px;
+
 
                     &__link {
                         color: $white;
                         font-size: $medium;
                         font-weight: bold;
+                        padding: 15px 20px;
 
-                        &.active {
-                            color: $tertiary;
-                            text-decoration: underline;
+                        &:before {
+                            display: none;
                         }
 
-                        &:hover {
-                            color: $tertiary;
-                            text-decoration: underline;
+                        &.active {
+                            color: $title2;
+                            font-size: $large;
+                            font-weight: bold;
+                        }
+
+                        &:hover, &:focus {
+                            color: $title2;
+                            font-weight: bold;
                         }
                     }
                 }

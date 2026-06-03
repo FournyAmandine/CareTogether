@@ -13,17 +13,18 @@
 
                     <div class="filters">
                         <x-utils.search name_parent="filters"/>
-                        <x-utils.button-text id="filters" name_parent="filters" title="Ouvrir les filtres" classButton="button button--blue" text="Filtrer"/>
+                        <x-utils.button-text aria-haspopup="dialog" aria-expanded="false" aria-controls="filtersForm" id="filters" name_parent="filters" title="Ouvrir les filtres" classButton="button button--blue" text="Filtrer"/>
                         @if($term || $category || $type || $sort)
                             <x-utils.link wire:click="resetFilters()" name_parent="filters" href="{!! route('public.posts.index') !!}" title="Supprimer les filtres" classButton="button button--border" label="Supprimer les filtres"/>
                         @endif
 
-                        <form id="filtersForm" class="filters__form hidden" method="GET" action="{{ route('public.posts.index') }}">
+                        <form aria-modal="true" aria-labelledby="filtersFormTitle" id="filtersForm" class="filters__form hidden" method="GET" action="{{ route('public.posts.index') }}">
 
-                            <di>
+                            <h3 id="filtersFormTitle" class="sro">Filtres et tris des annonces</h3>
+                            <div>
                                 <span class="maintitle maintitle--blue maintitle--small filters__form__text">
                                 Filtrer les annonces
-                            </span>
+                                </span>
 
                                 <fieldset class="filters__form__fieldset">
                                     <legend class="filters__form__fieldset__legend">
@@ -65,7 +66,7 @@
                                         </div>
                                     @endforeach
                                 </fieldset>
-                            </di>
+                            </div>
                             <div>
                                 <span class="maintitle maintitle--blue maintitle--small filters__form__text">
                                 Trier les annonces

@@ -39,7 +39,7 @@
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
-                max-height: 120px;
+                max-height: 190px;
 
                 &__item {
                     margin-right: 80px;
@@ -50,15 +50,20 @@
                         margin-bottom: 20px;
                         font-family: $textFont;
                         font-weight: normal;
+                        padding: 10px;
 
-                        &.active {
-                            color: $tertiary;
-                            text-decoration: underline;
+                        &:before {
+                            display: none;
                         }
 
-                        &:hover {
-                            color: $tertiary;
-                            text-decoration: underline;
+                        &.active {
+                            color: $title2;
+                            font-size: $large;
+                            font-weight: bold;
+                        }
+
+                        &:hover, &:focus {
+                            color: $title2;
                         }
                     }
                 }
@@ -77,10 +82,16 @@
                     font-weight: normal;
                     margin-bottom: 20px;
                     font-family: $textFont;
+                    padding: 10px;
+                    border: none;
+
+                    &:before {
+                        display: none;
+                    }
 
                     &:hover {
                         color: $tertiary;
-                        text-decoration: underline;
+                        border: none;
                     }
                 }
             }
@@ -116,15 +127,18 @@
 
                     &__link {
                         font-weight: normal;
+                        padding: 15px 10px;
+
+                        &:before {
+                            display: none;
+                        }
 
                         &.active {
                             color: $tertiary;
-                            text-decoration: underline;
                         }
 
-                        &:hover {
+                        &:hover, &:focus {
                             color: $tertiary;
-                            text-decoration: underline;
                         }
                     }
                 }
