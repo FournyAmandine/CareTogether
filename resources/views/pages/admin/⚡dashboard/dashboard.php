@@ -30,7 +30,7 @@ new class extends Component
             'posts_unsold' => Post::where('posts.sold', 0)->count(),
             'posts_sold' => Post::where('posts.sold', 1)->count(),
             'users' => User::where('role', UserRole::User)->count(),
-            'contact_messages' => auth()->user()->contact_messages()->count(),
+            'contact_messages' => auth()->user()->contact_messages()->where('read', 0)->count(),
             'categories' => Category::get(),
             'messages' => auth()->user()->contact_messages()->paginate(6),
         ])->layout('layouts::admin');
