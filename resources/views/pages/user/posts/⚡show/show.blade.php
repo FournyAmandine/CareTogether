@@ -39,7 +39,7 @@
                         <ul class="detail__main__contentContainer__infos__list">
                             <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
                             <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
-                            <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté il y a {{ \Carbon\Carbon::parse($post->created_at)->day }} jours"/>
+                            <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
                             <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
                             <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
                             <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
@@ -101,9 +101,13 @@
                     @endphp
                     <x-utils.card title="{!! $post->name !!}"
                                   locality="{!! $post->locality !!}"
-                                  state="{!! $post->state !!}"
-                                  price="{!! $post->price !!}"
-                                  imgSrc="{!! asset($image ? $image->img_path : 'assets/img/post-image.jpg') !!}"
+                                  state="{!! $post->state !!}" :registered-post-ids="$register_id"
+                                  price="{!! $post->price !!}" :post="$post"
+                                  imgSrc="{{ $image?->img_path
+                                                    ? (Str::startsWith($image->img_path, 'assets')
+                                                        ? asset($image->img_path)
+                                                        : asset('storage/photos/posts/originals/' . $image->img_path))
+                                                    : asset('assets/img/post-image.jpg') }}"
                                   svg="{!! Str::slug($post->category->name, '_')!!}"
                                   src="{!! route('user.posts.show', $post->id) !!}"
                                   type="{!! $post->type !!}" modifier="last"
@@ -139,8 +143,14 @@
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
-                        @foreach($users as $user)
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $user->sender->id !!}" option_name="{!! $user->sender->first_name !!} {!! $user->sender->last_name!!}"/>
+                        @foreach($conversations as $conversation)
+                            @php
+                                $otherUser = $conversation->buyer_id === auth()->id()
+                                    ? $conversation->seller
+                                    : $conversation->buyer;
+                            @endphp
+
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
@@ -159,8 +169,14 @@
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
-                        @foreach($users as $user)
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $user->sender->id !!}" option_name="{!! $user->sender->first_name !!} {!! $user->sender->last_name!!}"/>
+                        @foreach($conversations as $conversation)
+                            @php
+                                $otherUser = $conversation->buyer_id === auth()->id()
+                                    ? $conversation->seller
+                                    : $conversation->buyer;
+                            @endphp
+
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>
@@ -181,8 +197,14 @@
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
-                        @foreach($users as $user)
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $user->sender->id !!}" option_name="{!! $user->sender->first_name !!} {!! $user->sender->last_name!!}"/>
+                        @foreach($conversations as $conversation)
+                            @php
+                                $otherUser = $conversation->buyer_id === auth()->id()
+                                    ? $conversation->seller
+                                    : $conversation->buyer;
+                            @endphp
+
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
@@ -201,8 +223,14 @@
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
-                        @foreach($users as $user)
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $user->sender->id !!}" option_name="{!! $user->sender->first_name !!} {!! $user->sender->last_name!!}"/>
+                        @foreach($conversations as $conversation)
+                            @php
+                                $otherUser = $conversation->buyer_id === auth()->id()
+                                    ? $conversation->seller
+                                    : $conversation->buyer;
+                            @endphp
+
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>

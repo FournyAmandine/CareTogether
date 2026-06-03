@@ -45,6 +45,14 @@ body.user {
     }
 }
 
+.error {
+    color: $required;
+    font-size: $medium;
+    font-family: $textFont;
+    margin-bottom: 25px;
+    display: block;
+}
+
 .empty {
     min-width: 1270px;
     display: flex !important;

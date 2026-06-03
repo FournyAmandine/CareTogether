@@ -49,11 +49,12 @@
                             $image = $post->images->first();
                         @endphp
                         <x-utils.posts-card name_parent="recap__posts__listing"
-                                            src="{!! $image
-                                                ? asset($image->img_path)
-                                                : asset('assets/img/post-image.jpg')
-                                            !!}"
-                                            name="{!! $post->name !!}" date="{!! \Carbon\Carbon::parse($post->created_at)->day !!}"
+                                            src="{{ $image?->img_path
+                                                    ? (Str::startsWith($image->img_path, 'assets')
+                                                        ? asset($image->img_path)
+                                                        : asset('storage/photos/posts/originals/' . $image->img_path))
+                                                    : asset('assets/img/post-image.jpg') }}"
+                                            name="{!! $post->name !!}" date="{{ $post->created_at->diffForHumans() }}"
                                             price="{!! $post->price !!}" :post="$post"/>
                     @endforeach
                 </div>
@@ -66,7 +67,7 @@
                 <div class="recap__messages__listing">
                     @foreach($messages as $message)
                         <x-utils.messages-card name_parent="recap__messages__listing" src="{!! Str::startsWith($message->sender->profil_picture, 'assets')? asset($message->sender->profil_picture) : asset('storage/photos/users/originals/' . $message->sender->profil_picture)!!}"
-                                               name="{!! $message->sender->first_name !!} {!! $message->sender->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
+                                               name="{!! $message->sender->first_name !!} {!! $message->sender->last_name !!}" date="{{ $message->created_at->diffForHumans() }}"
                                                message="{!! Str::limit($message->text, 40) !!}"/>
                     @endforeach
                 </div>

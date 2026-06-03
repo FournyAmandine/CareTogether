@@ -19,7 +19,7 @@
                 </p>
                 <div class="banner__buttons">
                     <x-utils.link href="{!! route('public.posts.index') !!}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
-                    <x-utils.link href="#" svg="arrow-button" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    <x-utils.link href="{!! route('register') !!}" svg="arrow-button" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
                 </div>
             </div>
         </section>

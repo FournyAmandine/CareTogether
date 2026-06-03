@@ -39,7 +39,7 @@
                     field_name="password"
                     type="password"
                     placeholder="******"
-                    label="Entrez votre mot de passe"
+                    label="Entrez votre mot de passe (minimun 8 caractères)"
                     required="required"
                     name_parent="content__form"
                 />

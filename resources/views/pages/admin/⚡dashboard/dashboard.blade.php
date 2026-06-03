@@ -69,7 +69,7 @@
                 <div class="recap__messages__listing">
                     @foreach($messages as $message)
                         <x-utils.messages-card name_parent="recap__messages__listing"
-                                               name="{!! $message->first_name !!} {!! $message->last_name !!}" date="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
+                                               name="{!! $message->first_name !!} {!! $message->last_name !!}" date="{{ $message->created_at->diffForHumans() }}"
                                                message="{!! Str::limit($message->message, 40) !!}"/>
                     @endforeach
                 </div>

@@ -40,6 +40,7 @@ class PostController extends Controller
                     default => $query->latest(),
                 };
             })
+            ->orderByDesc('created_at')
             ->paginate(8)->withQueryString();
 
 

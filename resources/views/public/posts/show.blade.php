@@ -58,7 +58,7 @@
                             <ul class="detail__main__contentContainer__infos__list">
                                 <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
                                 <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
-                                <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté il y a {{ \Carbon\Carbon::parse($post->created_at)->day }} jours"/>
+                                <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
                                 <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
                                 <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
                                 <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>

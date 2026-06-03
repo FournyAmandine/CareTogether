@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Forms\PostForm;
+use App\Models\Conversation;
 use App\Models\Post;
 use App\Models\Rental;
 use App\Models\Sale;
@@ -35,9 +36,19 @@ new class extends Component
 
     public function render()
     {
+        $registeredPostIds = auth()->check()
+            ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
+            : [];
+
         return view('pages.user.posts.⚡show.show', [
             'posts' => Post::where('user_id', auth()->user()->id)->paginate(4),
-            'users' => auth()->user()->receivedMessages()->get(),
+            'register_id' => $registeredPostIds,
+            'conversations' => Conversation::with(['buyer', 'seller'])
+                ->where(function ($q) {
+                    $q->where('buyer_id', auth()->id())
+                        ->orWhere('seller_id', auth()->id());
+                })
+                ->get()
         ])->title($this->post->name);
     }
     public function mount($post): void

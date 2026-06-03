@@ -9,7 +9,11 @@
                              locality="{!! $post->locality !!}"
                              state="{!! $post->state !!}"
                              price="{!! $post->price !!}"
-                             imgSrc="{!! asset($image ? $image->img_path : 'assets/img/post-image.jpg') !!}"
+                             imgSrc="{{ $image?->img_path
+                                ? (Str::startsWith($image->img_path, 'assets')
+                                    ? asset($image->img_path)
+                                    : asset('storage/photos/posts/originals/' . $image->img_path))
+                                : asset('assets/img/post-image.jpg') }}"
                              svg="{!! Str::slug($post->category->name, '_')!!}"
                              src="{!! route('public.posts.show', $post->id) !!}"
                              type="{!! $post->type !!}" :post="$post" :registered-post-ids="$registeredPostIds"

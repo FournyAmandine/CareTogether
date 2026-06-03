@@ -12,7 +12,7 @@
            {!! $price !!}€
         </span>
         <span class="{!! $name_parent !!}__item__contentContainer__date">
-           Ajouté il y a {!! $date !!} jours
+           {!! $date !!}
         </span>
     </div>
     <div class="{!! $name_parent !!}__item__buttons">

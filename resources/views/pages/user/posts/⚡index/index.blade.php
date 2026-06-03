@@ -85,7 +85,7 @@
                 <x-utils.button name_parent="posts__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-sale-next"/>
                 @if($sales->isEmpty())
                     <x-user.utils.empty text="Il n'y a aucune annonce pour le moment"
-                                        label="Ajouter une annonce" href="#" title="Aller sur la page d'ajout d'une annonce"/>
+                                        label="Ajouter une annonce" href="{!! route('user.posts.create') !!}" title="Aller sur la page d'ajout d'une annonce"/>
                 @endif
             </div>
         </div>
