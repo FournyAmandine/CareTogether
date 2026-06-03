@@ -24,7 +24,7 @@ class PostForm extends Form
     #[Validate('required|integer')]
     public $price = '';
 
-    #[Validate('nullable|string')]
+    #[Validate('required|string')]
     public $marque = '';
 
     #[Validate('required|integer|exists:categories,id')]
@@ -37,7 +37,7 @@ class PostForm extends Form
     public $sold = false;
 
     #[Validate([
-        'newImages' => 'nullable|array',
+        'newImages' => 'nullable|array|max:5',
     ])]
     public array $newImages = [];
 
@@ -52,6 +52,21 @@ class PostForm extends Form
         $this->marque = $post->marque;
         $this->description = $post->description;
         $this->sold = $post->sold;
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Le titre est obligatoire.',
+            'name.string' => 'Le nom doit être un chaine de caractères.',
+            'category_id.required' => 'Veuillez choisir une catégorie.',
+            'marque.required' => 'Veuillez entrez une marque.',
+            'marque.string' => 'La marque doit être un chaine de caractères.',
+            'type.required' => 'Veuillez choisir un type d’annonce.',
+            'state.required' => 'Veuillez choisir un état.',
+            'price.required' => 'Veuillez entrez un prix.',
+            'price.integer' => 'Le prix doit être un nombre.',
+        ];
     }
 
     public function store()
@@ -71,7 +86,7 @@ class PostForm extends Form
                     'sold'
                 ]),
                 [
-                    'locality' => 'Bastogne',
+                    'locality' => auth()->user()->locality,
                 ]
             )
         );

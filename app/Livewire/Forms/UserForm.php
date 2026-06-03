@@ -18,7 +18,7 @@ class UserForm extends Form
     #[Validate('required|string')]
     public $last_name = '';
 
-    #[Validate('required|string')]
+    #[Validate('required|string|unique:')]
     public $email = '';
 
     #[Validate('required|string')]
@@ -56,7 +56,6 @@ class UserForm extends Form
         $this->postal = $user->postal;
         $this->profil_picture = $user->profil_picture;
     }
-
 
     public function store()
     {
