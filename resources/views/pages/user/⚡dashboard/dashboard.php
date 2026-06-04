@@ -73,5 +73,6 @@ new class extends Component
     {
         auth()->user()->unreadNotifications->markAsRead();
         $this->dispatch('close-modal');
+        $this->redirect(route('user.dashboard'));
     }
 };

@@ -7,6 +7,21 @@
         <section class="detail">
             <x-utils.deco/>
             <div class="wrapper">
+                @if($post->sold == 1)
+                    <div class="detail__sold">
+                    <span class="detail__sold__text">
+                        @if($post->type == \App\Enums\PostType::Sale->value)
+                            vendu
+                        @elseif($post->type == \App\Enums\PostType::Donation->value)
+                            donné
+                        @elseif($post->type == \App\Enums\PostType::Rental->value)
+                            loué
+                        @elseif($post->type == \App\Enums\PostType::Loan->value)
+                            prêté
+                        @endif
+                    </span>
+                    </div>
+                @endif
                 <div class="detail__main">
                     <div class="detail__main__listing">
                         @if(in_array($post->id, $registeredPostIds))
@@ -77,12 +92,14 @@
                         </div>
                     </div>
                 </div>
+                @if($post->sold == 0)
 
-                <form action="{{ route('public.posts.contact', $post->id) }}" method="POST">
-                    @csrf
+                    <form action="{{ route('public.posts.contact', $post->id) }}" method="POST">
+                        @csrf
 
-                    <x-user.form.buttons.button name_parent="detail" class_button="button--red" text="Contacter le vendeur"/>
-                </form>
+                        <x-user.form.buttons.button name_parent="detail" class_button="button--red" text="Contacter le vendeur"/>
+                    </form>
+                @endif
             </div>
         </section>
 

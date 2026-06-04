@@ -150,7 +150,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
@@ -176,7 +176,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>
@@ -204,7 +204,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
@@ -230,7 +230,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . '' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>

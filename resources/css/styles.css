@@ -2301,6 +2301,22 @@ button[aria-disabled=true] {
   padding-bottom: 70px;
   padding-top: 120px;
 }
+.singlePostPage .detail__sold {
+  background: #56C954;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  padding: 25px 30px;
+  border-radius: 15px 0 15px 0;
+  z-index: 2;
+}
+.singlePostPage .detail__sold__text {
+  color: #FFFFFF;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+}
 .singlePostPage .detail__main {
   display: grid;
   grid-template-columns: 1fr 2fr;
