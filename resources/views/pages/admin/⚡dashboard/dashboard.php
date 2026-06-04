@@ -18,9 +18,13 @@ new class extends Component
     public CategoryForm $catform;
     public string|Category $chosenCategory = '';
 
+    public string|Notification $openNotification = '';
+
     public bool $isOpenAddModal = false;
     public bool $isOpenModifyModal = false;
     public bool $isOpenDeleteModal = false;
+
+    public bool $isOpenShowModal = false;
 
     #[Title('Dashboard')]
     public function render (){
@@ -32,7 +36,8 @@ new class extends Component
             'users' => User::where('role', UserRole::User)->count(),
             'contact_messages' => auth()->user()->contact_messages()->where('read', 0)->count(),
             'categories' => Category::get(),
-            'messages' => auth()->user()->contact_messages()->paginate(6),
+            'messages' => auth()->user()->contact_messages()->orderByDesc('created_at')->paginate(6),
+            'notifications' => auth()->user()->unreadNotifications
         ])->layout('layouts::admin');
     }
 
@@ -51,7 +56,12 @@ new class extends Component
             $this->isOpenAddModal = !$this->isOpenAddModal;
         }
 
-        $this->isOpenDeleteModal || $this->isOpenModifyModal || $this->isOpenAddModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
+        if ($modal === 'notif') {
+            $this->isOpenShowModal = !$this->isOpenShowModal;
+            $this->openNotification = $id !== '' ? Notification::find($id) : '';
+        }
+
+        $this->isOpenDeleteModal || $this->isOpenModifyModal || $this->isOpenAddModal || $this->isOpenShowModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
         if ($modal === 'delete' || $modal === 'modify' || $modal === 'add') {
             $this->chosenCategory = $id !== '' ? Category::find($id) : '';
         }
@@ -87,5 +97,11 @@ new class extends Component
         $this->dispatch('close-modal');
         $this->toggleModal('add');
         $this->redirect(route('admin.dashboard'));
+    }
+
+    public function markAsRead()
+    {
+        auth()->user()->unreadNotifications->markAsRead();
+        $this->dispatch('close-modal');
     }
 };

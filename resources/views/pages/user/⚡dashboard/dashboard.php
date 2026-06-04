@@ -14,7 +14,11 @@ new class extends Component
     public PostForm $postform;
     public MessageForm $messageform;
     public string|Post $chosenPost = '';
+
+    public string|Notification $openNotification = '';
     public bool $isOpenDeleteModal = false;
+
+    public bool $isOpenShowModal = false;
     #[Title('Dashboard')]
     public function mount(Post $post, Message $message)
     {
@@ -35,6 +39,7 @@ new class extends Component
             'messages' => Message::whereHas('conversation', function ($q) {
                 $q->where('seller_id', auth()->id());
             })->with(['sender'])->latest()->paginate(5),
+            'notifications' => auth()->user()->unreadNotifications
         ])->layoutData(['body_class'=>'dashboardPage']);
     }
 
@@ -45,7 +50,12 @@ new class extends Component
             $this->isOpenDeleteModal = !$this->isOpenDeleteModal;
         }
 
-        $this->isOpenDeleteModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
+        if ($modal === 'notif') {
+            $this->isOpenShowModal = !$this->isOpenShowModal;
+            $this->openNotification = $id !== '' ? Notification::find($id) : '';
+        }
+
+        $this->isOpenDeleteModal || $this->isOpenShowModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
         if ($modal === 'delete') {
             $this->chosenPost = $id !== '' ? Post::find($id) : '';
         }
@@ -57,5 +67,11 @@ new class extends Component
         $this->dispatch('close-modal');
         $this->toggleModal('delete');
         $this->redirect(route('user.dashboard'));
+    }
+
+    public function markAsRead()
+    {
+        auth()->user()->unreadNotifications->markAsRead();
+        $this->dispatch('close-modal');
     }
 };

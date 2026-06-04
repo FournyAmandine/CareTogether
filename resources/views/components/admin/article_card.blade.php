@@ -9,7 +9,7 @@
     </div>
 
     <p class="card-message__date">
-        Il y a {!! $day !!} jours
+        {!! $day !!}
     </p>
 
     <x-utils.link wire:click="toggleReadMessage({{$id}})"
