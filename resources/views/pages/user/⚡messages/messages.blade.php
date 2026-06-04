@@ -6,7 +6,7 @@
         <div class="messages__decoContainer">
             <img class="messages__decoContainer__deco" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleue et ronde">
         </div>
-        <div class="wrapper wrapper--small">
+        <div class="wrapper">
         <h2 class="sro">Liste des messages</h2>
             <div class="messages__container">
                 <div wire:poll.10s class="messages__container__listing">
@@ -42,7 +42,7 @@
                     @endforeach
                 </div>
                 <div class="messages__container__content">
-                    @if($selectedConversationId == null)
+                    @if($selectedConversation == null)
                         <div class="messages__container__content__heading messages__container__content__heading--select">
                             <p class="messages__container__content__heading__text">
                                 Sélectionnez une conversation

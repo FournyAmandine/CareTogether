@@ -99,19 +99,17 @@
                     @php
                         $image = $post->images()->first();
                     @endphp
-                    <x-utils.card title="{!! $post->name !!}"
-                                  locality="{!! $post->locality !!}"
-                                  state="{!! $post->state !!}" :registered-post-ids="$register_id"
-                                  price="{!! $post->price !!}" :post="$post"
-                                  imgSrc="{{ $image?->img_path
+                    <x-user.utils.post-card title="{{ $post->name }}" type="{{ $post->type }}"
+                                            svg="{!! Str::slug($post->category->name, '_')!!}"
+                                            price="{{ $post->price }}" locality="{{ $post->locality }}"
+                                            state="{{ $post->state }}" modifier="post"
+                                            imgSrc="{{ $image?->img_path
                                                     ? (Str::startsWith($image->img_path, 'assets')
                                                         ? asset($image->img_path)
                                                         : asset('storage/photos/posts/originals/' . $image->img_path))
                                                     : asset('assets/img/post-image.jpg') }}"
-                                  svg="{!! Str::slug($post->category->name, '_')!!}"
-                                  src="{!! route('user.posts.show', $post->id) !!}"
-                                  type="{!! $post->type !!}" modifier="last"
-                    />
+                                            src="{!! route('user.posts.show', $post->id) !!}" sold="{{$post->sold}}"
+                                            views="{{ $post->views }}" registered="{!! $post->registeredByUser->count() !!}"/>
                 @endforeach
             </div>
         </div>

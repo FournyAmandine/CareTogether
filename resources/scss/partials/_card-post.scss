@@ -334,6 +334,11 @@
     &--last {
         .card-post__link {
 
+            &__imgContainer {
+                width: 265px;
+                height: 155px;
+            }
+
             &__iconContainer {
                 width: 40px;
                 height: 40px;

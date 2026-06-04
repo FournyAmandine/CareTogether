@@ -14,14 +14,15 @@ new class extends Component
 
     public string $text = '';
 
-    public ?int $selectedConversationId = null;
+    public ?Conversation $selectedConversation = null;
 
     public string $filters = 'all';
 
     public function mount($conversation = null)
     {
-        $this->selectedConversationId = $conversation;
+        $this->selectedConversation = $conversation;
     }
+
 
     #[Title('Vos messages')]
     public function render (){
@@ -30,8 +31,8 @@ new class extends Component
 
         $messages = $conversation->messages()->get();
 
-        if ($this->selectedConversationId) {
-            $conversation = Conversation::with('buyer', 'seller', 'messages.sender')->find($this->selectedConversationId);
+        if ($this->selectedConversation) {
+            $conversation = Conversation::with('buyer', 'seller', 'messages.sender')->find($this->selectedConversation->id);
 
             $messages = $conversation?->messages ?? collect();
         }
@@ -62,11 +63,11 @@ new class extends Component
         ]);
     }
 
-    public function selectConversation(int $conversationId)
+    public function selectConversation(Conversation $conversation)
     {
-        $this->selectedConversationId = $conversationId;
+        $this->selectedConversation = $conversation;
 
-        Message::where('messages.conversation_id', $conversationId)
+        Message::where('messages.conversation_id', $conversation->id)
             ->where('messages.sender_id', '!=', auth()->id())
             ->where('read', false)
             ->update([
@@ -76,7 +77,7 @@ new class extends Component
 
     public function store()
     {
-        $conversation = Conversation::find($this->selectedConversationId);
+        $conversation = Conversation::find($this->selectedConversation->id);
 
         $message = $conversation->messages()->create([
             'text' => $this->text,

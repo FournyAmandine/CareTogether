@@ -37,6 +37,7 @@ new class extends Component
 
     public function render()
     {
+
         $registeredPostIds = auth()->check()
             ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
             : [];

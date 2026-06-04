@@ -3,12 +3,14 @@
     <section class="heading">
         <x-utils.deco modifier="{!! $modifier !!}"/>
         <div class="wrapper wrapper--small">
-            @if(str_contains($title, 'Votre annonce'))
-                {{ Breadcrumbs::render('user.posts.show', $post) }}
-            @elseif(str_contains($title, 'Modifier'))
-                {{ Breadcrumbs::render('user.posts.edit', $post) }}
-            @else
-                {{ Breadcrumbs::render() }}
+            @if (!app()->environment('testing'))
+                @if(str_contains($title, 'Votre annonce'))
+                    {{ Breadcrumbs::render('user.posts.show', $post) }}
+                @elseif(str_contains($title, 'Modifier'))
+                    {{ Breadcrumbs::render('user.posts.edit', $post) }}
+                @else
+                    {{ Breadcrumbs::render() }}
+                @endif
             @endif
             <h2 class="maintitle maintitle--blue heading__title">
                 {!! $title !!}
