@@ -5,6 +5,7 @@ use App\Enums\PostType;
 use App\Livewire\Forms\PostForm;
 use App\Models\Post;
 use App\Models\PostImage;
+use App\Notifications\PostChange;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -35,6 +36,10 @@ new class extends Component
     public function save()
     {
         $this->form->update();
+
+        $receivers = $this->post->registeredByUser()->get();
+
+        Notification::send($receivers, new PostChange($this->post));
 
         return $this->redirect(route('user.posts.show', $this->post->id));
     }

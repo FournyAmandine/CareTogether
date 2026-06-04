@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Rental;
 use App\Models\Sale;
 use App\Models\User;
+use App\Notifications\RegisteredSold;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -108,6 +109,11 @@ new class extends Component
             'post_id' => $this->chosenPost->id,
             'user_id' => $this->selectedUser
         ]);
+
+        $receivers = $this->chosenPost->registeredByUser;
+
+        Notification::send($receivers, new RegisteredSold($this->chosenPost));
+
         $this->dispatch('close-modal');
         $this->toggleModal('sold');
     }
@@ -121,6 +127,12 @@ new class extends Component
             'post_id' => $this->chosenPost->id,
             'user_id' => $this->selectedUser
         ]);
+
+
+        $receivers = $this->chosenPost->registeredByUser;
+
+        Notification::send($receivers, new RegisteredSold($this->chosenPost));
+
         $this->dispatch('close-modal');
         $this->toggleModal('given');
     }
@@ -136,6 +148,11 @@ new class extends Component
             'start_date' => $this->startDate,
             'end_date' => $this->endedDate
         ]);
+
+        $receivers = $this->chosenPost->registeredByUser;
+
+        Notification::send($receivers, new RegisteredSold($this->chosenPost));
+
         $this->dispatch('close-modal');
         $this->toggleModal('rented');
     }
@@ -151,6 +168,11 @@ new class extends Component
             'start_date' => $this->startDate,
             'end_date' => $this->endedDate
         ]);
+
+        $receivers = $this->chosenPost->registeredByUser;
+
+        Notification::send($receivers, new RegisteredSold($this->chosenPost));
+
         $this->dispatch('close-modal');
         $this->toggleModal('loaned');
     }

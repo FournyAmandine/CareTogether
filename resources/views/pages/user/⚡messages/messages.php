@@ -2,7 +2,10 @@
 
 use App\Models\Conversation;
 use App\Models\Message;
+use App\Notifications\NewContactMessage;
+use App\Notifications\NewMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
@@ -75,11 +78,17 @@ new class extends Component
     {
         $conversation = Conversation::find($this->selectedConversationId);
 
-        $conversation->messages()->create([
+        $message = $conversation->messages()->create([
             'text' => $this->text,
             'sender_id' => auth()->id(),
             'read' => false
         ]);
+
+        $receiver = $conversation->buyer_id === auth()->id()
+            ? $conversation->seller
+            : $conversation->buyer;
+
+        Notification::send($receiver, new NewMessage($message));
 
         $this->reset('text');
     }

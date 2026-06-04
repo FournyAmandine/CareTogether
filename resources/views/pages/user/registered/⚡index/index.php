@@ -35,6 +35,7 @@
 
             $posts = auth()->user()
                 ->registered_posts()
+                ->where('sold', 0)
                 ->when($this->term, function ($term) {
                     $term->where('name', 'like', "%{$this->term}%");
                 })

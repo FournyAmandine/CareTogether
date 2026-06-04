@@ -13,7 +13,10 @@
                 </p>
             </div>
             <div class="heading__icons">
-                <x-utils.button class__button="button button--icon" title="Ouvrir les notifications" name_parent="heading__icons" svg="notifs"/>
+                <x-utils.button wire:click="toggleModal('notif')" class__button="button button--icon" title="Ouvrir les notifications" name_parent="heading__icons" svg="notifs"/>
+                <span class="heading__icons__notifs">
+                    {!! $notifications->count() !!}
+                </span>
                 <x-utils.link-svg class__button="button button--icon" title="Aller vers la page d'accueil" href="{!! route('public.homepage') !!}" name_parent="heading__icons" svg="home"/>
             </div>
         </div>
@@ -88,6 +91,25 @@
                 <div class="modal__container__buttons">
                     <x-utils.button-text wire:click="toggleModal('delete')" classButton="button button--border" name_parent="modal__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
                     <x-utils.button-text wire:click="delete()" classButton="button button--red" name_parent="modal__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="delete"/>
+                </div>
+            </x-slot:content>
+        </x-user.modal.modal>
+    @endif
+
+    @if($isOpenShowModal)
+        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'notif' })">
+            <x-slot:title>
+                Vos notifications
+            </x-slot:title>
+            <x-slot:content>
+                @foreach($notifications as $notification)
+                    <div class="modal__container__notification">
+                        <a class="modal__container__notification__link" href="{!! $notification->data['route'] !!}">{!! $notification->data['message'] !!}</a>
+                    </div>
+                @endforeach
+                <div class="modal__container__buttons">
+                    <x-utils.button-text wire:click="toggleModal('notif')" classButton="button button--border" name_parent="modal__container__buttons" text="Quitter" title="Quitter les notifications" svg="close"/>
+                    <x-utils.button-text wire:click="markAsRead()" classButton="button button--red" name_parent="modal__container__buttons" text="Marquer comme lus" title="Marquer comme lu ces notifications"/>
                 </div>
             </x-slot:content>
         </x-user.modal.modal>

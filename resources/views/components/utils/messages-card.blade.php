@@ -15,6 +15,6 @@
         </p>
     </div>
     <span class="{!! $name_parent !!}__item__date">
-        Il y a {!! $date !!} @if($date == 1) jour @else jours @endif
+        {!! $date !!}
     </span>
 </div>
