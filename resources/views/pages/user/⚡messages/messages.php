@@ -20,7 +20,9 @@ new class extends Component
 
     public function mount($conversation = null)
     {
-        $this->selectedConversation = $conversation;
+        $this->selectedConversation = $conversation
+            ? Conversation::find($conversation)
+            : null;
     }
 
 
