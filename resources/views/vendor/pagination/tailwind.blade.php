@@ -1,5 +1,6 @@
 @if ($paginator->hasPages())
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}">
+        <h3 class="sro">Pagination</h3>
 
         {{--<div class="flex gap-2 items-center justify-between sm:hidden ">
 
