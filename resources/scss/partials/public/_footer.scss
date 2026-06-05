@@ -66,6 +66,10 @@
                 justify-content: flex-start;
             }
 
+            @include w900px {
+                gap: 70px;
+            }
+
             @include w768px {
                 margin-left: unset;
             }
@@ -73,8 +77,13 @@
             &__navigation {
                 min-width: 320px;
 
+                @include w600px {
+                    min-width: 265px;
+                }
+
                 &__title {
                     margin-bottom: 40px;
+                    padding-left: 10px;
                 }
 
                 &__list {
@@ -120,6 +129,7 @@
 
                 &__title {
                     margin-bottom: 40px;
+                    padding-left: 10px;
                 }
 
                 &__buttonContainer {
