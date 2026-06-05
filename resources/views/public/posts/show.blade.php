@@ -30,7 +30,7 @@
                                 @method('DELETE')
 
                                 <button type="submit" class="detail__main__listing__iconContainer" title="Mettre en favoris">
-                                    <svg class="detail__main__listing__iconContainer__icon">
+                                    <svg class="detail__main__listing__iconContainer__icon detail__main__listing__iconContainer__icon--delete">
                                         <use xlink:href="{{ asset('assets/img/svg/sprite.svg#registered_fill') }}"></use>
                                     </svg>
                                 </button>
@@ -39,7 +39,7 @@
                             <form action="{{ route('public.posts.register', $post) }}" method="POST">
                                 @csrf
 
-                                <button type="submit" class="detail__main__listing__iconContainer" title="Mettre en favoris">
+                                <button type="submit" class="detail__main__listing__iconContainer detail__main__listing__iconContainer__icon--add" title="Mettre en favoris">
                                     <svg class="detail__main__listing__iconContainer__icon">
                                         <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
                                     </svg>
