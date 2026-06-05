@@ -1004,7 +1004,6 @@ button[aria-disabled=true] {
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 2px solid #FFFFFF;
-    padding: 0 0 14px 0;
     gap: 20px;
   }
 }
