@@ -2104,6 +2104,7 @@ button[aria-disabled=true] {
 }
 .textPage .text__main__title {
   margin-right: 20px;
+  max-width: 320px;
 }
 @media (max-width: 900px) {
   .textPage .text__main__title {

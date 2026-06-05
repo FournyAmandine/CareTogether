@@ -33,6 +33,7 @@
 
             &__title {
                 margin-right: 20px;
+                max-width: 320px;
 
                 @include w900px {
                     max-width: none;

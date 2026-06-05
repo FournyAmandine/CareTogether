@@ -9,7 +9,7 @@
                 </div>
                 <div class="wrapper wrapper--text">
                 <div class="text__main">
-                    <h2 class="maintitle maintitle--blue maintitle--big text__main__title">
+                    <h2 class="maintitle maintitle--blue text__main__title">
                         Mentions légales
                     </h2>
                     <div class="text__main__contentContainer">
