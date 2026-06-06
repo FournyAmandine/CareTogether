@@ -256,9 +256,19 @@ button[aria-disabled=true] {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .button--red {
+    padding: 10px 20px;
+  }
+}
 .button--blue {
   background: #CCD7FF;
   padding: 20px 25px;
+}
+@media (max-width: 768px) {
+  .button--blue {
+    padding: 10px 20px;
+  }
 }
 .button--blue svg {
   fill: #1E3A8A;
@@ -542,12 +552,12 @@ button[aria-disabled=true] {
 }
 @media (max-width: 600px) {
   .decoContainer {
-    top: -400px;
+    top: -420px;
   }
 }
 @media (max-width: 480px) {
   .decoContainer {
-    top: -280px;
+    top: -320px;
   }
 }
 .decoContainer__deco {
@@ -713,7 +723,7 @@ button[aria-disabled=true] {
 .breadcrumb {
   position: absolute;
   left: 125px;
-  bottom: -30px;
+  bottom: -35px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -746,6 +756,11 @@ button[aria-disabled=true] {
 .breadcrumb li {
   font-family: "DM Sans", sans-serif;
   color: #4F4A4A;
+}
+@media (max-width: 600px) {
+  .breadcrumb li {
+    font-size: 0.75em;
+  }
 }
 .breadcrumb li a {
   color: #4F4A4A;
@@ -3147,10 +3162,22 @@ button[aria-disabled=true] {
   }
 }
 
+@media (max-width: 900px) {
+  .public--show .breadcrumb {
+    flex-wrap: wrap;
+  }
+}
+
 .singlePostPage .detail {
   position: relative;
   padding-bottom: 70px;
   padding-top: 120px;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .singlePostPage .detail {
+    padding-top: 50px;
+  }
 }
 .singlePostPage .detail__sold {
   background: #2b7029;
@@ -3174,12 +3201,27 @@ button[aria-disabled=true] {
   gap: 25px;
   align-items: flex-start;
 }
+@media (max-width: 900px) {
+  .singlePostPage .detail__main {
+    grid-template-columns: 1fr;
+  }
+}
 .singlePostPage .detail__main__listing {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   gap: 15px;
   position: relative;
+}
+@media (max-width: 900px) {
+  .singlePostPage .detail__main__listing {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .singlePostPage .detail__main__listing {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .singlePostPage .detail__main__listing__iconContainer {
   border: none;
@@ -3189,6 +3231,13 @@ button[aria-disabled=true] {
   right: 15px;
   z-index: 10;
 }
+@media (max-width: 900px) {
+  .singlePostPage .detail__main__listing__iconContainer {
+    right: unset;
+    left: 10px;
+    top: 25px;
+  }
+}
 .singlePostPage .detail__main__listing__iconContainer__icon {
   background: #FFFFFF;
   padding: 10px;
@@ -3197,6 +3246,14 @@ button[aria-disabled=true] {
   border-radius: 20px;
   fill: #1E3A8A;
 }
+@media (max-width: 900px) {
+  .singlePostPage .detail__main__listing__iconContainer__icon {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
 .singlePostPage .detail__main__listing__imgContainer {
   overflow: hidden;
   border-radius: 30px;
@@ -3204,8 +3261,29 @@ button[aria-disabled=true] {
   position: relative;
   aspect-ratio: 1.2;
 }
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__listing__imgContainer {
+    border: 2px solid #1A41AE;
+  }
+}
+@media (max-width: 400px) {
+  .singlePostPage .detail__main__listing__imgContainer {
+    aspect-ratio: 1.5;
+    border-radius: 20px;
+  }
+}
 .singlePostPage .detail__main__listing__imgContainer:first-of-type {
   grid-column: span 2;
+}
+@media (max-width: 900px) {
+  .singlePostPage .detail__main__listing__imgContainer:first-of-type {
+    grid-column: 1/2;
+  }
+}
+@media (max-width: 400px) {
+  .singlePostPage .detail__main__listing__imgContainer:first-of-type {
+    grid-column: span 2;
+  }
 }
 .singlePostPage .detail__main__listing__imgContainer__img {
   width: 100%;
@@ -3221,6 +3299,16 @@ button[aria-disabled=true] {
   gap: 15px;
   max-height: fit-content !important;
 }
+@media (max-width: 1200px) {
+  .singlePostPage .detail__main__contentContainer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer {
+    padding: 15px;
+  }
+}
 .singlePostPage .detail__main__contentContainer__infos__title {
   color: #1E3A8A;
   text-transform: uppercase;
@@ -3228,10 +3316,25 @@ button[aria-disabled=true] {
   font-weight: bold;
   margin-bottom: 20px;
 }
+@media (max-width: 1024px) {
+  .singlePostPage .detail__main__contentContainer__infos__title {
+    font-size: 2em;
+  }
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__infos__title {
+    font-size: 1.5em;
+  }
+}
 .singlePostPage .detail__main__contentContainer__infos__price {
   color: #1A41AE;
   font-size: 2em;
   font-weight: bold;
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__infos__price {
+    font-size: 1.5em;
+  }
 }
 .singlePostPage .detail__main__contentContainer__infos__list {
   margin-top: 20px;
@@ -3245,10 +3348,21 @@ button[aria-disabled=true] {
   color: #3D3D3D;
   line-height: 1.5;
 }
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__infos__list__item {
+    font-size: 1em;
+  }
+}
 .singlePostPage .detail__main__contentContainer__infos__list__item__icon {
   fill: #3D3D3D;
   width: 35px;
   height: 35px;
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__infos__list__item__icon {
+    width: 25px;
+    height: 25px;
+  }
 }
 .singlePostPage .detail__main__contentContainer__infos__list__item__text {
   color: #3D3D3D;
@@ -3259,6 +3373,11 @@ button[aria-disabled=true] {
   padding: 30px;
   margin-right: 0;
   margin-left: auto;
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__description {
+    padding: 15px;
+  }
 }
 .singlePostPage .detail__main__contentContainer__description__title {
   margin-bottom: 15px;
@@ -3274,12 +3393,25 @@ button[aria-disabled=true] {
   color: #3D3D3D;
   line-height: 1.5;
 }
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__description__text {
+    font-size: 1em;
+  }
+}
 .singlePostPage .detail__main__contentContainer__description__text__icon {
   fill: #3D3D3D;
   width: 40px;
   height: 40px;
   min-width: 40px;
   min-height: 40px;
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__main__contentContainer__description__text__icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+  }
 }
 .singlePostPage .detail__buttonContainer {
   display: flex;
@@ -3297,6 +3429,7 @@ button[aria-disabled=true] {
   max-height: 920px;
   left: -320px;
   top: -260px;
+  z-index: -1;
 }
 .singlePostPage .posts__decoContainer__deco {
   width: 100%;

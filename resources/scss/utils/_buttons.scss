@@ -90,11 +90,20 @@
         padding: 20px 25px;
         position: relative;
         overflow: hidden;
+
+        @include w768px {
+            padding: 10px 20px;
+        }
     }
 
     &--blue {
         background: $secondary;
         padding: 20px 25px;
+
+
+        @include w768px {
+            padding: 10px 20px;
+        }
 
         svg {
             fill: $primary;

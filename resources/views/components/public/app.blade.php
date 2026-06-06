@@ -1,3 +1,5 @@
+@props(['modifier' => '', 'post'])
+
 <!doctype html>
 <html lang="{!! app()->getLocale() !!}">
 <head>
@@ -9,7 +11,7 @@
     <title>{!! $title_page !!} - CareTogether</title>
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
-<body class="public @if($title_page == 'À propos') aboutBody @endif">
+<body class="public @if($modifier) public--{!! $modifier !!} @endif @if($title_page == 'À propos') aboutBody @endif">
 <x-public.partials.header :title="$title_page" :post="$post ?? ''"/>
 {!! $slot !!}
 <x-public.partials.footer :title="$title_page"/>

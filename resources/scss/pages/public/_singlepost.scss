@@ -1,9 +1,24 @@
+.public--show {
+
+    .breadcrumb {
+
+        @include w900px {
+            flex-wrap: wrap;
+        }
+    }
+}
+
 .singlePostPage {//voir modifier --user en bas de page
 
     .detail {
         position: relative;
         padding-bottom: 70px;
         padding-top: 120px;
+        overflow: hidden;
+
+        @include w900px {
+            padding-top: 50px;
+        }
 
         &__sold {
             background: $sold;
@@ -29,12 +44,24 @@
             gap: 25px;
             align-items: flex-start;
 
+            @include w900px {
+                grid-template-columns: 1fr;
+            }
+
             &__listing {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-auto-rows: auto;
                 gap: 15px;
                 position: relative;
+
+                @include w900px {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                @include w600px {
+                    grid-template-columns: 1fr 1fr;
+                }
 
                 &__iconContainer {
                     border: none;
@@ -44,6 +71,12 @@
                     right: 15px;
                     z-index: 10;
 
+                    @include w900px {
+                        right: unset;
+                        left: 10px;
+                        top: 25px;
+                    }
+
                     &__icon{
                         background: $white;
                         padding: 10px;
@@ -51,6 +84,14 @@
                         height: 40px;
                         border-radius: 20px;
                         fill: $primary;
+
+                        @include w900px {
+                            width: 25px;
+                            height: 25px;
+                            padding: 5px;
+                            border-radius: 10px;
+                        }
+
                     }
                 }
 
@@ -61,8 +102,25 @@
                     position: relative;
                     aspect-ratio: 1.2;
 
+                    @include w768px {
+                        border: 2px solid $price;
+                    }
+
+                    @include w400px {
+                        aspect-ratio: 1.5;
+                        border-radius: 20px;
+                    }
+
                     &:first-of-type {
                         grid-column: span 2;
+
+                        @include w900px {
+                            grid-column: 1 / 2;
+                        }
+
+                        @include w400px {
+                            grid-column: span 2;
+                        }
                     }
 
                     &__img {
@@ -86,6 +144,14 @@
                 gap: 15px; //safety
                 max-height: fit-content !important;
 
+                @include w1200px {
+                    grid-template-columns: 1fr;
+                }
+
+                @include w768px {
+                    padding: 15px;
+                }
+
                 &__infos {
 
                     &__title {
@@ -94,12 +160,24 @@
                         font-size: $xx-large;
                         font-weight: bold;
                         margin-bottom: 20px;
+
+                        @include w1024px {
+                            font-size: $x-large;
+                        }
+
+                        @include w768px {
+                            font-size: $large;
+                        }
                     }
 
                     &__price {
                         color: $price;
                         font-size: $x-large;
                         font-weight: bold;
+
+                        @include w768px {
+                            font-size: $large;
+                        }
                     }
 
                     &__list {
@@ -114,10 +192,19 @@
                             color: $text;
                             line-height: 1.5;
 
+                            @include w768px {
+                               font-size: $normal;
+                            }
+
                             &__icon {
                                 fill: $text;
                                 width: 35px;
                                 height: 35px;
+
+                                @include w768px {
+                                    width: 25px;
+                                    height: 25px;
+                                }
                             }
 
                             &__text {
@@ -134,6 +221,11 @@
                     margin-right: 0;
                     margin-left: auto;
 
+                    @include w768px {
+                        padding: 15px;
+                    }
+
+
                     &__title {
                         margin-bottom: 15px;
                         color: $primary;
@@ -149,12 +241,24 @@
                         color: $text;
                         line-height: 1.5;
 
+                        @include w768px {
+                            font-size: $normal;
+                        }
+
+
                         &__icon {
                             fill: $text;
                             width: 40px;
                             height: 40px;
                             min-width: 40px;
                             min-height: 40px;
+
+                            @include w768px {
+                                width: 30px;
+                                height: 30px;
+                                min-width: 30px;
+                                min-height: 30px;
+                            }
                         }
                     }
                 }
@@ -182,6 +286,7 @@
             max-height: 920px;
             left: -320px;
             top: -260px;
+            z-index: -1;
 
             &__deco {
                 width: 100%;
