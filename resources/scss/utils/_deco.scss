@@ -2,10 +2,50 @@
     max-width: 1540px;
     height: auto;
     position: absolute;
-    top: -600px;
+    top: -550px;
     left: 15%;
     right: 15%;
     z-index: -1;
+
+    @include w1800px {
+        top: -450px;
+    }
+
+    @include w1600px {
+        top: -400px;
+    }
+
+    @include w1400px {
+        top: -350px;
+    }
+
+    @include w1200px {
+        top: -320px;
+    }
+
+    @include w1024px {
+        left: 5%;
+        right: 5%;
+    }
+
+    @include w900px {
+        top: -280px;
+    }
+
+    @include w768px {
+        left: -200px;
+        right: 0;
+        top: -520px;
+        width: 200%;
+    }
+
+    @include w600px {
+        top: -400px;
+    }
+
+    @include w480px {
+        top: -280px;
+    }
 
     &__deco {
         width: 100%;

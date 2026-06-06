@@ -496,10 +496,59 @@ button[aria-disabled=true] {
   max-width: 1540px;
   height: auto;
   position: absolute;
-  top: -600px;
+  top: -550px;
   left: 15%;
   right: 15%;
   z-index: -1;
+}
+@media (max-width: 1800px) {
+  .decoContainer {
+    top: -450px;
+  }
+}
+@media (max-width: 1600px) {
+  .decoContainer {
+    top: -400px;
+  }
+}
+@media (max-width: 1400px) {
+  .decoContainer {
+    top: -350px;
+  }
+}
+@media (max-width: 1200px) {
+  .decoContainer {
+    top: -320px;
+  }
+}
+@media (max-width: 1024px) {
+  .decoContainer {
+    left: 5%;
+    right: 5%;
+  }
+}
+@media (max-width: 900px) {
+  .decoContainer {
+    top: -280px;
+  }
+}
+@media (max-width: 768px) {
+  .decoContainer {
+    left: -200px;
+    right: 0;
+    top: -520px;
+    width: 200%;
+  }
+}
+@media (max-width: 600px) {
+  .decoContainer {
+    top: -400px;
+  }
+}
+@media (max-width: 480px) {
+  .decoContainer {
+    top: -280px;
+  }
 }
 .decoContainer__deco {
   width: 100%;
@@ -525,8 +574,20 @@ button[aria-disabled=true] {
   margin-left: auto;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .filters {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+}
 .filters__formSearch {
   position: relative;
+}
+@media (max-width: 768px) {
+  .filters__formSearch {
+    min-width: 0;
+  }
 }
 .filters__formSearch__input {
   border: none;
@@ -538,6 +599,13 @@ button[aria-disabled=true] {
   width: 460px;
   font-weight: bold;
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .filters__formSearch__input {
+    max-width: 460px;
+    width: 100%;
+    min-width: 0;
+  }
 }
 .filters__formSearch__input::placeholder {
   color: #1E3A8A;
@@ -1612,14 +1680,13 @@ button[aria-disabled=true] {
 .card-post__link__imgContainer, .card-post__container__imgContainer {
   overflow: hidden;
   border-radius: 15px;
-  width: 100%;
-  height: auto;
+  aspect-ratio: 16/9;
 }
 .card-post__link__imgContainer__img, .card-post__container__imgContainer__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   object-position: center;
+  object-fit: cover;
 }
 .card-post__link__contentContainer, .card-post__container__contentContainer {
   margin-top: 10px;
@@ -3004,19 +3071,34 @@ button[aria-disabled=true] {
   position: relative;
   padding-bottom: 90px;
 }
+@media (max-width: 600px) {
+  .postsPage .posts {
+    padding-top: 60px;
+  }
+}
 .postsPage .posts .wrapper {
   display: flex;
   flex-direction: column;
   gap: 60px;
   align-items: center;
 }
+@media (max-width: 600px) {
+  .postsPage .posts .wrapper {
+    gap: 30px;
+  }
+}
 .postsPage .posts__title {
   max-width: none;
 }
 .postsPage .posts__listing {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 25px;
+}
+@media (max-width: 1400px) {
+  .postsPage .posts__listing {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 .postsPage .posts__pagination span, .postsPage .posts__pagination a {
   font-family: "DM Sans", sans-serif;
@@ -3026,6 +3108,11 @@ button[aria-disabled=true] {
 }
 .postsPage .posts__pagination a {
   font-size: 2.5em;
+}
+@media (max-width: 900px) {
+  .postsPage .posts__pagination a {
+    font-size: 2em;
+  }
 }
 .postsPage .posts__pagination span {
   color: #1E3A8A;
@@ -3044,9 +3131,20 @@ button[aria-disabled=true] {
 .postsPage .posts__pagination__icon--disabled {
   background: rgba(30, 58, 138, 0.7) !important;
 }
+@media (max-width: 900px) {
+  .postsPage .posts__pagination__icon {
+    width: 30px;
+    height: 30px;
+  }
+}
 .postsPage .posts__pagination__current {
   margin-right: 0 !important;
   font-size: 2.5em;
+}
+@media (max-width: 900px) {
+  .postsPage .posts__pagination__current {
+    font-size: 2em;
+  }
 }
 
 .singlePostPage .detail {
