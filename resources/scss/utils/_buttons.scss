@@ -19,6 +19,11 @@
     overflow: hidden;
     position: relative;
 
+    @include w768px {
+        font-size: $normal;
+        padding: 10px 20px;
+    }
+
     svg {
         fill: $white;
         width: 25px;

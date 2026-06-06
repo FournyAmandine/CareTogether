@@ -79,6 +79,9 @@
                     </form>
                     @endif
                 </div>
+                <div class="contact__imgContainer">
+                    <img class="contact__imgContainer__img" src="{!! asset('assets/img/contact-image.png') !!}" alt="Illustration d'une personne qui tient les épaules d'une personne en scooter">
+                </div>
             </div>
         </div>
     </main>

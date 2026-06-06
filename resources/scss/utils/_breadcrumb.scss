@@ -6,6 +6,27 @@
     align-items: center;
     gap: 5px;
 
+    @include w1695px {
+        left: 0;
+    }
+
+    @include w1695px {
+        left: 10px;
+    }
+
+    @include w1400px {
+        left: 50px;
+    }
+
+    @include w1024px {
+        left: 40px;
+    }
+
+    @include w600px {
+        left: 30px;
+    }
+
+
     li {
         font-family: $titleFont;
         color: $breadcrumb;
