@@ -2646,6 +2646,12 @@ button[aria-disabled=true] {
   background: rgba(182, 200, 255, 0.2);
   flex-wrap: wrap;
 }
+@media (max-width: 1695px) {
+  .card-message {
+    width: unset;
+    gap: 20px;
+  }
+}
 .card-message__button {
   position: absolute;
   top: 0;
@@ -5457,6 +5463,9 @@ button[aria-disabled=true] {
   top: -570px;
   left: 15%;
   right: 10%;
+}
+.contactMessagesPage .breadcrumb {
+  flex-wrap: wrap;
 }
 .contactMessagesPage .unread__title, .contactMessagesPage .read__title {
   margin-bottom: 20px;
