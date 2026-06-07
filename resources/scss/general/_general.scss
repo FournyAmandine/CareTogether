@@ -36,6 +36,10 @@ body.user {
     height: 100vh;
     overflow: hidden;
 
+    @include w1695px {
+        flex-direction: column;
+    }
+
     main {
         width: 100%;
         flex: 1;
@@ -51,6 +55,10 @@ body.user {
     font-family: $textFont;
     margin-bottom: 25px;
     display: block;
+
+    @include w600px {
+        font-size: $normal;
+    }
 }
 
 .empty {
@@ -62,12 +70,21 @@ body.user {
     gap: 20px !important;
     margin-top: 20px;
 
+    @include w1600px {
+        width: 100%;
+        min-width: 0;
+    }
+
     &__text {
         font-weight: bold;
         color: $primary;
         font-size: $medium;
         display: flex;
         justify-content: center;
+
+        @include w600px {
+            font-size: $normal;
+        }
     }
 
     &__buttonContainer {

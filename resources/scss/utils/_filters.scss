@@ -33,6 +33,7 @@
                 max-width: 460px;
                 width: 100%;
                 min-width: 0;
+                font-size: $normal;
             }
 
             &::placeholder {
@@ -92,6 +93,10 @@
                 font-size: $large;
                 font-weight: bold;
                 margin-bottom: 20px;
+
+                @include w600px {
+                    font-size: $medium;
+                }
             }
 
             &__checkbox {
@@ -122,10 +127,19 @@
                         justify-content: space-between;
                         width: 85%;
 
+                        @include w600px {
+                            font-size: $normal;
+                        }
+
                         &__icon {
                             fill: $white;
                             width: 40px;
                             height: 40px;
+
+                            @include w600px {
+                                width: 30px;
+                                height: 30px;
+                            }
                         }
                     }
                 }
@@ -139,6 +153,10 @@
             font-size: $large;
             font-weight: bold;
             margin-bottom: 10px;
+
+            @include w600px {
+                font-size: $medium;
+            }
         }
 
         &__sort {
@@ -150,6 +168,10 @@
             padding: 5px;
             border-radius: 5px;
             width: 90%;
+
+            @include w600px {
+                font-size: $normal;
+            }
 
             &__option {
 

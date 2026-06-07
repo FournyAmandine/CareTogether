@@ -118,6 +118,14 @@
             position: absolute;
             top: 0;
             right: 0;
+
+            @include w600px {
+                width: 80%;
+            }
+
+            @include w400px {
+                width: 85%;
+            }
         }
     }
 

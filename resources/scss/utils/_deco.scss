@@ -33,18 +33,19 @@
     }
 
     @include w768px {
-        left: -200px;
-        right: 0;
-        top: -520px;
-        width: 200%;
+        top: -125px;
     }
 
     @include w600px {
-        top: -420px;
+        top: -80px;
     }
 
     @include w480px {
-        top: -320px;
+        top: -40px;
+    }
+
+    @include w400px {
+        top: -30px;
     }
 
     &__deco {
@@ -55,6 +56,45 @@
     &--user {
         left: 25%;
         right: 0;
+
+        @include w1600px {
+            top: -400px;
+            left: 15%;
+        }
+
+        @include w1400px {
+            top: -350px;
+        }
+
+        @include w1200px {
+            top: -280px;
+        }
+
+        @include w1024px {
+            left: 5%;
+            right: 5%;
+            top: -220px;
+        }
+
+        @include w900px {
+            top: -150px;
+        }
+
+        @include w768px {
+            top: -125px;
+        }
+
+        @include w600px {
+            top: -80px;
+        }
+
+        @include w480px {
+            top: -40px;
+        }
+
+        @include w400px {
+            top: -30px;
+        }
     }
 
     &--index {
@@ -64,5 +104,48 @@
         right: 0;
         width: 740px;
         height: 920px;
+    }
+
+    &--show {
+        @include w1800px {
+            top: -600px;
+            left: 15%;
+        }
+
+        @include w1600px {
+            top: -560px;
+            left: 15%;
+        }
+
+        @include w1400px {
+            top: -500px;
+        }
+
+        @include w1200px {
+            top: -450px;
+        }
+
+        @include w1024px {
+            left: 5%;
+            right: 5%;
+        }
+
+        @include w900px {
+            top: -400px;
+        }
+
+        @include w768px {
+        }
+
+        @include w600px {
+            top: -380px;
+        }
+
+        @include w480px {
+            top: -320px;
+        }
+
+        @include w400px {
+        }
     }
 }
