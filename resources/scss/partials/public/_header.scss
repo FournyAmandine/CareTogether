@@ -210,6 +210,8 @@
                     &__button {
 
                         &__icon {
+                            width: 25px;
+                            height: 25px;
 
                             @include w600px {
                                 width: 25px;
