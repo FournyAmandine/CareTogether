@@ -5,6 +5,10 @@
         .breadcrumb {
             bottom: unset;
             top: -25px;
+
+            @include w1695px {
+                top: -50px;
+            }
         }
     }
 
@@ -32,12 +36,21 @@
             border-radius: 20px;
             overflow: hidden;
 
+            @include w1024px {
+                grid-template-columns: 1fr;
+            }
+
             &__fieldset {
                 background: rgba($secondary, 0.7);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 padding: 40px;
+                min-width: 0;
+
+                @include w600px {
+                    padding: 20px;
+                }
 
                 &__image {
                     padding: 0 40px 30px;
@@ -106,12 +119,24 @@
                         color: $text;
                         border: 1px solid $stepBcg;
                         background: $postInfosBcg;
+
+                        @include w1024px {
+                            padding: 15px;
+                        }
                     }
                 }
 
                 &--secondary {
                     padding: 40px 110px 40px 90px;
                     background: $pageBcg;
+
+                    @include w768px {
+                        padding: 40px;
+                    }
+
+                    @include w600px {
+                        padding: 20px;
+                    }
 
                     .profil__form__fieldset__locality {
                         display: grid;
@@ -120,6 +145,13 @@
                         padding-bottom: 30px;
                         border-bottom: 1px solid $primary;
                         margin-bottom: 40px;
+
+                        @include w768px {
+                            padding-bottom: 10px;
+                            margin-bottom: 25px;
+                            grid-template-columns: 1fr;
+                            gap: 0;
+                        }
                     }
 
                     .profil__form__fieldset__formRow{
@@ -139,17 +171,30 @@
                     gap: 20px;
                     justify-content: flex-end;
 
+                    @include w600px {
+                        flex-direction: column-reverse;
+                        align-items: flex-end;
+                    }
+
                     &__buttonContainer {
 
                         &:first-of-type {
 
                             .profil__form__fieldset__buttons__buttonContainer__button {
                                 padding: 13px 25px;
+
+                                @include w768px {
+                                    padding: 13px 15px;
+                                }
                             }
                         }
 
                         &__button {
                             padding: 15px 25px;
+
+                            @include w768px {
+                                padding: 15px;
+                            }
                         }
                     }
                 }
