@@ -26,10 +26,15 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 25px;
-        z-index: 3;
+        z-index: 1;
         position: relative;
 
+        @include w900px {
+            grid-template-columns: 1fr;
+        }
+
         &__secondary {
+            min-width: 0;
 
             &__fieldset {
                 border-radius: 20px;
@@ -37,12 +42,14 @@
                 box-shadow: rgba($primary, 0.25) 0 0 30px;
                 padding: 45px 25px;
                 background: $postsBcg;
+                min-width: 0;
 
                 &__formRow {
                     display: flex;
                     flex-direction: column;
                     margin-bottom: 25px;
                     width: 100%;
+                    min-width: 0;
 
                     &__label {
                         color: $primary;
@@ -63,6 +70,7 @@
                         font-family: $titleFont;
                         font-size: $normal;
                         background: rgba($primary, 0.05);
+                        min-width: 0;
                     }
                 }
 
@@ -85,6 +93,10 @@
                     border: solid $primary 2px;
                     padding: 105px 25px;
 
+                    @include w600px {
+                        padding: 75px 15px;
+                    }
+
                     &__input {
 
                     }
@@ -105,10 +117,20 @@
                         flex-wrap: wrap;
                         padding: 30px 25px;
 
+                        @include w400px{
+                            padding: 20px 15px;
+                        }
+
                         .formContainer__form__secondary__fieldset__image__button {
                             width: 25px;
                             height: 25px;
                             padding: 15px;
+
+                            @include w400px{
+                                padding: 10px;
+                                width: 20px;
+                                height: 20px;
+                            }
                         }
                     }
                 }
@@ -130,12 +152,16 @@
             border: 2px solid $primary;
             box-shadow: rgba($primary, 0.25) 0 0 30px;
             padding: 45px 25px;
+            min-width: 0;
+            z-index: 1;
+            background: $postsBcg;
 
             &__formRow {
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 25px;
                 width: 100%;
+                min-width: 0;
 
                 &__label {
                     color: $primary;
@@ -160,6 +186,7 @@
                     font-family: $titleFont;
                     font-size: $normal;
                     background: rgba($primary, 0.05);
+                    min-width: 0;
 
                     &:disabled {
                         background: rgba($text, 0.2);
