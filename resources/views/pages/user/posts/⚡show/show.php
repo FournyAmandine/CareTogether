@@ -50,7 +50,7 @@ new class extends Component
                         ->orWhere('seller_id', auth()->id());
                 })
                 ->get()
-        ])->title($this->post->name);
+        ])->title($this->post->name)->layoutData(['body_class' => 'showUser']);
     }
     public function mount($post): void
     {

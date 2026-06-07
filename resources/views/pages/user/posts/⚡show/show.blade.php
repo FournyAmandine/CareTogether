@@ -3,15 +3,10 @@
     <x-user.utils.heading title="Votre annonce : {!! $post->name !!}" :post="$post"/>
 
     <section class="detail">
-        <x-utils.deco/>
+        <x-utils.deco modifier="show"/>
         <div class="wrapper wrapper--small">
             <div class="detail__main">
                 <div class="detail__main__listing">
-                    <button class="detail__main__listing__iconContainer" title="Mettre en favoris">
-                        <svg class="detail__main__listing__iconContainer__icon">
-                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
-                        </svg>
-                    </button>
                     @if($existingImages == [])
                         <div class="detail__main__listing__imgContainer">
                             <img class="detail__main__listing__imgContainer__img detail__main__listing__imgContainer__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">

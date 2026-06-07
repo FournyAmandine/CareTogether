@@ -14,7 +14,10 @@
         position: relative;
         padding-bottom: 70px;
         padding-top: 120px;
-        overflow: hidden;
+
+        @include w600px {
+            padding-bottom: 40px;
+        }
 
         @include w900px {
             padding-top: 50px;
@@ -280,6 +283,10 @@
         padding-bottom: 120px;
         position: relative;
 
+        @include w600px {
+            padding-top: 40px;
+        }
+
         &__decoContainer {
             position: absolute;
             max-width: 740px;
@@ -316,6 +323,10 @@
             .breadcrumb {
                 bottom: unset;
                 top: -25px;
+
+                @include w1695px {
+                    top: -50px;
+                }
             }
 
             &__title {
@@ -328,27 +339,9 @@
 
             &__main {
 
-                &__imgContainer {
-
-                    &__iconContainer {
-
-                        &__icon{
-                        }
-                    }
-
-                    &__img {
-                    }
-                }
-
                 &__contentContainer {
 
                     &__infos {
-
-                        &__title {
-                        }
-
-                        &__price {
-                        }
 
                         &__list {
 
@@ -360,22 +353,6 @@
                                     width: 35px;
                                     height: 35px;
                                 }
-
-                                &__text {
-
-                                }
-                            }
-                        }
-                    }
-
-                    &__description {
-
-                        &__title {
-                        }
-
-                        &__text {
-
-                            &__icon {
                             }
                         }
                     }
@@ -384,14 +361,18 @@
 
             &__buttons {
                 display: flex;
-                gap: 20px;
                 justify-content: flex-end;
-                z-index: 2;
+                flex-wrap: wrap;
 
                 &__buttonContainer {
                     display: flex;
                     justify-content: flex-end;
                     padding-top: 30px;
+                    margin-left: 20px;
+
+                    @include w600px {
+                        padding-top: 15px;
+                    }
 
                     &__button {
                         //_buttons.scss
@@ -414,10 +395,6 @@
             &__decoContainer {
                 right: -320px;
                 left: unset;
-
-                &__deco {
-
-                }
             }
         }
     }
