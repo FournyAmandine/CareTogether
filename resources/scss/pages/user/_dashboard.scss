@@ -14,9 +14,13 @@
         }
 
         .wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
+            display: flex;
+            justify-content: space-between;
             gap: 15px;//safety
+
+            @include w768px {
+                flex-direction: column-reverse;
+            }
         }
 
         &__decoContainer {
@@ -243,7 +247,7 @@
             }
         }
 
-        &__posts, &__category {
+        &__posts {
             padding: 40px 30px;
             border-radius: 20px;
             border: 3px solid $tertiary;
@@ -342,6 +346,62 @@
 
                 &__button {
                     //_button.scss
+                }
+            }
+        }
+
+        &__category {
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 3px solid $tertiary;
+            background: $postsBcg;
+            box-shadow: rgba($primary, 0.3) 0 0 30px;
+            height: fit-content;
+
+            &__title {
+                margin-bottom: 30px;
+                max-width: none;
+            }
+
+            &__listing {
+
+                &__item {
+                    display: flex;
+                    align-items: center;
+                    background: $postsBcg;
+                    box-shadow: rgba($primary, 0.2) 0 0 30px;
+                    padding: 15px 20px;
+                    border-radius: 20px;
+                    margin-bottom: 20px;
+                    justify-content: space-between;
+                    gap: 15px;
+
+                    @include w480px {
+                        flex-direction: column;
+                    }
+
+                    &__text {
+                        color: $primary;
+                        font-size: $medium;
+                        font-weight: bold;
+                    }
+
+                    &__buttons {
+                        display: flex;
+                        gap: 15px;
+
+                        &__buttonContainer {
+
+                            &__button {
+                                //buttons.scss
+
+                                svg {
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

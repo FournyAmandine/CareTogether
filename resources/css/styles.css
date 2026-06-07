@@ -4343,9 +4343,14 @@ button[aria-disabled=true] {
   }
 }
 .dashboardPage .heading .wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 15px;
+}
+@media (max-width: 768px) {
+  .dashboardPage .heading .wrapper {
+    flex-direction: column-reverse;
+  }
 }
 .dashboardPage .heading__decoContainer {
   position: absolute;
@@ -4530,7 +4535,7 @@ button[aria-disabled=true] {
   width: 100%;
   height: 100%;
 }
-.dashboardPage .recap__posts, .dashboardPage .recap__category {
+.dashboardPage .recap__posts {
   padding: 40px 30px;
   border-radius: 20px;
   border: 3px solid #00B5C4;
@@ -4538,11 +4543,11 @@ button[aria-disabled=true] {
   box-shadow: rgba(30, 58, 138, 0.3) 0 0 30px;
   height: fit-content;
 }
-.dashboardPage .recap__posts__title, .dashboardPage .recap__category__title {
+.dashboardPage .recap__posts__title {
   margin-bottom: 30px;
   max-width: none;
 }
-.dashboardPage .recap__posts__listing__item__link, .dashboardPage .recap__category__listing__item__link {
+.dashboardPage .recap__posts__listing__item__link {
   display: flex;
   align-items: center;
   background: #F4F7FF;
@@ -4552,68 +4557,109 @@ button[aria-disabled=true] {
   margin-bottom: 20px;
 }
 @media (max-width: 480px) {
-  .dashboardPage .recap__posts__listing__item__link, .dashboardPage .recap__category__listing__item__link {
+  .dashboardPage .recap__posts__listing__item__link {
     flex-direction: column;
     gap: 20px;
   }
 }
-.dashboardPage .recap__posts__listing__item__link__imgContainer, .dashboardPage .recap__category__listing__item__link__imgContainer {
+.dashboardPage .recap__posts__listing__item__link__imgContainer {
   width: 150px;
   height: 90px;
   border-radius: 30px;
   overflow: hidden;
 }
 @media (max-width: 480px) {
-  .dashboardPage .recap__posts__listing__item__link__imgContainer, .dashboardPage .recap__category__listing__item__link__imgContainer {
+  .dashboardPage .recap__posts__listing__item__link__imgContainer {
     width: 200px;
     height: 120px;
     border-radius: 20px;
   }
 }
 @media (max-width: 400px) {
-  .dashboardPage .recap__posts__listing__item__link__imgContainer, .dashboardPage .recap__category__listing__item__link__imgContainer {
+  .dashboardPage .recap__posts__listing__item__link__imgContainer {
     width: 150px;
     height: 90px;
     border-radius: 20px;
   }
 }
-.dashboardPage .recap__posts__listing__item__link__imgContainer__img, .dashboardPage .recap__category__listing__item__link__imgContainer__img {
+.dashboardPage .recap__posts__listing__item__link__imgContainer__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.dashboardPage .recap__posts__listing__item__link__contentContainer, .dashboardPage .recap__category__listing__item__link__contentContainer {
+.dashboardPage .recap__posts__listing__item__link__contentContainer {
   margin-left: 20px;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
 }
-.dashboardPage .recap__posts__listing__item__link__contentContainer__name, .dashboardPage .recap__category__listing__item__link__contentContainer__name {
+.dashboardPage .recap__posts__listing__item__link__contentContainer__name {
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
   font-size: 1.25em;
   color: #1E3A8A;
 }
-.dashboardPage .recap__posts__listing__item__link__contentContainer__price, .dashboardPage .recap__category__listing__item__link__contentContainer__price {
+.dashboardPage .recap__posts__listing__item__link__contentContainer__price {
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
   font-size: 1.25em;
   color: #1E3A8A;
 }
-.dashboardPage .recap__posts__listing__item__link__contentContainer__date, .dashboardPage .recap__category__listing__item__link__contentContainer__date {
+.dashboardPage .recap__posts__listing__item__link__contentContainer__date {
   font-family: "Inter", sans-serif;
   color: #1E3A8A;
 }
-.dashboardPage .recap__posts__listing__item__link__text, .dashboardPage .recap__category__listing__item__link__text {
+.dashboardPage .recap__posts__listing__item__link__text {
   color: #1E3A8A;
   font-size: 1.25em;
   font-weight: bold;
 }
-.dashboardPage .recap__posts__buttonContainer, .dashboardPage .recap__category__buttonContainer {
+.dashboardPage .recap__posts__buttonContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-top: 30px;
+}
+.dashboardPage .recap__category {
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 3px solid #00B5C4;
+  background: #F4F7FF;
+  box-shadow: rgba(30, 58, 138, 0.3) 0 0 30px;
+  height: fit-content;
+}
+.dashboardPage .recap__category__title {
+  margin-bottom: 30px;
+  max-width: none;
+}
+.dashboardPage .recap__category__listing__item {
+  display: flex;
+  align-items: center;
+  background: #F4F7FF;
+  box-shadow: rgba(30, 58, 138, 0.2) 0 0 30px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  gap: 15px;
+}
+@media (max-width: 480px) {
+  .dashboardPage .recap__category__listing__item {
+    flex-direction: column;
+  }
+}
+.dashboardPage .recap__category__listing__item__text {
+  color: #1E3A8A;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.dashboardPage .recap__category__listing__item__buttons {
+  display: flex;
+  gap: 15px;
+}
+.dashboardPage .recap__category__listing__item__buttons__buttonContainer__button svg {
+  width: 30px;
+  height: 30px;
 }
 .dashboardPage .recap__messages {
   padding: 40px 30px;
