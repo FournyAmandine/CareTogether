@@ -83,6 +83,7 @@
                 @endforeach
                 </div>
                 <x-utils.button name_parent="rentals__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-current-next"/>
+                <div class="slider--dots slider--dots-currentRentals"></div>
                 @if($current_rentals->isEmpty())
                     <x-user.utils.empty text="Il n'y a aucune location en cours pour le moment"
                                         label="Voir toutes les annonces" href="{!! route('public.posts.index') !!}" title="Aller sur la page avec les annonces"/>
@@ -115,6 +116,7 @@
                 @endforeach
             </div>
             <x-utils.button name_parent="rentals__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-ended-next"/>
+                <div class="slider--dots slider--dots-endedRentals"></div>
             @if($ended_rentals->isEmpty())
                 <x-user.utils.empty text="Il n'y a aucune location terminée pour le moment"
                                     label="Voir toutes les annonces" href="{!! route('public.posts.index') !!}" title="Aller sur la page avec les annonces"/>
