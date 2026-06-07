@@ -3,15 +3,10 @@
     <x-user.utils.heading title="Votre annonce : {!! $post->name !!}" :post="$post"/>
 
     <section class="detail">
-        <x-utils.deco/>
+        <x-utils.deco modifier="show"/>
         <div class="wrapper wrapper--small">
             <div class="detail__main">
                 <div class="detail__main__listing">
-                    <button class="detail__main__listing__iconContainer" title="Mettre en favoris">
-                        <svg class="detail__main__listing__iconContainer__icon">
-                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
-                        </svg>
-                    </button>
                     @if($existingImages == [])
                         <div class="detail__main__listing__imgContainer">
                             <img class="detail__main__listing__imgContainer__img detail__main__listing__imgContainer__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">
@@ -117,7 +112,7 @@
         </div>
     </section>
     @if($isOpenDeleteModal)
-        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'modal' })">
+        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'delete' })">
             <x-slot:title>
                 Voulez-vous vraiment supprimer cette annonce :
                 <span class="modal__container__title__name">
@@ -167,7 +162,7 @@
             <x-slot:content>
                 <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
                     @csrf
-                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
+                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous loué cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
                         @foreach($conversations as $conversation)
                             @php
@@ -195,7 +190,7 @@
             <x-slot:content>
                 <form class="modal__container__form" wire:submit.prevent="markAsGiven" method="post">
                     @csrf
-                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
+                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous donné cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
                         @foreach($conversations as $conversation)
                             @php
@@ -221,7 +216,7 @@
             <x-slot:content>
                 <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
                     @csrf
-                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
+                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous prêté cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
                         @foreach($conversations as $conversation)
                             @php

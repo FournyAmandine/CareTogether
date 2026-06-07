@@ -31,11 +31,11 @@ new class extends Component
         return view('pages.user.⚡dashboard.dashboard', [
             'first_name' => auth()->user()->first_name,
             'last_name' => auth()->user()->last_name,
-            'posts_unsold' => auth()->user()->posts()->where('posts.sold', 0)->count(),
-            'posts_sold' => auth()->user()->posts()->where('posts.sold', 1)->count(),
+            'posts_count' => auth()->user()->posts()->count(),
+            'registered_count' => auth()->user()->registered_posts()->count(),
             'rentals' => auth()->user()->rentals()->count(),
             'conversations' => auth()->user()->soldConversations()->count(),
-            'posts' => auth()->user()->posts()->with('images')->where('posts.sold', 0)->paginate(4),
+            'posts' => auth()->user()->registered_posts()->with('images')->where('posts.sold', 0)->paginate(4),
             'messages' => Message::whereHas('conversation', function ($q) {
                 $q->where('seller_id', auth()->id());
             })->with(['sender'])->latest()->paginate(5),

@@ -11,6 +11,11 @@
     background: rgba($gradient1, 0.2);
     flex-wrap: wrap;
 
+    @include w1695px {
+        width: unset;
+        gap: 20px;
+    }
+
     &__button {
         position: absolute;
         top: 0;

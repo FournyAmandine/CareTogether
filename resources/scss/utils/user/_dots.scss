@@ -1,0 +1,43 @@
+.slider--dots {
+
+    .slick-dots {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        @include w768px {
+            gap: 5px;
+        }
+
+        li {
+
+            button {
+                font-size: 0;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                border: none;
+                background: $tertiary;
+
+                @include w768px {
+                    width: 7px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+
+    .slick-active {
+
+        button {
+            width: 17px !important;
+            height: 17px !important;
+            background: $primary !important;
+
+            @include w768px {
+                width: 10px !important;
+                height: 10px !important;
+            }
+        }
+    }
+}

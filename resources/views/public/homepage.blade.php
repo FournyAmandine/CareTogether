@@ -17,9 +17,12 @@
                 <p class="banner__subtitle">
                     La plateforme dédiée au prêt, au don et à la vente de matériel médical de seconde main pour faciliter l’accès aux soins pour tous
                 </p>
+
+                <p class="banner__subtitle banner__subtitle--tel">
+                    La plateforme de prêt, don et vente de matériel médical de seconde main pour faciliter l’accès aux soins.                </p>
                 <div class="banner__buttons">
                     <x-utils.link href="{!! route('public.posts.index') !!}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
-                    <x-utils.link href="{!! route('register') !!}" svg="arrow-button" class-button="button--blue" name_parent="buttonbanner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    <x-utils.link href="{!! route('register') !!}" svg="arrow-button" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-<x-login.app title_page="Mot de passe oublié">
+<x-login.app modifier="login" title_page="Mot de passe oublié">
     <main class="formPage">
         <section class="content">
             <div class="content__imgContainer">

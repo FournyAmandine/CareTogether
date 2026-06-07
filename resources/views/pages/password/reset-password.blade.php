@@ -1,4 +1,4 @@
-<x-login.app title_page="Réinitialiser votre mot de passe">
+<x-login.app modifier="login" title_page="Réinitialiser votre mot de passe">
     <main class="formPage">
         <section class="content">
             <div class="content__imgContainer">
@@ -36,6 +36,7 @@
                 <x-login.button
                     text="Réinitialiser"
                     class_button="button--login"
+                    name_parent="content__form"
                 />
             </form>
         </section>

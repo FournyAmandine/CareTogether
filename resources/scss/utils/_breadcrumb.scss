@@ -1,14 +1,39 @@
 .breadcrumb {
     position: absolute;
     left: 125px;
-    bottom: -30px;
+    bottom: -35px;
     display: flex;
     align-items: center;
     gap: 5px;
 
+    @include w1695px {
+        left: 0;
+    }
+
+    @include w1695px {
+        left: 10px;
+    }
+
+    @include w1400px {
+        left: 50px;
+    }
+
+    @include w1024px {
+        left: 40px;
+    }
+
+    @include w600px {
+        left: 30px;
+    }
+
+
     li {
         font-family: $titleFont;
         color: $breadcrumb;
+
+        @include w600px {
+            font-size: $small;
+        }
 
         a {
             color: $breadcrumb;

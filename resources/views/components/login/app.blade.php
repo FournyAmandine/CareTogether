@@ -1,4 +1,4 @@
-@props(['title_page'])
+@props(['title_page', 'modifier'=>''])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -11,7 +11,7 @@
     <title>{!! $title_page !!} - CareTogether</title>
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
-<body class="auth">
+<body class="auth @if($modifier) auth--{!! $modifier !!} @endif">
 <header>
     <h1 class="sro">Header</h1>
 </header>
