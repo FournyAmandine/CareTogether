@@ -5,6 +5,7 @@ namespace App\Livewire\Forms;
 use App\Jobs\ProcessUploadedImage;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -18,8 +19,7 @@ class UserForm extends Form
     #[Validate('required|string')]
     public $last_name = '';
 
-    #[Validate('required|string|unique:')]
-    public $email = '';
+    public string $email = '';
 
     #[Validate('required|string')]
     public $password = '';
@@ -96,6 +96,17 @@ class UserForm extends Form
                 ['profil_picture' => $profil_picture]
             )
         );
+    }
+
+    public function rules(): array
+    {
+        return [
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users', 'email')->ignore($this->user->id),
+            ],
+        ];
     }
 
     public function update()

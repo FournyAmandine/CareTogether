@@ -99,6 +99,7 @@
                 @endforeach
                 </div>
                 <x-utils.button name_parent="registered__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-registered-next"/>
+                <div class="slider--dots slider--dots-registered"></div>
                 @if($registered_posts->isEmpty())
                     <x-user.utils.empty text="Il n'y a aucune annonce enregistrée pour le moment"
                                         label="Voir toutes les annonces" href="{!! route('public.posts.index') !!}" title="Aller sur la page avec les annonces"/>

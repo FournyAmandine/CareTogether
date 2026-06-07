@@ -23,6 +23,14 @@
             font-weight: bold;
             color: $primary;
             line-height: 1.2;
+
+            @include w900px {
+                font-size: $large;
+            }
+
+            @include w600px {
+                font-size: $medium;
+            }
         }
 
         &__buttons {
@@ -32,11 +40,25 @@
             gap: 20px;
             margin-top: 20px;
 
+            @include w480px {
+                flex-direction: column-reverse;
+                gap: 10px;
+            }
+
             &__buttonContainer {
+
+                @include w480px {
+                    width: 100%;
+                }
 
                 &__button {
                     //_buttons.scss
                     padding: 20px 25px !important;
+
+                    @include w480px {
+                        padding: 10px 15px !important;
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -49,6 +71,10 @@
                 border-bottom: 2px solid $primary;
                 font-size: $medium;
                 width: 100%;
+
+                @include w600px {
+                    font-size: $normal;
+                }
             }
         }
 
@@ -72,6 +98,10 @@
                     color: $text;
                     margin-bottom: 15px;
 
+                    @include w600px {
+                        font-size: $medium;
+                    }
+
                     .required {
                         color: $required;
                     }
@@ -86,6 +116,10 @@
                     padding: 5px;
                     border-radius: 5px;
                     width: 90%;
+
+                    @include w600px {
+                        font-size: $normal;
+                    }
                 }
 
                 &__select {
@@ -98,8 +132,16 @@
                     border-radius: 5px;
                     width: 90%;
 
+                    @include w600px {
+                        font-size: $normal;
+                    }
+
                     &__option {
                         font-size: $medium;
+
+                        @include w600px {
+                            font-size: $normal;
+                        }
                     }
                 }
             }
@@ -118,6 +160,14 @@
             position: absolute;
             top: 0;
             right: 0;
+
+            @include w600px {
+                width: 80%;
+            }
+
+            @include w400px {
+                width: 85%;
+            }
         }
     }
 
@@ -134,21 +184,28 @@
                 align-items: center;
                 font-size: $medium;
 
-                &__email {
+                @include w600px {
+                    font-size: $normal;
                 }
 
-                &__date {
-                }
             }
 
             &__subject {
                 font-family: $textFont;
                 font-size: $medium;
+
+                @include w600px {
+                    font-size: $normal;
+                }
             }
 
             &__message {
                 font-size: $medium;
                 margin-top: 10px;
+
+                @include w600px {
+                    font-size: $normal;
+                }
             }
 
             &__buttons {

@@ -7,9 +7,9 @@
                 <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>
             </svg>
         @endif
-        <h3 class="stats__listing__item__titleContainer__title">
+        <p class="stats__listing__item__titleContainer__title">
             {!! $title !!}
-        </h3>
+        </p>
     </div>
     <p class="stats__listing__item__text">
         {!! $text !!}

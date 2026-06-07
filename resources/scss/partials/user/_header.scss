@@ -8,17 +8,69 @@
         top: 0;
         overflow: hidden;
 
+        @include w1800px {
+            width: 370px;
+        }
+
+        @include w1695px {
+            height: 100px;
+            width: 100%;
+            z-index: 2;
+        }
+
         &__content {
             padding: 30px;
             height: 100vh;
 
+            @include w1695px {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px;
+                height: 80px;
+                align-items: flex-end;
+                gap: 10px;
+            }
+
+            &__burger {
+                display: none;
+
+                @include w1695px {
+                    display: block;
+                }
+
+                &__container {
+
+                    &__form {
+
+                        &__buttonContainer {
+                            padding-top: 50px;
+
+                            &__button {
+                                width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+
             &__imgContainer {
                 margin-bottom: 30px;
+
+
+                @include w1800px {
+                    width: 310px;
+                }
+
+                @include w1695px {
+                    margin-bottom: 10px;
+                    width: 250px;
+                }
 
                 &__link {
 
                     &__img {
-
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
@@ -28,6 +80,10 @@
                 border-bottom: solid 2px $white;
                 padding-top: 30px;
                 height: 75%;
+
+                @include w1695px {
+                    display: none;
+                }
 
                 &__list {
 
@@ -72,15 +128,43 @@
             }
 
             &__buttonContainer {
-                max-width: 220px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 20px;
-                margin-bottom: 30px;
+                display: none;
+
+                @include w1695px {
+                    display: block;
+                }
 
                 &__button {
-                    padding: 10px 25px;
                     //_buttons.scss
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+
+                        @include w600px {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+            }
+
+            &__form {
+                @include w1695px {
+                    display: none;
+                }
+
+                &__buttonContainer {
+                    max-width: 220px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+
+                    &__button {
+                        padding: 10px 25px;
+                        //_buttons.scss
+                    }
                 }
             }
         }

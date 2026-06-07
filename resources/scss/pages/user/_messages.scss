@@ -2,11 +2,38 @@
     position: relative;
     overflow: hidden;
 
+    .decoContainer {
+
+        @include w1024px {
+            top: -250px;
+        }
+
+        @include w768px {
+            top: -230px;
+        }
+
+        @include w600px {
+            top: -170px;
+        }
+
+        @include w480px {
+            top: -140px;
+        }
+
+        @include w400px {
+            top: -100px;
+        }
+    }
+
     .messages {
         padding-bottom: 120px;
         position: relative;
         height: 100vh;
         display: flex;
+
+        @include w768px {
+            height: unset;
+        }
 
         &__decoContainer {
             position: absolute;
@@ -32,14 +59,52 @@
             height: 80vh;
             overflow: hidden;
 
+            @include w1024px {
+                display: flex;
+                width: 200%;
+                transition: transform 0.35s ease;
+                will-change: transform;
+                overflow: hidden;
+
+                &.is-conv-open {
+                    transform: translateX(-50%);
+
+                    .messages__container__listing {
+                        opacity: 0.4;
+                        transform: scale(0.98);
+                    }
+
+                    .messages__container__content {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            @include w480px {
+                width: 180%;
+            }
+
+            @include w400px {
+                width: 140%;
+            }
+
+
             &__listing {
                 border-right: solid 2px $primary;
                 overflow-y: auto;
+
+                @include w1024px {
+                    width: 50%;
+                    flex-shrink: 0;
+                    transition: transform 0.35s ease, opacity 0.35s ease;
+                }
 
                 &__heading {
                     display: flex;
                     gap: 20px;
                     padding: 25px 10px 10px 15px;
+                    flex-wrap: wrap;
 
                     &__buttonContainer {
 
@@ -97,17 +162,29 @@
                             font-family: $titleFont;
                             font-size: $large;
                             color: $primary;
+
+                            @include w768px {
+                                font-size: $medium;
+                            }
                         }
 
                         &__post {
                             font-family: $textFont;
                             font-size: $medium;
                             color: $primary;
+
+                            @include w768px {
+                                font-size: $normal;
+                            }
                         }
 
                         &__text {
                             font-family: $textFont;
                             font-size: $medium;
+
+                            @include w768px {
+                                font-size: $normal;
+                            }
                         }
                     }
                 }
@@ -118,11 +195,50 @@
                 flex-direction: column;
                 overflow: hidden;
 
+                @include w1024px {
+                    width: 50%;
+                    flex-shrink: 0;
+                    transition: transform 0.35s ease, opacity 0.35s ease;
+                }
+
                 &__heading {
                     display: flex;
                     padding: 9px 25px;
                     align-items: center;
                     flex-shrink: 0;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: flex-start;
+
+                    @include w480px {
+                        padding: 9px 15px;
+                    }
+
+                    &__back {
+
+                        &__buttonContainer {
+                            display: none;
+                            transform: rotate(180deg);
+
+                            @include w1024px {
+                                display: block;
+                            }
+
+                            &__button {
+                                //button.scss
+                                padding: 10px 12px !important;
+
+                                @include w400px {
+                                    padding: 8px 10px !important;
+                                }
+
+                                svg {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
 
                     &--select{
                         padding: 22px 25px;
@@ -131,6 +247,10 @@
                             font-size: $large;
                             color: $primary;
                             font-weight: bold;
+
+                            @include w768px {
+                                font-size: $medium;
+                            }
                         }
                     }
 
@@ -138,9 +258,11 @@
                         display: flex;
                         align-items: center;
                         gap: 10px;
+                        margin-right: 30px;
 
                         &__imgContainer {
-                            width: 50px;
+                            min-width: 50px;
+                            min-height: 50px;
                             height: 50px;
                             border-radius: 50%;
                             background: $primary;
@@ -157,6 +279,10 @@
                             color: $primary;
                             font-family: $titleFont;
                             font-weight: bold;
+
+                            @include w768px {
+                                font-size: $normal;
+                            }
                         }
                     }
 
@@ -166,11 +292,14 @@
                         padding: 10px;
                         border-radius: 10px;
                         border: 1px solid $primary;
-                        margin-left: 30px;
                     }
 
                     &__buttonContainer {
                         margin-left: auto;
+
+                        @include w1600px {
+                            margin-left: 0;
+                        }
 
                         &__button {
                             padding: 10px 30px;
@@ -204,6 +333,10 @@
                                 align-self: flex-end;
                                 margin-right: 25px;
 
+                                @include w768px {
+                                    margin-right: 0;
+                                }
+
                                 p {
                                     color: $white;
                                 }
@@ -214,6 +347,10 @@
                                 background: $postInfosBcg;
                                 align-self: flex-start;
                                 margin-left: 25px;
+
+                                @include w768px {
+                                    margin-left: 0;
+                                }
 
                                 p {
                                     color: $primary;
@@ -246,6 +383,10 @@
                                 border: 1px solid $primary;
                                 width: 95%;
                                 background: $postInfosBcg;
+
+                                @include w600px {
+                                    width: 85%;
+                                }
 
                                 &::placeholder {
                                     color: $primary;

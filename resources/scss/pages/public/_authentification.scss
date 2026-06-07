@@ -7,6 +7,20 @@
     width: 100%;
     height: 100vh;
 
+    @include w900px {
+        height: auto;
+        background-position: 60%;
+    }
+
+    &--login {
+        height: 100vh;
+
+        .formPage {
+            height: 100vh !important;
+            padding: 0 !important;
+        }
+    }
+
 
     .formPage {
         display: flex;
@@ -14,12 +28,35 @@
         align-items: center;
         height: 100vh;
 
+        @include w900px {
+            height: auto;
+            padding: 60px 0;
+        }
+
+
         .content {
             background: $pageBcg;
             border: 1px solid $primary;
             border-radius: 20px;
             padding: 60px 45px 85px;
-            width: 25%;
+            width: 30%;
+
+            @include w1600px {
+                width: 40%;
+            }
+
+            @include w1200px {
+                width: 55%;
+            }
+
+            @include w900px {
+                width: 60%;
+            }
+
+            @include w600px {
+                width: 70%;
+                padding: 60px 25px 85px;
+            }
 
             &__heading {
                 display: flex;
@@ -33,6 +70,11 @@
                 &__imgContainer {
                     width: 410px;
                     height: 125px;
+
+                    @include w600px {
+                        width: 250px;
+                        height: auto;
+                    }
 
                     &__img {
                         width: 100%;
@@ -67,6 +109,11 @@
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 20px;
+
+                    @include w900px {
+                        grid-template-columns: 1fr;
+                        gap: 0;
+                    }
                 }
 
                 &__formRow {
@@ -80,6 +127,10 @@
                         font-weight: bold;
                         font-size: $medium;
 
+                        @include w900px {
+                            font-size: $normal;
+                        }
+
                         span {
                             color: $required;
                         }
@@ -91,6 +142,10 @@
                         border-radius: 10px;
                         padding: 15px 20px;
                         margin-bottom: 30px;
+
+                        @include w600px {
+                            padding: 10px 20px;
+                        }
                     }
                 }
 
@@ -120,6 +175,11 @@
                 gap: 15px;
                 justify-content: center;
                 margin-top: 20px;
+
+                @include w600px {
+                    flex-direction: column;
+                    align-items: center;
+                }
 
                 &__link {
                     font-family: $textFont;

@@ -8,7 +8,7 @@
         </div>
         <div class="wrapper">
         <h2 class="sro">Liste des messages</h2>
-            <div class="messages__container">
+            <div class="messages__container" x-data="{ isChatOpen: @entangle('selectedConversationId') }" :class="{ 'is-conv-open': isChatOpen }">
                 <div wire:poll.10s class="messages__container__listing">
                     <div class="messages__container__listing__heading">
                         <x-utils.button-text wire:click="$set('filters', 'all')" name_parent="messages__container__listing__heading" text="Tous" title="Voir tous les messages" class-button="button {{$filters == 'all' ? 'button--login' : 'button--border'}}"/>
@@ -25,7 +25,7 @@
                                 return $message->sender_id != auth()->id() && !$message->read;
                             });
                         @endphp
-                        <div class="messages__container__listing__item messages__container__listing__item--{{$unread ? 'unread' : ''}}">
+                        <div @click="isChatOpen = true" class="messages__container__listing__item messages__container__listing__item--{{$unread ? 'unread' : ''}}">
                             <button wire:click="selectConversation({{ $conversation->id }})" class="messages__container__listing__item__button" title="Voir la conversation avec  {!! $otherUser->first_name . ' ' . $otherUser->last_name !!}"></button>
                             <div class="messages__container__listing__item__imgContainer">
                                 <img class="messages__container__listing__item__imgContainer__img" src="{!! Str::startsWith($otherUser->profil_picture, 'assets')? asset($otherUser->profil_picture) : asset('storage/photos/users/originals/' . $otherUser->profil_picture) !!}" alt="Image de profil de l'utilisateur">
@@ -50,6 +50,9 @@
                         </div>
                     @else
                         <div class="messages__container__content__heading">
+                            <div class="messages__container__content__heading__back">
+                                <x-utils.button  @click="isChatOpen = false"     wire:click="$set('selectedConversationId', null)" name_parent="messages__container__content__heading__back" svg="arrow-button" class-button="button--icon" title="Retour sur la liste des conversations"/>
+                            </div>
                             <div class="messages__container__content__heading__sender">
                                 @php
                                     $otherUser = $conversation_selected->buyer_id === auth()->id()

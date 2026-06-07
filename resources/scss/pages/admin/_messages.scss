@@ -6,6 +6,10 @@
         right: 10%;
     }
 
+    .breadcrumb {
+        flex-wrap: wrap;
+    }
+
     .unread, .read {
 
         &__title {

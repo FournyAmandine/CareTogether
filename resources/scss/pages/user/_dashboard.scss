@@ -4,10 +4,23 @@
         padding-top: 100px;
         padding-bottom: 40px;
 
+
+        @include w1695px {
+            padding-top: 50px;
+        }
+
+        @include w768px {
+            padding-top: 20px;
+        }
+
         .wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
+            display: flex;
+            justify-content: space-between;
             gap: 15px;//safety
+
+            @include w768px {
+                flex-direction: column-reverse;
+            }
         }
 
         &__decoContainer {
@@ -16,6 +29,10 @@
             right: 0;
             width: 870px;
             height: 1055px;
+
+            @include w1695px {
+                bottom: 300px;
+            }
 
             &__deco {
                 width: 100%;
@@ -36,6 +53,10 @@
                 color: $text;
                 max-width: 400px;
                 line-height: 1.5;
+
+                @include w768px {
+                    font-size: $normal;
+                }
             }
         }
 
@@ -57,15 +78,30 @@
                 font-size: $medium;
                 left: 35px;
                 top: -10px;
+
+                @include w600px {
+                    font-size: $normal;
+                    padding: 7px 12px;
+                }
             }
 
             &__buttonContainer {
 
+                &:nth-child(3) {
+
+                    @include w600px {
+                        display: none;
+                    }
+                }
+
                 &__button {
                     //buttons.scss
 
-                    &__icon {
-
+                    svg {
+                        @include w600px {
+                            width: 30px;
+                            height: 30px;
+                        }
                     }
                 }
             }
@@ -98,14 +134,33 @@
 
         &__listing {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
+
+            @include w900px {
+                gap: 20px;
+            }
+
+            @include w600px {
+                grid-template-columns:repeat(auto-fit, minmax(135px, 1fr));
+                gap: 10px;
+            }
 
             &__item {
                 border: 25px solid $white;
                 border-radius: 30px;
                 background: $statsBcg1;
                 padding: 20px 30px;
+
+                @include w1400px {
+                    border-width: 15px;
+                }
+
+                @include w600px {
+                    border-width: 5px;
+                    border-radius: 10px;
+                    padding: 15px 10px;
+                }
 
                 &:nth-child(even) {
                     background: $statsBcg2;
@@ -131,6 +186,11 @@
                         width: 60px;
                         height: 60px;
                         fill: $primary;
+
+                        @include w768px {
+                            width: 40px;
+                            height: 40px;
+                        }
                     }
                 }
 
@@ -138,6 +198,10 @@
                     font-size: $medium;
                     font-weight: bold;
                     color: $primary;
+
+                    @include w600px {
+                        font-size: $normal;
+                    }
                 }
             }
         }
@@ -164,6 +228,10 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
+
+            @include w1024px{
+                grid-template-columns: 1fr;
+            }
         }
 
         &__decoContainer {
@@ -179,7 +247,110 @@
             }
         }
 
-        &__posts, &__category {
+        &__posts {
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 3px solid $tertiary;
+            background: $postsBcg;
+            box-shadow: rgba($primary, 0.3) 0 0 30px;
+            height: fit-content;
+
+            &__title {
+                margin-bottom: 30px;
+                max-width: none;
+            }
+
+            &__listing {
+
+                &__item {
+
+                    &__link {
+                        display: flex;
+                        align-items: center;
+                        background: $postsBcg;
+                        box-shadow: rgba($primary, 0.2) 0 0 30px;
+                        padding: 15px 20px;
+                        border-radius: 20px;
+                        margin-bottom: 20px;
+
+                        @include w480px {
+                            flex-direction: column;
+                            gap: 20px;
+                        }
+
+                        &__imgContainer {
+                            width: 150px;
+                            height: 90px;
+                            border-radius: 30px;
+                            overflow: hidden;
+
+                            @include w480px {
+                                width: 200px;
+                                height: 120px;
+                                border-radius: 20px;
+                            }
+
+                            @include w400px {
+                                width: 150px;
+                                height: 90px;
+                                border-radius: 20px;
+                            }
+
+                            &__img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        &__contentContainer {
+                            margin-left: 20px;
+                            line-height: 1.5;
+                            display: flex;
+                            flex-direction: column;
+
+                            &__name {
+                                font-family: $titleFont;
+                                font-weight: bold;
+                                font-size: $medium;
+                                color: $primary;
+                            }
+
+                            &__price {
+                                font-family: $titleFont;
+                                font-weight: bold;
+                                font-size: $medium;
+                                color: $primary;
+                            }
+
+                            &__date {
+                                font-family: $textFont;
+                                color: $primary;
+                            }
+                        }
+
+                        &__text {
+                            color: $primary;
+                            font-size: $medium;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            &__buttonContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-top: 30px;
+
+                &__button {
+                    //_button.scss
+                }
+            }
+        }
+
+        &__category {
             padding: 40px 30px;
             border-radius: 20px;
             border: 3px solid $tertiary;
@@ -202,43 +373,11 @@
                     padding: 15px 20px;
                     border-radius: 20px;
                     margin-bottom: 20px;
+                    justify-content: space-between;
+                    gap: 15px;
 
-                    &__imgContainer {
-                        width: 150px;
-                        height: 90px;
-                        border-radius: 30px;
-                        overflow: hidden;
-
-                        &__img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-
-                    &__contentContainer {
-                        margin-left: 20px;
-                        line-height: 1.5;
-                        display: flex;
+                    @include w480px {
                         flex-direction: column;
-
-                        &__name {
-                            font-family: $titleFont;
-                            font-weight: bold;
-                            font-size: $medium;
-                            color: $primary;
-                        }
-
-                        &__price {
-                            font-family: $titleFont;
-                            font-weight: bold;
-                            font-size: $medium;
-                            color: $primary;
-                        }
-
-                        &__date {
-                            font-family: $textFont;
-                        }
                     }
 
                     &__text {
@@ -249,33 +388,20 @@
 
                     &__buttons {
                         display: flex;
-                        gap: 20px;
-                        margin-left: auto;
-                        margin-right: 0;
+                        gap: 15px;
 
                         &__buttonContainer {
 
                             &__button {
-                                //_buttons.scss
-                                padding: 15px;
+                                //buttons.scss
+
                                 svg {
-                                    width: 25px;
-                                    height: 25px;
+                                    width: 30px;
+                                    height: 30px;
                                 }
                             }
                         }
                     }
-                }
-            }
-
-            &__buttonContainer {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                margin-top: 30px;
-
-                &__button {
-                    //_button.scss
                 }
             }
         }
@@ -298,12 +424,14 @@
                     display: flex;
                     border-bottom: 1px solid $primary;
                     padding: 15px 10px;
+                    flex-wrap: wrap;
 
                     &__imgContainer {
                         width: 60px;
                         height: 60px;
                         background: $primary;
                         border-radius: 50%;
+                        margin-right: 20px;
 
                         &__img {
                             width: 100%;
@@ -313,8 +441,8 @@
                     }
 
                     &__contentContainer {
-                        margin-left: 20px;
                         line-height: 1.5;
+                        padding-bottom: 15px;
 
                         &__name {
                             font-family: $titleFont;

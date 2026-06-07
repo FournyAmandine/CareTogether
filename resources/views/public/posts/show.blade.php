@@ -1,4 +1,4 @@
-<x-public.app :post="$post">
+<x-public.app :post="$post" modifier="show">
     <x-slot:title_page>
         {!! $post->name !!}
     </x-slot:title_page>

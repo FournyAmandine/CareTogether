@@ -1,4 +1,4 @@
-<x-login.app title_page="Connexion">
+<x-login.app modifier="login" title_page="Connexion">
 
     <main class="formPage">
 
