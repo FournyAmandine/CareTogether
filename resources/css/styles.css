@@ -2271,6 +2271,10 @@ button[aria-disabled=true] {
   height: 30px;
   width: 25px;
 }
+.card-post--last .card-post__link__imgContainer {
+  width: 265px;
+  height: 155px;
+}
 .card-post--last .card-post__link__iconContainer {
   width: 40px;
   height: 40px;
@@ -5679,6 +5683,9 @@ button[aria-disabled=true] {
 .messagesPage .messages__container__content__main__form__formRow {
   padding: 10px 25px;
 }
+.messagesPage .messages__container__content__main__form__formRow__label span {
+  display: none;
+}
 .messagesPage .messages__container__content__main__form__formRow__input {
   padding: 25px 20px;
   border-radius: 20px;
@@ -5697,8 +5704,15 @@ button[aria-disabled=true] {
 .messagesPage .messages__container__content__main__form__buttonContainer {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 30px;
   transform: rotate(45deg);
+}
+.messagesPage .messages__container__content__main__form__buttonContainer__button:hover {
+  background: none;
+  border: none;
+}
+.messagesPage .messages__container__content__main__form__buttonContainer__button:hover svg {
+  fill: #E65650;
 }
 .messagesPage .messages__container__content__main__form__buttonContainer__button svg {
   width: 30px;

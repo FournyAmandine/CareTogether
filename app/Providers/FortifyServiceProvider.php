@@ -75,12 +75,24 @@ class FortifyServiceProvider extends ServiceProvider
             {
 
                 if (auth()->user()->role === UserRole::Administrator){
-                    return redirect('/admin/dashboard');
+                    return redirect(route('admin.dashboard'));
                 }
-                return redirect('/user/dashboard');
+                return redirect(route('user.dashboard'));
 
             }
 
+        });
+
+        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
+
+            public function toResponse($request)
+            {
+                if (auth()->user()->role === UserRole::Administrator) {
+                    return redirect(route('admin.dashboard'));
+                }
+
+                return redirect(route('user.dashboard'));
+            }
         });
 
     }

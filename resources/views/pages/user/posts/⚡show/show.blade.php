@@ -28,14 +28,33 @@
                         <h3 class="detail__main__contentContainer__infos__title">
                             {!! $post->name !!}
                         </h3>
-                        <p class="detail__main__contentContainer__infos__price">
-                            {!! $post->price !!}€
-                        </p>
+                        @if($post->type === \App\Enums\PostType::Loan->value)
+                            <p class="detail__main__contentContainer__infos__price">
+                                Prêt
+                            </p>
+                        @elseif($post->type === \App\Enums\PostType::Donation->value)
+                            <p class="detail__main__contentContainer__infos__price">
+                                Don
+                            </p>
+                        @else
+                            <p class="detail__main__contentContainer__infos__price">
+                                {!! $post->price !!}€
+                            </p>
+                        @endif
                         <ul class="detail__main__contentContainer__infos__list">
                             <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
                             <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
                             <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
-                            <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+
+                            @if($post->type === \App\Enums\PostType::Sale->value)
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                            @elseif($post->type === \App\Enums\PostType::Rental->value)
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Loué par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                            @elseif($post->type === \App\Enums\PostType::Loan->value)
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Prêté par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                            @elseif($post->type === \App\Enums\PostType::Donation->value)
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Donné par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                            @endif
                             <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
                             <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
                         </ul>
@@ -94,19 +113,17 @@
                     @php
                         $image = $post->images()->first();
                     @endphp
-                    <x-utils.card title="{!! $post->name !!}"
-                                  locality="{!! $post->locality !!}"
-                                  state="{!! $post->state !!}" :registered-post-ids="$register_id"
-                                  price="{!! $post->price !!}" :post="$post"
-                                  imgSrc="{{ $image?->img_path
+                    <x-user.utils.post-card title="{{ $post->name }}" type="{{ $post->type }}"
+                                            svg="{!! Str::slug($post->category->name, '_')!!}"
+                                            price="{{ $post->price }}" locality="{{ $post->locality }}"
+                                            state="{{ $post->state }}" modifier="post"
+                                            imgSrc="{{ $image?->img_path
                                                     ? (Str::startsWith($image->img_path, 'assets')
                                                         ? asset($image->img_path)
                                                         : asset('storage/photos/posts/originals/' . $image->img_path))
                                                     : asset('assets/img/post-image.jpg') }}"
-                                  svg="{!! Str::slug($post->category->name, '_')!!}"
-                                  src="{!! route('user.posts.show', $post->id) !!}"
-                                  type="{!! $post->type !!}" modifier="last"
-                    />
+                                            src="{!! route('user.posts.show', $post->id) !!}" sold="{{$post->sold}}"
+                                            views="{{ $post->views }}" registered="{!! $post->registeredByUser->count() !!}"/>
                 @endforeach
             </div>
         </div>
@@ -160,7 +177,7 @@
                 Marquer cette annonce comme loué
             </x-slot:title>
             <x-slot:content>
-                <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
+                <form class="modal__container__form" wire:submit.prevent="markAsRented" method="post">
                     @csrf
                     <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous loué cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>

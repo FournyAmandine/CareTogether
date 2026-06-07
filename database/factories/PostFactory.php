@@ -4,7 +4,9 @@ namespace Database\Factories;
 
 use App\Enums\PostState;
 use App\Enums\PostType;
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
@@ -26,15 +28,41 @@ class PostFactory extends Factory
             'locality' => $this->faker->randomElement($locality),
             'state' => $this->faker->randomElement($state),
             'price' => $this->faker->randomElement($price),
-            'category_id' => $this->faker->numberBetween(1, 6),
+            'category_id' => Category::factory(),
             'marque' => 'Rolstoel',
             'type' => $this->faker->randomElement($type),
             'description' => $this->faker->text(200),
             'sold' => $this->faker->boolean(),
             'views' => $this->faker->numberBetween(1, 20),
-            'user_id' => 1,
+            'user_id' => User::factory(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
+    }
+
+    public function withoutName(): PostFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'name' => null,
+
+            ];
+
+        });
+    }
+
+    public function withoutType(): PostFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'type' => null,
+
+            ];
+
+        });
     }
 }

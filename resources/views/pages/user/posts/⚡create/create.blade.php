@@ -24,6 +24,7 @@
                     @enderror
 
                     <x-user.form.fields.select wire:model.live="form.category_id" name_parent="formContainer__form__fieldset" field_name="post_category" required="required" label="Categorie">
+                        <x-user.form.fields.option value="none" option_name="Selectionnez une catégorie" name_parent="formContainer__form__fieldset"/>
                         @foreach($categories as $category)
                             <x-user.form.fields.option value="{!! $category->id !!}" option_name="{!! $category->name !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
@@ -35,6 +36,7 @@
                     @enderror
 
                     <x-user.form.fields.select wire:model.live="form.type" name_parent="formContainer__form__fieldset" field_name="post_type" required="required" label="Type d'annonce">
+                        <x-user.form.fields.option value="none" option_name="Selectionnez un type d'annonce" name_parent="formContainer__form__fieldset"/>
                         @foreach($this->getType() as $type)
                             <x-user.form.fields.option value="{!! $type->value !!}" option_name="{!! $type->value !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
@@ -63,6 +65,7 @@
                     @enderror
 
                     <x-user.form.fields.select wire:model.live="form.state" name_parent="formContainer__form__fieldset" field_name="post_state" required="required" label="État du produit">
+                        <x-user.form.fields.option value="none" option_name="Selectionnez un état" name_parent="formContainer__form__fieldset"/>
                         @foreach($this->getState() as $state)
                             <x-user.form.fields.option value="{!! $state->value !!}" option_name="{!! $state->value !!}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
@@ -86,9 +89,6 @@
 
                         <span class="formContainer__form__secondary__fieldset__title">
                                 Photos
-                                <span class="required">
-                                    *
-                                </span>
                             </span>
                         <div class="@if($form->newImages == []) formContainer__form__secondary__fieldset__image @else formContainer__form__secondary__fieldset__image formContainer__form__secondary__fieldset__image--complet @endif">
                             <input wire:model.live="form.newImages" class="formContainer__form__secondary__fieldset__image__input" type="file" id="photos" hidden multiple>

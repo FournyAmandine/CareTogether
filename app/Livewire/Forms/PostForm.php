@@ -22,7 +22,7 @@ class PostForm extends Form
     public $state = '';
 
     #[Validate('required|integer')]
-    public $price = '';
+    public $price = 0;
 
     #[Validate('required|string')]
     public $marque = '';

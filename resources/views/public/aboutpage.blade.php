@@ -12,8 +12,8 @@
                     Faciliter l’accès au matériel médical grâce à la seconde main.
                 </h2>
                 <div class="banner__buttons">
-                    <x-utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
-                    <x-utils.link svg="arrow-button" href="#" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
+                    <x-utils.link svg="arrow-button" href="{!! route('register') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
+                    <x-utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
                 </div>
             </div>
         </section>
@@ -36,7 +36,7 @@
                     <p  class="about__contentContainer__content">
                         Fauteuils roulants, lits médicalisés, déambulateurs ou équipements de confort représentent souvent un investissement important et ne sont utilisés que temporairement. CareTogether propose une solution simple, locale et solidaire pour favoriser leur réutilisation.
                     </p>
-                    <x-utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    <x-utils.link svg="arrow-button" href="{!! route('login') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
                 </div>
                 <div class="about__imgContainer">
                     <img class="about__imgContainer__img" src="{!! asset('assets/img/about-about-image.png') !!}" alt="Homme tenant l'épaule d'une femme dans un lit médical">

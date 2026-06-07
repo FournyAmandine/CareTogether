@@ -29,6 +29,7 @@ new class extends Component
     public function mount($post): void
     {
         $this->post = Post::findOrFail($post);
+        $this->authorize('update', $this->post);
         $this->form->setPost($this->post);
         $this->existingImages = $this->post->images->toArray();
     }

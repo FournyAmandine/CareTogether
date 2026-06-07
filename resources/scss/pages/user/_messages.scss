@@ -370,6 +370,13 @@
                         &__formRow {
                             padding: 10px 25px;
 
+                            &__label {
+
+                                span {
+                                    display: none;
+                                }
+                            }
+
                             &__input {
                                 padding: 25px 20px;
                                 border-radius: 20px;
@@ -390,10 +397,19 @@
                         &__buttonContainer {
                             position: absolute;
                             top: 20px;
-                            right: 20px;
+                            right: 30px;
                             transform: rotate(45deg);
 
                             &__button {
+
+                                &:hover {
+                                    background: none;
+                                    border: none;
+
+                                    svg {
+                                        fill: $buttonBcg1;
+                                    }
+                                }
 
                                 svg {
                                     width: 30px;

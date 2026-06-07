@@ -87,9 +87,6 @@
 
                         <span class="formContainer__form__secondary__fieldset__title">
                                 Photos
-                                <span class="required">
-                                    *
-                                </span>
                             </span>
                         <div class="@if($existingImages == [] && $form->newImages == []) formContainer__form__secondary__fieldset__image @else formContainer__form__secondary__fieldset__image formContainer__form__secondary__fieldset__image--complet @endif">
                             <input wire:model.live="form.newImages" class="formContainer__form__secondary__fieldset__image__input" type="file" id="photos" hidden multiple>
