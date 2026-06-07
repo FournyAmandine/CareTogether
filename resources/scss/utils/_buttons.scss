@@ -22,6 +22,7 @@
     @include w768px {
         font-size: $normal;
         padding: 10px 20px;
+        gap: 10px;
     }
 
     svg {
@@ -29,6 +30,11 @@
         width: 25px;
         height: 25px;
         transition: transform .2s ease;
+
+        @include w768px {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &:before {
@@ -165,6 +171,10 @@
         position: absolute;
         top: 460px;
         right: -80px;
+
+        @include w1695px {
+            display: none;
+        }
 
         &--left {
             transform: rotate(180deg);

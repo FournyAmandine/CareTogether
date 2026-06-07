@@ -10,7 +10,7 @@
             left: 50px;
             bottom: unset;
             top: -55px;
-            z-index: 6;
+            z-index: 1;
         }
     }
 
@@ -33,7 +33,9 @@
     &__actions {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
+        gap: 20px;
+        flex-wrap: wrap;
 
         &__filters {
 

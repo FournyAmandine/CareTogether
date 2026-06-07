@@ -28,8 +28,8 @@
                 Quelques statistiques
             </h2>
             <div class="stats__listing">
-                <x-user.utils.stats-card number="{!! $posts_unsold !!}" content="annonces actives" svg="stats-actives"/>
-                <x-user.utils.stats-card number="{!! $posts_sold !!}" content="annonces vendues" svg="stats-vendues"/>
+                <x-user.utils.stats-card number="{!! $posts_count !!}" content="annonces" svg="stats-actives"/>
+                <x-user.utils.stats-card number="{!! $registered_count !!}" content="annonces enregistrées" svg="registered_fill"/>
                 <x-user.utils.stats-card number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
                 <x-user.utils.stats-card number="{!! $conversations !!}" content="conversations" svg="stats-messages"/>
             </div>
@@ -44,7 +44,7 @@
         <div class="wrapper wrapper--small">
             <section class="recap__posts">
                 <h2 class="maintitle maintitle--blue maintitle--small recap__posts__title">
-                    Vos dernières annonces
+                    Vos annonces enregistrées
                 </h2>
                 <div class="recap__posts__listing">
                     @foreach($posts as $post)
