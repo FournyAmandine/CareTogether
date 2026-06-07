@@ -112,7 +112,7 @@
         </div>
     </section>
     @if($isOpenDeleteModal)
-        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'modal' })">
+        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'delete' })">
             <x-slot:title>
                 Voulez-vous vraiment supprimer cette annonce :
                 <span class="modal__container__title__name">
@@ -162,7 +162,7 @@
             <x-slot:content>
                 <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
                     @csrf
-                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
+                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous loué cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
                         @foreach($conversations as $conversation)
                             @php
@@ -190,7 +190,7 @@
             <x-slot:content>
                 <form class="modal__container__form" wire:submit.prevent="markAsGiven" method="post">
                     @csrf
-                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
+                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous donné cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
                         @foreach($conversations as $conversation)
                             @php
@@ -216,7 +216,7 @@
             <x-slot:content>
                 <form class="modal__container__form" wire:submit.prevent="markAsLoaned" method="post">
                     @csrf
-                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous vendu cette annonce?">
+                    <x-user.form.fields.select wire:model="selectedUser" name_parent="modal__container__form" field_name="user" required="required" label="À qui avez-vous prêté cette annonce?">
                         <x-user.form.fields.option name_parent="modal__container__form" selected="selected" value="none" option_name="Sélectionner l'acheteur"/>
                         @foreach($conversations as $conversation)
                             @php
