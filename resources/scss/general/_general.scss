@@ -98,6 +98,24 @@ body.user {
         min-width: 1600px;
     }
 }
+.unauthorize {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: $statsBcg1;
+
+    &__text {
+        font-size: $large;
+        color: $primary;
+
+        @include w600px {
+            font-size: $medium;
+        }
+    }
+}
 
 button[aria-disabled="true"] {
     display: none;

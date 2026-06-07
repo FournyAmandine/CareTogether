@@ -186,6 +186,25 @@ body.user main {
   min-width: 1600px;
 }
 
+.unauthorize {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #DBE5FF;
+}
+.unauthorize__text {
+  font-size: 1.5em;
+  color: #1E3A8A;
+}
+@media (max-width: 600px) {
+  .unauthorize__text {
+    font-size: 1.25em;
+  }
+}
+
 button[aria-disabled=true] {
   display: none;
 }
