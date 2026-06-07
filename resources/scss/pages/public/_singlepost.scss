@@ -335,7 +335,7 @@
         }
 
         .detail {
-            z-index: 2;
+            z-index: 1;
 
             &__main {
 
@@ -393,7 +393,7 @@
         .posts {
 
             &__decoContainer {
-                right: -320px;
+                right: -0px;
                 left: unset;
             }
         }

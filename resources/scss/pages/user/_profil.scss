@@ -15,6 +15,10 @@
     .profil {
         padding-top: 50px;
 
+        @include w1024px {
+            padding-bottom: 90px;
+        }
+
         &__decoContainer {
             width: 775px;
             height: 920px;

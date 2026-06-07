@@ -2,10 +2,10 @@
 @import "settings/reset";
 
 //GENERAL
+@import "general/breakpoints";
 @import "general/colors";
 @import "general/fonts";
 @import "general/general";
-@import "general/breakpoints";
 
 //UTILS
 @import "utils/buttons";
@@ -17,6 +17,7 @@
 @import "utils/burger";
 @import "utils/user/heading";
 @import "utils/user/form";
+@import "utils/user/dots";
 
 //PARTIALS
 @import "partials/public/header";
