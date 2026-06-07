@@ -5241,11 +5241,41 @@ button[aria-disabled=true] {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  .messagesPage .decoContainer {
+    top: -250px;
+  }
+}
+@media (max-width: 768px) {
+  .messagesPage .decoContainer {
+    top: -230px;
+  }
+}
+@media (max-width: 600px) {
+  .messagesPage .decoContainer {
+    top: -170px;
+  }
+}
+@media (max-width: 480px) {
+  .messagesPage .decoContainer {
+    top: -140px;
+  }
+}
+@media (max-width: 400px) {
+  .messagesPage .decoContainer {
+    top: -100px;
+  }
+}
 .messagesPage .messages {
   padding-bottom: 120px;
   position: relative;
   height: 100vh;
   display: flex;
+}
+@media (max-width: 768px) {
+  .messagesPage .messages {
+    height: unset;
+  }
 }
 .messagesPage .messages__decoContainer {
   position: absolute;
@@ -5269,14 +5299,52 @@ button[aria-disabled=true] {
   height: 80vh;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  .messagesPage .messages__container {
+    display: flex;
+    width: 200%;
+    transition: transform 0.35s ease;
+    will-change: transform;
+    overflow: hidden;
+  }
+  .messagesPage .messages__container.is-conv-open {
+    transform: translateX(-50%);
+  }
+  .messagesPage .messages__container.is-conv-open .messages__container__listing {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  .messagesPage .messages__container.is-conv-open .messages__container__content {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 480px) {
+  .messagesPage .messages__container {
+    width: 180%;
+  }
+}
+@media (max-width: 400px) {
+  .messagesPage .messages__container {
+    width: 140%;
+  }
+}
 .messagesPage .messages__container__listing {
   border-right: solid 2px #1E3A8A;
   overflow-y: auto;
+}
+@media (max-width: 1024px) {
+  .messagesPage .messages__container__listing {
+    width: 50%;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
 }
 .messagesPage .messages__container__listing__heading {
   display: flex;
   gap: 20px;
   padding: 25px 10px 10px 15px;
+  flex-wrap: wrap;
 }
 .messagesPage .messages__container__listing__heading__buttonContainer__button {
   padding: 5px 15px;
@@ -5326,25 +5394,76 @@ button[aria-disabled=true] {
   font-size: 1.5em;
   color: #1E3A8A;
 }
+@media (max-width: 768px) {
+  .messagesPage .messages__container__listing__item__infos__name {
+    font-size: 1.25em;
+  }
+}
 .messagesPage .messages__container__listing__item__infos__post {
   font-family: "Inter", sans-serif;
   font-size: 1.25em;
   color: #1E3A8A;
 }
+@media (max-width: 768px) {
+  .messagesPage .messages__container__listing__item__infos__post {
+    font-size: 1em;
+  }
+}
 .messagesPage .messages__container__listing__item__infos__text {
   font-family: "Inter", sans-serif;
   font-size: 1.25em;
+}
+@media (max-width: 768px) {
+  .messagesPage .messages__container__listing__item__infos__text {
+    font-size: 1em;
+  }
 }
 .messagesPage .messages__container__content {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  .messagesPage .messages__container__content {
+    width: 50%;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+}
 .messagesPage .messages__container__content__heading {
   display: flex;
   padding: 9px 25px;
   align-items: center;
   flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+@media (max-width: 480px) {
+  .messagesPage .messages__container__content__heading {
+    padding: 9px 15px;
+  }
+}
+.messagesPage .messages__container__content__heading__back__buttonContainer {
+  display: none;
+  transform: rotate(180deg);
+}
+@media (max-width: 1024px) {
+  .messagesPage .messages__container__content__heading__back__buttonContainer {
+    display: block;
+  }
+}
+.messagesPage .messages__container__content__heading__back__buttonContainer__button {
+  padding: 10px 12px !important;
+}
+@media (max-width: 400px) {
+  .messagesPage .messages__container__content__heading__back__buttonContainer__button {
+    padding: 8px 10px !important;
+  }
+}
+.messagesPage .messages__container__content__heading__back__buttonContainer__button svg {
+  width: 20px;
+  height: 20px;
 }
 .messagesPage .messages__container__content__heading--select {
   padding: 22px 25px;
@@ -5354,13 +5473,20 @@ button[aria-disabled=true] {
   color: #1E3A8A;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .messagesPage .messages__container__content__heading--select .messages__container__content__heading__text {
+    font-size: 1.25em;
+  }
+}
 .messagesPage .messages__container__content__heading__sender {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 30px;
 }
 .messagesPage .messages__container__content__heading__sender__imgContainer {
-  width: 50px;
+  min-width: 50px;
+  min-height: 50px;
   height: 50px;
   border-radius: 50%;
   background: #1E3A8A;
@@ -5376,16 +5502,25 @@ button[aria-disabled=true] {
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .messagesPage .messages__container__content__heading__sender__name {
+    font-size: 1em;
+  }
+}
 .messagesPage .messages__container__content__heading__post {
   color: #1E3A8A;
   font-family: "Inter", sans-serif;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #1E3A8A;
-  margin-left: 30px;
 }
 .messagesPage .messages__container__content__heading__buttonContainer {
   margin-left: auto;
+}
+@media (max-width: 1600px) {
+  .messagesPage .messages__container__content__heading__buttonContainer {
+    margin-left: 0;
+  }
 }
 .messagesPage .messages__container__content__heading__buttonContainer__button {
   padding: 10px 30px;
@@ -5416,6 +5551,11 @@ button[aria-disabled=true] {
   align-self: flex-end;
   margin-right: 25px;
 }
+@media (max-width: 768px) {
+  .messagesPage .messages__container__content__main__listing__messageContainer--mine {
+    margin-right: 0;
+  }
+}
 .messagesPage .messages__container__content__main__listing__messageContainer--mine p {
   color: #FFFFFF;
 }
@@ -5424,6 +5564,11 @@ button[aria-disabled=true] {
   background: #E3EBFF;
   align-self: flex-start;
   margin-left: 25px;
+}
+@media (max-width: 768px) {
+  .messagesPage .messages__container__content__main__listing__messageContainer--theirs {
+    margin-left: 0;
+  }
 }
 .messagesPage .messages__container__content__main__listing__messageContainer--theirs p {
   color: #1E3A8A;
@@ -5444,6 +5589,11 @@ button[aria-disabled=true] {
   border: 1px solid #1E3A8A;
   width: 95%;
   background: #E3EBFF;
+}
+@media (max-width: 600px) {
+  .messagesPage .messages__container__content__main__form__formRow__input {
+    width: 85%;
+  }
 }
 .messagesPage .messages__container__content__main__form__formRow__input::placeholder {
   color: #1E3A8A;
