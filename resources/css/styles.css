@@ -4611,12 +4611,14 @@ button[aria-disabled=true] {
   display: flex;
   border-bottom: 1px solid #1E3A8A;
   padding: 15px 10px;
+  flex-wrap: wrap;
 }
 .dashboardPage .recap__messages__listing__item__imgContainer {
   width: 60px;
   height: 60px;
   background: #1E3A8A;
   border-radius: 50%;
+  margin-right: 20px;
 }
 .dashboardPage .recap__messages__listing__item__imgContainer__img {
   width: 100%;
@@ -4624,8 +4626,8 @@ button[aria-disabled=true] {
   object-fit: cover;
 }
 .dashboardPage .recap__messages__listing__item__contentContainer {
-  margin-left: 20px;
   line-height: 1.5;
+  padding-bottom: 15px;
 }
 .dashboardPage .recap__messages__listing__item__contentContainer__name {
   font-family: "DM Sans", sans-serif;

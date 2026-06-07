@@ -364,12 +364,14 @@
                     display: flex;
                     border-bottom: 1px solid $primary;
                     padding: 15px 10px;
+                    flex-wrap: wrap;
 
                     &__imgContainer {
                         width: 60px;
                         height: 60px;
                         background: $primary;
                         border-radius: 50%;
+                        margin-right: 20px;
 
                         &__img {
                             width: 100%;
@@ -379,8 +381,8 @@
                     }
 
                     &__contentContainer {
-                        margin-left: 20px;
                         line-height: 1.5;
+                        padding-bottom: 15px;
 
                         &__name {
                             font-family: $titleFont;
