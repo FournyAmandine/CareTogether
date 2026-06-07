@@ -4,7 +4,7 @@
     </x-slot:title_page>
     <main class="singlePostPage">
 
-        <section class="detail">
+        <section class="detail" itemscope itemtype="https://schema.org/Product">
             <x-utils.deco/>
             <div class="wrapper">
                 @if($post->sold == 1)
@@ -47,12 +47,12 @@
                             </form>
                         @endif
                         @if($existingImages == [])
-                            <div class="detail__main__listing__imgContainer">
+                            <div class="detail__main__listing__imgContainer" itemprop="image">
                                 <img class="detail__main__listing__imgContainer__img detail__main__listing__imgContainer__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">
                             </div>
                         @else
                             @foreach($existingImages as $image)
-                                <div class="detail__main__listing__imgContainer">
+                                <div class="detail__main__listing__imgContainer" itemprop="image">
                                     @if(Str::startsWith($image['img_path'], 'assets'))
                                         <img class="detail__main__listing__imgContainer__img" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
                                     @else
@@ -64,26 +64,26 @@
                     </div>
                     <div class="detail__main__contentContainer">
                         <div class="detail__main__contentContainer__infos">
-                            <h2 class="detail__main__contentContainer__infos__title">
+                            <h2 class="detail__main__contentContainer__infos__title"  itemprop="name">
                                 {!! $post->name !!}
                             </h2>
-                            <p class="detail__main__contentContainer__infos__price">
+                            <p class="detail__main__contentContainer__infos__price"  itemprop="offers">
                                 {!! $post->price !!}€
                             </p>
                             <ul class="detail__main__contentContainer__infos__list">
-                                <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
+                                <x-utils.list-item itemprop="displayLocation" svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
                                 <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
-                                <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
-                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
-                                <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
-                                <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
+                                <x-utils.list-item itemprop="releaseDate" svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
+                                <x-utils.list-item itemprop="owner" svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                                <x-utils.list-item itemprop="category" svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
+                                <x-utils.list-item itemprop="manufacturer" svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
                             </ul>
                         </div>
                         <div class="detail__main__contentContainer__description">
                             <p class="detail__main__contentContainer__description__title">
                                 Description du produit :
                             </p>
-                            <p class="detail__main__contentContainer__description__text">
+                            <p class="detail__main__contentContainer__description__text" itemprop="description">
                                 <svg class="detail__main__contentContainer__description__text__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#description') }}"></use>
                                 </svg>

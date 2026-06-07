@@ -1,27 +1,27 @@
 @props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'post', 'registeredPostIds'])
 
 
-<article class="card-post card-post--{!! $modifier !!} posts__listing__item">
-    <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}">
+<article class="card-post card-post--{!! $modifier !!} posts__listing__item" itemscope itemtype="https://schema.org/Product">
+    <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}" itemprop="url">
         <div class="card-post__link__iconContainer">
-            <svg class="card-post__link__iconContainer__icon">
+            <svg class="card-post__link__iconContainer__icon" itemprop="category">
                 <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>
             </svg>
         </div>
 
         <div class="card-post__link__imgContainer">
-            <img class="card-post__link__imgContainer__img" src="{!! $imgSrc !!}" alt="Photo du produit {!! $title !!}">
+            <img class="card-post__link__imgContainer__img" src="{!! $imgSrc !!}" alt="Photo du produit {!! $title !!}" itemprop="image">
         </div>
 
         <div class="card-post__link__contentContainer">
-            <h3 class="card-post__link__contentContainer__title">
+            <h3 class="card-post__link__contentContainer__title" itemprop="name">
                 {!! $title !!}
             </h3>
             <div class="card-post__link__contentContainer__info">
                 <svg class="card-post__link__contentContainer__info__icon">
                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#map-pin') }}"></use>
                 </svg>
-                <span class="card-post__link__contentContainer__info__text">
+                <span class="card-post__link__contentContainer__info__text" itemprop="displayLocation">
                 {!! $locality !!}
             </span>
             </div>
@@ -33,7 +33,7 @@
                 {!! $state !!}
             </span>
             </div>
-            <span class="card-post__link__contentContainer__price">
+            <span class="card-post__link__contentContainer__price" itemprop="offers">
                 @if($type == \App\Enums\PostType::Sale->value)
                     {!! $price !!}€
                 @elseif($type == \App\Enums\PostType::Donation->value)

@@ -5712,7 +5712,7 @@ button[aria-disabled=true] {
   border: none;
 }
 .messagesPage .messages__container__content__main__form__buttonContainer__button:hover svg {
-  fill: #E65650;
+  fill: #D0433E;
 }
 .messagesPage .messages__container__content__main__form__buttonContainer__button svg {
   width: 30px;
