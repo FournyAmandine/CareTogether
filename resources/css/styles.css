@@ -3826,14 +3826,14 @@ button[aria-disabled=true] {
   padding-bottom: 70px;
   padding-top: 120px;
 }
-@media (max-width: 600px) {
-  .singlePostPage .detail {
-    padding-bottom: 40px;
-  }
-}
 @media (max-width: 900px) {
   .singlePostPage .detail {
     padding-top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail {
+    padding-bottom: 40px;
   }
 }
 .singlePostPage .detail__sold {
@@ -3845,12 +3845,43 @@ button[aria-disabled=true] {
   border-radius: 15px 0 15px 0;
   z-index: 2;
 }
+@media (max-width: 1695px) {
+  .singlePostPage .detail__sold {
+    left: 50px;
+  }
+}
+@media (max-width: 1024px) {
+  .singlePostPage .detail__sold {
+    left: 40px;
+    padding: 20px 25px;
+  }
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__sold {
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 600px) {
+  .singlePostPage .detail__sold {
+    left: 30px;
+  }
+}
 .singlePostPage .detail__sold__text {
   color: #FFFFFF;
   font-size: 2em;
   text-transform: uppercase;
   font-weight: bold;
   font-family: "DM Sans", sans-serif;
+}
+@media (max-width: 1024px) {
+  .singlePostPage .detail__sold__text {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 768px) {
+  .singlePostPage .detail__sold__text {
+    font-size: 1.25em;
+  }
 }
 .singlePostPage .detail__main {
   display: grid;
@@ -3886,13 +3917,11 @@ button[aria-disabled=true] {
   position: absolute;
   top: 30px;
   right: 15px;
-  z-index: 10;
+  z-index: 1;
 }
 @media (max-width: 900px) {
   .singlePostPage .detail__main__listing__iconContainer {
-    right: unset;
-    left: 10px;
-    top: 25px;
+    top: 280px;
   }
 }
 .singlePostPage .detail__main__listing__iconContainer__icon {
@@ -4080,7 +4109,7 @@ button[aria-disabled=true] {
   padding-bottom: 120px;
   position: relative;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .singlePostPage .posts {
     padding-top: 40px;
   }

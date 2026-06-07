@@ -15,12 +15,12 @@
         padding-bottom: 70px;
         padding-top: 120px;
 
-        @include w600px {
-            padding-bottom: 40px;
-        }
-
         @include w900px {
             padding-top: 50px;
+        }
+
+        @include w768px {
+            padding-bottom: 40px;
         }
 
         &__sold {
@@ -32,12 +32,37 @@
             border-radius: 15px 0 15px 0;
             z-index: 2;
 
+            @include w1695px {
+                left: 50px;
+            }
+
+            @include w1024px {
+                left: 40px;
+                padding: 20px 25px;
+            }
+
+            @include w768px {
+                padding: 15px 20px;
+            }
+
+            @include w600px {
+                left: 30px;
+            }
+
             &__text {
                 color: $white;
                 font-size: $x-large;
                 text-transform: uppercase;
                 font-weight: bold;
                 font-family: $titleFont;
+
+                @include w1024px {
+                    font-size: $large;
+                }
+
+                @include w768px {
+                    font-size: $medium;
+                }
             }
         }
 
@@ -72,12 +97,10 @@
                     position: absolute;
                     top:30px;
                     right: 15px;
-                    z-index: 10;
+                    z-index: 1;
 
                     @include w900px {
-                        right: unset;
-                        left: 10px;
-                        top: 25px;
+                        top: 280px;
                     }
 
                     &__icon{
@@ -283,7 +306,7 @@
         padding-bottom: 120px;
         position: relative;
 
-        @include w600px {
+        @include w768px {
             padding-top: 40px;
         }
 
