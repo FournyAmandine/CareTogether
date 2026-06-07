@@ -79,7 +79,8 @@
                 @endforeach
             </div>
             <x-utils.button name_parent="sales__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-next"/>
-            @if($sales->isEmpty())
+                <div class="slider--dots slider--dots-salesIndex"></div>
+                @if($sales->isEmpty())
                 <x-user.utils.empty text="Il n'y a aucun achat pour le moment"
                                     label="Voir toutes les annonces" href="{!! route('public.posts.index') !!}" title="Aller sur la page avec les annonces"/>
             @endif
