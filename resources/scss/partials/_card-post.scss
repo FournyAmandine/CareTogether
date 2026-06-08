@@ -4,6 +4,11 @@
     position: relative;
     padding: 15px;
 
+    &:hover, &:focus {
+        transform: scale(1.02);
+        box-shadow: rgba(30, 58, 138, 0.25) 0 8px 24px;
+    }
+
     &__link, &__container {
         height: 100%;
         width: 100%;
@@ -62,6 +67,7 @@
                 color: $primary;
                 font-weight: bold;
                 line-height: 1.5;
+                min-height: 3em;
 
                 @include w768px {
                     font-size: $medium;
@@ -158,6 +164,11 @@
 
     &--rental {
 
+        &:hover, &:focus {
+            box-shadow: unset;
+            transform: unset;
+        }
+
         .card-post__container {
 
             &__iconContainer {
@@ -192,7 +203,16 @@
                 }
 
                 &__date {
+                    padding: 10px;
 
+                    &:before {
+                        display: none;
+                    }
+
+                    &:hover, &:focus {
+                        background: none;
+                        color: $primary;
+                    }
                 }
             }
         }

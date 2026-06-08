@@ -984,7 +984,7 @@ button[aria-disabled=true] {
   right: 0;
   display: flex;
   flex-direction: column;
-  z-index: 7;
+  z-index: 99999;
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -1030,6 +1030,12 @@ button[aria-disabled=true] {
   .header__container__burger__container__list__buttonContainer__button, .header__content__burger__container__list__buttonContainer__button {
     font-size: 1.25em;
   }
+}
+.header__container__burger__container__list__buttonContainer__button:hover, .header__container__burger__container__list__buttonContainer__button:focus, .header__content__burger__container__list__buttonContainer__button:hover, .header__content__burger__container__list__buttonContainer__button:focus {
+  color: #00B5C4;
+}
+.header__container__burger__container__list__buttonContainer__button:hover svg, .header__container__burger__container__list__buttonContainer__button:focus svg, .header__content__burger__container__list__buttonContainer__button:hover svg, .header__content__burger__container__list__buttonContainer__button:focus svg {
+  fill: #00B5C4;
 }
 .header__container__burger__container__list__buttonContainer__button svg, .header__content__burger__container__list__buttonContainer__button svg {
   width: 25px;
@@ -1082,6 +1088,18 @@ button[aria-disabled=true] {
   transform: rotate(-45deg) translateY(-10px);
 }
 
+.header__container__burger__container__link {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header__container__burger__container__link__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .mfp-bg {
   background: rgba(0, 0, 0, 0.85);
 }
@@ -1118,7 +1136,7 @@ button[aria-disabled=true] {
 
 .mfp-arrow {
   position: absolute;
-  bottom: 30%;
+  bottom: 25%;
   left: 50%;
   width: 40px;
   height: 40px;
@@ -1451,7 +1469,7 @@ button[aria-disabled=true] {
   margin-left: 40px;
   margin-top: 30px;
   position: relative;
-  z-index: 3;
+  z-index: 99999;
 }
 @media (max-width: 1400px) {
   .public .header {
@@ -2068,6 +2086,10 @@ button[aria-disabled=true] {
   position: relative;
   padding: 15px;
 }
+.card-post:hover, .card-post:focus {
+  transform: scale(1.02);
+  box-shadow: rgba(30, 58, 138, 0.25) 0 8px 24px;
+}
 .card-post__link, .card-post__container {
   height: 100%;
   width: 100%;
@@ -2123,6 +2145,7 @@ button[aria-disabled=true] {
   color: #1E3A8A;
   font-weight: bold;
   line-height: 1.5;
+  min-height: 3em;
 }
 @media (max-width: 768px) {
   .card-post__link__contentContainer__title, .card-post__container__contentContainer__title {
@@ -2206,6 +2229,10 @@ button[aria-disabled=true] {
   width: 25px;
   height: 45px;
 }
+.card-post--rental:hover, .card-post--rental:focus {
+  box-shadow: unset;
+  transform: unset;
+}
 .card-post--rental .card-post__container__iconContainer {
   width: 40px;
   height: 40px;
@@ -2230,6 +2257,16 @@ button[aria-disabled=true] {
   padding-top: 20px;
   padding-bottom: 15px;
   display: block;
+}
+.card-post--rental .card-post__container__contentContainer__date {
+  padding: 10px;
+}
+.card-post--rental .card-post__container__contentContainer__date:before {
+  display: none;
+}
+.card-post--rental .card-post__container__contentContainer__date:hover, .card-post--rental .card-post__container__contentContainer__date:focus {
+  background: none;
+  color: #1E3A8A;
 }
 .card-post--registered .card-post__link__iconContainer {
   width: 40px;
@@ -2394,6 +2431,7 @@ button[aria-disabled=true] {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   overflow-x: scroll;
+  padding: 20px 25px 40px;
 }
 
 .user .header {
@@ -3279,7 +3317,7 @@ button[aria-disabled=true] {
 }
 .homePage .posts {
   padding-top: 125px;
-  padding-bottom: 110px;
+  padding-bottom: 90px;
   position: relative;
 }
 .homePage .posts .wrapper {
@@ -4197,6 +4235,15 @@ button[aria-disabled=true] {
     font-size: 1.5em;
   }
 }
+.singlePostPage .detail__main__contentContainer__infos__date {
+  font-weight: bold;
+  color: #1E3A8A;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+  text-decoration: underline #1AECFF;
+}
 .singlePostPage .detail__main__contentContainer__infos__price {
   color: #1A41AE;
   font-size: 2em;
@@ -4745,6 +4792,12 @@ button[aria-disabled=true] {
     padding: 15px 10px;
   }
 }
+.dashboardPage .stats__listing__item:hover, .dashboardPage .stats__listing__item:focus {
+  background: rgba(0, 181, 196, 0.4);
+}
+.dashboardPage .stats__listing__item:hover:nth-child(even), .dashboardPage .stats__listing__item:focus:nth-child(even) {
+  background: rgba(0, 181, 196, 0.4);
+}
 .dashboardPage .stats__listing__item:nth-child(even) {
   background: #BFCFFF;
 }
@@ -4839,6 +4892,10 @@ button[aria-disabled=true] {
     flex-direction: column;
     gap: 20px;
   }
+}
+.dashboardPage .recap__posts__listing__item__link:hover, .dashboardPage .recap__posts__listing__item__link:focus {
+  transform: scale(1.02);
+  box-shadow: rgba(30, 58, 138, 0.25) 0 8px 24px;
 }
 .dashboardPage .recap__posts__listing__item__link__imgContainer {
   width: 150px;
@@ -4962,6 +5019,7 @@ button[aria-disabled=true] {
   background: #1E3A8A;
   border-radius: 50%;
   margin-right: 20px;
+  overflow: hidden;
 }
 .dashboardPage .recap__messages__listing__item__imgContainer__img {
   width: 100%;
@@ -4999,7 +5057,7 @@ button[aria-disabled=true] {
   }
 }
 .rentalsPage .rentals {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .rentalsPage .rentals--ended {
   margin-top: 70px;
@@ -5085,7 +5143,7 @@ button[aria-disabled=true] {
   }
 }
 .salesPage .sales {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 60px;
 }
 .salesPage .sales__sliderContainer {
@@ -5207,9 +5265,10 @@ button[aria-disabled=true] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  width: 100%;
+  width: 95%;
   height: 100%;
   margin-bottom: 25px;
+  padding: 20px;
 }
 @media (max-width: 1400px) {
   .registeredPage .registered__sliderContainer__slider.slick-initialized.slick-slider .slick-list.draggable .slick-track .slick-slide div:not([class^=card]) {
@@ -5307,9 +5366,10 @@ button[aria-disabled=true] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  width: 100%;
+  width: 95%;
   height: 100%;
   margin-bottom: 25px;
+  padding: 20px;
 }
 @media (max-width: 1400px) {
   .userPosts .postsPage .posts__sliderContainer__slider.slick-initialized.slick-slider .slick-list.draggable .slick-track .slick-slide div:not([class^=card]) {

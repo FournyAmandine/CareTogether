@@ -1,6 +1,6 @@
 @props(['post' => '', 'title'])
 
-<header class="header" data-aos="fade-down" data-aos-delay="100" data-aos-duration="500">
+<header class="header">
     <h1 class="sro header__title">{{$title}}</h1>
 
     <div class="header__container">

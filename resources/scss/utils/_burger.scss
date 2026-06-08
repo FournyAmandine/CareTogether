@@ -3,7 +3,7 @@
     right: 0;
     display: flex;
     flex-direction: column;
-    z-index: 7;
+    z-index: 99999;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -51,6 +51,14 @@
 
             @include w768px {
                 font-size: $medium;
+            }
+
+            &:hover, &:focus {
+                color: $tertiary;
+
+                svg {
+                    fill: $tertiary;
+                }
             }
 
             svg {
@@ -110,5 +118,18 @@
         path:last-of-type {
             transform: rotate(-45deg) translateY(-10px);
         }
+    }
+}
+
+.header__container__burger__container__link{
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }

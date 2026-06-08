@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Post extends Model
 {
@@ -24,6 +25,11 @@ class Post extends Model
     public function rentals(): HasMany
     {
         return $this->hasMany(Rental::class);
+    }
+
+    public function rental(): HasOne
+    {
+        return $this->hasOne(Rental::class);
     }
 
     public function sales(): HasMany

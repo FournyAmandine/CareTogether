@@ -28,11 +28,13 @@
 
                 @if($categories)
                 <div class="filters">
-                    <x-utils.search id="searchTitle2" name_parent="filters" route="{!! $route !!}" wire:model="term"/>
-                    <x-utils.button-text aria-haspopup="dialog" aria-controls="filtersForm" wire:click="toggleModal('filters')" id="filtersUser" name_parent="filters" title="Ouvrir les filtres" classButton="button button--blue" text="Filtrer"/>
-                    @if (request()->filled('term') ||!empty(request('types')) ||!empty(request('categories')) ||(request('sort') && request('sort') !== 'date_desc'))
-                        <x-utils.button-text wire:click="resetFilters()" name_parent="filters" title="Supprimer les filtres" classButton="button button--border" text="Supprimer les filtres"/>
-                    @endif
+                    <div class="filters__content">
+                        <x-utils.search id="searchTitle2" name_parent="filters__content" route="{!! $route !!}" wire:model="term"/>
+                        <x-utils.button-text aria-haspopup="dialog" aria-controls="filtersForm" wire:click="toggleModal('filters')" id="filtersUser" name_parent="filters__content" title="Ouvrir les filtres" classButton="button button--blue" text="Filtrer"/>
+                        @if (request()->filled('term') ||!empty(request('types')) ||!empty(request('categories')) ||(request('sort') && request('sort') !== 'date_desc'))
+                            <x-utils.button-text wire:click="resetFilters()" name_parent="filters__content" title="Supprimer les filtres" classButton="button button--border" text="Supprimer les filtres"/>
+                        @endif
+                    </div>
                 </div>
                 @endif
             </div>
