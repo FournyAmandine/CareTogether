@@ -7,7 +7,7 @@
         @endphp
         <x-utils.card title="{!! $post->name !!}"
                              locality="{!! $post->locality !!}"
-                             state="{!! $post->state !!}"
+                             state="{!! $post->state !!}" delay="{{$loop->iteration}}"
                              price="{!! $post->price !!}"
                              imgSrc="{{ $image?->img_path
                                 ? (Str::startsWith($image->img_path, 'assets')

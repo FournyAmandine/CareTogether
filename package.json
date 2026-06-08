@@ -17,6 +17,7 @@
         "vite": "^8.0.0"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "jquery": "^3.7.1",
         "magnific-popup": "^1.2.0",
         "playwright": "^1.60.0",

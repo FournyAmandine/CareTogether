@@ -1,6 +1,6 @@
-@props(['href', 'label', 'name_parent', 'classButton', 'title', 'svg'])
+@props(['href', 'label', 'name_parent', 'classButton', 'title', 'svg', 'delay'=>'', 'aos'=>''])
 
-<div class="{!! $name_parent !!}__buttonContainer">
+<div class="{!! $name_parent !!}__buttonContainer" @if($aos) data-aos="{{$aos}}" data-aos-delay="{{$delay}}" data-aos-duration="500" @endif>
     <a class="button @if(isset($classButton)) {!! $classButton !!} @endif {!! $name_parent !!}__buttonContainer__button" title="{!! $title !!}" href="{!! $href !!}">
         {!! $label !!}
         @if(isset($svg))

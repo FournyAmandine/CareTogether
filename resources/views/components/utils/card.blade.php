@@ -1,7 +1,7 @@
-@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'post', 'registeredPostIds'])
+@props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'post', 'registeredPostIds', 'delay' => ''])
 
 
-<article class="card-post card-post--{!! $modifier !!} posts__listing__item" itemscope itemtype="https://schema.org/Product">
+<article class="card-post card-post--{!! $modifier !!} posts__listing__item" itemscope itemtype="https://schema.org/Product" data-aos="fade-right" data-aos-delay="{!! 150*$delay !!}" data-aos-duration="500">
     <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}" itemprop="url">
         <div class="card-post__link__iconContainer">
             <svg class="card-post__link__iconContainer__icon" itemprop="category">
@@ -58,8 +58,8 @@
                             @csrf
                             @method('DELETE')
 
-                            <button aria-labelledby="deleteRegister" type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
-                                <span id="deleteRegister" class="sro">Supprimer cette annonce des enregistrées</span>
+                            <button aria-labelledby="deleteRegister-{{ $post->id }}" type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                                <span id="deleteRegister-{{ $post->id }}" class="sro">Supprimer cette annonce des enregistrées</span>
                                 <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#registered_fill') }}"></use>
                                 </svg>
@@ -68,8 +68,8 @@
                     @else
                         <form action="{{ route('public.posts.register', $post) }}" method="POST">
                             @csrf
-                            <button aria-labelledby="addRegister" type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
-                                <span id="addRegister" class="sro">Enregistrer cette annonce</span>
+                            <button aria-labelledby="addRegister-{{ $post->id }}" type="submit" class="card-post__link__contentContainer__navigation__buttons__button">
+                                <span id="deleteRegister-{{ $post->id }}" class="sro">Enregistrer cette annonce</span>
                                 <svg class="card-post__link__contentContainer__navigation__buttons__button__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#register') }}"></use>
                                 </svg>

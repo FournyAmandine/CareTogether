@@ -1,6 +1,6 @@
 @props(['post' => '', 'title'])
 
-<header class="header">
+<header class="header" data-aos="fade-down" data-aos-delay="100" data-aos-duration="500">
     <h1 class="sro header__title">{{$title}}</h1>
 
     <div class="header__container">
@@ -10,7 +10,7 @@
             <h2 class="sro header__container__navigation__title">Navigation</h2>
             <x-public.navigation.list.list-header name_parent="header__container__navigation"/>
         </nav>
-        <x-utils.search name_parent="header__container"/>
+        <x-utils.search id="searchTitle" name_parent="header__container"/>
 
 
         @if(auth()->check())
