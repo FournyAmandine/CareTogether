@@ -78,7 +78,7 @@
                     <p class="problems__contentContainer__content" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">
                         Parallèlement, de nombreux équipements restent inutilisés après usage, faute de solution adaptée pour les revendre, les prêter ou les donner en toute simplicité.
                     </p>
-                    <p  class="problems__contentContainer__content"data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
+                    <p  class="problems__contentContainer__content" data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
                         Cette situation entraîne :
                     </p>
                     <ul  class="problems__contentContainer__list" data-aos="fade-right" data-aos-delay="500" data-aos-duration="500">

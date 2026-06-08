@@ -20,7 +20,7 @@
                             <x-utils.link wire:click="resetFilters()" name_parent="filters" href="{!! route('public.posts.index') !!}" title="Supprimer les filtres" classButton="button button--border" label="Supprimer les filtres"/>
                         @endif
 
-                        <form aria-modal="true" aria-labelledby="filtersFormTitle" id="filtersForm" class="filters__form hidden" method="GET" action="{{ route('public.posts.index') }}">
+                        <form aria-labelledby="filtersFormTitle" id="filtersForm" class="filters__form hidden" method="GET" action="{{ route('public.posts.index') }}">
 
                             <h3 id="filtersFormTitle" class="sro">Filtres et tris des annonces</h3>
                             <div>

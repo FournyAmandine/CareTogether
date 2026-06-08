@@ -56,8 +56,11 @@
         />
     @endforeach
 
-    <form method="POST" action="{{ route('logout') }}" class="{!! $name_parent !!}__form">
-        @csrf
-        <x-user.form.buttons.button svg="deconnexion" class_button="button--red" name_parent="{!! $name_parent !!}__form" text="Deconnexion"/>
-    </form>
+    <li class="{!! $name_parent !!}__list__item">
+        <form method="POST" action="{{ route('logout') }}" class="{!! $name_parent !!}__form">
+            @csrf
+            <x-user.form.buttons.button svg="deconnexion" class_button="button--red" name_parent="{!! $name_parent !!}__form" text="Deconnexion"/>
+        </form>
+    </li>
+
 </ul>

@@ -32,11 +32,11 @@
     @endforeach
 
         @if(!auth()->check())
-            <div class="{!! $name_parent !!}__list__buttons">
+            <li class="{!! $name_parent !!}__list__buttons">
                 <x-utils.link name_parent="{!! $name_parent !!}__list__buttons" class-button="button--login" title="Aller vers la page Se connecter"
                               href="{!! route('login') !!}" label="Se connecter"/>
                 <x-utils.link class-button="button--border" name_parent="{!! $name_parent !!}__list__buttons" title="Aller vers la page S'inscrire"
                               href="{!! route('register') !!}" label="S'inscrire"/>
-            </div>
+            </li>
         @endif
 </ul>

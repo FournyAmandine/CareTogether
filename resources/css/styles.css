@@ -2090,6 +2090,13 @@ button[aria-disabled=true] {
   transform: scale(1.02);
   box-shadow: rgba(30, 58, 138, 0.25) 0 8px 24px;
 }
+.card-post__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .card-post__link, .card-post__container {
   height: 100%;
   width: 100%;
