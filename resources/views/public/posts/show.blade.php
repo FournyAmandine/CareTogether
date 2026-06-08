@@ -48,15 +48,21 @@
                         @endif
                         @if($existingImages == [])
                             <div class="detail__main__listing__imgContainer" itemprop="image">
-                                <img class="detail__main__listing__imgContainer__img detail__main__listing__imgContainer__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">
+                                <a class="detail__main__listing__imgContainer__link" href="{{ asset('assets/img/post-image.jpg') }}">
+                                    <img class="detail__main__listing__imgContainer__link__img detail__main__listing__imgContainer__link__img--general" src="{{ asset('assets/img/post-image.jpg') }}" alt="Image de l'article">
+                                </a>
                             </div>
                         @else
                             @foreach($existingImages as $image)
                                 <div class="detail__main__listing__imgContainer" itemprop="image">
                                     @if(Str::startsWith($image['img_path'], 'assets'))
-                                        <img class="detail__main__listing__imgContainer__img" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        <a class="detail__main__listing__imgContainer__link" href="{!! $image['img_path'] !!}">
+                                            <img class="detail__main__listing__imgContainer__link__img" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        </a>
                                     @else
-                                        <img class="detail__main__listing__imgContainer__img" src="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        <a class="detail__main__listing__imgContainer__link" href="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}">
+                                            <img class="detail__main__listing__imgContainer__link__img" src="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        </a>
                                     @endif
                                 </div>
                             @endforeach
