@@ -215,6 +215,11 @@
                     }
 
                     &__back {
+                        display: none;
+
+                        @include w1024px {
+                            display: block;
+                        }
 
                         &__buttonContainer {
                             display: none;
@@ -295,11 +300,6 @@
                     }
 
                     &__buttonContainer {
-                        margin-left: auto;
-
-                        @include w1600px {
-                            margin-left: 0;
-                        }
 
                         &__button {
                             padding: 10px 30px;
@@ -378,11 +378,12 @@
                             }
 
                             &__input {
-                                padding: 25px 20px;
+                                padding: 30px 20px;
                                 border-radius: 20px;
-                                border: 1px solid $primary;
+                                border: 2px solid $primary;
                                 width: 95%;
-                                background: $postInfosBcg;
+                                background: rgba($tertiary, 0.25);
+                                color: $primary;
 
                                 @include w600px {
                                     width: 85%;
@@ -396,7 +397,7 @@
 
                         &__buttonContainer {
                             position: absolute;
-                            top: 20px;
+                            top: 25px;
                             right: 30px;
                             transform: rotate(45deg);
 

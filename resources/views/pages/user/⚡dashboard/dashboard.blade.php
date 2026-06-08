@@ -28,10 +28,10 @@
                 Quelques statistiques
             </h2>
             <div class="stats__listing">
-                <x-user.utils.stats-card number="{!! $posts_count !!}" content="annonces" svg="stats-actives"/>
-                <x-user.utils.stats-card number="{!! $registered_count !!}" content="annonces enregistrées" svg="registered_fill"/>
-                <x-user.utils.stats-card number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
-                <x-user.utils.stats-card number="{!! $conversations !!}" content="conversations" svg="stats-messages"/>
+                <x-user.utils.stats-card route="{!! route('user.posts.index') !!}" title="Aller vers la page des annonces" number="{!! $posts_count !!}" content="annonces" svg="stats-actives"/>
+                <x-user.utils.stats-card route="{!! route('user.registered.index') !!}" title="Aller vers la page des annonces enregistrées" number="{!! $registered_count !!}" content="annonces enregistrées" svg="registered_fill"/>
+                <x-user.utils.stats-card route="{!! route('user.rentals.index') !!}" title="Aller vers la page des locations et prêt" number="{!! $rentals !!}" content="locations/prêts" svg="stats-locations"/>
+                <x-user.utils.stats-card route="{!! route('user.messages') !!}" title="Aller vers la page des messages" number="{!! $conversations !!}" content="conversations" svg="stats-messages"/>
             </div>
             <x-utils.link name_parent="stats" class_button="button button--red" svg="add" label="Ajouter une annonce" href="{!! route('user.posts.create') !!}" title="Aller vers la page d'ajout d'une annonce" />
         </div>
@@ -57,7 +57,7 @@
                                                         ? asset($image->img_path)
                                                         : asset('storage/photos/posts/originals/' . $image->img_path))
                                                     : asset('assets/img/post-image.jpg') }}"
-                                            name="{!! $post->name !!}" date="{{ $post->created_at->diffForHumans() }}"
+                                            name="{!! $post->name !!}" date="{{ $post->locality }}"
                                             price="{!! $post->price !!}" :post="$post"/>
                     @endforeach
                 </div>

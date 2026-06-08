@@ -20,15 +20,26 @@
                                label="Entrez votre email"
                                required="required"
                                name_parent="content__form"/>
-                <x-login.input
-                    field_name="password"
-                    type="password"
-                    placeholder="******"
-                    label="Entrez votre mot de passe"
-                    required="required"
-                    name_parent="content__form"
-                />
-                <a class="content__form__password" href="{{ route('password.request') }}" title="Renouveller son mot de passe">Mot de passe oublié?</a>
+                <div class="content__form__password">
+                    <x-login.input
+                        field_name="password"
+                        type="password"
+                        placeholder="******"
+                        label="Entrez votre mot de passe (minimun 8 caractères)"
+                        required="required"
+                        name_parent="content__form"
+                    />
+                    <button class="button button--input content__form__password__button" type="button" title="Cacher ou voir le mot de passe">
+                        <svg class="content__form__password__button__icon content__form__password__button__icon--show">
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#view') }}"></use>
+                        </svg>
+
+                        <svg class="content__form__password__button__icon content__form__password__button__icon--hide is-hidden">
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#eye-close') }}"></use>
+                        </svg>
+                    </button>
+                </div>
+                <a class="content__form__forgotten" href="{{ route('password.request') }}" title="Renouveller son mot de passe">Mot de passe oublié?</a>
 
                 <x-login.button
                     text="Se connecter"

@@ -4,6 +4,8 @@
     </x-slot:title_page>
     <main class="singlePostPage">
 
+        <x-utils.button-text onclick="history.back()" name_parent="singlePostPage" svg="arrow-button" title="Retourner sur la page précédente" text="Retour" class-button="button button--back"/>
+
         <section class="detail" itemscope itemtype="https://schema.org/Product">
             <x-utils.deco/>
             <div class="wrapper">
@@ -98,14 +100,30 @@
                         </div>
                     </div>
                 </div>
-                @if($post->sold == 0)
+                <div class="detail__buttons">
+                    @if(in_array($post->id, $registeredPostIds))
+                        <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
 
-                    <form action="{{ route('public.posts.contact', $post->id) }}" method="POST">
-                        @csrf
+                            <x-user.form.buttons.button text="Enlever des annonces enregistrées" name_parent="detail__buttons" class_button="button--blue" svg="registered_fill"/>
+                        </form>
+                    @else
+                        <form action="{{ route('public.posts.register', $post) }}" method="POST">
+                            @csrf
 
-                        <x-user.form.buttons.button name_parent="detail" class_button="button--red" text="Contacter le vendeur"/>
-                    </form>
-                @endif
+                            <x-user.form.buttons.button text="Enregister l'annonce" name_parent="detail__buttons" class_button="button--blue" svg="register"/>
+                        </form>
+                    @endif
+                    @if($post->sold == 0)
+
+                        <form action="{{ route('public.posts.contact', $post->id) }}" method="POST">
+                            @csrf
+
+                            <x-user.form.buttons.button name_parent="detail__buttons" class_button="button--red" text="Contacter le vendeur"/>
+                        </form>
+                    @endif
+                </div>
             </div>
         </section>
 

@@ -75,8 +75,8 @@
                     <strong class="stats__title__strong">Ensemble</strong>, améliorons l’accès au matériel médical
                 </h2>
                 <div class="stats__listing">
-                    <x-public.home.stats-item svg="home-stats-annonces" title="250" text="Annonces publiées"/>
-                    <x-public.home.stats-item svg="home-stats-users" title="120" text="Utilisateurs actifs"/>
+                    <x-public.home.stats-item svg="home-stats-annonces" title="{!! $allPosts !!}" text="Annonces publiées"/>
+                    <x-public.home.stats-item svg="home-stats-users" title="{!! $users !!}" text="Utilisateurs actifs"/>
                 </div>
             </div>
         </section>

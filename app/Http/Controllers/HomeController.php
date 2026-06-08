@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserRole;
 use App\Models\Post;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -14,6 +16,10 @@ class HomeController extends Controller
             ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()
             : [];
 
-        return view('public.homepage', compact('posts', 'registeredPostIds'));
+        $users = User::where('role', UserRole::User)->count();
+
+        $allPosts = Post::count();
+
+        return view('public.homepage', compact('posts', 'registeredPostIds', 'users', 'allPosts'));
     }
 }

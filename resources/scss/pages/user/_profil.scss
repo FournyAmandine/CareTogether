@@ -96,6 +96,24 @@
                         position: absolute;
                         top: 28px;
                         right: -10px;
+
+                        @include w1024px {
+                            top: 30px;
+                        }
+
+                        @include w768px {
+                            top: 35px;
+                        }
+
+
+                        &:hover, &:focus {
+                            background: none;
+                            border: none;
+
+                            svg {
+                                fill: $primary;
+                            }
+                        }
                     }
                 }
 

@@ -1,6 +1,6 @@
-@props(['svg', 'content', 'number', 'title', 'route'])
+@props(['svg', 'content', 'number'])
 
-<a class="stats__listing__item" href="{!! $route !!}" title="{!! $title !!}">
+<div class="stats__listing__item">
     <div class="stats__listing__item__numberContainer">
         <svg class="stats__listing__item__numberContainer__icon">
             <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>
@@ -12,4 +12,4 @@
     <p class="stats__listing__item__content">
         {!! $content !!}
     </p>
-</a>
+</div>

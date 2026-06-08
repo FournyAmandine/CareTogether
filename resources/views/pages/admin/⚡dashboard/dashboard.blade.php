@@ -33,10 +33,10 @@
                 Quelques statistiques
             </h2>
             <div class="stats__listing">
-                <x-user.utils.stats-card number="{!! $posts_unsold !!}" content="annonces actives" svg="stats-actives"/>
-                <x-user.utils.stats-card number="{!! $posts_sold !!}" content="annonces vendues" svg="stats-vendues"/>
-                <x-user.utils.stats-card number="{!! $users !!}" content="utilisateurs" svg="user-fill"/>
-                <x-user.utils.stats-card number="{!! $contact_messages !!}" content="messages non lus" svg="stats-messages"/>
+                <x-admin.stats-card number="{!! $posts_unsold !!}" content="annonces actives" svg="stats-actives"/>
+                <x-admin.stats-card number="{!! $posts_sold !!}" content="annonces vendues" svg="stats-vendues"/>
+                <x-admin.stats-card number="{!! $users !!}" content="utilisateurs" svg="user-fill"/>
+                <x-admin.stats-card number="{!! $contact_messages !!}" content="messages non lus" svg="stats-messages"/>
             </div>
         </div>
     </section>

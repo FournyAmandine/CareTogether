@@ -2,6 +2,8 @@
 
     <x-user.utils.heading title="Votre annonce : {!! $post->name !!}" :post="$post"/>
 
+    <x-utils.button-text onclick="history.back()" name_parent="singlePostPage" svg="arrow-button" title="Retourner sur la page précédente" text="Retour" class-button="button button--back"/>
+
     <section class="detail">
         <x-utils.deco modifier="show"/>
         <div class="wrapper wrapper--small">
