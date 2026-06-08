@@ -1,5 +1,10 @@
 <?php
 
+pest()->extend(Tests\DuskTestCase::class)
+//  ->use(Illuminate\Foundation\Testing\DatabaseMigrations::class)
+    ->in('Browser');
+
+
 use Tests\TestCase;
 
 /*
@@ -13,9 +18,9 @@ use Tests\TestCase;
 |
 */
 
-pest()->extend(TestCase::class)
- // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
+pest()->extend(Tests\TestCase::class)
+    // ...
+    ->in('Feature', '../resources/views');
 
 /*
 |--------------------------------------------------------------------------

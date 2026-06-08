@@ -1,0 +1,129 @@
+/****************************
+            GENERAL
+*****************************/
+
+.sro{
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+}
+
+body {
+    background-color: $pageBcg;
+}
+
+a, h1, h2, h3, h4 {
+    display: inline-block;
+    text-decoration: none;
+    font-family: $titleFont;
+}
+
+p {
+    font-family: $textFont;
+}
+
+ul li {
+    font-family: $textFont;
+}
+
+body.user {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    @include w1695px {
+        flex-direction: column;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        overflow-y: auto;
+
+        height: 100vh;
+    }
+}
+
+.error {
+    color: $required;
+    font-size: $medium;
+    font-family: $textFont;
+    margin-bottom: 25px;
+    display: block;
+
+    @include w600px {
+        font-size: $normal;
+    }
+}
+
+.empty {
+    min-width: 1270px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
+    margin-top: 20px;
+
+    @include w1600px {
+        width: 100%;
+        min-width: 0;
+    }
+
+    &__text {
+        font-weight: bold;
+        color: $primary;
+        font-size: $medium;
+        display: flex;
+        justify-content: center;
+
+        @include w600px {
+            font-size: $normal;
+        }
+    }
+
+    &__buttonContainer {
+
+        &__button {
+
+        }
+    }
+
+    &--public {
+        min-width: 1600px;
+    }
+}
+.unauthorize {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: $statsBcg1;
+
+    &__text {
+        font-size: $large;
+        color: $primary;
+
+        @include w600px {
+            font-size: $medium;
+        }
+    }
+}
+
+button[aria-disabled="true"] {
+    display: none;
+}
+
+/** {
+  outline: 1px solid red;
+}*/
+
+
+

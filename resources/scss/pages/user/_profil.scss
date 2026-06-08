@@ -1,0 +1,226 @@
+.profilPage {
+
+    .heading {
+
+        .breadcrumb {
+            bottom: unset;
+            top: -25px;
+
+            @include w1695px {
+                top: -50px;
+            }
+        }
+    }
+
+    .profil {
+        padding-top: 50px;
+
+        @include w1024px {
+            padding-bottom: 90px;
+        }
+
+        &__decoContainer {
+            width: 775px;
+            height: 920px;
+            position: absolute;
+            bottom: -300px;
+            right: 0;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__form {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            box-shadow: rgba($primary, 0.3) 0 0 30px;
+            border-radius: 20px;
+            overflow: hidden;
+
+            @include w1024px {
+                grid-template-columns: 1fr;
+            }
+
+            &__fieldset {
+                background: rgba($secondary, 0.7);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px;
+                min-width: 0;
+
+                @include w600px {
+                    padding: 20px;
+                }
+
+                &__image {
+                    padding: 0 40px 30px;
+                    border-bottom: 1px solid $primary;
+                    margin-bottom: 40px;
+                    position: relative;
+
+                    &__imageContainer {
+                        border-radius: 50%;
+                        overflow: hidden;
+                        width: 120px;
+                        height: 120px;
+
+                        &__image {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+
+                    &__button {
+                        position: absolute;
+                        bottom: 30px;
+                        right: 30px;
+
+                        svg {
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+                }
+
+                &__password {
+                    width: 100%;
+                    position: relative;
+
+                    &__button {
+                        position: absolute;
+                        top: 28px;
+                        right: -10px;
+
+                        @include w1024px {
+                            top: 30px;
+                        }
+
+                        @include w768px {
+                            top: 35px;
+                        }
+
+
+                        &:hover, &:focus {
+                            background: none;
+                            border: none;
+
+                            svg {
+                                fill: $primary;
+                            }
+                        }
+                    }
+                }
+
+                &__formRow {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 30px;
+                    width: 100%;
+
+                    &__label {
+                        font-weight: bold;
+                        font-size: $medium;
+                        color: $primary;
+                        font-family: $titleFont;
+                        margin-bottom: 10px;
+
+                        .required {
+                            color: $required;
+                        }
+                    }
+
+                    &__input {
+                        border-radius: 10px;
+                        padding: 10px;
+                        color: $text;
+                        border: 1px solid $stepBcg;
+                        background: $postInfosBcg;
+
+                        @include w1024px {
+                            padding: 15px;
+                        }
+                    }
+                }
+
+                &--secondary {
+                    padding: 40px 110px 40px 90px;
+                    background: $pageBcg;
+
+                    @include w768px {
+                        padding: 40px;
+                    }
+
+                    @include w600px {
+                        padding: 20px;
+                    }
+
+                    .profil__form__fieldset__locality {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 20px;
+                        padding-bottom: 30px;
+                        border-bottom: 1px solid $primary;
+                        margin-bottom: 40px;
+
+                        @include w768px {
+                            padding-bottom: 10px;
+                            margin-bottom: 25px;
+                            grid-template-columns: 1fr;
+                            gap: 0;
+                        }
+                    }
+
+                    .profil__form__fieldset__formRow{
+
+                        &__label {
+
+                        }
+
+                        &__input {
+                            padding: 15px;
+                        }
+                    }
+                }
+
+                &__buttons {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: flex-end;
+
+                    @include w600px {
+                        flex-direction: column-reverse;
+                        align-items: flex-end;
+                    }
+
+                    &__buttonContainer {
+
+                        &:first-of-type {
+
+                            .profil__form__fieldset__buttons__buttonContainer__button {
+                                padding: 13px 25px;
+
+                                @include w768px {
+                                    padding: 13px 15px;
+                                }
+                            }
+                        }
+
+                        &__button {
+                            padding: 15px 25px;
+
+                            @include w768px {
+                                padding: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+/****************************
+            COMMONS
+*****************************/
+
+.maintitle {
+    font-weight: bold;
+    font-size: $xxx-large;
+    color: $white;
+    font-family: $titleFont;
+    max-width: 280px;
+    line-height: 1.2;
+
+    @include w1200px {
+        font-size: $xx-large;
+
+        @include w900px {
+            font-size: $x-large;
+        }
+    }
+
+    &--big {
+        font-size: $xxxx-large;
+
+        @include w1200px {
+            font-size: $xxx-large;
+        }
+
+        @include w900px {
+            font-size: $xx-large;
+        }
+
+        @include w600px {
+            font-size: $x-large;
+        }
+    }
+
+    &--small {
+        font-size: $x-large;
+
+        @include w1200px {
+            font-size: $large;
+        }
+
+        @include w900px {
+            font-size: $medium;
+        }
+    }
+
+    &--blue {
+        color: $primary;
+    }
+
+    &--footer {
+        font-size: $large;
+    }
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: $x-large;
+    color: $primary;
+    font-family: $titleFont;
+    margin-bottom: 15px;
+
+    @include w900px {
+        font-size: $large;
+    }
+
+    @include w600px {
+        font-size: $medium;
+    }
+}

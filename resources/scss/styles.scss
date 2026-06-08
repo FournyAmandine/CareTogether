@@ -1,0 +1,50 @@
+//SETTINGS
+@import "settings/reset";
+
+//GENERAL
+@import "general/breakpoints";
+@import "general/colors";
+@import "general/fonts";
+@import "general/general";
+
+//UTILS
+@import "utils/buttons";
+@import "utils/commons";
+@import "utils/wrapper";
+@import "utils/deco";
+@import "utils/filters";
+@import "utils/breadcrumb";
+@import "utils/burger";
+@import "utils/gallery";
+@import "utils/user/heading";
+@import "utils/user/form";
+@import "utils/user/dots";
+
+//PARTIALS
+@import "partials/public/header";
+@import "partials/public/footer";
+@import "partials/banner";
+@import "partials/card-post";
+@import "partials/listing-posts";
+@import "partials/user/header";
+@import "partials/user/modal";
+@import "partials/user/card-image";
+@import "partials/admin/card-messages";
+
+//PAGES
+@import "pages/public/pageText";
+@import "pages/public/home";
+@import "pages/public/contact";
+@import "pages/public/about";
+@import "pages/public/posts";
+@import "pages/public/singlepost";
+@import "pages/public/authentification";
+@import "pages/user/dashboard";
+@import "pages/user/rentals";
+@import "pages/user/sales";
+@import "pages/user/registered";
+@import "pages/user/posts";
+@import "pages/user/profil";
+@import "pages/user/messages";
+@import "pages/admin/messages";
+

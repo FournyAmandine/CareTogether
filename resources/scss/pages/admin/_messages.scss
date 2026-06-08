@@ -1,0 +1,24 @@
+.contactMessagesPage {
+
+    .decoContainer {
+        top: -570px;
+        left: 15%;
+        right: 10%;
+    }
+
+    .breadcrumb {
+        flex-wrap: wrap;
+    }
+
+    .unread, .read {
+
+        &__title {
+            margin-bottom: 20px;
+        }
+    }
+
+    .read {
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+}

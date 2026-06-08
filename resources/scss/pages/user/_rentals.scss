@@ -1,0 +1,107 @@
+.rentalsPage {
+
+    .heading {
+
+        .breadcrumb {
+            bottom: 140px;
+
+            @include w768px {
+                bottom: unset;
+                top: -50px;
+            }
+        }
+    }
+
+    .rentals {
+        margin-top: 20px;
+
+        &--ended {
+            margin-top: 70px;
+            margin-bottom: 60px;
+        }
+
+        &__title {
+            font-size: $large;
+            font-weight: bold;
+            color: $primary;
+            font-family: $titleFont;
+            margin-bottom: 10px;
+        }
+
+        &__sliderContainer {
+            max-width: 100%;
+
+            &__slider {
+                width: 100%;
+
+                &.slick-initialized {
+
+                    &.slick-slider{
+                        position: relative;
+                        display: block;
+
+                        .slick-list {
+                            position: relative;
+                            display: block;
+                            overflow: hidden;
+                            margin: 0;
+                            padding: 0;
+
+                            &.draggable {
+                                overflow: hidden;
+
+                                .slick-track {
+                                    /*display: grid;
+                                    grid-template-columns: repeat(4, 1fr);
+                                    gap: 25px;*/
+                                    display: flex !important;
+                                    //width: 100% !important;
+
+                                    .slick-slide {
+                                        display: flex;
+                                        flex-direction: column;
+                                        overflow: hidden;
+                                        padding-right: 10px;
+                                        padding-left: 10px;
+                                        //width: 1275px !important;
+
+                                        &.slick-active {
+                                            //width: 1275px !important;
+                                            overflow: hidden;
+                                        }
+
+                                        div:not([class^="card"]) {
+                                            display: grid;
+                                            grid-template-columns: repeat(4, 1fr);
+                                            gap: 25px;
+                                            width: 100%;
+                                            height: 100%;
+                                            margin-bottom: 25px;
+
+                                            @include w1400px {
+                                                grid-template-columns: repeat(3, 1fr);
+                                            }
+
+                                            @include w900px {
+                                                grid-template-columns: repeat(2, 1fr);
+                                            }
+
+                                            @include w600px {
+                                                grid-template-columns: repeat(1, 1fr);
+                                            }
+
+                                            .card-post {
+                                                //_card-post.scss
+                                                width: 90% !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

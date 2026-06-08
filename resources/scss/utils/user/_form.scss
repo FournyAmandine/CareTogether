@@ -1,0 +1,214 @@
+.formContainer {
+    padding-bottom: 80px;
+    padding-top: 50px;
+    overflow: hidden;
+
+    &__decoContainer {
+        position: absolute;
+        width: 870px;
+        height: 1055px;
+        bottom: -250px;
+        right: 0;
+        z-index: -1;
+
+        &__deco {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        max-width: none;
+        margin-bottom: 30px;
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 25px;
+        z-index: 1;
+        position: relative;
+
+        @include w900px {
+            grid-template-columns: 1fr;
+        }
+
+        &__secondary {
+            min-width: 0;
+
+            &__fieldset {
+                border-radius: 20px;
+                border: 2px solid $primary;
+                box-shadow: rgba($primary, 0.25) 0 0 30px;
+                padding: 45px 25px;
+                background: $postsBcg;
+                min-width: 0;
+
+                &__formRow {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 25px;
+                    width: 100%;
+                    min-width: 0;
+
+                    &__label {
+                        color: $primary;
+                        font-family: $textFont;
+                        font-weight: bold;
+                        font-size: $medium;
+                        margin-bottom: 10px;
+
+                        .required {
+                            color: $required;
+                        }
+                    }
+
+                    &__textarea {
+                        padding: 15px;
+                        border-radius: 10px;
+                        border: solid $primary 2px;
+                        font-family: $titleFont;
+                        font-size: $normal;
+                        background: rgba($primary, 0.05);
+                        min-width: 0;
+                    }
+                }
+
+                &__title {
+                    color: $primary;
+                    font-family: $textFont;
+                    font-weight: bold;
+                    font-size: $medium;
+                    margin-bottom: 10px;
+                    display: block;
+
+                    .required {
+                        color: $required;
+                    }
+                }
+
+                &__image {
+                    background: rgba($primary, 0.20);
+                    border-radius: 10px;
+                    border: solid $primary 2px;
+                    padding: 105px 25px;
+
+                    @include w600px {
+                        padding: 75px 15px;
+                    }
+
+                    &__input {
+
+                    }
+
+                    &__button {
+                        max-width: max-content;
+                        margin-bottom: 20px;
+                    }
+
+                    &__text {
+                        color: $primary;
+                    }
+
+                    &--complet {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        padding: 30px 25px;
+
+                        @include w400px{
+                            padding: 20px 15px;
+                        }
+
+                        .formContainer__form__secondary__fieldset__image__button {
+                            width: 25px;
+                            height: 25px;
+                            padding: 15px;
+
+                            @include w400px{
+                                padding: 10px;
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+
+                &__buttonContainer {
+                    margin-top: 25px;
+
+                    &__button {
+                        padding: 15px 25px;
+                        margin-left: auto;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        &__fieldset {
+            border-radius: 20px;
+            border: 2px solid $primary;
+            box-shadow: rgba($primary, 0.25) 0 0 30px;
+            padding: 45px 25px;
+            min-width: 0;
+            z-index: 1;
+            background: $postsBcg;
+
+            &__formRow {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 25px;
+                width: 100%;
+                min-width: 0;
+
+                &__label {
+                    color: $primary;
+                    font-family: $textFont;
+                    font-weight: bold;
+                    font-size: $medium;
+                    margin-bottom: 10px;
+
+                    .required {
+                        color: $required;
+                    }
+
+                    &:has(+input:disabled) {
+                        color: $text;
+                    }
+                }
+
+                &__input, &__textarea, &__select {
+                    padding: 15px;
+                    border-radius: 10px;
+                    border: solid $primary 2px;
+                    font-family: $titleFont;
+                    font-size: $normal;
+                    background: rgba($primary, 0.05);
+                    min-width: 0;
+
+                    &:disabled {
+                        background: rgba($text, 0.2);
+                        border: solid $text 2px;
+                    }
+                }
+
+                &__select {
+                    background: rgba($stepBcg, 0.35);
+                    color: $primary;
+                }
+            }
+
+            &__buttonContainer {
+                margin-top: 25px;
+
+                &__button {
+                    padding: 15px 25px;
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

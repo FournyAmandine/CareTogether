@@ -1,0 +1,172 @@
+.user {
+
+    .header {
+        background: $primary;
+        position: sticky;
+        height: 100vh;
+        width: 420px;
+        top: 0;
+        overflow: hidden;
+
+        @include w1800px {
+            width: 370px;
+        }
+
+        @include w1695px {
+            height: 100px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        &__content {
+            padding: 30px;
+            height: 100vh;
+
+            @include w1695px {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px;
+                height: 80px;
+                align-items: flex-end;
+                gap: 10px;
+            }
+
+            &__burger {
+                display: none;
+
+                @include w1695px {
+                    display: block;
+                }
+
+                &__container {
+
+                    &__form {
+
+                        &__buttonContainer {
+                            padding-top: 50px;
+
+                            &__button {
+                                width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__imgContainer {
+                margin-bottom: 30px;
+
+
+                @include w1800px {
+                    width: 310px;
+                }
+
+                @include w1695px {
+                    margin-bottom: 10px;
+                    width: 250px;
+                }
+
+                &__link {
+
+                    &__img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &__navigation {
+                border-top: solid 2px $white;
+                border-bottom: solid 2px $white;
+                padding-top: 30px;
+                height: 75%;
+
+                @include w1695px {
+                    display: none;
+                }
+
+                &__list {
+
+                    &__item {
+                        border-radius: 10px;
+                        position: relative;
+
+                        &.active {
+                            background: rgba($tertiary, 0.7);
+                        }
+
+                        &__link {
+                            padding: 15px;
+                            margin-bottom: 15px;
+                            z-index: 1;
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                inset: 0;
+                                background: rgba($tertiary, 0.6);
+                                transform: translateX(-100%);
+                                transition: transform .3s ease;
+                                height: 100%;
+                                z-index: -1;
+                            }
+
+                            &:hover, &:focus {
+                                background: none;
+
+                                &:before {
+                                    transform: translateX(0);
+                                }
+                            }
+
+                            &__icon {
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__buttonContainer {
+                display: none;
+
+                @include w1695px {
+                    display: block;
+                }
+
+                &__button {
+                    //_buttons.scss
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+
+                        @include w600px {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+            }
+
+            &__form {
+                @include w1695px {
+                    display: none;
+                }
+
+                &__buttonContainer {
+                    max-width: 220px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+
+                    &__button {
+                        padding: 10px 25px;
+                        //_buttons.scss
+                    }
+                }
+            }
+        }
+    }
+}

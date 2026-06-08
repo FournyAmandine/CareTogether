@@ -1,0 +1,247 @@
+/****************************
+            BANNER
+*****************************/
+
+.banner {
+    position: relative;
+    min-height: 660px;
+    display: flex;
+
+    @include w1800px {
+        min-height: 560px;
+    }
+
+    @include w1400px {
+        min-height: 620px;
+    }
+
+    &__backgroundContainer {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -140px;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        border-radius: 0 230px 0 230px;
+        z-index: -1;
+
+        &:after {
+            content: '';
+            background: rgba($primary, 0.5);
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: -140px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            @include w768px {
+                background: rgba($primary, 0.7);
+            }
+        }
+
+        @include w1400px {
+            border-radius: 0 0 0 160px;
+        }
+
+        @include w900px {
+            border-radius: 0 0 0 120px;
+        }
+
+        @include w600px {
+            border-radius: 0 0 0 70px;
+        }
+
+        &__background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include w1200px {
+                object-position: 60%;
+            }
+
+            @include w1024px {
+                object-position: 65%;
+            }
+
+            @include w900px {
+                object-position: 70%;
+            }
+        }
+    }
+
+    .wrapper {
+        margin-top: auto;
+        margin-left: 100px;
+        margin-bottom: auto;
+
+        @include w1200px {
+            margin-left: 50px;
+        }
+
+        @include w600px {
+            margin-left: 0;
+        }
+    }
+
+    &__title {
+        font-size: $xxxxx-large;
+        max-width: 380px;
+        padding-left: 100px;
+        margin-bottom: 20px;
+
+        &__span {
+            color: $title2;
+        }
+
+        @include w1695px {
+            padding-left: 0;
+        }
+
+        @include w900px {
+            font-size: $xx-large;
+            max-width: 240px;
+        }
+    }
+
+    &__subtitle {
+        color: $white;
+        max-width: 485px;
+        line-height: 1.5;
+        font-size: $medium;
+        margin-bottom: 40px;
+        padding-left: 100px;
+
+        @include w1695px {
+            padding-left: 0;
+        }
+
+        @include w900px {
+            display: none;
+        }
+
+        &--tel {
+            display: none;
+
+            @include w900px {
+                font-weight: bold;
+                display: block;
+                max-width: 390px;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+        padding-left: 100px;
+
+        @include w1695px {
+            padding-left: 0;
+        }
+
+        @include w900px {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__buttonContainer {
+
+            &__button {
+                //_button.scss
+
+                @include w600px {
+                    padding: 20px 15px;
+                }
+            }
+        }
+    }
+
+    &--about {
+        position: relative;
+        z-index: 2;
+
+        @include w1400px {
+            min-height: 500px;
+        }
+
+        @include w1200px {
+            min-height: 400px;
+        }
+
+        @include w600px {
+            //min-height: 500px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            @include w900px {
+                align-items: flex-start;
+            }
+        }
+
+        .banner{
+
+            &__backgroundContainer {
+
+                &:after {
+                    content: '';
+                    background: rgba($primary, 0.5);
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: -140px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                &__background {
+
+                    @include w1200px {
+                        object-position: 0;
+                    }
+
+                    @include w600px {
+                        object-position: 20%;
+                    }
+                }
+            }
+
+            &__title {
+                max-width: 610px;
+                font-size: $xxxx-large;
+
+                @include w1200px {
+                    font-size: $xx-large;
+                    max-width: 400px;
+                }
+
+                @include w600px {
+                    font-size: $x-large;
+                }
+            }
+
+            &__buttons {
+                margin-right: 145px;
+
+                @include w1200px {
+                    margin-right: unset;
+                }
+
+                &__buttonContainer {
+
+                    &__button {
+                        padding: 10px 20px;
+                    }
+                }
+            }
+        }
+    }
+}

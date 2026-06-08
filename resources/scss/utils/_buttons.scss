@@ -1,0 +1,239 @@
+/****************************
+            BUTTONS
+*****************************/
+
+.button {
+    font-family: $titleFont;
+    font-size: $medium;
+    font-weight: bold;
+    color: $primary;
+    background: $white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform .3s ease;
+    border: 2px transparent solid;
+    overflow: hidden;
+    position: relative;
+
+    @include w768px {
+        font-size: $normal;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    svg {
+        fill: $white;
+        width: 25px;
+        height: 25px;
+        transition: transform .2s ease;
+
+        @include w768px {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,.15);
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+    }
+
+    &:hover, &:focus {
+        color: $white;
+        background: $primary;
+        border: 2px $white solid;
+
+        svg {
+            transform: scale(1.1);
+            fill: $white;
+        }
+
+        &:before {
+            transform: translateX(0);
+        }
+    }
+
+    &--simple {
+        color: $white;
+        padding: 10px;
+        background: none;
+        border: none;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $white;
+            height: 2px;
+            transform: translateX(-100%);
+            transition: transform .3s ease;
+        }
+
+        &:hover, &:focus {
+            border: none;
+
+            &:before {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &--back {
+        color: $primary;
+        flex-direction: row-reverse;
+        background: none;
+
+        svg {
+            fill: $primary;
+            transform: rotate(180deg);
+        }
+
+        &:hover, &:focus {
+            border: none;
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &--red {
+        color: $white;
+        background: $buttonBcg1;
+        padding: 20px 25px;
+        position: relative;
+        overflow: hidden;
+
+        @include w768px {
+            padding: 10px 20px;
+        }
+    }
+
+    &--blue {
+        background: $secondary;
+        padding: 20px 25px;
+
+
+        @include w768px {
+            padding: 10px 20px;
+        }
+
+        svg {
+            fill: $primary;
+        }
+    }
+
+    &--border {
+        background: none !important;
+        border: solid 3px $primary;
+
+        svg {
+            fill: $primary;
+        }
+
+        &:hover, &:focus {
+            background: $primary !important;
+            border: solid 3px $white;
+        }
+    }
+
+    &--icon {
+        border: none;
+        background: $primary;
+        border-radius: 50%;
+        padding: 10px 12px;
+
+        svg {
+            fill: $white;
+            height: 40px;
+            width: 40px;
+        }
+
+        &:before {
+            display: none;
+        }
+
+        &:hover, &:focus {
+            background: $white;
+            border: none;
+
+            svg {
+                fill: $primary;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &--input {
+        background: none;
+        border: none;
+
+        svg {
+            fill: $primary;
+        }
+    }
+
+    &--arrow {
+        padding: 10px 10px 10px 12px;
+        position: absolute;
+        top: 460px;
+        right: -80px;
+
+        @include w1695px {
+            display: none;
+        }
+
+        &--left {
+            transform: rotate(180deg);
+            top: 460px;
+            left: -80px;
+            right: unset;
+        }
+
+    }
+
+    &--post {
+        font-weight: normal;
+        justify-content: flex-end;
+        text-decoration: underline;
+        text-decoration-color: $buttonUnderline;
+        text-decoration-thickness: 2px;
+        padding: 0;
+        display: block;
+
+        svg {
+            fill: $buttonUnderline;
+            height: 15px;
+            width: 10px;
+        }
+    }
+
+    &--login {
+        background: $primary;
+        color: $white;
+        border-radius: 10px;
+
+        svg {
+            fill: $white;
+        }
+    }
+
+    &--footer {
+        color: $white;
+        padding: 0;
+        background: none;
+        font-weight: normal;
+    }
+}

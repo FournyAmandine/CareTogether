@@ -1,0 +1,500 @@
+.public--show {
+
+    .breadcrumb {
+
+        @include w900px {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.singlePostPage {//voir modifier --user en bas de page
+
+    &__buttonContainer {
+        position: absolute;
+        left: 80px;
+        top: 190px;
+        z-index: 1;
+
+        @include w1800px {
+            left: 30px;
+        }
+
+        @include w1400px {
+            top: 160px;
+        }
+
+        @include w600px {
+            left: 10px;
+        }
+
+        &__button {
+            //buttons.scss
+        }
+    }
+
+    .detail {
+        position: relative;
+        padding-bottom: 70px;
+        padding-top: 120px;
+
+        @include w900px {
+            padding-top: 90px;
+        }
+
+        @include w768px {
+            padding-bottom: 40px;
+        }
+
+        &__sold {
+            background: $sold;
+            position: absolute;
+            top: 15px;
+            left: 0;
+            padding: 25px 30px;
+            border-radius: 15px 0 15px 0;
+            z-index: 2;
+
+            @include w1695px {
+                left: 50px;
+            }
+
+            @include w1024px {
+                left: 40px;
+                padding: 20px 25px;
+            }
+
+            @include w768px {
+                padding: 15px 20px;
+            }
+
+            @include w600px {
+                left: 30px;
+            }
+
+            &__text {
+                color: $white;
+                font-size: $x-large;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: $titleFont;
+
+                @include w1024px {
+                    font-size: $large;
+                }
+
+                @include w768px {
+                    font-size: $medium;
+                }
+            }
+        }
+
+        &__main {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
+            align-items: flex-start;
+
+            @include w900px {
+                grid-template-columns: 1fr;
+            }
+
+            &__listing {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: auto;
+                gap: 15px;
+                position: relative;
+
+                @include w900px {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                @include w600px {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &__iconContainer {
+                    border: none;
+                    background: none;
+                    position: absolute;
+                    top:30px;
+                    right: 15px;
+                    z-index: 1;
+
+                    @include w900px {
+                        top: 280px;
+                    }
+
+                    &__icon{
+                        background: $white;
+                        padding: 10px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 20px;
+                        fill: $primary;
+
+                        @include w900px {
+                            width: 25px;
+                            height: 25px;
+                            padding: 5px;
+                            border-radius: 10px;
+                        }
+
+                    }
+                }
+
+                &__imgContainer {
+                    overflow: hidden;
+                    border-radius: 30px;
+                    border: 3px solid $price;
+                    position: relative;
+                    aspect-ratio: 1.2;
+
+                    @include w768px {
+                        border: 2px solid $price;
+                    }
+
+                    @include w400px {
+                        aspect-ratio: 1.5;
+                        border-radius: 20px;
+                    }
+
+                    &:first-of-type {
+                        grid-column: span 2;
+
+                        @include w900px {
+                            grid-column: 1 / 2;
+                        }
+
+                        @include w400px {
+                            grid-column: span 2;
+                        }
+                    }
+
+                    &__link {
+                        width: 100%;
+                        height: 100%;
+
+                        &__img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+
+                            &--general {
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__contentContainer {
+                background: $postInfosBcg;
+                border-radius: 20px;
+                padding: 30px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px; //safety
+                max-height: fit-content !important;
+
+                @include w1200px {
+                    grid-template-columns: 1fr;
+                }
+
+                @include w768px {
+                    padding: 15px;
+                }
+
+                &__infos {
+
+                    &__title {
+                        color: $primary;
+                        text-transform: uppercase;
+                        font-size: $xx-large;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+
+                        @include w1024px {
+                            font-size: $x-large;
+                        }
+
+                        @include w768px {
+                            font-size: $large;
+                        }
+                    }
+
+                    &__date {
+                        font-weight: bold;
+                        color: $primary;
+                        font-family: $textFont;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        display: block;
+                        text-decoration: underline $title2;
+                    }
+
+                    &__price {
+                        color: $price;
+                        font-size: $x-large;
+                        font-weight: bold;
+
+                        @include w768px {
+                            font-size: $large;
+                        }
+                    }
+
+                    &__list {
+                        margin-top: 20px;
+
+                        &__item {
+                            display: flex;
+                            gap: 20px;
+                            align-items: center;
+                            margin-bottom: 20px;
+                            font-size: $medium;
+                            color: $text;
+                            line-height: 1.5;
+
+                            @include w768px {
+                               font-size: $normal;
+                            }
+
+                            &__icon {
+                                fill: $text;
+                                width: 35px;
+                                height: 35px;
+
+                                @include w768px {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                            }
+
+                            &__text {
+                                color: $text;
+                            }
+                        }
+                    }
+                }
+
+                &__description {
+                    background: $stepBcg;
+                    border-radius: 20px;
+                    padding: 30px;
+                    margin-right: 0;
+                    margin-left: auto;
+
+                    @include w1200px {
+                        width: 90%;
+                    }
+
+                    @include w768px {
+                        padding: 15px;
+                    }
+
+
+                    &__title {
+                        margin-bottom: 15px;
+                        color: $primary;
+                        font-weight: bold;
+                        font-size: $medium;
+                        font-family: $titleFont;
+                    }
+
+                    &__text {
+                        display: flex;
+                        gap: 20px;
+                        font-size: $medium;
+                        color: $text;
+                        line-height: 1.5;
+
+                        @include w768px {
+                            font-size: $normal;
+                        }
+
+
+                        &__icon {
+                            fill: $text;
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            min-height: 40px;
+
+                            @include w768px {
+                                width: 30px;
+                                height: 30px;
+                                min-width: 30px;
+                                min-height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            padding-top: 20px;
+
+            &__buttonContainer {
+                display: flex;
+                justify-content: flex-end;
+                margin-left: 20px;
+                margin-bottom: 10px;
+
+                &__button {
+                }
+            }
+        }
+    }
+
+    .posts {
+        padding-top: 70px;
+        padding-bottom: 120px;
+        position: relative;
+
+        @include w768px {
+            padding-top: 40px;
+        }
+
+        &__decoContainer {
+            position: absolute;
+            max-width: 740px;
+            max-height: 920px;
+            left: -320px;
+            top: -260px;
+            z-index: -1;
+
+            &__deco {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            margin-bottom: 10px;
+        }
+    }
+
+    &--user {
+        overflow: hidden;
+
+        .singlePostPage__buttonContainer {
+            left: 520px;
+            top: 100px;
+
+            @include w1800px {
+                left: 410px;
+            }
+
+            @include w1695px {
+                left: 50px;
+                top: 160px;
+            }
+
+            @include w400px {
+                top: 170px;
+            }
+
+            &__button {
+                background: $stepBcg;
+            }
+        }
+
+        .heading {
+
+            .wrapper {
+                display: flex;
+                justify-content: center;
+            }
+
+            .decoContainer {
+                top: -640px;
+            }
+
+            .breadcrumb {
+                bottom: unset;
+                top: -25px;
+
+                @include w1695px {
+                    top: -50px;
+                }
+            }
+
+            &__title {
+                max-width: 500px;
+
+                @include w900px {
+                    padding-top: 60px;
+                }
+            }
+        }
+
+        .detail {
+            padding-top: 40px;
+
+            &__main {
+
+                &__contentContainer {
+
+                    &__infos {
+
+                        &__list {
+
+                            &__item {
+
+
+                                &__icon {
+                                    fill: $text;
+                                    width: 35px;
+                                    height: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__buttons {
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+
+                &__buttonContainer {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-top: 30px;
+                    margin-left: 20px;
+
+                    @include w600px {
+                        padding-top: 15px;
+                    }
+
+                    &__button {
+                        //_buttons.scss
+                    }
+                }
+
+                &:last-of-type{
+
+                    a{
+                        svg {
+                            fill: $primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .posts {
+
+            &__decoContainer {
+                right: -0px;
+                left: unset;
+            }
+        }
+    }
+}

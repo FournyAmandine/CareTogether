@@ -1,0 +1,226 @@
+.auth {
+    background-image: url('../../../../public/assets/img/connexion-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100%;
+
+    @include w900px {
+        background-position: 60%;
+    }
+
+    &--login {
+        height: 100%;
+
+        .formPage {
+            height: 100vh !important;
+        }
+    }
+
+
+    .formPage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 60px 0;
+
+        @include w900px {
+        }
+
+
+        .content {
+            background: $pageBcg;
+            border: 1px solid $primary;
+            border-radius: 20px;
+            padding: 60px 45px 85px;
+            width: 30%;
+
+            @include w1600px {
+                width: 40%;
+            }
+
+            @include w1200px {
+                width: 55%;
+            }
+
+            @include w900px {
+                width: 60%;
+            }
+
+            @include w600px {
+                width: 70%;
+                padding: 60px 25px 85px;
+            }
+
+            &__heading {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &__title {
+                    margin-bottom: 45px;
+                }
+
+                &__imgContainer {
+                    width: 410px;
+                    height: 125px;
+
+                    @include w600px {
+                        width: 250px;
+                        height: auto;
+                    }
+
+                    &__img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &__text {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                color: $text;
+                max-width: none;
+            }
+
+            &__required {
+                color: $required;
+                font-size: $small;
+                font-family: $textFont;
+            }
+
+            &__form {
+                margin-top: 30px;
+
+                .error {
+                    color: $required;
+                    margin-bottom: 30px;
+                    font-size: $medium;
+                }
+
+                &__name {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+
+                    @include w900px {
+                        grid-template-columns: 1fr;
+                        gap: 0;
+                    }
+                }
+
+                &__formRow {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    &__label {
+                        font-family: $titleFont;
+                        color: $primary;
+                        font-weight: bold;
+                        font-size: $medium;
+
+                        @include w900px {
+                            font-size: $normal;
+                        }
+
+                        span {
+                            color: $required;
+                        }
+                    }
+
+                    &__input {
+                        border: solid 2px $primary;
+                        background: rgba($inputBcg, 0.1);
+                        border-radius: 10px;
+                        padding: 15px 20px;
+                        margin-bottom: 30px;
+
+                        &::placeholder {
+                            color: rgba($text, 0.6);
+                        }
+
+                        @include w600px {
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+
+                &__forgotten {
+                    color: $primary;
+                    display: block;
+                    position: relative;
+                    text-align: right;
+                    margin-bottom: 30px;
+                }
+
+                &__password {
+                    color: $primary;
+                    display: block;
+                    position: relative;
+
+                    &__button {
+                        position: absolute;
+                        right: 15px;
+                        top: 55%;
+                        transform: translateY(-50%);
+
+                        &:hover, &:focus {
+                            background: none;
+                            border: none;
+
+                            svg {
+                                fill: $primary;
+                            }
+                        }
+
+                        &__icon {
+
+                            &.is-hidden {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &:hover, &:focus {
+                        color: $tertiary;
+                    }
+                }
+
+                &__buttonContainer {
+                    width: 100%;
+
+                    &__button {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            &__register {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: 20px;
+
+                @include w600px {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &__link {
+                    font-family: $textFont;
+                    color: $primary;
+
+                    &:hover, &:focus {
+                        color: $tertiary;
+                    }
+                }
+            }
+        }
+    }
+}

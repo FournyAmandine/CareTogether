@@ -1,0 +1,70 @@
+.mfp-bg {
+    background: rgba($black, 0.85);
+}
+
+.mfp-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($black, 0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+}
+
+.mfp-content {
+    max-width: 90vw;
+    max-height: 100vh;
+}
+
+.mfp-close, .mfp-counter, .mfp-preloader {
+    display: none;
+}
+
+.mfp-img {
+    max-width: 90%;
+    max-height: 100vh;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.mfp-arrow {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: $white;
+    border: none;
+    border-radius: 50%;
+
+    @include w900px {
+        left: 55%;
+    }
+
+    &:before {
+        content: '›';
+        color: $primary;
+        font-size: $xxxx-large;
+        font-weight: bold;
+        margin-top: -13px;
+        display: block;
+    }
+
+    &-right {
+    }
+
+    &-left {
+        left: 45%;
+        transform: rotate(180deg);
+
+        @include w900px {
+            left: 40%;
+        }
+    }
+}
+

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -24,11 +25,19 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $locality = ['Bastogne', 'Marche-en-Famenne', 'Nandrin', 'Seraing'];
+
         return [
-            'name' => fake()->name(),
+            'last_name' => fake()->name(),
+            'first_name' => fake()->name(),
+            'role' => UserRole::User,
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => 'password',
+            'tel'=> '0473 79 19 38',
+            'address' => 'Rue du Spite',
+            'postal'=> 6600,
+            'locality' => $this->faker->randomElement($locality),
             'remember_token' => Str::random(10),
         ];
     }
