@@ -3,7 +3,7 @@
         Conditions générales d’utilisation
     </x-slot:title_page>
     <main class="textPage">
-        <section class="text">
+        <section class="text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
             <div class="text__decoContainer">
                 <img class="text__decoContainer__deco" src="{{ asset('assets/img/svg/deco-texte.svg') }}" alt="Décoration de 2 mains qui tiennent une croix de pharmacie">
             </div>

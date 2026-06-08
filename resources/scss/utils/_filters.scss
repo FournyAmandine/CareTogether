@@ -11,56 +11,63 @@
         gap: 15px;
     }
 
-    &__formSearch {
-        position: relative;
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
 
-        @include w768px {
-            min-width: 0;
-        }
-
-        &__input {
-            border: none;
-            background: rgba($secondary, 0.75);
-            border-radius: 15px;
-            font-size: $medium;
-            color: $primary;
-            padding: 15px 25px;
-            width: 460px;
-            font-weight: bold;
-            opacity: 1;
+        &__formSearch {
+            position: relative;
 
             @include w768px {
-                max-width: 460px;
-                width: 100%;
                 min-width: 0;
-                font-size: $normal;
             }
 
-            &::placeholder {
+            &__input {
+                border: none;
+                background: rgba($secondary, 0.75);
+                border-radius: 15px;
+                font-size: $medium;
                 color: $primary;
+                padding: 15px 25px;
+                width: 460px;
+                font-weight: bold;
+                opacity: 1;
+
+                @include w768px {
+                    max-width: 460px;
+                    width: 100%;
+                    min-width: 0;
+                    font-size: $normal;
+                }
+
+                &::placeholder {
+                    color: $primary;
+                }
+            }
+
+            &__button {
+                background: none;
+                border: none;
+                position: absolute;
+                top: 12px;
+                right: 15px;
+
+                &__icon {
+                    fill: $primary;
+                    width: 25px;
+                    height: 25px;
+                }
             }
         }
 
-        &__button {
-            background: none;
-            border: none;
-            position: absolute;
-            top: 12px;
-            right: 15px;
+        &__buttonContainer {
 
-            &__icon {
-                fill: $primary;
-                width: 25px;
-                height: 25px;
+            &__button {
+                padding: 11px 40px;
+                background: rgba($secondary, 0.75);
             }
-        }
-    }
-
-    &__buttonContainer {
-
-        &__button {
-            padding: 15px 40px;
-            background: rgba($secondary, 0.75);
         }
     }
 

@@ -36,6 +36,13 @@
                         <h3 class="detail__main__contentContainer__infos__title">
                             {!! $post->name !!}
                         </h3>
+                        @if($post->sold == 1)
+                            @if($post->type == \App\Enums\PostType::Loan->value || $post->type == \App\Enums\PostType::Rental->value)
+                                <span class="detail__main__contentContainer__infos__date">
+                                    Se termine le {{ \Carbon\Carbon::parse($post->rental?->end_date)->locale('fr')->translatedFormat('d F Y')  }}
+                                </span>
+                            @endif
+                        @endif
                         @if($post->type === \App\Enums\PostType::Loan->value)
                             <p class="detail__main__contentContainer__infos__price">
                                 Prêt

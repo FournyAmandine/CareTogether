@@ -9,10 +9,10 @@
             </div>
             <div class="wrapper">
                 <aside class="contact__aside">
-                    <h2 class="maintitle maintitle--blue contact__aside__title">
+                    <h2 class="maintitle maintitle--blue contact__aside__title" data-aos="fade-right" data-aos-delay="100" data-aos-duration="500">
                         Une question pratique?
                     </h2>
-                    <p class="contact__aside__content">
+                    <p class="contact__aside__content" data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">
                         Que vous ayez une question sur
                         <strong>
                             la création de compte, la publication d’annonce, la messagerie ou autre
@@ -23,11 +23,11 @@
                         </strong>
 
                     </p>
-                    <div class="contact__aside__imgContainer">
+                    <div class="contact__aside__imgContainer" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">
                         <img class="contact__aside__imgContainer__img" src="{!! asset('assets/img/contact-image.png') !!}" alt="Illustration d'une personne qui tient les épaules d'une personne en scooter">
                     </div>
                 </aside>
-                <div class="contact__formContainer">
+                <div class="contact__formContainer" data-aos="fade-left" data-aos-delay="200" data-aos-duration="500">
                     <h2 class="maintitle maintitle--blue contact__formContainer__title">
                         Dites nous bonjour !
                     </h2>

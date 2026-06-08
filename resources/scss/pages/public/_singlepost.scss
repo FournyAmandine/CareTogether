@@ -224,6 +224,16 @@
                         }
                     }
 
+                    &__date {
+                        font-weight: bold;
+                        color: $primary;
+                        font-family: $textFont;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        display: block;
+                        text-decoration: underline $title2;
+                    }
+
                     &__price {
                         color: $price;
                         font-size: $x-large;

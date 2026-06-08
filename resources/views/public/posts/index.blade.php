@@ -7,13 +7,15 @@
             <section class="posts">
                 <x-utils.deco/>
                 <div class="wrapper">
-                    <h2 class="maintitle maintitle--blue posts__title">
+                    <h2 class="maintitle maintitle--blue posts__title" data-aos="fade-down" data-aos-delay="200" data-aos-duration="500">
                         Découvrez toutes nos annonces
                     </h2>
 
                     <div class="filters">
-                        <x-utils.search name_parent="filters"/>
-                        <x-utils.button-text aria-haspopup="dialog" aria-expanded="false" aria-controls="filtersForm" id="filters" name_parent="filters" title="Ouvrir les filtres" classButton="button button--blue" text="Filtrer"/>
+                        <div class="filters__content" data-aos="fade-left" data-aos-delay="300" data-aos-duration="500">
+                            <x-utils.search id="searchTitle3" name_parent="filters__content"/>
+                            <x-utils.button-text aria-haspopup="dialog" aria-expanded="false" aria-controls="filtersForm" id="filters" name_parent="filters__content" title="Ouvrir les filtres" classButton="button button--blue" text="Filtrer"/>
+                        </div>
                         @if($term || $category || $type || $sort)
                             <x-utils.link wire:click="resetFilters()" name_parent="filters" href="{!! route('public.posts.index') !!}" title="Supprimer les filtres" classButton="button button--border" label="Supprimer les filtres"/>
                         @endif

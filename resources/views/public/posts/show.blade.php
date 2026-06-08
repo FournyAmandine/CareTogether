@@ -25,7 +25,7 @@
                     </div>
                 @endif
                 <div class="detail__main">
-                    <div class="detail__main__listing">
+                    <div class="detail__main__listing" data-aos="fade-right" data-aos-delay="100" data-aos-duration="500">
                         @if(in_array($post->id, $registeredPostIds))
                             <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
                                 @csrf
@@ -70,7 +70,7 @@
                             @endforeach
                         @endif
                     </div>
-                    <div class="detail__main__contentContainer">
+                    <div class="detail__main__contentContainer" data-aos="fade-left" data-aos-delay="200" data-aos-duration="500">
                         <div class="detail__main__contentContainer__infos">
                             <h2 class="detail__main__contentContainer__infos__title"  itemprop="name">
                                 {!! $post->name !!}
@@ -87,7 +87,7 @@
                                 <x-utils.list-item itemprop="manufacturer" svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
                             </ul>
                         </div>
-                        <div class="detail__main__contentContainer__description">
+                        <div class="detail__main__contentContainer__description" data-aos="fade-left" data-aos-delay="300" data-aos-duration="500">
                             <p class="detail__main__contentContainer__description__title">
                                 Description du produit :
                             </p>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="detail__buttons">
+                <div class="detail__buttons" data-aos="fade-left" data-aos-delay="400" data-aos-duration="500">
                     @if(in_array($post->id, $registeredPostIds))
                         <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
                             @csrf
@@ -132,7 +132,7 @@
                 <img class="posts__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="">
             </div>
             <div class="wrapper">
-                <h2 class="maintitle maintitle--blue posts__title">
+                <h2 class="maintitle maintitle--blue posts__title" data-aos="fade-right" data-aos-delay="100" data-aos-duration="500">
                     Dernières annonces dans la catégorie : {!! $post->category->name !!}
                 </h2>
                 <x-utils.listing-cards :posts="$posts" :registered-post-ids="$registeredPostIds"/>

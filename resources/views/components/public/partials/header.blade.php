@@ -10,7 +10,7 @@
             <h2 class="sro header__container__navigation__title">Navigation</h2>
             <x-public.navigation.list.list-header name_parent="header__container__navigation"/>
         </nav>
-        <x-utils.search name_parent="header__container"/>
+        <x-utils.search id="searchTitle" name_parent="header__container"/>
 
 
         @if(auth()->check())

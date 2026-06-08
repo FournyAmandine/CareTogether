@@ -162,6 +162,14 @@
                     padding: 15px 10px;
                 }
 
+                &:hover, &:focus {
+                    background: rgba($tertiary, 0.4);
+
+                    &:nth-child(even) {
+                        background: rgba($tertiary, 0.4);
+                    }
+                }
+
                 &:nth-child(even) {
                     background: $statsBcg2;
 
@@ -276,6 +284,11 @@
                         @include w480px {
                             flex-direction: column;
                             gap: 20px;
+                        }
+
+                        &:hover, &:focus {
+                            transform: scale(1.02);
+                            box-shadow: rgba(30, 58, 138, 0.25) 0 8px 24px;
                         }
 
                         &__imgContainer {
@@ -432,6 +445,7 @@
                         background: $primary;
                         border-radius: 50%;
                         margin-right: 20px;
+                        overflow: hidden;
 
                         &__img {
                             width: 100%;

@@ -2,6 +2,11 @@
 
 @php
     $links = [
+        [
+            'href'=>route('public.homepage'),
+            'label'=> 'Accueil',
+            'svg'=> 'home'
+        ],
        [
             'href'=>route('user.dashboard'),
             'label'=> 'Votre tableau de bord',
@@ -36,11 +41,6 @@
             'href'=>route('user.messages'),
             'label'=> 'Vos messages',
             'svg'=> 'messages'
-        ],
-        [
-            'href'=>route('public.homepage'),
-            'label'=> 'Accueil',
-            'svg'=> 'home'
         ],
     ];
 @endphp

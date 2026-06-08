@@ -31,13 +31,7 @@
         />
     @endforeach
 
-        @if(auth()->check())
-            <a class="{!! $name_parent !!}__link" href="{!! route('user.dashboard') !!}">
-                <img class="{!! $name_parent !!}__link__img" src="{!! Str::startsWith(auth()->user()->profil_picture, 'assets')
-                                                        ? asset(auth()->user()->profil_picture)
-                                                        : asset('storage/photos/users/originals/' . auth()->user()->profil_picture) !!}" alt="Image de profil de l'utilisateur">
-            </a>
-        @else
+        @if(!auth()->check())
             <div class="{!! $name_parent !!}__list__buttons">
                 <x-utils.link name_parent="{!! $name_parent !!}__list__buttons" class-button="button--login" title="Aller vers la page Se connecter"
                               href="{!! route('login') !!}" label="Se connecter"/>
