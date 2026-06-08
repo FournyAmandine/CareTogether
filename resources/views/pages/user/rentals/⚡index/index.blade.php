@@ -1,6 +1,6 @@
 <main class="rentalsPage">
 
-    <x-user.utils.heading title="Vos locations et prêts" route="{!! route('user.rentals.index') !!}" :categories="$categories_name"/>
+    <x-user.utils.heading title="Vos locations et prêts" route="{{ route('user.rentals.index') }}" :categories="$categories_name"/>
 
     <x-user.utils.deco/>
 
@@ -72,7 +72,7 @@
                             $image = $current_rental->post->images()->first();
                         @endphp
                     <x-user.utils.rental-card title="{{ $current_rental->post->name }}"
-                                              svg="{!! Str::slug($current_rental->post->category->name, '_')!!}"
+                                              svg="{{ Str::slug($current_rental->post->category->name, '_')}}"
                                               date="{{ \Carbon\Carbon::parse($current_rental->end_date)->locale('fr')->translatedFormat('d F Y')  }}"
                                               price="{{ $current_rental->post->price }}"
                                               imgSrc="{{ $image?->img_path
@@ -106,7 +106,7 @@
                             $image = $ended_rental->post->images()->first();
                         @endphp
                     <x-user.utils.rental-card title="{{ $ended_rental->post->name }}"
-                                              svg="{!! Str::slug($ended_rental->post->category->name, '_')!!}"
+                                              svg="{{ Str::slug($ended_rental->post->category->name, '_')}}"
                                               price="{{ $ended_rental->post->price }}"
                                               imgSrc="{{ $image?->img_path
                                                     ? (Str::startsWith($image->img_path, 'assets')

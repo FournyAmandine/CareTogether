@@ -58,12 +58,12 @@
                             @foreach($existingImages as $image)
                                 <div class="detail__main__listing__imgContainer" itemprop="image">
                                     @if(Str::startsWith($image['img_path'], 'assets'))
-                                        <a class="detail__main__listing__imgContainer__link" href="{!! $image['img_path'] !!}">
-                                            <img class="detail__main__listing__imgContainer__link__img" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                        <a class="detail__main__listing__imgContainer__link" href="{{ $image['img_path'] }}">
+                                            <img class="detail__main__listing__imgContainer__link__img" src="{{ asset($image['img_path']) }}" alt="Image de l'article : {{ $post->name }}">
                                         </a>
                                     @else
                                         <a class="detail__main__listing__imgContainer__link" href="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}">
-                                            <img class="detail__main__listing__imgContainer__link__img" src="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}" alt="Image de l'article : {!! $post->name !!}">
+                                            <img class="detail__main__listing__imgContainer__link__img" src="{{ asset('storage/photos/posts/originals/' . $image['img_path']) }}" alt="Image de l'article : {{ $post->name }}">
                                         </a>
                                     @endif
                                 </div>
@@ -73,18 +73,18 @@
                     <div class="detail__main__contentContainer" data-aos="fade-left" data-aos-delay="200" data-aos-duration="500">
                         <div class="detail__main__contentContainer__infos">
                             <h2 class="detail__main__contentContainer__infos__title"  itemprop="name">
-                                {!! $post->name !!}
+                                {{ $post->name }}
                             </h2>
                             <p class="detail__main__contentContainer__infos__price"  itemprop="offers">
-                                {!! $post->price !!}€
+                                {{ $post->price }}€
                             </p>
                             <ul class="detail__main__contentContainer__infos__list">
-                                <x-utils.list-item itemprop="displayLocation" svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
-                                <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
+                                <x-utils.list-item itemprop="displayLocation" svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->locality }}"/>
+                                <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->state }}"/>
                                 <x-utils.list-item itemprop="releaseDate" svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
-                                <x-utils.list-item itemprop="owner" svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
-                                <x-utils.list-item itemprop="category" svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
-                                <x-utils.list-item itemprop="manufacturer" svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
+                                <x-utils.list-item itemprop="owner" svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {{ $post->user->first_name . ' ' . $post->user->last_name}}"/>
+                                <x-utils.list-item itemprop="category" svg="category" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->category->name }}"/>
+                                <x-utils.list-item itemprop="manufacturer" svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->marque }}"/>
                             </ul>
                         </div>
                         <div class="detail__main__contentContainer__description" data-aos="fade-left" data-aos-delay="300" data-aos-duration="500">
@@ -95,7 +95,7 @@
                                 <svg class="detail__main__contentContainer__description__text__icon">
                                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#description') }}"></use>
                                 </svg>
-                                {!! $post->description !!}
+                                {{ $post->description }}
                             </p>
                         </div>
                     </div>

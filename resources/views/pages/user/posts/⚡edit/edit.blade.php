@@ -26,7 +26,7 @@
 
                     <x-user.form.fields.select wire:model.live="form.category_id" name_parent="formContainer__form__fieldset" field_name="post_category" required="required" label="Categorie">
                         @foreach($categories as $category)
-                            <x-user.form.fields.option value="{!! $category->id !!}" option_name="{!! $category->name !!}" name_parent="formContainer__form__fieldset"/>
+                            <x-user.form.fields.option value="{!! $category->id !!}" option_name="{{ $category->name }}" name_parent="formContainer__form__fieldset"/>
                         @endforeach
                     </x-user.form.fields.select>
 

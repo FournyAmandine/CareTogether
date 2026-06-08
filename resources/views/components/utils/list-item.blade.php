@@ -7,6 +7,6 @@
         </svg>
     @endif
     <div class="{!! $name_parent !!}__item__textContainer" @if($delay) data-aos="fade-right" data-aos-delay="{{$delay*200}}" data-aos-duration="500" @endif>
-        {!! $item !!}
+        {{ $item }}
     </div>
 </li>

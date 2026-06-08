@@ -16,7 +16,7 @@
                         <input wire:model.live="form.photo" class="profil__form__fieldset__image__input" type="file" id="photos" hidden>
 
                         <div class="profil__form__fieldset__image__imageContainer">
-                            <img class="profil__form__fieldset__image__imageContainer__image" src="{!! $form->photo ? $form->photo->temporaryUrl() : (Str::startsWith($user->profil_picture, 'assets')? asset($user->profil_picture) : asset('storage/photos/users/originals/' . $user->profil_picture)) !!}" alt="Image de l'article">
+                            <img class="profil__form__fieldset__image__imageContainer__image" src="{{ $form->photo ? $form->photo->temporaryUrl() : (Str::startsWith($user->profil_picture, 'assets')? asset($user->profil_picture) : asset('storage/photos/users/originals/' . $user->profil_picture)) }}" alt="Image de l'article">
                         </div>
 
                         <label for="photos" class="button button--icon profil__form__fieldset__image__button">

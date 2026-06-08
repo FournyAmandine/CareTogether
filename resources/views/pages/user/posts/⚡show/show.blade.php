@@ -1,6 +1,6 @@
 <main class="singlePostPage singlePostPage--user">
 
-    <x-user.utils.heading title="Votre annonce : {!! $post->name !!}" :post="$post"/>
+    <x-user.utils.heading title="Votre annonce : {{ $post->name }}" :post="$post"/>
 
     <x-utils.button-text onclick="history.back()" name_parent="singlePostPage" svg="arrow-button" title="Retourner sur la page précédente" text="Retour" class-button="button button--back"/>
 
@@ -34,7 +34,7 @@
                 <div class="detail__main__contentContainer">
                     <div class="detail__main__contentContainer__infos">
                         <h3 class="detail__main__contentContainer__infos__title">
-                            {!! $post->name !!}
+                            {{ $post->name }}
                         </h3>
                         @if($post->sold == 1)
                             @if($post->type == \App\Enums\PostType::Loan->value || $post->type == \App\Enums\PostType::Rental->value)
@@ -53,25 +53,25 @@
                             </p>
                         @else
                             <p class="detail__main__contentContainer__infos__price">
-                                {!! $post->price !!}€
+                                {{$post->price}}€
                             </p>
                         @endif
                         <ul class="detail__main__contentContainer__infos__list">
-                            <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->locality !!}"/>
-                            <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->state !!}"/>
+                            <x-utils.list-item svg="map-pin" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->locality }}"/>
+                            <x-utils.list-item svg="state" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->state }}"/>
                             <x-utils.list-item svg="date" name_parent="detail__main__contentContainer__infos__list" item="Ajouté {{ $post->created_at->diffForHumans() }}"/>
 
                             @if($post->type === \App\Enums\PostType::Sale->value)
-                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Vendu par {{ $post->user->first_name . ' ' . $post->user->last_name}}"/>
                             @elseif($post->type === \App\Enums\PostType::Rental->value)
-                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Loué par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Loué par {{ $post->user->first_name . ' ' . $post->user->last_name}}"/>
                             @elseif($post->type === \App\Enums\PostType::Loan->value)
-                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Prêté par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Prêté par {{ $post->user->first_name . ' ' . $post->user->last_name}}"/>
                             @elseif($post->type === \App\Enums\PostType::Donation->value)
-                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Donné par {!! $post->user->first_name . ' ' . $post->user->last_name!!}"/>
+                                <x-utils.list-item svg="user" name_parent="detail__main__contentContainer__infos__list" item="Donné par {{ $post->user->first_name . ' ' . $post->user->last_name}}"/>
                             @endif
-                            <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->category->name !!}"/>
-                            <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{!! $post->marque !!}"/>
+                            <x-utils.list-item svg="category" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->category->name }}"/>
+                            <x-utils.list-item svg="marque" name_parent="detail__main__contentContainer__infos__list" item="{{ $post->marque }}"/>
                         </ul>
                     </div>
                     <div class="detail__main__contentContainer__description">
@@ -82,7 +82,7 @@
                             <svg class="detail__main__contentContainer__description__text__icon">
                                 <use xlink:href="{{ asset('assets/img/svg/sprite.svg#description') }}"></use>
                             </svg>
-                            {!! $post->description !!}
+                            {{ $post->description }}
                         </p>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                                                         ? asset($image->img_path)
                                                         : asset('storage/photos/posts/originals/' . $image->img_path))
                                                     : asset('assets/img/post-image.jpg') }}"
-                                            src="{!! route('user.posts.show', $post->id) !!}" sold="{{$post->sold}}"
+                                            src="{{ route('user.posts.show', $post->id) }}" sold="{{$post->sold}}"
                                             views="{{ $post->views }}" registered="{!! $post->registeredByUser->count() !!}"/>
                 @endforeach
             </div>
@@ -177,7 +177,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{{ $otherUser->first_name . ' ' . $otherUser->last_name  }}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
@@ -203,7 +203,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{{ $otherUser->first_name . ' ' . $otherUser->last_name  }}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>
@@ -231,7 +231,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{{ $otherUser->first_name . ' ' . $otherUser->last_name  }}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
@@ -257,7 +257,7 @@
                                     : $conversation->buyer;
                             @endphp
 
-                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{!! $otherUser->first_name . ' ' . $otherUser->last_name  !!}"/>
+                            <x-user.form.fields.option name_parent="modal__container__form" value="{!! $otherUser->id !!}" option_name="{{ $otherUser->first_name . ' ' . $otherUser->last_name  }}"/>
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>

@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="heading__content">
                 <h2 class="maintitle maintitle--blue maintitle--big heading__content__title">
-                    Bonjour {!! $first_name !!},
+                    Bonjour {{ $first_name }},
                 </h2>
                 <p class="heading__content__text">
                     Bienvenue sur votre espace administrateur, voici un résumé de l'activité sur votre site :
@@ -54,7 +54,7 @@
                     @foreach($categories as $category)
                         <div class="recap__category__listing__item">
                             <p class="recap__category__listing__item__text">
-                                {!! $category->name !!}
+                                {{ $category->name }}
                             </p>
                             <div class="recap__category__listing__item__buttons">
                                 <x-utils.button wire:click="toggleModal('modify', {!! $category->id !!})" class__button="button button--icon" title="Modifier la catégorie" name_parent="recap__category__listing__item__buttons" svg="modify"/>
@@ -72,8 +72,8 @@
                 <div class="recap__messages__listing">
                     @foreach($messages as $message)
                         <x-utils.messages-card name_parent="recap__messages__listing"
-                                               name="{!! $message->first_name !!} {!! $message->last_name !!}" date="{{ $message->created_at->diffForHumans() }}"
-                                               message="{!! Str::limit($message->message, 40) !!}"/>
+                                               name="{{ $message->first_name . '' . $message->last_name }}" date="{{ $message->created_at->diffForHumans() }}"
+                                               message="{{ Str::limit($message->message, 40) }}"/>
                     @endforeach
                 </div>
                 <x-utils.link name_parent="recap__messages" class_button="button button--blue" svg="arrow-button" label="Voir tous vos messages" href="{!! route('admin.messages.index') !!}" title="Aller vers la page des messages" />

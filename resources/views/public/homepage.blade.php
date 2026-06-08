@@ -21,8 +21,8 @@
                 <p class="banner__subtitle banner__subtitle--tel" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">
                     La plateforme de prêt, don et vente de matériel médical de seconde main pour faciliter l’accès aux soins.                </p>
                 <div class="banner__buttons" data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
-                    <x-utils.link href="{!! route('public.posts.index') !!}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
-                    <x-utils.link href="{!! route('register') !!}" svg="arrow-button" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    <x-utils.link href="{{ route('public.posts.index') }}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
+                    <x-utils.link href="{{ route('register') }}" svg="arrow-button" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
                 </div>
             </div>
         </section>
@@ -33,7 +33,7 @@
             <div class="wrapper">
                 <div class="hook__main">
                     <div class="hook__main__imgContainer" data-aos="fade-right" data-aos-delay="100" data-aos-duration="500">
-                        <img class="hook__main__imgContainer__img" src="{!! asset('assets/img/home-hook-deco.jpg') !!}" alt="2 personnes qui tiennent un carton rempli de matériel">
+                        <img class="hook__main__imgContainer__img" src="{{ asset('assets/img/home-hook-deco.jpg') }}" alt="2 personnes qui tiennent un carton rempli de matériel">
                     </div>
                     <div class="hook__main__contentContainer" data-aos="fade-left" data-aos-delay="200" data-aos-duration="500">
                         <h2 class="maintitle maintitle--big maintitle--blue hook__main__contentContainer__title">
@@ -50,7 +50,7 @@
         </section>
         <section class="steps">
             <div class="steps__decoContainer" data-aos="fade-in" data-aos-delay="100" data-aos-duration="500">
-                <img class="steps__decoContainer__deco" src="{!! asset('assets/img/deco-red.png') !!}" alt="Forme bleu, ronde">
+                <img class="steps__decoContainer__deco" src="{{ asset('assets/img/deco-red.png') }}" alt="Forme bleu, ronde">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue steps__title" data-aos="fade-down" data-aos-delay="100" data-aos-duration="500">
@@ -68,7 +68,7 @@
         </section>
         <section class="stats">
             <div class="stats__backgroundContainer" data-aos="fade-left" data-aos-delay="200" data-aos-duration="500">
-                <img class="stats__backgroundContainer__background" src="{!! asset('assets/img/home-stats-background.jpg') !!}" alt="Fond bleu">
+                <img class="stats__backgroundContainer__background" src="{{ asset('assets/img/home-stats-background.jpg') }}" alt="Fond bleu">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue maintitle--big stats__title" data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">
@@ -82,7 +82,7 @@
         </section>
         <section class="posts">
             <div class="posts__decoContainer" data-aos="fade-in" data-aos-delay="100" data-aos-duration="500">
-                <img class="posts__decoContainer__deco" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleu, ronde">
+                <img class="posts__decoContainer__deco" src="{{ asset('assets/img/deco-blue.png') }}" alt="Forme bleu, ronde">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle maintitle--blue posts__title" data-aos="fade-down" data-aos-delay="100" data-aos-duration="500">

@@ -6,7 +6,7 @@
         <div class="wrapper wrapper--small">
             <div class="heading__content">
                 <h2 class="maintitle maintitle--blue maintitle--big heading__content__title">
-                    Bonjour {!! $first_name !!},
+                    Bonjour {{ $first_name }},
                 </h2>
                 <p class="heading__content__text">
                     Bienvenue sur votre espace personnel, voici un résumé de votre activité :
@@ -57,8 +57,8 @@
                                                         ? asset($image->img_path)
                                                         : asset('storage/photos/posts/originals/' . $image->img_path))
                                                     : asset('assets/img/post-image.jpg') }}"
-                                            name="{!! $post->name !!}" date="{{ $post->locality }}"
-                                            price="{!! $post->price !!}" :post="$post"/>
+                                            name="{{ $post->name }}" date="{{ $post->locality }}"
+                                            price="{{ $post->price }}" :post="$post"/>
                     @endforeach
                 </div>
                 <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="{!! route('user.posts.index') !!}" title="Aller vers la page de vos annonces" />
@@ -69,9 +69,9 @@
                 </h2>
                 <div class="recap__messages__listing">
                     @foreach($messages as $message)
-                        <x-utils.messages-card name_parent="recap__messages__listing" src="{!! Str::startsWith($message->sender->profil_picture, 'assets')? asset($message->sender->profil_picture) : asset('storage/photos/users/originals/' . $message->sender->profil_picture)!!}"
-                                               name="{!! $message->sender->first_name !!} {!! $message->sender->last_name !!}" date="{{ $message->created_at->diffForHumans() }}"
-                                               message="{!! Str::limit($message->text, 40) !!}"/>
+                        <x-utils.messages-card name_parent="recap__messages__listing" src="{{ Str::startsWith($message->sender->profil_picture, 'assets')? asset($message->sender->profil_picture) : asset('storage/photos/users/originals/' . $message->sender->profil_picture)}}"
+                                               name="{{ $message->sender->first_name . ' ' . $message->sender->last_name}}" date="{{ $message->created_at->diffForHumans() }}"
+                                               message="{{ Str::limit($message->text, 40) }}"/>
                     @endforeach
                 </div>
                 <x-utils.link name_parent="recap__messages" class_button="button button--blue" svg="arrow-button" label="Voir tous vos messages" href="{!! route('user.messages') !!}" title="Aller vers la page des messages" />

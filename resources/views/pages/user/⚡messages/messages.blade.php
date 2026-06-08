@@ -32,10 +32,10 @@
                             </div>
                             <div class="messages__container__listing__item__infos">
                                 <h3 class="messages__container__listing__item__infos__name">
-                                    {!! $otherUser->first_name . ' ' . $otherUser->last_name !!}
+                                    {{ $otherUser->first_name . ' ' . $otherUser->last_name }}
                                 </h3>
                                 <span class="messages__container__listing__item__infos__post">
-                                    {!! $conversation->post->name !!}
+                                    {{ $conversation->post->name }}
                                 </span>
                             </div>
                         </div>
@@ -63,20 +63,20 @@
                                     <img class="messages__container__content__heading__sender__imgContainer__img" src="{!! Str::startsWith($otherUser->profil_picture, 'assets')? asset($otherUser->profil_picture) : asset('storage/photos/users/originals/' . $otherUser->profil_picture) !!}" alt="Image de profil de l'utilisateur">
                                 </div>
                                 <span class="messages__container__content__heading__sender__name">
-                                {!! $otherUser->first_name . ' ' .$otherUser->last_name !!}
-                            </span>
+                                    {{ $otherUser->first_name . ' ' . $otherUser->last_name }}
+                                </span>
                             </div>
                             <div class="messages__container__content__heading__post">
-                                {!! $conversation_selected->post->name !!}
+                                {{ $conversation_selected->post->name }}
                             </div>
-                            <x-utils.link href="{!! route('public.posts.show', $conversation_selected->post->id) !!}" label="Voir l'annonce" name_parent="messages__container__content__heading" class-button="button--red" title="Aller voir l'annonce" svg="arrow-button"/>
+                            <x-utils.link href="{{ route('public.posts.show', $conversation_selected->post->id) }}" label="Voir l'annonce" name_parent="messages__container__content__heading" class-button="button--red" title="Aller voir l'annonce" svg="arrow-button"/>
                         </div>
                         <div class="messages__container__content__main">
                             <div wire:poll.5s class="messages__container__content__main__listing">
                                 @foreach($messages as $message)
                                     <div class="messages__container__content__main__listing__messageContainer messages__container__content__main__listing__messageContainer--{{$message->sender_id === auth()->id() ? 'mine' : 'theirs'}}">
                                         <p class="messages__container__content__main__listing__messageContainer__message">
-                                            {!! $message->text !!}
+                                            {{ $message->text }}
                                         </p>
                                     </div>
                                 @endforeach

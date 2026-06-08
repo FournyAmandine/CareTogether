@@ -1,6 +1,6 @@
 <main class="salesPage">
 
-    <x-user.utils.heading title="Vos achats et dons" route="{!! route('user.sales.index') !!}" :categories="$categories_name"/>
+    <x-user.utils.heading title="Vos achats et dons" route="{{ route('user.sales.index') }}" :categories="$categories_name"/>
 
     <x-user.utils.deco/>
 
@@ -27,7 +27,7 @@
                                             @checked(in_array($category->id,request('categories', [])))
                                         >
                                         <span class="filters__form__fieldset__checkbox__label__text">
-                                                    {!! $category->name !!}
+                                                    {{ $category->name }}
                                                     <svg class="filters__form__fieldset__checkbox__label__text__icon">
                                                         <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . Str::slug($category->name, '_')) }}"></use>
                                                     </svg>
@@ -69,7 +69,7 @@
                             $image = $sale->post->images()->first();
                         @endphp
                     <x-user.utils.sale-card title="{{ $sale->post->name }}"
-                                              svg="{!! Str::slug($sale->post->category->name, '_')!!}"
+                                              svg="{{ Str::slug($sale->post->category->name, '_')}}"
                                               price="{{ $sale->post->price }}"
                                               imgSrc="{{ $image?->img_path
                                                     ? (Str::startsWith($image->img_path, 'assets')

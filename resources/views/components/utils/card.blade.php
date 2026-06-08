@@ -1,27 +1,27 @@
 @props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'post', 'registeredPostIds', 'delay' => ''])
 
 
-<article class="card-post card-post--{!! $modifier !!} posts__listing__item" itemscope itemtype="https://schema.org/Product" @if($delay) data-aos="fade-right" data-aos-delay="{!! 150*$delay !!}" data-aos-duration="500" @endif>
-    <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}" itemprop="url"></a>
+<article class="card-post card-post--{{ $modifier }} posts__listing__item" itemscope itemtype="https://schema.org/Product" @if($delay) data-aos="fade-right" data-aos-delay="{{ 150*$delay }}" data-aos-duration="500" @endif>
+    <a class="card-post__link" href="{{ $src }}" title="Voir cette annonce : {{ $title }}" itemprop="url"></a>
         <div class="card-post__link__iconContainer" itemprop="category">
             <svg class="card-post__link__iconContainer__icon">
                 <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>
             </svg>
         </div>
         <div class="card-post__link__imgContainer">
-            <img class="card-post__link__imgContainer__img" src="{!! $imgSrc !!}" alt="Photo du produit {!! $title !!}" itemprop="image">
+            <img class="card-post__link__imgContainer__img" src="{{ $imgSrc }}" alt="Photo du produit {{ $title }}" itemprop="image">
         </div>
 
         <div class="card-post__link__contentContainer">
             <h3 class="card-post__link__contentContainer__title" itemprop="name">
-                {!! $title !!}
+                {{ $title }}
             </h3>
             <div class="card-post__link__contentContainer__info">
                 <svg class="card-post__link__contentContainer__info__icon">
                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#map-pin') }}"></use>
                 </svg>
                 <span class="card-post__link__contentContainer__info__text" itemprop="displayLocation">
-                {!! $locality !!}
+                {{ $locality }}
             </span>
             </div>
             <div class="card-post__link__contentContainer__info">
@@ -29,16 +29,16 @@
                     <use xlink:href="{{ asset('assets/img/svg/sprite.svg#state') }}"></use>
                 </svg>
                 <span class="card-post__link__contentContainer__info__text">
-                {!! $state !!}
+                {{ $state }}
             </span>
             </div>
             <span class="card-post__link__contentContainer__price" itemprop="offers">
                 @if($type == \App\Enums\PostType::Sale->value)
-                    {!! $price !!}€
+                    {{ $price }}€
                 @elseif($type == \App\Enums\PostType::Donation->value)
                     Don
                 @elseif($type == \App\Enums\PostType::Rental->value)
-                    {!! $price !!}€/mois
+                    {{ $price }}€/mois
                 @elseif($type == \App\Enums\PostType::Loan->value)
                     Prêt
                 @endif

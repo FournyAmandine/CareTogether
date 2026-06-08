@@ -1,6 +1,6 @@
 <main class="registeredPage">
 
-    <x-user.utils.heading title="Vos annonces enregistrées" route="{!! route('user.registered.index') !!}" :categories="$categories_name" :types="$types"/>
+    <x-user.utils.heading title="Vos annonces enregistrées" route="{{ route('user.registered.index') }}" :categories="$categories_name" :types="$types"/>
 
     <x-user.utils.deco/>
 
@@ -27,7 +27,7 @@
                                             @checked(in_array($category->id,request('categories', [])))
                                         >
                                         <span class="filters__form__fieldset__checkbox__label__text">
-                                                    {!! $category->name !!}
+                                                    {{ $category->name }}
                                                     <svg class="filters__form__fieldset__checkbox__label__text__icon">
                                                         <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . Str::slug($category->name, '_')) }}"></use>
                                                     </svg>
@@ -46,7 +46,7 @@
                                 <div class="filters__form__fieldset__checkbox">
                                     <label class="filters__form__fieldset__checkbox__label">
                                         <input wire:model.live="types" class="filters__form__fieldset__checkbox__label__input" type="checkbox"
-                                               value="{!! Str::slug($type->value, '_') !!}"
+                                               value="{{ Str::slug($type->value, '_') }}"
                                             @checked(in_array(Str::slug($type->value, '_'),request('types', [])))
                                         >
                                         <span class="filters__form__fieldset__checkbox__label__text">{!! $type->value !!}</span>
@@ -87,7 +87,7 @@
                             $image = $registered_post->images()->first();
                         @endphp
                     <x-utils.card title="{{ $registered_post->name }}" type="{{ $registered_post->type }}"
-                                            svg="{!! Str::slug($registered_post->category->name, '_')!!}" :post="$registered_post"
+                                            svg="{{ Str::slug($registered_post->category->name, '_')}}" :post="$registered_post"
                                             price="{{ $registered_post->price }}" locality="{{ $registered_post->locality }}"
                                             state="{{ $registered_post->state }}" modifier="registered" :registered-post-ids="$registerPost"
                                             imgSrc="{{ $image?->img_path
@@ -95,7 +95,7 @@
                                                         ? asset($image->img_path)
                                                         : asset('storage/photos/posts/originals/' . $image->img_path))
                                                     : asset('assets/img/post-image.jpg') }}"
-                                            src="{!! route('public.posts.show', $registered_post->id) !!}"/>
+                                            src="{{ route('public.posts.show', $registered_post->id) }}"/>
                 @endforeach
                 </div>
                 <x-utils.button name_parent="registered__sliderContainer" svg="arrow-simple" title="Voir les annonces suivantes" classButton="button button--icon button--arrow js-registered-next"/>
