@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /****************************
             RESET
 *****************************/
@@ -1058,6 +1059,73 @@ button[aria-disabled=true] {
 }
 .nav__check:checked + .nav__toggle svg path:last-of-type {
   transform: rotate(-45deg) translateY(-10px);
+}
+
+.mfp-bg {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.mfp-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+}
+
+.mfp-content {
+  max-width: 90vw;
+  max-height: 100vh;
+}
+
+.mfp-close, .mfp-counter, .mfp-preloader {
+  display: none;
+}
+
+.mfp-img {
+  max-width: 90%;
+  max-height: 100vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.mfp-arrow {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+}
+@media (max-width: 900px) {
+  .mfp-arrow {
+    left: 55%;
+  }
+}
+.mfp-arrow:before {
+  content: "›";
+  color: #1E3A8A;
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-top: -13px;
+  display: block;
+}
+.mfp-arrow-left {
+  left: 45%;
+  transform: rotate(180deg);
+}
+@media (max-width: 900px) {
+  .mfp-arrow-left {
+    left: 40%;
+  }
 }
 
 .heading {
@@ -4042,7 +4110,11 @@ button[aria-disabled=true] {
     grid-column: span 2;
   }
 }
-.singlePostPage .detail__main__listing__imgContainer__img {
+.singlePostPage .detail__main__listing__imgContainer__link {
+  width: 100%;
+  height: 100%;
+}
+.singlePostPage .detail__main__listing__imgContainer__link__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
