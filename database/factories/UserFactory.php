@@ -28,10 +28,10 @@ class UserFactory extends Factory
         $locality = ['Bastogne', 'Marche-en-Famenne', 'Nandrin', 'Seraing'];
 
         return [
-            'last_name' => fake()->name(),
-            'first_name' => fake()->name(),
+            'last_name' => $this->faker()->name(),
+            'first_name' => $this->faker()->name(),
             'role' => UserRole::User,
-            'email' => fake()->unique()->safeEmail(),
+            'email' => $this->faker()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => 'password',
             'tel'=> '0473 79 19 38',
