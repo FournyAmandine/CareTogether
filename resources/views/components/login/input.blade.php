@@ -8,11 +8,11 @@
     </label>
     <input class="{!! $name_parent !!}__formRow__input"
            type="{!! $type ?? 'text' !!}"
-           {{$value ?? old($field_name)}}
+           value="{{ old($field_name, $value ?? '') }}"
            name="{!! $field_name !!}"
            id="{!! $field_name !!}"
            placeholder="{!! $placeholder ?? '' !!}"
-        {!! $required ?? '' !!}>
+        {!! $required ?? '' !!} {!! $attributes !!}>
 
     @error($field_name)
         <p class="error">

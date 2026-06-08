@@ -10,13 +10,36 @@
 
 .singlePostPage {//voir modifier --user en bas de page
 
+    &__buttonContainer {
+        position: absolute;
+        left: 80px;
+        top: 190px;
+        z-index: 1;
+
+        @include w1800px {
+            left: 30px;
+        }
+
+        @include w1400px {
+            top: 160px;
+        }
+
+        @include w600px {
+            left: 10px;
+        }
+
+        &__button {
+            //buttons.scss
+        }
+    }
+
     .detail {
         position: relative;
         padding-bottom: 70px;
         padding-top: 120px;
 
         @include w900px {
-            padding-top: 50px;
+            padding-top: 90px;
         }
 
         @include w768px {
@@ -252,6 +275,10 @@
                     margin-right: 0;
                     margin-left: auto;
 
+                    @include w1200px {
+                        width: 90%;
+                    }
+
                     @include w768px {
                         padding: 15px;
                     }
@@ -296,12 +323,20 @@
             }
         }
 
-        &__buttonContainer {
+        &__buttons {
             display: flex;
             justify-content: flex-end;
-            padding-top: 30px;
+            flex-wrap: wrap;
+            padding-top: 20px;
 
-            &__button {
+            &__buttonContainer {
+                display: flex;
+                justify-content: flex-end;
+                margin-left: 20px;
+                margin-bottom: 10px;
+
+                &__button {
+                }
             }
         }
     }
@@ -337,6 +372,28 @@
     &--user {
         overflow: hidden;
 
+        .singlePostPage__buttonContainer {
+            left: 520px;
+            top: 100px;
+
+            @include w1800px {
+                left: 410px;
+            }
+
+            @include w1695px {
+                left: 50px;
+                top: 160px;
+            }
+
+            @include w400px {
+                top: 170px;
+            }
+
+            &__button {
+                background: $stepBcg;
+            }
+        }
+
         .heading {
 
             .wrapper {
@@ -359,11 +416,15 @@
 
             &__title {
                 max-width: 500px;
+
+                @include w900px {
+                    padding-top: 60px;
+                }
             }
         }
 
         .detail {
-            z-index: 1;
+            padding-top: 40px;
 
             &__main {
 

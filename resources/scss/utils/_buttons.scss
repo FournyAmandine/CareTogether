@@ -90,6 +90,25 @@
         }
     }
 
+    &--back {
+        color: $primary;
+        flex-direction: row-reverse;
+        background: none;
+
+        svg {
+            fill: $primary;
+            transform: rotate(180deg);
+        }
+
+        &:hover, &:focus {
+            border: none;
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
     &--red {
         color: $white;
         background: $buttonBcg1;

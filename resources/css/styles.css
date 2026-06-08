@@ -297,6 +297,21 @@ button[aria-disabled=true] {
 .button--simple:hover:before, .button--simple:focus:before {
   transform: translateX(0);
 }
+.button--back {
+  color: #1E3A8A;
+  flex-direction: row-reverse;
+  background: none;
+}
+.button--back svg {
+  fill: #1E3A8A;
+  transform: rotate(180deg);
+}
+.button--back:hover, .button--back:focus {
+  border: none;
+}
+.button--back:hover svg, .button--back:focus svg {
+  transform: rotate(180deg);
+}
 .button--red {
   color: #FFFFFF;
   background: #D0433E;
@@ -3960,6 +3975,27 @@ button[aria-disabled=true] {
   }
 }
 
+.singlePostPage__buttonContainer {
+  position: absolute;
+  left: 80px;
+  top: 190px;
+  z-index: 1;
+}
+@media (max-width: 1800px) {
+  .singlePostPage__buttonContainer {
+    left: 30px;
+  }
+}
+@media (max-width: 1400px) {
+  .singlePostPage__buttonContainer {
+    top: 160px;
+  }
+}
+@media (max-width: 600px) {
+  .singlePostPage__buttonContainer {
+    left: 10px;
+  }
+}
 .singlePostPage .detail {
   position: relative;
   padding-bottom: 70px;
@@ -3967,7 +4003,7 @@ button[aria-disabled=true] {
 }
 @media (max-width: 900px) {
   .singlePostPage .detail {
-    padding-top: 50px;
+    padding-top: 90px;
   }
 }
 @media (max-width: 768px) {
@@ -4203,6 +4239,11 @@ button[aria-disabled=true] {
   margin-right: 0;
   margin-left: auto;
 }
+@media (max-width: 1200px) {
+  .singlePostPage .detail__main__contentContainer__description {
+    width: 90%;
+  }
+}
 @media (max-width: 768px) {
   .singlePostPage .detail__main__contentContainer__description {
     padding: 15px;
@@ -4242,10 +4283,17 @@ button[aria-disabled=true] {
     min-height: 30px;
   }
 }
-.singlePostPage .detail__buttonContainer {
+.singlePostPage .detail__buttons {
   display: flex;
   justify-content: flex-end;
-  padding-top: 30px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+.singlePostPage .detail__buttons__buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 .singlePostPage .posts {
   padding-top: 70px;
@@ -4275,6 +4323,29 @@ button[aria-disabled=true] {
 .singlePostPage--user {
   overflow: hidden;
 }
+.singlePostPage--user .singlePostPage__buttonContainer {
+  left: 520px;
+  top: 100px;
+}
+@media (max-width: 1800px) {
+  .singlePostPage--user .singlePostPage__buttonContainer {
+    left: 410px;
+  }
+}
+@media (max-width: 1695px) {
+  .singlePostPage--user .singlePostPage__buttonContainer {
+    left: 50px;
+    top: 160px;
+  }
+}
+@media (max-width: 400px) {
+  .singlePostPage--user .singlePostPage__buttonContainer {
+    top: 170px;
+  }
+}
+.singlePostPage--user .singlePostPage__buttonContainer__button {
+  background: #C7D5FF;
+}
 .singlePostPage--user .heading .wrapper {
   display: flex;
   justify-content: center;
@@ -4294,8 +4365,13 @@ button[aria-disabled=true] {
 .singlePostPage--user .heading__title {
   max-width: 500px;
 }
+@media (max-width: 900px) {
+  .singlePostPage--user .heading__title {
+    padding-top: 60px;
+  }
+}
 .singlePostPage--user .detail {
-  z-index: 1;
+  padding-top: 40px;
 }
 .singlePostPage--user .detail__main__contentContainer__infos__list__item__icon {
   fill: #3D3D3D;
@@ -4332,32 +4408,25 @@ button[aria-disabled=true] {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 @media (max-width: 900px) {
   .auth {
-    height: auto;
     background-position: 60%;
   }
 }
 .auth--login {
-  height: 100vh;
+  height: 100%;
 }
 .auth--login .formPage {
   height: 100vh !important;
-  padding: 0 !important;
 }
 .auth .formPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-@media (max-width: 900px) {
-  .auth .formPage {
-    height: auto;
-    padding: 60px 0;
-  }
+  height: 100%;
+  padding: 60px 0;
 }
 .auth .formPage .content {
   background: #F4F7FF;
@@ -4465,16 +4534,41 @@ button[aria-disabled=true] {
   padding: 15px 20px;
   margin-bottom: 30px;
 }
+.auth .formPage .content__form__formRow__input::placeholder {
+  color: rgba(61, 61, 61, 0.6);
+}
 @media (max-width: 600px) {
   .auth .formPage .content__form__formRow__input {
     padding: 10px 20px;
   }
 }
-.auth .formPage .content__form__password {
-  text-align: right;
+.auth .formPage .content__form__forgotten {
   color: #1E3A8A;
-  margin-bottom: 50px;
   display: block;
+  position: relative;
+  text-align: right;
+  margin-bottom: 30px;
+}
+.auth .formPage .content__form__password {
+  color: #1E3A8A;
+  display: block;
+  position: relative;
+}
+.auth .formPage .content__form__password__button {
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  transform: translateY(-50%);
+}
+.auth .formPage .content__form__password__button:hover, .auth .formPage .content__form__password__button:focus {
+  background: none;
+  border: none;
+}
+.auth .formPage .content__form__password__button:hover svg, .auth .formPage .content__form__password__button:focus svg {
+  fill: #1E3A8A;
+}
+.auth .formPage .content__form__password__button__icon.is-hidden {
+  display: none;
 }
 .auth .formPage .content__form__password:hover, .auth .formPage .content__form__password:focus {
   color: #00B5C4;
@@ -5320,6 +5414,23 @@ button[aria-disabled=true] {
   top: 28px;
   right: -10px;
 }
+@media (max-width: 1024px) {
+  .profilPage .profil__form__fieldset__password__button {
+    top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .profilPage .profil__form__fieldset__password__button {
+    top: 35px;
+  }
+}
+.profilPage .profil__form__fieldset__password__button:hover, .profilPage .profil__form__fieldset__password__button:focus {
+  background: none;
+  border: none;
+}
+.profilPage .profil__form__fieldset__password__button:hover svg, .profilPage .profil__form__fieldset__password__button:focus svg {
+  fill: #1E3A8A;
+}
 .profilPage .profil__form__fieldset__formRow {
   display: flex;
   flex-direction: column;
@@ -5616,6 +5727,14 @@ button[aria-disabled=true] {
     padding: 9px 15px;
   }
 }
+.messagesPage .messages__container__content__heading__back {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .messagesPage .messages__container__content__heading__back {
+    display: block;
+  }
+}
 .messagesPage .messages__container__content__heading__back__buttonContainer {
   display: none;
   transform: rotate(180deg);
@@ -5686,14 +5805,6 @@ button[aria-disabled=true] {
   border-radius: 10px;
   border: 1px solid #1E3A8A;
 }
-.messagesPage .messages__container__content__heading__buttonContainer {
-  margin-left: auto;
-}
-@media (max-width: 1600px) {
-  .messagesPage .messages__container__content__heading__buttonContainer {
-    margin-left: 0;
-  }
-}
 .messagesPage .messages__container__content__heading__buttonContainer__button {
   padding: 10px 30px;
 }
@@ -5759,11 +5870,12 @@ button[aria-disabled=true] {
   display: none;
 }
 .messagesPage .messages__container__content__main__form__formRow__input {
-  padding: 25px 20px;
+  padding: 30px 20px;
   border-radius: 20px;
-  border: 1px solid #1E3A8A;
+  border: 2px solid #1E3A8A;
   width: 95%;
-  background: #E3EBFF;
+  background: rgba(0, 181, 196, 0.25);
+  color: #1E3A8A;
 }
 @media (max-width: 600px) {
   .messagesPage .messages__container__content__main__form__formRow__input {
@@ -5775,7 +5887,7 @@ button[aria-disabled=true] {
 }
 .messagesPage .messages__container__content__main__form__buttonContainer {
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 30px;
   transform: rotate(45deg);
 }

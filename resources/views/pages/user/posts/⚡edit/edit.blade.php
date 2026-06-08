@@ -46,7 +46,7 @@
 
                     <x-user.form.fields.input wire:model.live="form.price" name_parent="formContainer__form__fieldset"
                                               field_name="post_price"
-                                              label="{!! $form->type == \App\Enums\PostType::Rental->value ? 'Prix de location (par mois)' : 'Prix du matériel' !!}"
+                                              label="{!! $form->type == \App\Enums\PostType::Rental->value ? 'Prix de location (par mois et sans €)' : 'Prix du matériel (sans €)' !!}"
                                               placeholder="Ex : 390€" required="required"
                                               disabled="{!! in_array($form->type, [\App\Enums\PostType::Loan->value, \App\Enums\PostType::Donation->value]) !!}"/>
 

@@ -6,7 +6,7 @@
         <div class="messages__decoContainer">
             <img class="messages__decoContainer__deco" src="{!! asset('assets/img/deco-blue.png') !!}" alt="Forme bleue et ronde">
         </div>
-        <div class="wrapper">
+        <div class="wrapper wrapper--small">
         <h2 class="sro">Liste des messages</h2>
             <div class="messages__container" x-data="{ isChatOpen: @entangle('selectedConversationId') }" :class="{ 'is-conv-open': isChatOpen }">
                 <div wire:poll.10s class="messages__container__listing">
