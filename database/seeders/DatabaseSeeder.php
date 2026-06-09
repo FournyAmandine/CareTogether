@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'locality' => 'Bertogne',
         ]);
 
-        User::factory(10)->create();
+        //User::factory(10)->create();
 
         Category::factory()->create(
             [
