@@ -20,15 +20,34 @@ class PostFactory extends Factory
         $locality = ['Nandrin', 'Seraing', 'Marche-en-Famenne', 'Bastogne'];
         $state = [PostState::Damaged->value, PostState::Good->value, PostState::New->value, PostState::Wear->value];
         $price = [390, 180, 420, 220];
-        $img_path = ['assets/img/article-1.jpg', 'assets/img/article-2.jpg', 'assets/img/article-3.jpg', 'assets/img/article-4.jpg'];
         $type = [PostType::Sale->value, PostType::Rental->value, PostType::Loan->value, PostType::Donation->value];
+        $templates = [
+            [
+                'name' => 'Fauteuil roulant pliable',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Déambulateur 4 roues',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Lit médicalisé électrique',
+                'category_id' => 2,
+            ],
+            [
+                'name' => 'Coussin anti-escarres',
+                'category_id' => 5,
+            ],
+        ];
+
+        $template = $this->faker->randomElement($templates);
 
         return [
-            'name' => $this->faker->randomElement($name),
+            'name' => $template['name'],
             'locality' => $this->faker->randomElement($locality),
             'state' => $this->faker->randomElement($state),
             'price' => $this->faker->randomElement($price),
-            'category_id' => Category::factory(),
+            'category_id' =>  $template['category_id'],
             'marque' => 'Rolstoel',
             'type' => $this->faker->randomElement($type),
             'description' => $this->faker->text(200),

@@ -16,7 +16,7 @@ class PostImageFactory extends Factory
 
         return [
             'img_path' => $this->faker->randomElement($img_path),
-            'post_id' => $this->faker->numberBetween(1, 80),
+            'post_id' => $this->faker->numberBetween(1, 40),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

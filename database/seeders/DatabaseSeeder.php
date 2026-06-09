@@ -88,13 +88,29 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        Post::factory(80)->create();
+        Post::factory(40)->create();
 
         Rental::factory(10)->create();
 
         Sale::factory(10)->create();
 
-        PostImage::factory(100)->create();
+        $posts = Post::all();
+
+        foreach ($posts as $post) {
+
+            $image = match ($post->name) {
+                'Fauteuil roulant pliable' => 'assets/img/article-1.jpg',
+                'Déambulateur 4 roues' => 'assets/img/article-2.jpg',
+                'Lit médicalisé électrique' => 'assets/img/article-3.jpg',
+                'Coussin anti-escarres' => 'assets/img/article-4.jpg',
+                default => 'assets/img/post-image.jpg',
+            };
+
+            PostImage::create([
+                'post_id' => $post->id,
+                'img_path' => $image,
+            ]);
+        }
 
         ContactMessage::factory(10)->for($admin)->create();
 

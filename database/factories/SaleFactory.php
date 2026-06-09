@@ -13,7 +13,7 @@ class SaleFactory extends Factory
     {
         return [
             'user_id' => $this->faker->numberBetween(1, 2),
-            'post_id' => $this->faker->numberBetween(1, 80),
+            'post_id' => $this->faker->numberBetween(1, 40),
         ];
     }
 }
