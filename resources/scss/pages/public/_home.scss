@@ -141,6 +141,7 @@
                 position: relative;
                 margin-bottom: 60px;
                 border: 20px $pageBcg solid;
+                z-index: 3 !important;
 
                 @include w768px {
                     max-width: 300px;
@@ -150,19 +151,20 @@
                 &:before {
                     content: '';
                     background: $primary;
-                    display: block;
                     width: 150px;
                     height: 4px;
                     position: absolute;
                     top: 50%;
                     left: -175px;
                     z-index: -1;
+                    display: none;
 
                     @include w1200px {
                         width: 4px;
                         height: 60px;
                         top: -85px;
                         left: 50%;
+                        display: block;
                     }
                 }
 
