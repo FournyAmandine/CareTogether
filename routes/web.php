@@ -5,8 +5,8 @@ use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterPostController;
-use App\Http\Middleware\isAdministrator;
-use App\Http\Middleware\isUser;
+use App\Http\Middleware\IsAdministrator;
+use App\Http\Middleware\IsUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('public.homepage');
