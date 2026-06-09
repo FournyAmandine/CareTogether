@@ -3900,7 +3900,7 @@ button[aria-disabled=true] {
   font-size: 1.25em;
   margin-bottom: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .aboutPage .values__contentContainer__content {
     font-size: 1em;
   }
@@ -3911,7 +3911,7 @@ button[aria-disabled=true] {
 }
 .aboutPage .values__contentContainer__list__item {
   font-size: 1.25em;
-  min-width: 700px;
+  min-width: 680px;
   margin-bottom: 30px;
   display: flex;
   gap: 10px;
