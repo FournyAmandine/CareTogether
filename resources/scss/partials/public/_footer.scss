@@ -208,6 +208,15 @@
                             color: $tertiary;
                         }
                     }
+
+                    &__text {
+                        color: $white;
+                        font-size: $medium;
+
+                        @include w768px {
+                            font-size: $normal;
+                        }
+                    }
                 }
             }
         }

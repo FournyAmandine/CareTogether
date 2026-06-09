@@ -17,22 +17,44 @@
                     required="required"
                     name_parent="content__form"
                 />
-                <x-login.input
-                    field_name="password"
-                    type="password"
-                    placeholder=""
-                    label="Entrez votre nouveau mot de passe"
-                    required="required"
-                    name_parent="content__form"
-                />
-                <x-login.input
-                    field_name="password_confirmation"
-                    type="password"
-                    placeholder=""
-                    label="Confimer votre mot de passe"
-                    required="required"
-                    name_parent="content__form"
-                />
+                <div class="content__form__password">
+                    <x-login.input
+                        field_name="password"
+                        type="password"
+                        placeholder="******"
+                        label="Entrez votre mot de passe (minimun 8 caractères)"
+                        required="required"
+                        name_parent="content__form__password"
+                    />
+                    <button class="button button--input content__form__password__button" type="button" title="Cacher ou voir le mot de passe">
+                        <svg class="content__form__password__button__icon content__form__password__button__icon--show">
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#view') }}"></use>
+                        </svg>
+
+                        <svg class="content__form__password__button__icon content__form__password__button__icon--hide is-hidden">
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#eye-close') }}"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="content__form__password__reset">
+                    <x-login.input
+                        field_name="password"
+                        type="password"
+                        placeholder="******"
+                        label="Entrez votre mot de passe (minimun 8 caractères)"
+                        required="required"
+                        name_parent="content__form__password__reset"
+                    />
+                    <button class="button button--input content__form__password__reset__button content__form__password__button--reset" type="button" title="Cacher ou voir le mot de passe">
+                        <svg class="content__form__password__reset__button__icon content__form__password__reset__button__icon--show">
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#view') }}"></use>
+                        </svg>
+
+                        <svg class="content__form__password__reset__button__icon content__form__password__reset__button__icon--hide is-hidden">
+                            <use xlink:href="{{ asset('assets/img/svg/sprite.svg#eye-close') }}"></use>
+                        </svg>
+                    </button>
+                </div>
                 <x-login.button
                     text="Réinitialiser"
                     class_button="button--login"

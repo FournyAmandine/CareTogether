@@ -46,18 +46,31 @@
                         Champs secondaires
                     </legend>
                     <x-user.form.fields.input wire:model.live="form.email" field_name="email" placeholder="anne@bourguinon.be" required="required" label="Email" name_parent="profil__form__fieldset"/>
-                    <x-user.form.fields.input wire:model.live="form.tel" field_name="tel" placeholder="0473 87 19 03" required="required" label="Téléphone" name_parent="profil__form__fieldset"/>
-                    <x-user.form.fields.input wire:model.live="form.address" field_name="address" placeholder="Rue de la Soie" required="required" label="Adresse" name_parent="profil__form__fieldset"/>
+                    <x-user.form.fields.input wire:model.live="form.tel" field_name="tel" placeholder="0473 87 19 03" label="Téléphone" name_parent="profil__form__fieldset"/>
+                    <x-user.form.fields.input wire:model.live="form.address" field_name="address" placeholder="Rue de la Soie" label="Adresse" name_parent="profil__form__fieldset"/>
                     <div class="profil__form__fieldset__locality">
                         <x-user.form.fields.input wire:model.live="form.locality" field_name="locality" placeholder="Bertogne" required="required" label="Localité" name_parent="profil__form__fieldset"/>
-                        <x-user.form.fields.input wire:model.live="form.postal" field_name="postal" placeholder="6676" required="required" label="Code postal" name_parent="profil__form__fieldset"/>
+                        <x-user.form.fields.input wire:model.live="form.postal" field_name="postal" placeholder="6676" label="Code postal" name_parent="profil__form__fieldset"/>
                     </div>
                     <div class="profil__form__fieldset__buttons">
-                        <x-utils.button-text text="Supprimer le compte" svg="delete" name_parent="profil__form__fieldset__buttons" classButton="button button--border" title="Supprimer le compte"/>
+                        <x-utils.button-text wire:click="toggleModal('delete', {!! $user->id !!})" text="Supprimer le compte" svg="delete" name_parent="profil__form__fieldset__buttons" classButton="button button--border" title="Supprimer le compte"/>
                         <x-user.form.buttons.button text="Enregistrer les informations" name_parent="profil__form__fieldset__buttons" class_button="button--red"/>
                     </div>
                 </fieldset>
             </form>
         </div>
     </section>
+    @if($isOpenDeleteModal)
+        <x-user.modal.modal outside="$dispatch('toggleModal', { modal: 'delete' })">
+            <x-slot:title>
+                Voulez-vous vraiment supprimer votre compte {{$user->name}}?
+            </x-slot:title>
+            <x-slot:content>
+                <div class="modal__container__buttons">
+                    <x-utils.button-text wire:click="toggleModal('modal')" classButton="button button--border" name_parent="modal__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
+                    <x-utils.button-text wire:click="deleteAccount()" classButton="button button--red" name_parent="modal__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="modal"/>
+                </div>
+            </x-slot:content>
+        </x-user.modal.modal>
+    @endif
 </main>

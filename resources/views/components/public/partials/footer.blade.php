@@ -30,6 +30,9 @@
                                                :href="route('public.conditionspage')"
                                                label="Conditions d’utilisation"
                                                :active="request()->url() == route('public.conditionspage')"/>
+                <li class="footer__secondary__navigation__list__item">
+                    <p class="footer__secondary__navigation__list__item__text">© Tous droits réservés. Créé par Amandine Fourny</p>
+                </li>
             </ul>
         </nav>
     </div>

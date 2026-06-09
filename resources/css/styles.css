@@ -1850,6 +1850,15 @@ button[aria-disabled=true] {
 .footer__secondary__navigation__list__item__link:hover, .footer__secondary__navigation__list__item__link:focus {
   color: #00B5C4;
 }
+.footer__secondary__navigation__list__item__text {
+  color: #FFFFFF;
+  font-size: 1.25em;
+}
+@media (max-width: 768px) {
+  .footer__secondary__navigation__list__item__text {
+    font-size: 1em;
+  }
+}
 
 /****************************
             BANNER
@@ -4623,10 +4632,97 @@ button[aria-disabled=true] {
   display: block;
   position: relative;
 }
+.auth .formPage .content__form__password__formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.auth .formPage .content__form__password__formRow__label {
+  font-family: "DM Sans", sans-serif;
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+@media (max-width: 900px) {
+  .auth .formPage .content__form__password__formRow__label {
+    font-size: 1em;
+  }
+}
+.auth .formPage .content__form__password__formRow__label span {
+  color: #C51010;
+}
+.auth .formPage .content__form__password__formRow__input {
+  border: solid 2px #1E3A8A;
+  background: rgba(147, 175, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+}
+.auth .formPage .content__form__password__formRow__input::placeholder {
+  color: rgba(61, 61, 61, 0.6);
+}
+@media (max-width: 600px) {
+  .auth .formPage .content__form__password__formRow__input {
+    padding: 10px 20px;
+  }
+}
+.auth .formPage .content__form__password__reset {
+  position: relative;
+}
+.auth .formPage .content__form__password__reset__formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.auth .formPage .content__form__password__reset__formRow__label {
+  font-family: "DM Sans", sans-serif;
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+@media (max-width: 900px) {
+  .auth .formPage .content__form__password__reset__formRow__label {
+    font-size: 1em;
+  }
+}
+.auth .formPage .content__form__password__reset__formRow__label span {
+  color: #C51010;
+}
+.auth .formPage .content__form__password__reset__formRow__input {
+  border: solid 2px #1E3A8A;
+  background: rgba(147, 175, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+}
+.auth .formPage .content__form__password__reset__formRow__input::placeholder {
+  color: rgba(61, 61, 61, 0.6);
+}
+@media (max-width: 600px) {
+  .auth .formPage .content__form__password__reset__formRow__input {
+    padding: 10px 20px;
+  }
+}
+.auth .formPage .content__form__password__reset__button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.auth .formPage .content__form__password__reset__button:hover, .auth .formPage .content__form__password__reset__button:focus {
+  background: none;
+  border: none;
+}
+.auth .formPage .content__form__password__reset__button:hover svg, .auth .formPage .content__form__password__reset__button:focus svg {
+  fill: #1E3A8A;
+}
+.auth .formPage .content__form__password__reset__button__icon.is-hidden {
+  display: none;
+}
 .auth .formPage .content__form__password__button {
   position: absolute;
   right: 15px;
-  top: 55%;
+  top: 50%;
   transform: translateY(-50%);
 }
 .auth .formPage .content__form__password__button:hover, .auth .formPage .content__form__password__button:focus {
