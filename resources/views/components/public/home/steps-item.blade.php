@@ -1,6 +1,6 @@
 @props(['number', 'title', 'text', 'loop'])
 
-<div class="steps__listing__item" data-aos="fade-right" data-aos-delay="{{ $loop * 100 }}" data-aos-duration="500">
+<div class="steps__listing__item">
     <svg class="steps__listing__item__icon">
         <use xlink:href="{{ asset('assets/img/svg/sprite.svg#home-steps-deco') }}"></use>
     </svg>

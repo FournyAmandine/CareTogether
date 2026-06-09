@@ -3099,6 +3099,7 @@ button[aria-disabled=true] {
   position: relative;
   margin-bottom: 60px;
   border: 20px #F4F7FF solid;
+  z-index: 3 !important;
 }
 @media (max-width: 768px) {
   .homePage .steps__listing__item {
@@ -3109,13 +3110,13 @@ button[aria-disabled=true] {
 .homePage .steps__listing__item:before {
   content: "";
   background: #1E3A8A;
-  display: block;
   width: 150px;
   height: 4px;
   position: absolute;
   top: 50%;
   left: -175px;
   z-index: -1;
+  display: none;
 }
 @media (max-width: 1200px) {
   .homePage .steps__listing__item:before {
@@ -3123,6 +3124,7 @@ button[aria-disabled=true] {
     height: 60px;
     top: -85px;
     left: 50%;
+    display: block;
   }
 }
 .homePage .steps__listing__item:first-child {
