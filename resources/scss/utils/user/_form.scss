@@ -4,6 +4,7 @@
     overflow: hidden;
 
     &__decoContainer {
+        pointer-events: none;
         position: absolute;
         width: 870px;
         height: 1055px;

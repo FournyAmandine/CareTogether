@@ -24,6 +24,7 @@
         }
 
         &__decoContainer {
+            pointer-events: none;
             position: absolute;
             bottom: 400px;
             right: 0;
@@ -243,6 +244,7 @@
         }
 
         &__decoContainer {
+            pointer-events: none;
             position: absolute;
             top: 450px;
             left: -200px;

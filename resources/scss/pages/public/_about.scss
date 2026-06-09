@@ -45,6 +45,7 @@
             left: 15%;
             right: 15%;
             z-index: -1;
+            pointer-events: none;
 
             @include w1800px {
                 bottom: 450px;
@@ -178,6 +179,7 @@
             position: absolute;
             right: 0;
             top: -40px;
+            pointer-events: none;
 
             @include w1600px {
                 width: 550px;
@@ -353,6 +355,7 @@
             width: 740px;
             height: 870px;
             z-index: -1;
+            pointer-events: none;
 
             &__deco {
                 width: 100%;

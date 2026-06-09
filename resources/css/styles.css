@@ -572,6 +572,7 @@ button[aria-disabled=true] {
 }
 
 .decoContainer {
+  pointer-events: none;
   max-width: 1540px;
   height: auto;
   position: absolute;
@@ -1249,6 +1250,7 @@ button[aria-disabled=true] {
   overflow: hidden;
 }
 .formContainer__decoContainer {
+  pointer-events: none;
   position: absolute;
   width: 870px;
   height: 1055px;
@@ -2899,6 +2901,7 @@ button[aria-disabled=true] {
 }
 
 .textPage .text__decoContainer {
+  pointer-events: none;
   position: absolute;
   z-index: -1;
   top: 50%;
@@ -3063,6 +3066,7 @@ button[aria-disabled=true] {
   align-items: center;
 }
 .homePage .steps__decoContainer {
+  pointer-events: none;
   position: absolute;
   bottom: 160px;
   right: 0;
@@ -3352,6 +3356,7 @@ button[aria-disabled=true] {
   align-items: center;
 }
 .homePage .posts__decoContainer {
+  pointer-events: none;
   position: absolute;
   bottom: 240px;
   left: -300px;
@@ -3605,6 +3610,7 @@ button[aria-disabled=true] {
   left: 15%;
   right: 15%;
   z-index: -1;
+  pointer-events: none;
 }
 @media (max-width: 1800px) {
   .aboutPage .about__decoContainer {
@@ -3739,6 +3745,7 @@ button[aria-disabled=true] {
   position: absolute;
   right: 0;
   top: -40px;
+  pointer-events: none;
 }
 @media (max-width: 1600px) {
   .aboutPage .objectifs__decoContainer {
@@ -3896,6 +3903,7 @@ button[aria-disabled=true] {
   width: 740px;
   height: 870px;
   z-index: -1;
+  pointer-events: none;
 }
 .aboutPage .values__decoContainer__deco {
   width: 100%;
@@ -4384,6 +4392,7 @@ button[aria-disabled=true] {
   }
 }
 .singlePostPage .posts__decoContainer {
+  pointer-events: none;
   position: absolute;
   max-width: 740px;
   max-height: 920px;
@@ -4430,6 +4439,7 @@ button[aria-disabled=true] {
 }
 .singlePostPage--user .heading .decoContainer {
   top: -640px;
+  pointer-events: none;
 }
 .singlePostPage--user .heading .breadcrumb {
   bottom: unset;
@@ -4478,6 +4488,7 @@ button[aria-disabled=true] {
 .singlePostPage--user .posts__decoContainer {
   right: 0px;
   left: unset;
+  pointer-events: none;
 }
 
 .auth {
@@ -4790,6 +4801,7 @@ button[aria-disabled=true] {
   }
 }
 .dashboardPage .heading__decoContainer {
+  pointer-events: none;
   position: absolute;
   bottom: 400px;
   right: 0;
@@ -4968,6 +4980,7 @@ button[aria-disabled=true] {
   }
 }
 .dashboardPage .recap__decoContainer {
+  pointer-events: none;
   position: absolute;
   top: 450px;
   left: -200px;
@@ -5520,6 +5533,7 @@ button[aria-disabled=true] {
   }
 }
 .profilPage .profil__decoContainer {
+  pointer-events: none;
   width: 775px;
   height: 920px;
   position: absolute;
@@ -5702,6 +5716,9 @@ button[aria-disabled=true] {
   position: relative;
   overflow: hidden;
 }
+.messagesPage .decoContainer {
+  pointer-events: none;
+}
 @media (max-width: 1024px) {
   .messagesPage .decoContainer {
     top: -250px;
@@ -5739,6 +5756,7 @@ button[aria-disabled=true] {
   }
 }
 .messagesPage .messages__decoContainer {
+  pointer-events: none;
   position: absolute;
   bottom: 0;
   right: -300px;
@@ -6085,6 +6103,7 @@ button[aria-disabled=true] {
   top: -570px;
   left: 15%;
   right: 10%;
+  pointer-events: none;
 }
 .contactMessagesPage .breadcrumb {
   flex-wrap: wrap;

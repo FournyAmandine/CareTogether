@@ -3,6 +3,7 @@
     overflow: hidden;
 
     .decoContainer {
+        pointer-events: none;
 
         @include w1024px {
             top: -250px;
@@ -36,6 +37,7 @@
         }
 
         &__decoContainer {
+            pointer-events: none;
             position: absolute;
             bottom: 0;
             right: -300px;
