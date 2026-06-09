@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $user = User::factory()->create([
+        $user = User::create([
             'last_name' => 'Bourguignon',
             'first_name' => 'Anne-Catherine',
             'email' => 'anne@bourguignon.com',
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'locality' => 'Flamierge',
         ]);
 
-        $admin = User::factory()->create([
+        $admin = User::create([
             'last_name' => 'Fourny',
             'first_name' => 'Amandine',
             'email' => 'amandine@fourny.com',
