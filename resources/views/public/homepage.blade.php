@@ -22,7 +22,9 @@
                     La plateforme de prêt, don et vente de matériel médical de seconde main pour faciliter l’accès aux soins.                </p>
                 <div class="banner__buttons" data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
                     <x-utils.link href="{{ route('public.posts.index') }}" svg="arrow-button" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
-                    <x-utils.link href="{{ route('register') }}" svg="arrow-button" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    @if(!auth()->check())
+                        <x-utils.link href="{{ route('register') }}" svg="arrow-button" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    @endif
                 </div>
             </div>
         </section>

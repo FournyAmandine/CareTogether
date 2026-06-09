@@ -12,7 +12,9 @@
                     Faciliter l’accès au matériel médical grâce à la seconde main.
                 </h2>
                 <div class="banner__buttons" data-aos="fade-right" data-aos-delay="250" data-aos-duration="500">
-                    <x-utils.link svg="arrow-button" href="{!! route('register') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
+                    @if(!auth()->check())
+                        <x-utils.link svg="arrow-button" href="{!! route('register') !!}" class-button="button--red" name_parent="banner__buttons" title="Aller vers la page Inscription" label="S'inscrire"/>
+                    @endif
                     <x-utils.link svg="arrow-button" href="{!! route('public.posts.index') !!}" class-button="button--blue" name_parent="banner__buttons" title="Aller vers la page Annonces" label="Voir les annonces"/>
                 </div>
             </div>
@@ -36,7 +38,9 @@
                     <p  class="about__contentContainer__content" data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
                         Fauteuils roulants, lits médicalisés, déambulateurs ou équipements de confort représentent souvent un investissement important et ne sont utilisés que temporairement. CareTogether propose une solution simple, locale et solidaire pour favoriser leur réutilisation.
                     </p>
-                    <x-utils.link aos="fade-right" delay="500" svg="arrow-button" href="{!! route('login') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    @if(!auth()->check())
+                        <x-utils.link aos="fade-right" delay="500" svg="arrow-button" href="{!! route('login') !!}" class-button="button--red" name_parent="about__contentContainer" title="Aller vers la page Inscription" label="Créer un compte"/>
+                    @endif
                 </div>
                 <div class="about__imgContainer" data-aos="fade-left" data-aos-delay="200" data-aos-duration="500">
                     <img class="about__imgContainer__img" src="{!! asset('assets/img/about-about-image.png') !!}" alt="Homme tenant l'épaule d'une femme dans un lit médical">

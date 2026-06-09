@@ -14,11 +14,20 @@
 
 
         @if(auth()->check())
-            <a class="header__container__link" href="{!! route('user.dashboard') !!}">
-                <img class="header__container__link__img" src="{!! Str::startsWith(auth()->user()->profil_picture, 'assets')
+            @if(auth()->user()->role == \App\Enums\UserRole::User)
+                <a class="header__container__link" href="{!! route('user.dashboard') !!}">
+                    <img class="header__container__link__img" src="{!! Str::startsWith(auth()->user()->profil_picture, 'assets')
                                                         ? asset(auth()->user()->profil_picture)
                                                         : asset('storage/photos/users/originals/' . auth()->user()->profil_picture) !!}" alt="Image de profil de l'utilisateur">
-            </a>
+                </a>
+            @else
+                <a class="header__container__link" href="{!! route('admin.dashboard') !!}">
+                    <img class="header__container__link__img" src="{!! Str::startsWith(auth()->user()->profil_picture, 'assets')
+                                                        ? asset(auth()->user()->profil_picture)
+                                                        : asset('storage/photos/users/originals/' . auth()->user()->profil_picture) !!}" alt="Image de profil de l'utilisateur">
+                </a>
+            @endif
+
         @else
             <div class="header__container__account">
                 <x-utils.link-svg class-button="button--icon" name_parent="header__container__account" title="Aller vers la page de connexion"

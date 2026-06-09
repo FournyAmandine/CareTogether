@@ -371,7 +371,7 @@
                 font-size: $medium;
                 margin-bottom: 30px;
 
-                @include w768px{
+                @include w900px{
                     font-size: $normal;
                 }
             }
@@ -382,7 +382,7 @@
 
                 &__item {
                     font-size: $medium;
-                    min-width: 700px;
+                    min-width: 680px;
                     margin-bottom: 30px;
                     display: flex;
                     gap: 10px;
