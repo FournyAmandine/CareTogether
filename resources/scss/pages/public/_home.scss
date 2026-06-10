@@ -100,8 +100,6 @@
             position: absolute;
             bottom: 160px;
             right: 0;
-            width: 740px;
-            height: 870px;
             z-index: -1;
 
             @include w1200px {
@@ -406,8 +404,6 @@
             position: absolute;
             bottom: 240px;
             left: -300px;
-            width: 740px;
-            height: 870px;
             z-index: -1;
 
             &__deco {
