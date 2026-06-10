@@ -84,7 +84,7 @@
                 <div class="registered__sliderContainer__slider">
                 @foreach($registered_posts as $registered_post)
                         @php
-                            $image = $registered_post->images()->first();
+                            $image = $registered_post->images->first();
                         @endphp
                     <x-utils.card title="{{ $registered_post->name }}" type="{{ $registered_post->type }}"
                                             svg="{{ Str::slug($registered_post->category->name, '_')}}" :post="$registered_post"

@@ -126,7 +126,7 @@
             <div class="posts__listing">
                 @foreach($posts as $post)
                     @php
-                        $image = $post->images()->first();
+                        $image = $post->images->first();
                     @endphp
                     <x-user.utils.post-card title="{{ $post->name }}" type="{{ $post->type }}"
                                             svg="{!! Str::slug($post->category->name, '_')!!}"

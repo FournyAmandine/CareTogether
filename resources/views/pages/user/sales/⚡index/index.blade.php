@@ -1,6 +1,6 @@
 <main class="salesPage">
 
-    <x-user.utils.heading title="Vos achats et dons" route="{{ route('user.sales.index') }}" :categories="$categories_name"/>
+    <x-user.utils.heading text="Ayez une vue d'ensemble sur les articles qu'on vous a vendus ou donnés" title="Vos achats et dons" route="{{ route('user.sales.index') }}" :categories="$categories_name"/>
 
     <x-user.utils.deco/>
 
@@ -66,7 +66,7 @@
                 <div class="sales__sliderContainer__slider">
                 @foreach($sales as $sale)
                         @php
-                            $image = $sale->post->images()->first();
+                            $image = $sale->post->images->first();
                         @endphp
                     <x-user.utils.sale-card title="{{ $sale->post->name }}"
                                               svg="{{ Str::slug($sale->post->category->name, '_')}}"

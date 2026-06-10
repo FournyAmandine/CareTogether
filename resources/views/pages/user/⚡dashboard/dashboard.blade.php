@@ -61,7 +61,7 @@
                                             price="{{ $post->price }}" :post="$post"/>
                     @endforeach
                 </div>
-                <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="{!! route('user.posts.index') !!}" title="Aller vers la page de vos annonces" />
+                <x-utils.link name_parent="recap__posts" class_button="button button--border" svg="arrow-button" label="Voir tous vos annonces" href="{!! route('user.registered.index') !!}" title="Aller vers la page de vos annonces" />
             </section>
             <section class="recap__messages">
                 <h2 class="maintitle maintitle--blue maintitle--small recap__messages__title">

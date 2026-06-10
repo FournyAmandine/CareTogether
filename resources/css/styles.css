@@ -1200,6 +1200,7 @@ button[aria-disabled=true] {
   font-size: 1.25em;
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 @media (max-width: 768px) {
   .heading__text {
@@ -4958,6 +4959,12 @@ button[aria-disabled=true] {
   .dashboardPage .stats__listing__item__content {
     font-size: 1em;
   }
+}
+.dashboardPage .stats__listing__item--admin:hover, .dashboardPage .stats__listing__item--admin:focus {
+  background: #DBE5FF;
+}
+.dashboardPage .stats__listing__item--admin:hover:nth-child(even), .dashboardPage .stats__listing__item--admin:focus:nth-child(even) {
+  background: #BFCFFF;
 }
 .dashboardPage .stats__buttonContainer {
   display: flex;
