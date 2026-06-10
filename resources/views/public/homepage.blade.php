@@ -5,7 +5,7 @@
     <main class="homePage">
         <section class="banner">
             <div class="banner__backgroundContainer">
-                <img class="banner__backgroundContainer__background" src="{!! asset('assets/img/home-banner-background.jpg') !!}" alt="Fond bleu avec une chaise roulante en avant plan à droite">
+                <img class="banner__backgroundContainer__background" src="{!! asset('assets/img/home-banner-background.jpeg') !!}" alt="Fond bleu avec une chaise roulante en avant plan à droite">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle banner__title" data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">
