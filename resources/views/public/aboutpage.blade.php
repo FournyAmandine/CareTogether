@@ -5,7 +5,7 @@
     <main class="aboutPage">
         <section class="banner banner--about">
             <div class="banner__backgroundContainer">
-                <img class="banner__backgroundContainer__background" src="{!! asset('assets/img/about-banner-background.jpg') !!}" alt="Mains tenant un coeur">
+                <img class="banner__backgroundContainer__background" src="{!! asset('assets/img/about-banner-background.jpeg') !!}" alt="Mains tenant un coeur">
             </div>
             <div class="wrapper">
                 <h2 class="maintitle banner__title" data-aos="fade-right" data-aos-delay="100" data-aos-duration="500">
