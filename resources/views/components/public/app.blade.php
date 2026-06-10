@@ -12,7 +12,11 @@
     @if (!app()->environment('testing'))
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script> AOS.init();</script>
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                AOS.init();
+            });
+        </script>
     @endif
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
