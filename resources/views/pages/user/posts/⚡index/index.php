@@ -26,53 +26,19 @@ new class extends Component
 
     public function render()
     {
-        $sales = auth()->user()
+        $baseQuery = auth()->user()
             ->posts()
-            ->with('registeredByUser')
-            ->whereIn('posts.type', [PostType::Sale, PostType::Donation])
-            ->when($this->term, function ($term) {
-                $term->where('name', 'like', "%{$this->term}%");
-            })
-            ->when($this->categories, function ($category) {
-                $category->whereIn('category_id', $this->categories);
-            })
-            ->when($this->sort, function ($sort) {
-                match ($this->sort) {
-                    'date_asc' => $sort->orderBy('created_at', 'asc'),
-                    'date_desc' => $sort->orderBy('created_at', 'desc'),
-                    'price_asc' => $sort->orderBy('price', 'asc'),
-                    'price_desc' => $sort->orderBy('price', 'desc'),
-                    default => $sort->latest(),
-                };
-            })
-            ->orderByDesc('created_at')
+            ->with(['registeredByUser', 'category', 'images'])
+            ->when($this->term, fn ($q) => $q->where('name', 'like', "%{$this->term}%"))
+            ->when($this->categories, fn ($q) => $q->whereIn('category_id', $this->categories));
+
+        $sales = (clone $baseQuery)
+            ->whereIn('type', [PostType::Sale, PostType::Donation])
             ->get();
 
-        $sales->load(['sales', 'registeredByUser', 'category']);
-
-        $rentals = auth()->user()
-            ->posts()
-            ->with('registeredByUser')
-            ->whereIn('posts.type', [PostType::Rental, PostType::Loan])
-            ->when($this->term, function ($term) {
-                $term->where('name', 'like', "%{$this->term}%");
-            })
-            ->when($this->categories, function ($category) {
-                $category->whereIn('category_id', $this->categories);
-            })
-            ->when($this->sort, function ($sort) {
-                match ($this->sort) {
-                    'date_asc' => $sort->orderBy('created_at', 'asc'),
-                    'date_desc' => $sort->orderBy('created_at', 'desc'),
-                    'price_asc' => $sort->orderBy('price', 'asc'),
-                    'price_desc' => $sort->orderBy('price', 'desc'),
-                    default => $sort->latest(),
-                };
-            })
-            ->orderByDesc('created_at')
+        $rentals = (clone $baseQuery)
+            ->whereIn('type', [PostType::Rental, PostType::Loan])
             ->get();
-
-        $rentals->load(['rentals', 'registeredByUser', 'category']);
 
         $categoriesName = Category::get();
 

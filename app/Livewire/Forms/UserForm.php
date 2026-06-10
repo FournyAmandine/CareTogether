@@ -131,21 +131,21 @@ class UserForm extends Form
             }
         }
 
-        $this->user->update(
-            array_merge(
-                $this->only([
-                    'last_name',
-                    'first_name',
-                    'email',
-                    'password',
-                    'tel',
-                    'address',
-                    'locality',
-                    'postal',
-                    'profil_picture'
-                ]),
-                ['profil_picture' => $profil_picture]
-            )
-        );
+        $data = [
+            'last_name' => $this->last_name,
+            'first_name' => $this->first_name,
+            'email' => $this->email,
+            'tel' => $this->tel,
+            'address' => $this->address,
+            'locality' => $this->locality,
+            'postal' => $this->postal,
+            'profil_picture' => $profil_picture,
+        ];
+
+        if (!empty($this->password)) {
+            $data['password'] = $this->password;
+        }
+
+        $this->user->update($data);
     }
 }

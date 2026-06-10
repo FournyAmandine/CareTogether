@@ -163,10 +163,111 @@
                     display: block;
                     position: relative;
 
+                    &__formRow {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        &__label {
+                            font-family: $titleFont;
+                            color: $primary;
+                            font-weight: bold;
+                            font-size: $medium;
+
+                            @include w900px {
+                                font-size: $normal;
+                            }
+
+                            span {
+                                color: $required;
+                            }
+                        }
+
+                        &__input {
+                            border: solid 2px $primary;
+                            background: rgba($inputBcg, 0.1);
+                            border-radius: 10px;
+                            padding: 15px 20px;
+                            margin-bottom: 30px;
+
+                            &::placeholder {
+                                color: rgba($text, 0.6);
+                            }
+
+                            @include w600px {
+                                padding: 10px 20px;
+                            }
+                        }
+                    }
+
+                    &__reset {
+                        position: relative;
+
+                        &__formRow {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            &__label {
+                                font-family: $titleFont;
+                                color: $primary;
+                                font-weight: bold;
+                                font-size: $medium;
+
+                                @include w900px {
+                                    font-size: $normal;
+                                }
+
+                                span {
+                                    color: $required;
+                                }
+                            }
+
+                            &__input {
+                                border: solid 2px $primary;
+                                background: rgba($inputBcg, 0.1);
+                                border-radius: 10px;
+                                padding: 15px 20px;
+                                margin-bottom: 30px;
+
+                                &::placeholder {
+                                    color: rgba($text, 0.6);
+                                }
+
+                                @include w600px {
+                                    padding: 10px 20px;
+                                }
+                            }
+                        }
+
+                        &__button {
+                            position: absolute;
+                            right: 15px;
+                            top: 50%;
+                            transform: translateY(-50%);
+
+                            &:hover, &:focus {
+                                background: none;
+                                border: none;
+
+                                svg {
+                                    fill: $primary;
+                                }
+                            }
+
+                            &__icon {
+
+                                &.is-hidden {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
                     &__button {
                         position: absolute;
                         right: 15px;
-                        top: 55%;
+                        top: 50%;
                         transform: translateY(-50%);
 
                         &:hover, &:focus {

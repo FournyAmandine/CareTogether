@@ -43,7 +43,7 @@
                         placeholder="******"
                         label="Entrez votre mot de passe (minimun 8 caractères)"
                         required="required"
-                        name_parent="content__form"
+                        name_parent="content__form__password"
                     />
                     <button class="button button--input content__form__password__button" type="button" title="Cacher ou voir le mot de passe">
                         <svg class="content__form__password__button__icon content__form__password__button__icon--show">

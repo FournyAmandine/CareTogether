@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::where('sold', 0)->paginate(4);
+        $posts = Post::where('sold', 0)->with(['category', 'images'])->paginate(4);
 
         $registeredPostIds = auth()->check()
             ? auth()->user()->registered_posts()->pluck('posts.id')->toArray()

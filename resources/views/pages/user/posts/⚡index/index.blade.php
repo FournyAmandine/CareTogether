@@ -67,7 +67,7 @@
                 <div class="posts__sliderContainer__slider posts__sliderContainer__slider--sale">
                     @foreach($sales as $sale)
                         @php
-                            $image = $sale->images()->first();
+                            $image = $sale->images->first();
                         @endphp
                         <x-user.utils.post-card title="{{ $sale->name }}" type="{{ $sale->type }}"
                                                 svg="{{ Str::slug($sale->category->name, '_')}}"
@@ -102,7 +102,7 @@
                 <div class="posts__sliderContainer__slider posts__sliderContainer__slider--rental">
                 @foreach($rentals as $rental)
                     @php
-                        $image = $rental->images()->first();
+                        $image = $rental->images->first();
                     @endphp
                     <x-user.utils.post-card title="{{ $rental->name }}" type="{{ $rental->type }}"
                                             svg="{{ Str::slug($rental->category->name, '_')}}"
