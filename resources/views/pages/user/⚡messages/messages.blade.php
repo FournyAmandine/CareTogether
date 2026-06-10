@@ -26,7 +26,7 @@
                             });
                         @endphp
                         <div @click="isChatOpen = true" class="messages__container__listing__item messages__container__listing__item--{{$unread ? 'unread' : ''}}">
-                            <button wire:click="selectConversation({{ $conversation->id }})" class="messages__container__listing__item__button" title="Voir la conversation avec  {!! $otherUser->first_name . ' ' . $otherUser->last_name !!}"></button>
+                            <button data-test="conversation" wire:click="selectConversation({{ $conversation->id }})" class="messages__container__listing__item__button" title="Voir la conversation avec  {!! $otherUser->first_name . ' ' . $otherUser->last_name !!}"></button>
                             <div class="messages__container__listing__item__imgContainer">
                                 <img class="messages__container__listing__item__imgContainer__img" src="{!! Str::startsWith($otherUser->profil_picture, 'assets')? asset($otherUser->profil_picture) : asset('storage/photos/users/originals/' . $otherUser->profil_picture) !!}" alt="Image de profil de l'utilisateur">
                             </div>

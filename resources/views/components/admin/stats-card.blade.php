@@ -1,6 +1,6 @@
-@props(['svg', 'content', 'number'])
+@props(['svg', 'content', 'number', 'modifier'=>''])
 
-<div class="stats__listing__item">
+<div class="stats__listing__item @if($modifier) stats__listing__item--{!! $modifier !!} @endif">
     <div class="stats__listing__item__numberContainer">
         <svg class="stats__listing__item__numberContainer__icon">
             <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>

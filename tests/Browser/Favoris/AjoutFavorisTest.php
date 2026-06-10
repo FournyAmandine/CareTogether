@@ -7,15 +7,22 @@ use Laravel\Dusk\Browser;
 
 uses(RefreshDatabase::class);
 
-it('allows user to add a post to favorites', function () {
+test('allows user to add a post to favorites', function () {
 
-    $user = User::factory()->create();
-    $post = Post::factory()->create();
+    $category = \App\Models\Category::factory()->create();
+    $user = User::factory()->create([
+        'password' => Hash::make('password'),
+    ]);
+    $post = Post::factory()->create([
+        'category_id' => $category->id,
+        'user_id' => $user->id,
+        'sold' => 0
+    ]);
 
-    $this->browse(function (Browser $browser) use ($user, $post) {
+    \Pest\Laravel\actingAs($user);
 
-        $browser->loginAs($user)
-            ->visit(route('user.posts.show', $post->id))
-            ->assertPresent('.detail__main__listing__iconContainer__icon--add');
-    });
+    visit(route('public.posts.show', $post->id))
+        ->press('Enregistrer l‘annonce')
+        ->assertSee('Enlever des annonces enregistrées');
 });
+

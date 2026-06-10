@@ -212,6 +212,17 @@
                         font-size: $normal;
                     }
                 }
+
+                &--admin {
+
+                    &:hover, &:focus{
+                        background: $statsBcg1;
+
+                        &:nth-child(even) {
+                            background: $statsBcg2;
+                        }
+                    }
+                }
             }
         }
 

@@ -36,6 +36,7 @@ new class extends Component
 
         $currentRentals = auth()->user()
             ->rentals()
+            ->with('post.images', 'post.category')
             ->where('rentals.end_date', '>', Carbon::now())
             ->when($this->term, function ($term) {
                 $term->whereHas('post', function ($post) {
@@ -69,6 +70,7 @@ new class extends Component
 
         $endedRentals = auth()->user()
             ->rentals()
+            ->with('post.images', 'post.category')
             ->where('rentals.end_date', '<', Carbon::now())
             ->when($this->term, function ($term) {
                 $term->whereHas('post', function ($post) {

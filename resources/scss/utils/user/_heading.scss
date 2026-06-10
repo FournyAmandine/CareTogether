@@ -24,6 +24,7 @@
         font-size: $medium;
         text-align: center;
         margin-top: 20px;
+        margin-bottom: 30px;
 
         @include w768px {
             font-size: $normal;

@@ -112,7 +112,7 @@
                         <form action="{{ route('public.posts.register', $post) }}" method="POST">
                             @csrf
 
-                            <x-user.form.buttons.button text="Enregister l'annonce" name_parent="detail__buttons" class_button="button--blue" svg="register"/>
+                            <x-user.form.buttons.button text="Enregistrer l‘annonce" name_parent="detail__buttons" class_button="button--blue" svg="register"/>
                         </form>
                     @endif
                     @if($post->sold == 0)

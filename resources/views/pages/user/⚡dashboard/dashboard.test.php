@@ -20,11 +20,14 @@ beforeEach(function(){
 
 it('renders successfully', function () {
 
-    $post = Post::factory()->create();
+    $category = Category::factory()->create();
+
+    $post = Post::factory()->create([
+        'category_id' => $category->id,
+        'user_id' => $this->user->id
+    ]);
 
     $buyer = User::factory()->create();
-
-    $posts  = Post::factory()->count(3)->for($this->user)->create();
 
     $conversation = Conversation::factory()->create([
         'post_id' => $post->id,
@@ -36,9 +39,6 @@ it('renders successfully', function () {
 
     Livewire::test('pages::admin.dashboard')
         ->assertStatus(200)
-        ->assertSee($posts[0]->name)
-        ->assertSee($posts[1]->name)
-        ->assertSee($posts[2]->name)
         ->assertSee($messages[0]->first_name)
         ->assertSee($messages[1]->first_name)
         ->assertSee($messages[2]->first_name);

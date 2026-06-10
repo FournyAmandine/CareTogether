@@ -35,7 +35,7 @@ new class extends Component
             'registered_count' => auth()->user()->registered_posts()->count(),
             'rentals' => auth()->user()->rentals()->count(),
             'conversations' => auth()->user()->soldConversations()->count(),
-            'posts' => auth()->user()->registered_posts()->with('images')->where('posts.sold', 0)->paginate(4),
+            'posts' => auth()->user()->registered_posts()->with('images', 'category')->where('posts.sold', 0)->paginate(4),
             'messages' => Message::whereHas('conversation', function ($q) {
                 $q->where('seller_id', auth()->id());
             })->with(['sender'])->latest()->paginate(5),

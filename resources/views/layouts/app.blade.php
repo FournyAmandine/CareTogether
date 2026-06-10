@@ -12,7 +12,9 @@
     <title>{{ $title . ' - CareTogether' }}</title>
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    @if (!app()->environment('testing'))
+        <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    @endif
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>
 <body class="user {{$body_class ?? ''}}">

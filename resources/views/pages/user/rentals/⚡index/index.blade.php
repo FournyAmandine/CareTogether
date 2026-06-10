@@ -1,6 +1,6 @@
 <main class="rentalsPage">
 
-    <x-user.utils.heading title="Vos locations et prêts" route="{{ route('user.rentals.index') }}" :categories="$categories_name"/>
+    <x-user.utils.heading text="Ayez une vue d'ensemble sur les articles que l'on vous a loués ou prêtés" title="Vos locations et prêts" route="{{ route('user.rentals.index') }}" :categories="$categories_name"/>
 
     <x-user.utils.deco/>
 
@@ -69,7 +69,7 @@
                 <div class="rentals__sliderContainer__slider rentals__sliderContainer__slider--current">
                 @foreach($current_rentals as $current_rental)
                         @php
-                            $image = $current_rental->post->images()->first();
+                            $image = $current_rental->post->images->first();
                         @endphp
                     <x-user.utils.rental-card title="{{ $current_rental->post->name }}"
                                               svg="{{ Str::slug($current_rental->post->category->name, '_')}}"
@@ -103,7 +103,7 @@
                 <div class="rentals__sliderContainer__slider rentals__sliderContainer__slider--ended">
                 @foreach($ended_rentals as $ended_rental)
                         @php
-                            $image = $ended_rental->post->images()->first();
+                            $image = $ended_rental->post->images->first();
                         @endphp
                     <x-user.utils.rental-card title="{{ $ended_rental->post->name }}"
                                               svg="{{ Str::slug($ended_rental->post->category->name, '_')}}"

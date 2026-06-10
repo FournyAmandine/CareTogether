@@ -11,30 +11,22 @@ it('Verify that the user can access to the post’s details page correctly and t
     $user = User::factory()->create();
     $category = Category::factory()->create();
     $category2 = Category::factory()->create();
-
     $post = Post::factory()->create([
         'user_id' => $user->id,
         'category_id' => $category->id,
     ]);
-
     $post_two = Post::factory()->create([
         'name' => 'Lit médical',
         'user_id' => $user->id,
         'category_id' => $category2->id,
     ]);
-
     $response = $this->get(route('public.posts.show', $post['id'], ['locale' => app()->getLocale()]));
-
     $response->assertStatus(200);
-
-    $response->assertSee($post['name']);
-
     $response->assertSee($post['name']);
     $response->assertSee($post['price']);
     $response->assertSee($post['marque']);
     $response->assertSee($post['description']);
     $response->assertSee($post['locality']);
-
     $response->assertDontSee($post_two['name']);
     $response->assertDontSee($post_two['description']);
 

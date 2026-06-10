@@ -11,7 +11,7 @@ new class extends Component
 
     public string|ContactMessage $openMessage = '';
 
-    #[Title('Vos contact_messages')]
+    #[Title('Vos messages de contact')]
     public function toggleReadMessage(ContactMessage $message){
         $message->update([
             'read'=> !$message->done,

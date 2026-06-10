@@ -21,8 +21,10 @@ it('renders successfully', function () {
 });
 
 it('creates successfully a post from the data provided by the request', function () {
-
-    $post = Post::factory()->raw();
+    $category = \App\Models\Category::factory()->create();
+    $post = Post::factory()->raw([
+            'category_id' => $category->id
+    ]);
 
     Livewire::test('pages::user.posts.create')
         ->set('form.name', $post['name'])

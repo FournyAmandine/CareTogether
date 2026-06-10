@@ -43,7 +43,7 @@ new class extends Component
             : [];
 
         return view('pages.user.posts.⚡show.show', [
-            'posts' => Post::where('user_id', auth()->user()->id)->paginate(4),
+            'posts' => Post::where('user_id', auth()->user()->id)->with('category', 'images', 'registeredByUser')->paginate(4),
             'register_id' => $registeredPostIds,
             'conversations' => Conversation::with(['buyer', 'seller'])
                 ->where(function ($q) {

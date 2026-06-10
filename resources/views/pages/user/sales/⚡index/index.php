@@ -31,6 +31,7 @@ new class extends Component
 
         $sales = auth()->user()
             ->sales()
+            ->with('post.images')
             ->when($this->term, function ($term) {
                 $term->whereHas('post', function ($post) {
                     $post->where('name', 'like', "%{$this->term}%");
