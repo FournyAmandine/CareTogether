@@ -43,7 +43,6 @@
                     Prêt
                 @endif
         </span>
-
             <div class="card-post__link__contentContainer__navigation">
             <span class="button button--post card-post__link__contentContainer__navigation__button">
                 <svg class="card-post__link__contentContainer__navigation__buttonContainer__button__icon">

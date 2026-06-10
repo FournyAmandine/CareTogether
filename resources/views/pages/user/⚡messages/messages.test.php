@@ -34,21 +34,15 @@ it('renders successfully', function () {
 
 
 it('displays successfully the conversations', function () {
-
     $post = Post::factory()->create();
-
     $post2 = Post::factory()->create();
-
     $buyer = User::factory()->create();
-
     $sender = User::factory()->create();
-
     $conversation = Conversation::factory()->create([
         'post_id' => $post->id,
         'seller_id' => $this->user->id,
         'buyer_id' => $buyer->id
     ]);
-
     $conversation2 = Conversation::factory()->create([
         'post_id' => $post2->id,
         'seller_id' => $sender->id,

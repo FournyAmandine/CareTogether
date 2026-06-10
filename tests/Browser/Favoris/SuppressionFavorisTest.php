@@ -8,18 +8,20 @@ use Laravel\Dusk\Browser;
 
 uses(RefreshDatabase::class);
 
-it('allows user to remove a post from favorites', function () {
+test('allows user to remove a post from favorites', function () {
 
+    $category = \App\Models\Category::factory()->create();
     $user = User::factory()->create();
-    $post = Post::factory()->create();
+    $post = Post::factory()->create([
+            'category_id' => $category->id,
+            'user_id' => $user->id
+    ]);
 
     $user->registered_posts()->attach($post->id);
 
-    $this->browse(function (Browser $browser) use ($user, $post) {
+    \Pest\Laravel\actingAs($user);
 
-        $browser->loginAs($user)
-            ->visit(route('user.posts.show', $post->id))
-            ->press('Retirer des favoris')
-            ->assertPresent('.detail__main__listing__iconContainer__icon--delete');
-    });
+    visit(route('public.posts.show', $post->id))
+        ->press('Enlever des annonces enregistrées')
+        ->assertSee('Enregistrer l‘annonce');
 });

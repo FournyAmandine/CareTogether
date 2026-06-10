@@ -2,14 +2,16 @@ import $ from 'jquery';
 window.$ = window.jQuery = $;
 import 'slick-carousel';
 
-document.addEventListener('livewire:navigated', () => {
-    initSalesSlider();
-    initRentalsSlider();
-    initRegisteredSlider();
-    initRentalCurrentSlider();
-    initRentalEndedSlider();
-    initSalesIndexSlider();
-});
+if (process.env.NODE_ENV !== 'testing') {
+    document.addEventListener('livewire:navigated', () => {
+        initSalesSlider();
+        initRentalsSlider();
+        initRegisteredSlider();
+        initRentalCurrentSlider();
+        initRentalEndedSlider();
+        initSalesIndexSlider();
+    });
+}
 
 function initSalesSlider() {
 

@@ -7,6 +7,8 @@ import './login/password.js'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-AOS.init({
-    once: true,
-});
+if (process.env.NODE_ENV !== 'testing') {
+    AOS.init({
+        once: true
+    });
+}
