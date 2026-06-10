@@ -9,13 +9,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 uses(RefreshDatabase::class);
 
 test('allows user to open a conversation', function () {
-
-
     $category = \App\Models\Category::factory()->create();
-
     $buyer = User::factory()->create();
     $seller = User::factory()->create();
-
     $post = Post::factory()->create([
         'category_id' => $category->id,
         'user_id' => $seller->id,
