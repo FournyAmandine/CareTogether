@@ -2456,7 +2456,7 @@ button[aria-disabled=true] {
 .posts__listing {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 380px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
   gap: 25px;
   overflow-x: scroll;
   padding: 20px 25px 40px;
@@ -3994,12 +3994,12 @@ button[aria-disabled=true] {
 }
 .postsPage .posts__listing {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 380px));
+  grid-template-columns: repeat(4, minmax(250px, 330px));
   gap: 25px;
 }
 @media (max-width: 1400px) {
   .postsPage .posts__listing {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 380px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
   }
 }
 .postsPage .posts__pagination span, .postsPage .posts__pagination a {

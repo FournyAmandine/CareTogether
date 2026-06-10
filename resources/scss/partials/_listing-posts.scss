@@ -2,12 +2,13 @@
 
     &__title {
         max-width: none;
+
     }
 
     &__listing {
         width: 100%;
         display: grid;
-        grid-template-columns:repeat(auto-fit, minmax(250px, 380px));
+        grid-template-columns:repeat(auto-fit, minmax(250px, 330px));
         gap: 25px;
         overflow-x: scroll;
         padding: 20px 25px 40px;
