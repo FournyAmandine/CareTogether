@@ -2,7 +2,7 @@
 
 
 <article class="card-post card-post--{!! $modifier !!} posts__listing__item">
-    <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}">
+    <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}"></a>
         <div class="card-post__link__iconContainer">
             <svg class="card-post__link__iconContainer__icon">
                 <use xlink:href="{{ asset('assets/img/svg/sprite.svg#' . $svg) }}"></use>
@@ -75,7 +75,6 @@
                     {!! $registered !!}
             </div>
         </div>
-    </a>
 
 
 </article>

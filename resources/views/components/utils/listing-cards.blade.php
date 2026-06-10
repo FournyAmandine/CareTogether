@@ -3,7 +3,7 @@
 <div class="posts__listing">
     @forelse($posts as $post)
         @php
-            $image = $post->images()->first();
+            $image = $post->images->first();
         @endphp
         <x-utils.card
             title="{{ $post->name }}"

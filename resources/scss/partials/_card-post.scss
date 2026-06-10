@@ -338,6 +338,7 @@
                         font-size: $large;
                         text-transform: uppercase;
                         font-weight: bold;
+                        font-family: $titleFont;
 
                         @include w768px {
                             font-size: $medium;
@@ -365,6 +366,7 @@
                     align-items: center;
                     gap: 10px;
                     color: $primary;
+                    font-family: $textFont;
 
                     &__button {
                         border: none;
