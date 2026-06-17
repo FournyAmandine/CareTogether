@@ -29,6 +29,7 @@
         &__listing {
             display: grid;
             grid-template-columns:repeat(4, minmax(250px, 315px));
+            justify-content: center;
             gap: 25px;
 
             @include w1400px {

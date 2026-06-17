@@ -61,6 +61,7 @@
                                         div:not([class^="card"]) {
                                             display: grid;
                                             grid-template-columns: repeat(4, 1fr);
+                                            justify-content: center;
                                             gap: 25px;
                                             width: 95%;
                                             height: 100%;
@@ -68,6 +69,7 @@
                                             padding: 20px;
 
                                             @include w1400px {
+                                                justify-content: start;
                                                 grid-template-columns: repeat(3, 1fr);
                                             }
 

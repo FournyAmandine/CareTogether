@@ -9,6 +9,7 @@
         width: 100%;
         display: grid;
         grid-template-columns:repeat(auto-fit, minmax(250px, 315px));
+        justify-content: center;
         gap: 25px;
         overflow-x: scroll;
         padding: 20px 25px 40px;
