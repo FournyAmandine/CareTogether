@@ -102,25 +102,43 @@
                 </div>
                 <div class="detail__buttons" data-aos="fade-left" data-aos-delay="400" data-aos-duration="500">
                     @if(in_array($post->id, $registeredPostIds))
-                        <form action="{{ route('public.posts.unregister', $post) }}" method="POST">
+                        <form class="js-loading-form--add" action="{{ route('public.posts.unregister', $post) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
                             <x-user.form.buttons.button text="Enlever des annonces enregistrées" name_parent="detail__buttons" class_button="button--blue" svg="registered_fill"/>
+                            <div class="loading loading--public">
+                                <div class="loading__spinner" wire:loading></div>
+                                <p class="loading__text" wire:loading>
+                                    Chargement en cours...
+                                </p>
+                            </div>
                         </form>
                     @else
-                        <form action="{{ route('public.posts.register', $post) }}" method="POST">
+                        <form class="js-loading-form--delete" action="{{ route('public.posts.register', $post) }}" method="POST">
                             @csrf
 
-                            <x-user.form.buttons.button text="Enregistrer l‘annonce" name_parent="detail__buttons" class_button="button--blue" svg="register"/>
+                            <x-user.form.buttons.button wire:loading.attr="disabled" text="Enregistrer l‘annonce" name_parent="detail__buttons" class_button="button--blue" svg="register"/>
+                            <div class="loading loading--public">
+                                <div class="loading__spinner" wire:loading></div>
+                                <p class="loading__text" wire:loading>
+                                    Chargement en cours...
+                                </p>
+                            </div>
                         </form>
                     @endif
                     @if($post->sold == 0)
 
-                        <form action="{{ route('public.posts.contact', $post->id) }}" method="POST">
+                        <form class="js-loading-form--contact" action="{{ route('public.posts.contact', $post->id) }}" method="POST">
                             @csrf
 
                             <x-user.form.buttons.button name_parent="detail__buttons" class_button="button--red" text="Contacter le vendeur"/>
+                            <div class="loading loading--public">
+                                <div class="loading__spinner" wire:loading></div>
+                                <p class="loading__text" wire:loading>
+                                    Chargement en cours...
+                                </p>
+                            </div>
                         </form>
                     @endif
                 </div>

@@ -153,7 +153,13 @@
                         @enderror
                     </fieldset>
 
-                    <x-user.form.buttons.button svg="modify" text="Modifier" name_parent="formContainer__form__fieldset" class_button="button--red"/>
+                    <x-user.form.buttons.button wire:loading.attr="disabled" svg="modify" text="Modifier" name_parent="formContainer__form__fieldset" class_button="button--red"/>
+                    <div class="loading">
+                        <div class="loading__spinner" wire:loading></div>
+                        <p class="loading__text" wire:loading>
+                            Publication en cours...
+                        </p>
+                    </div>
                 </div>
             </form>
         </div>

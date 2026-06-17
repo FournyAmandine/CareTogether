@@ -217,9 +217,15 @@ button[aria-disabled=true] {
   gap: 10px;
   margin-top: 20px;
 }
+.loading--public {
+  display: none;
+}
+.loading.is-visible {
+  display: flex;
+}
 .loading__spinner {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   border: 3px solid rgba(79, 74, 74, 0.7);
   border-top-color: #1E3A8A;
   border-radius: 50%;

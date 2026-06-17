@@ -2,6 +2,7 @@ import './bootstrap';
 import './user/index.js'
 import './public/posts.js'
 import './public/gallery.js'
+import './public/loading.js'
 import './login/password.js'
 
 import AOS from 'aos';
