@@ -45,7 +45,7 @@
                             </strong>
                             à votre matériel médical
                         </h2>
-                        <x-utils.link href="#" svg="arrow-button" class-button="button--red" name_parent="hook__main__contentContainer" title="Aller vers la page AJout d'annonce" label="Ajouter une annonce"/>
+                        <x-utils.link href="{{route('user.posts.create')}}" svg="arrow-button" class-button="button--red" name_parent="hook__main__contentContainer" title="Aller vers la page AJout d'annonce" label="Ajouter une annonce"/>
                     </div>
                 </div>
             </div>

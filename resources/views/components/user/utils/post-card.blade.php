@@ -1,7 +1,7 @@
 @props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'views', 'registered', 'sold' => 0])
 
 
-<article class="card-post card-post--{!! $modifier !!} posts__listing__item">
+<article {!! $attributes !!} class="card-post card-post--{!! $modifier !!} posts__listing__item">
     <a class="card-post__link" href="{!! $src !!}" title="Voir cette annonce : {!! $title !!}"></a>
         <div class="card-post__link__iconContainer">
             <svg class="card-post__link__iconContainer__icon">

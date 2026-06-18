@@ -112,6 +112,12 @@
                     @endif
                 @endif
             </div>
+            <div class="loading">
+                <div class="loading__spinner" wire:target="toggleModal" wire:loading></div>
+                <p class="loading__text" wire:loading>
+                    Chargement en cours...
+                </p>
+            </div>
         </div>
     </section>
 
@@ -153,8 +159,14 @@
             </x-slot:title>
             <x-slot:content>
                 <div class="modal__container__buttons">
-                    <x-utils.button-text wire:click="toggleModal('modal')" classButton="button button--border" name_parent="modal__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
-                    <x-utils.button-text wire:click="modal()" classButton="button button--red" name_parent="modal__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="modal"/>
+                    <x-utils.button-text wire:click="toggleModal('delete')" classButton="button button--border" name_parent="modal__container__buttons" title="Retourner sur la page de l'annonce" text="Non, retour" svg="arrow-button"/>
+                    <x-utils.button-text wire:click="delete()" classButton="button button--red" name_parent="modal__container__buttons" text="Oui, supprimer" title="Supprimer cette annonce" svg="modal"/>
+                </div>
+                <div class="loading">
+                    <div class="loading__spinner" wire:target="toggleModal, delete" wire:loading></div>
+                    <p class="loading__text" wire:loading>
+                        Chargement en cours...
+                    </p>
                 </div>
             </x-slot:content>
         </x-user.modal.modal>
@@ -181,6 +193,12 @@
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
+                    <div class="loading">
+                        <div class="loading__spinner" wire:loading></div>
+                        <p class="loading__text" wire:loading>
+                            Chargement en cours...
+                        </p>
+                    </div>
                 </form>
             </x-slot:content>
         </x-user.modal.modal>
@@ -209,6 +227,12 @@
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>
                     <x-user.form.fields.input wire:model="endedDate" name_parent="modal__container__form" type="date" field_name="ended_date" label="Entrez une date de fin"/>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
+                    <div class="loading">
+                        <div class="loading__spinner" wire:loading></div>
+                        <p class="loading__text" wire:loading>
+                            Chargement en cours...
+                        </p>
+                    </div>
                 </form>
             </x-slot:content>
         </x-user.modal.modal>
@@ -235,6 +259,12 @@
                         @endforeach
                     </x-user.form.fields.select>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
+                    <div class="loading">
+                        <div class="loading__spinner" wire:loading></div>
+                        <p class="loading__text" wire:loading>
+                            Chargement en cours...
+                        </p>
+                    </div>
                 </form>
             </x-slot:content>
         </x-user.modal.modal>
@@ -263,6 +293,12 @@
                     <x-user.form.fields.input wire:model="startDate" name_parent="modal__container__form" type="date" field_name="start_date" label="Entrez une date de début" required="required"/>
                     <x-user.form.fields.input wire:model="endedDate" name_parent="modal__container__form" type="date" field_name="ended_date" label="Entrez une date de fin"/>
                     <x-user.form.buttons.button text="Valider" name_parent="modal__container__form" class_button="button--red"/>
+                    <div class="loading">
+                        <div class="loading__spinner" wire:loading></div>
+                        <p class="loading__text" wire:loading>
+                            Chargement en cours...
+                        </p>
+                    </div>
                 </form>
             </x-slot:content>
         </x-user.modal.modal>
@@ -276,6 +312,12 @@
             <x-slot:content>
                 <div class="modal__container__buttons">
                     <x-utils.button-text wire:click="markAsUnsold()" classButton="button button--red" name_parent="modal__container__buttons" text="Valider" title="Ne plus mettre comme venud ou loué" svg="arrow-button"/>
+                </div>
+                <div class="loading">
+                    <div class="loading__spinner" wire:loading></div>
+                    <p class="loading__text" wire:loading>
+                        Chargement en cours...
+                    </p>
                 </div>
             </x-slot:content>
         </x-user.modal.modal>

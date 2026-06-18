@@ -136,6 +136,7 @@
         &__listing {
             display: grid;
             grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            justify-content: center;
             gap: 25px;
 
             @include w900px {

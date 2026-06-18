@@ -72,7 +72,7 @@
                             <x-utils.link href="{{ route('public.posts.show', $conversation_selected->post->id) }}" label="Voir l'annonce" name_parent="messages__container__content__heading" class-button="button--red" title="Aller voir l'annonce" svg="arrow-button"/>
                         </div>
                         <div class="messages__container__content__main">
-                            <div wire:poll.5s class="messages__container__content__main__listing">
+                            <div wire:poll.2s class="messages__container__content__main__listing">
                                 @foreach($messages as $message)
                                     <div class="messages__container__content__main__listing__messageContainer messages__container__content__main__listing__messageContainer--{{$message->sender_id === auth()->id() ? 'mine' : 'theirs'}}">
                                         <p class="messages__container__content__main__listing__messageContainer__message">

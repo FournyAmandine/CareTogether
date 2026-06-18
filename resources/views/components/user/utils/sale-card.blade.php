@@ -18,7 +18,7 @@
                 {!! $title !!}
             </h3>
             <span class="card-post__container__contentContainer__price">
-            {!! $price !!}€/mois
+            {!! $price !!}€
             </span>
         </div>
     </div>

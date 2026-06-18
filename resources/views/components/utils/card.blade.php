@@ -1,7 +1,7 @@
 @props(['title', 'locality', 'state', 'price', 'imgSrc', 'svg', 'src', 'modifier'=>'', 'type', 'post', 'registeredPostIds', 'delay' => ''])
 
 
-<article class="card-post card-post--{{ $modifier }} posts__listing__item" itemscope itemtype="https://schema.org/Product" @if($delay) data-aos="fade-right" data-aos-delay="{{ 150*$delay }}" data-aos-duration="500" @endif>
+<article {!! $attributes !!} class="card-post card-post--{{ $modifier }} posts__listing__item" itemscope itemtype="https://schema.org/Product" @if($delay) data-aos="fade-right" data-aos-delay="{{ 150*$delay }}" data-aos-duration="500" @endif>
     <a class="card-post__link" href="{{ $src }}" title="Voir cette annonce : {{ $title }}" itemprop="url"></a>
         <div class="card-post__link__iconContainer" itemprop="category">
             <svg class="card-post__link__iconContainer__icon">

@@ -86,7 +86,7 @@
                         @php
                             $image = $registered_post->images->first();
                         @endphp
-                    <x-utils.card title="{{ $registered_post->name }}" type="{{ $registered_post->type }}"
+                    <x-utils.card wire:loading.attr="disabled" title="{{ $registered_post->name }}" type="{{ $registered_post->type }}"
                                             svg="{{ Str::slug($registered_post->category->name, '_')}}" :post="$registered_post"
                                             price="{{ $registered_post->price }}" locality="{{ $registered_post->locality }}"
                                             state="{{ $registered_post->state }}" modifier="registered" :registered-post-ids="$registerPost"

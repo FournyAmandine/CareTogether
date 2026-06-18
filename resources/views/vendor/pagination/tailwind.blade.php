@@ -60,7 +60,7 @@
 
                     {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
-                    <a href="#" aria-disabled="true" rel="prev" class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-orange-600  border-gray-300 rounded-l-md leading-5 hover:bg-orange-200 focus:z-10 focus:outline-none active:bg-orange-600 active:text-orange-50 transition ease-in-out duration-150 dark:bg-orange-50 dark:active:bg-orange-600 " aria-label="{{ __('pagination.previous') }}">
+                    <a href="{{ $paginator->previousPageUrl() }}" aria-disabled="true" rel="prev" class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-orange-600  border-gray-300 rounded-l-md leading-5 hover:bg-orange-200 focus:z-10 focus:outline-none active:bg-orange-600 active:text-orange-50 transition ease-in-out duration-150 dark:bg-orange-50 dark:active:bg-orange-600 " aria-label="{{ __('pagination.previous') }}">
                         <svg class="posts__pagination__icon posts__pagination__icon--disabled" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
@@ -100,7 +100,7 @@
 
                     {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
-                    <a href="#" aria-disabled="true" rel="next" class="paginate relative inline-flex items-center px-2 py-2 text-sm font-medium hover:bg-orange-100/30 text-orange-600 cursor-default rounded-md leading-5" aria-label="{{ __('pagination.next') }}">
+                    <a href="{{ $paginator->nextPageUrl() }}" aria-disabled="true" rel="next" class="paginate relative inline-flex items-center px-2 py-2 text-sm font-medium hover:bg-orange-100/30 text-orange-600 cursor-default rounded-md leading-5" aria-label="{{ __('pagination.next') }}">
                         <svg class="posts__pagination__icon" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
